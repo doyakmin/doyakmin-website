@@ -1,12 +1,13 @@
+import type { Metadata } from "next";
 import GlobalNavigation from '@/components/gnb'
 import { Inter } from 'next/font/google'
 import Footer from "@/components/footer";
 const inter = Inter({ subsets: ['latin'] })
 import './globals.css'
 
-export const metadata = {
-    title: '도약민',
-    description: '더 나은 도약을 위한 선택',
+export const metadata: Metadata = {
+    title: '도약민 | DOYAKMIN',
+    description: 'GAMES MAKETH THE WORLD ANEW, 한국지 제작사',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
