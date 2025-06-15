@@ -2,15 +2,15 @@ import Image from 'next/image'
 
 export default function Games() {
     return (
-        <main className="min-h-screen font-sans text-white bg-black">
+        <main className="min-h-screen font-sans text-black bg-white">
             {/*Hero Section*/}
-            <section className="relative py-20 bg-gradient-to-b from-black via-gray-900 to-black">
+            <section className="relative py-20 bg-emerald-900/20">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center mb-16">
-                        <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+                    <div className="text-center">
+                        <h1 className="text-5xl md:text-6xl font-bold mb-6">
                             GAMES
                         </h1>
-                        <p className="text-xl text-gray-400">
+                        <p className="text-lg text-gray-700 max-w-3xl mx-auto">
                             게임을 통해 세상을 새롭게 만들어갑니다
                         </p>
                     </div>
@@ -29,7 +29,7 @@ export default function Games() {
                                     alt="doyakmin enjoy"
                                     width={800}
                                     height={600}
-                                    className="w-full h-auto object-cover rounded-2xl shadow-2xl shadow-emerald-500/20 group-hover:shadow-emerald-500/40 transition-all duration-500 group-hover:scale-105"
+                                    className="w-full h-auto object-cover rounded-2xl transition-all duration-500"
                                 />
                             </div>
                         </div>
@@ -48,7 +48,7 @@ export default function Games() {
                                 {/* Game Description */}
                                 <div className="mb-8">
                                     <h3 className="text-xl font-semibold text-white mb-4">한줄 소개</h3>
-                                    <p className="text-lg text-gray-300 leading-relaxed">
+                                    <p className="text-lg text-gray-900 leading-relaxed">
                                         지역 소멸 문제 해결을 위한 GPS 기반의 모바일 점령형 게임
                                     </p>
                                 </div>
@@ -78,26 +78,26 @@ export default function Games() {
             </section>
 
             {/* Features Section */}
-            <section className="relative py-30 bg-gradient-to-b from-black to-gray-900">
+            <section className="relative py-30 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
-                        <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                        <h2 className="text-4xl md:text-5xl font-bold mb-6">
                             게임 특징
                         </h2>
-                        <div className="w-24 h-1 bg-gradient-to-r from-emerald-400 to-blue-400 rounded-full mx-auto"></div>
+                        <div className="w-24 h-1 bg-gradient-to-r from-emerald-400 to-blue-300 rounded-full mx-auto"></div>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {/* GPS 기반 */}
                         <div className="group relative h-full">
-                            <div className="relative h-full p-6 bg-gradient-to-br from-gray-900 to-black border border-emerald-900/30 rounded-2xl hover:border-emerald-400/50 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-emerald-500/20 flex flex-col">
+                            <div className="relative h-full p-6 bg-gradient-to-br from-emerald-200 to-emerald-400 rounded-2xl hover:border-emerald-400/50 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-emerald-500/20 flex flex-col">
                                 <div className="w-16 h-16 mx-auto mb-4 bg-emerald-600/20 rounded-xl flex items-center justify-center">
                                     <span className="text-2xl">📍</span>
                                 </div>
-                                <h3 className="text-lg font-bold text-emerald-400 mb-2 text-center">
+                                <h3 className="text-lg font-bold mb-2 text-center">
                                     GPS 기반
                                 </h3>
-                                <p className="text-gray-300 text-sm text-center flex-grow">
+                                <p className="text-gray-700 text-sm text-center flex-grow">
                                     실제 위치를 활용한 현실 연동 게임플레이
                                 </p>
                             </div>
@@ -105,14 +105,14 @@ export default function Games() {
 
                         {/* PVP 전투 */}
                         <div className="group relative h-full">
-                            <div className="relative h-full p-6 bg-gradient-to-br from-gray-900 to-black border border-emerald-900/30 rounded-2xl hover:border-emerald-400/50 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-emerald-500/20 flex flex-col">
+                            <div className="relative h-full p-6 bg-gradient-to-br from-emerald-200 to-emerald-400 rounded-2xl hover:border-emerald-400/50 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-emerald-500/20 flex flex-col">
                                 <div className="w-16 h-16 mx-auto mb-4 bg-emerald-600/20 rounded-xl flex items-center justify-center">
                                     <span className="text-2xl">⚔️</span>
                                 </div>
-                                <h3 className="text-lg font-bold text-emerald-400 mb-2 text-center">
+                                <h3 className="text-lg font-bold mb-2 text-center">
                                     PVP 전투
                                 </h3>
-                                <p className="text-gray-300 text-sm text-center flex-grow">
+                                <p className="text-gray-700 text-sm text-center flex-grow">
                                     플레이어 간 실시간 대전과 경쟁
                                 </p>
                             </div>
@@ -120,14 +120,14 @@ export default function Games() {
 
                         {/* 점령 시스템 */}
                         <div className="group relative h-full">
-                            <div className="relative h-full p-6 bg-gradient-to-br from-gray-900 to-black border border-emerald-900/30 rounded-2xl hover:border-emerald-400/50 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-emerald-500/20 flex flex-col">
+                            <div className="relative h-full p-6 bg-gradient-to-br from-emerald-200 to-emerald-400 rounded-2xl hover:border-emerald-400/50 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-emerald-500/20 flex flex-col">
                                 <div className="w-16 h-16 mx-auto mb-4 bg-emerald-600/20 rounded-xl flex items-center justify-center">
                                     <span className="text-2xl">🏰</span>
                                 </div>
-                                <h3 className="text-lg font-bold text-emerald-400 mb-2 text-center">
+                                <h3 className="text-lg font-bold  mb-2 text-center">
                                     점령 시스템
                                 </h3>
-                                <p className="text-gray-300 text-sm text-center flex-grow">
+                                <p className="text-gray-700 text-sm text-center flex-grow">
                                     지역을 점령하고 영토를 확장하는 전략 게임
                                 </p>
                             </div>
@@ -135,14 +135,14 @@ export default function Games() {
 
                         {/* 지역 활성화 */}
                         <div className="group relative h-full">
-                            <div className="relative h-full p-6 bg-gradient-to-br from-gray-900 to-black border border-emerald-900/30 rounded-2xl hover:border-emerald-400/50 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-emerald-500/20 flex flex-col">
+                            <div className="relative h-full p-6 bg-gradient-to-br from-emerald-200 to-emerald-400 rounded-2xl hover:border-emerald-400/50 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-emerald-500/20 flex flex-col">
                                 <div className="w-16 h-16 mx-auto mb-4 bg-emerald-600/20 rounded-xl flex items-center justify-center">
                                     <span className="text-2xl">🌱</span>
                                 </div>
-                                <h3 className="text-lg font-bold text-emerald-400 mb-2 text-center">
+                                <h3 className="text-lg font-bold mb-2 text-center">
                                     지역 활성화
                                 </h3>
-                                <p className="text-gray-300 text-sm text-center flex-grow">
+                                <p className="text-gray-700 text-sm text-center flex-grow">
                                     게임을 통한 실제 지역 경제 기여
                                 </p>
                             </div>
