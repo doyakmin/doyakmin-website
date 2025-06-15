@@ -7,7 +7,7 @@ export default function Footer() {
                     <div className="col-span-1 md:col-span-2">
                         <h3 className="text-2xl font-bold text-white mb-4">도약민</h3>
                         <p className="text-xl text-blue-400 mb-4 font-medium">
-                            "GAMES MAKETH THE WORLD ANEW "
+                            &#34;GAMES MAKETH THE WORLD ANEW&#34;
                         </p>
                         <p className="text-gray-400 mb-6 leading-relaxed">
                             더 나은 도약을 위한 선택<br />
@@ -37,8 +37,8 @@ export default function Footer() {
                         © 2025 주식회사 도약민. All rights reserved.
                     </p>
                     <div className="flex space-x-6 mt-4 sm:mt-0">
-                        <a href="/privacy" className="text-gray-500 hover:text-gray-300 text-sm transition-colors">개인정보처리방침 !!없으면 알려주세요!!</a>
-                        <a href="/terms" className="text-gray-500 hover:text-gray-300 text-sm transition-colors">이용약관 !! 없으면 알려주세요!!</a>
+                        <a href="https://naver.com" className="text-gray-500 hover:text-gray-300 text-sm transition-colors">개인정보처리방침 !!없으면 알려주세요!!</a>
+                        <a href="https://naver.com" className="text-gray-500 hover:text-gray-300 text-sm transition-colors">이용약관 !! 없으면 알려주세요!!</a>
                     </div>
                 </div>
             </div>
