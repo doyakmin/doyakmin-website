@@ -89,60 +89,60 @@ export default function Games() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {/* GPS 기반 */}
-                        <div className="group relative">
-                            <div className="relative p-6 bg-gradient-to-br from-gray-900 to-black border border-emerald-900/30 rounded-2xl hover:border-emerald-400/50 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-emerald-500/20">
+                        <div className="group relative h-full">
+                            <div className="relative h-full p-6 bg-gradient-to-br from-gray-900 to-black border border-emerald-900/30 rounded-2xl hover:border-emerald-400/50 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-emerald-500/20 flex flex-col">
                                 <div className="w-16 h-16 mx-auto mb-4 bg-emerald-600/20 rounded-xl flex items-center justify-center">
                                     <span className="text-2xl">📍</span>
                                 </div>
                                 <h3 className="text-lg font-bold text-emerald-400 mb-2 text-center">
                                     GPS 기반
                                 </h3>
-                                <p className="text-gray-300 text-sm text-center">
+                                <p className="text-gray-300 text-sm text-center flex-grow">
                                     실제 위치를 활용한 현실 연동 게임플레이
                                 </p>
                             </div>
                         </div>
 
                         {/* PVP 전투 */}
-                        <div className="group relative">
-                            <div className="relative p-6 bg-gradient-to-br from-gray-900 to-black border border-emerald-900/30 rounded-2xl hover:border-emerald-400/50 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-emerald-500/20">
+                        <div className="group relative h-full">
+                            <div className="relative h-full p-6 bg-gradient-to-br from-gray-900 to-black border border-emerald-900/30 rounded-2xl hover:border-emerald-400/50 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-emerald-500/20 flex flex-col">
                                 <div className="w-16 h-16 mx-auto mb-4 bg-emerald-600/20 rounded-xl flex items-center justify-center">
                                     <span className="text-2xl">⚔️</span>
                                 </div>
                                 <h3 className="text-lg font-bold text-emerald-400 mb-2 text-center">
                                     PVP 전투
                                 </h3>
-                                <p className="text-gray-300 text-sm text-center">
+                                <p className="text-gray-300 text-sm text-center flex-grow">
                                     플레이어 간 실시간 대전과 경쟁
                                 </p>
                             </div>
                         </div>
 
                         {/* 점령 시스템 */}
-                        <div className="group relative">
-                            <div className="relative p-6 bg-gradient-to-br from-gray-900 to-black border border-emerald-900/30 rounded-2xl hover:border-emerald-400/50 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-emerald-500/20">
+                        <div className="group relative h-full">
+                            <div className="relative h-full p-6 bg-gradient-to-br from-gray-900 to-black border border-emerald-900/30 rounded-2xl hover:border-emerald-400/50 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-emerald-500/20 flex flex-col">
                                 <div className="w-16 h-16 mx-auto mb-4 bg-emerald-600/20 rounded-xl flex items-center justify-center">
                                     <span className="text-2xl">🏰</span>
                                 </div>
                                 <h3 className="text-lg font-bold text-emerald-400 mb-2 text-center">
                                     점령 시스템
                                 </h3>
-                                <p className="text-gray-300 text-sm text-center">
+                                <p className="text-gray-300 text-sm text-center flex-grow">
                                     지역을 점령하고 영토를 확장하는 전략 게임
                                 </p>
                             </div>
                         </div>
 
                         {/* 지역 활성화 */}
-                        <div className="group relative">
-                            <div className="relative p-6 bg-gradient-to-br from-gray-900 to-black border border-emerald-900/30 rounded-2xl hover:border-emerald-400/50 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-emerald-500/20">
+                        <div className="group relative h-full">
+                            <div className="relative h-full p-6 bg-gradient-to-br from-gray-900 to-black border border-emerald-900/30 rounded-2xl hover:border-emerald-400/50 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-emerald-500/20 flex flex-col">
                                 <div className="w-16 h-16 mx-auto mb-4 bg-emerald-600/20 rounded-xl flex items-center justify-center">
                                     <span className="text-2xl">🌱</span>
                                 </div>
                                 <h3 className="text-lg font-bold text-emerald-400 mb-2 text-center">
                                     지역 활성화
                                 </h3>
-                                <p className="text-gray-300 text-sm text-center">
+                                <p className="text-gray-300 text-sm text-center flex-grow">
                                     게임을 통한 실제 지역 경제 기여
                                 </p>
                             </div>
