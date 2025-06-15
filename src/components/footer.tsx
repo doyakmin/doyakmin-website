@@ -1,3 +1,5 @@
+import PrivacyModalTrigger from "@/components/privacy_modal_trigger";
+
 export default function Footer() {
     return (
         <footer className="bg-gray-800 border-t border-gray-900">
@@ -37,7 +39,7 @@ export default function Footer() {
                         © 2025 주식회사 도약민. All rights reserved.
                     </p>
                     <div className="flex space-x-6 mt-4 sm:mt-0">
-                        <a href="https://naver.com" className="text-gray-500 hover:text-gray-300 text-sm transition-colors">개인정보처리방침</a>
+                        <PrivacyModalTrigger />
                         <a href="https://naver.com" className="text-gray-500 hover:text-gray-300 text-sm transition-colors">이용약관</a>
                     </div>
                 </div>
