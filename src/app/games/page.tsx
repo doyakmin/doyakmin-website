@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import GameImageCarousel from "@/components/game_image_carousel";
 
 export default function Games() {

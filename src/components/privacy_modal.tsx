@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 
 interface PrivacyModalProps {
     isOpen: boolean
@@ -54,7 +54,7 @@ export default function PrivacyModal({ isOpen, onClose }: PrivacyModalProps) {
                 <div className="flex-1 overflow-y-auto p-6">
                     <div className="text-gray-800 space-y-6 leading-relaxed">
                         <p>
-                            주식회사 도약민 (이하 "회사")는 회사의 서비스를 이용하시는 고객님(이하 "이용자")의 소중한 개인정보를 보호하기 위하여 「개인정보 보호법」 등 대한민국의 관계 법령 및 개인정보보호 규정, 가이드라인을 준수하고 있습니다.
+                            주식회사 도약민 (이하 &#34;회사&#34;)는 회사의 서비스를 이용하시는 고객님(이하 &#34;이용자&#34;)의 소중한 개인정보를 보호하기 위하여 「개인정보 보호법」 등 대한민국의 관계 법령 및 개인정보보호 규정, 가이드라인을 준수하고 있습니다.
                         </p>
 
                         <p>
@@ -255,7 +255,7 @@ export default function PrivacyModal({ isOpen, onClose }: PrivacyModalProps) {
                             <div className="text-sm space-y-2">
                                 <p>- 이용자는 개인정보 처리를 스스로 결정하는 정보주체로, 자신의 개인정보를 언제든지 열람하거나 정정, 삭제하도록 요구할 수 있습니다. 이를 위하여 개인정보 보호책임자에게 전화 또는 이메일로 연락하시면 본인 확인 절차를 거친 후 지체없이 조치하겠습니다.</p>
                                 <p>- 이용자가 개인정보의 오류에 대한 정정을 요청하신 경우에는 정정을 완료하기 전까지 당해 개인정보를 이용 또는 제공하지 않습니다. 또한 잘못된 개인정보를 제3자에게 이미 제공한 경우에는 정정 처리결과를 제3자에게 지체없이 통지하여 정정이 이루어지도록 하겠습니다.</p>
-                                <p>- 회사는 이용자의 요청에 의해 해지 또는 삭제된 개인정보는 '3. 개인정보의 처리 및 보유기간'에 명시된 바에 따라 처리하고 그 외의 용도로 열람 또는 이용할 수 없도록 처리하고 있습니다.</p>
+                                <p>- 회사는 이용자의 요청에 의해 해지 또는 삭제된 개인정보는 &#39;3. 개인정보의 처리 및 보유기간&#39;에 명시된 바에 따라 처리하고 그 외의 용도로 열람 또는 이용할 수 없도록 처리하고 있습니다.</p>
                             </div>
                         </div>
 
@@ -290,8 +290,8 @@ export default function PrivacyModal({ isOpen, onClose }: PrivacyModalProps) {
                                         <div>
                                             <p className="font-medium text-sm">③ 개인 맞춤형 광고 차단</p>
                                             <ul className="ml-4 list-disc list-inside text-sm space-y-1">
-                                                <li>Android : [설정→Google{'>'}광고] 또는 [설정→Google{'>'}개인정보 보호{'>'}광고] 에서 "광고 개인 최적화 선택 해제" 선택</li>
-                                                <li>iOS : [설정→개인정보 보호→Apple 광고]에서 "맞춤형 광고" 선택 해제</li>
+                                                <li>Android : [설정→Google{'>'}광고] 또는 [설정→Google{'>'}개인정보 보호{'>'}광고] 에서 &#39;광고 개인 최적화 선택 해제&#39; 선택</li>
+                                                <li>iOS : [설정→개인정보 보호→Apple 광고]에서 &#39;맞춤형 광고&#39; 선택 해제</li>
                                             </ul>
                                         </div>
 
@@ -313,10 +313,10 @@ export default function PrivacyModal({ isOpen, onClose }: PrivacyModalProps) {
                                     <p className="text-sm mb-2">분석 소프트웨어는 이용자가 웹 사이트를 방문하거나 모바일 서비스를 이용할 때 자동으로 생성되는 정보를 분석하기 위해 사용되며, 이용자는 이를 거부할 수 있습니다.</p>
 
                                     <ul className="ml-4 list-disc list-inside text-sm space-y-1">
-                                        <li>Android : [설정→인터넷 설정{'>'}개인정보 보호 및 보안] 에서 "스마트 추적 방지" 또는"사이트에서 추적하지 못하도록 요청" 선택</li>
-                                        <li>iOS : [설정→개인정보 보호→ 추적]에서 "앱이 추척을 요청하도록 허용" 선택 해제</li>
-                                        <li>Internet Explorer : 웹브라우저 상단 "도구" 메뉴 {'>'} "안전" 메뉴 {'>'} "Do Not Track 요청 켜기" 선택</li>
-                                        <li>Chrome : [설정{'>'}개인정보 및 보안{'>'}쿠키 및 기타 사이트 데이터{'>'}일반 설정]에서 탐색 트래픽과 함께 '추적 안함' 요청 선택</li>
+                                        <li>Android : [설정→인터넷 설정{'>'}개인정보 보호 및 보안] 에서 &#39;스마트 추적 방지&#39; 또는&#39;사이트에서 추적하지 못하도록 요청&#39; 선택</li>
+                                        <li>iOS : [설정→개인정보 보호→ 추적]에서 &#39;앱이 추척을 요청하도록 허용&#39; 선택 해제</li>
+                                        <li>Internet Explorer : 웹브라우저 상단 &#39;도구&#39; 메뉴 {'>'} &#39;안전&#39; 메뉴 {'>'} &#39;Do Not Track 요청 켜기&#39; 선택</li>
+                                        <li>Chrome : [설정{'>'}개인정보 및 보안{'>'}쿠키 및 기타 사이트 데이터{'>'}일반 설정]에서 탐색 트래픽과 함께 &apos;추적 안함&apos; 요청 선택</li>
                                     </ul>
                                 </div>
                             </div>

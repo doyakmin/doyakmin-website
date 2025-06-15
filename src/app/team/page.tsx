@@ -232,10 +232,10 @@ export default function TeamPage() {
                         >
                             <div className="relative p-6 bg-gradient-to-br from-emerald-900/20 to-emerald-800/10 border border-emerald-600/30 rounded-xl hover:border-emerald-400/50 transition-all duration-300 hover:transform hover:scale-[1.02] hover:shadow-lg cursor-pointer">
                                 <h3 className="text-lg font-semibold text-emerald-500 mb-3">
-                                    국립부경대, 창업 아이디어 경진대회 '대상·우수상'
+                                    국립부경대, 창업 아이디어 경진대회 &apos;대상·우수상&apos;
                                 </h3>
                                 <p className="text-gray-600 leading-relaxed group-hover:text-gray-500 transition-colors">
-                                    부경대 경영학부 정민영 학생과 경상국립대 의예과 김민서 학생으로 구성된 연합 창업동아리 '도약민' 팀(지도교수 한재호)이 대상을 받았습니다.
+                                    부경대 경영학부 정민영 학생과 경상국립대 의예과 김민서 학생으로 구성된 연합 창업동아리 &apos;도약민&apos; 팀(지도교수 한재호)이 대상을 받았습니다.
                                 </p>
                             </div>
                         </a>
@@ -252,7 +252,7 @@ export default function TeamPage() {
                                     국립부경대, 창업 아이디어 경진대회 대상·우수상 동시 수상
                                 </h3>
                                 <p className="text-gray-600 leading-relaxed group-hover:text-gray-500 transition-colors">
-                                    국립부경대 경영학부 정민영 학생과 경상국립대 의예과 김민서 학생이 함께한 연합 창업동아리 '도약민' 팀(지도교수 한재호)은 지역 소멸 문제 해결을 위한 GPS 기반 모바일 점령형 게임 '한국지'를 제안해 대상과 함께 상금 100만 원을 수상했다.
+                                    국립부경대 경영학부 정민영 학생과 경상국립대 의예과 김민서 학생이 함께한 연합 창업동아리 &apos;도약민&apos; 팀(지도교수 한재호)은 지역 소멸 문제 해결을 위한 GPS 기반 모바일 점령형 게임 &apos;한국지&apos;를 제안해 대상과 함께 상금 100만 원을 수상했다.
                                 </p>
                             </div>
                         </a>
@@ -266,10 +266,10 @@ export default function TeamPage() {
                         >
                             <div className="relative p-6 bg-gradient-to-br from-emerald-900/20 to-emerald-800/10 border border-emerald-600/30 rounded-xl hover:border-emerald-400/50 transition-all duration-300 hover:transform hover:scale-[1.02] hover:shadow-lg cursor-pointer">
                                 <h3 className="text-lg font-semibold text-emerald-500 mb-3">
-                                    국립부경대-경상국립대 연합팀, '2024 부산다움 트래블톤' 우수상 수상
+                                    국립부경대-경상국립대 연합팀, &apos;2024 부산다움 트래블톤&apos; 우수상 수상
                                 </h3>
                                 <p className="text-gray-600 leading-relaxed group-hover:text-gray-500 transition-colors">
-                                    지역소멸 문제를 온 가족이 즐기는 모바일 게임으로 해결한다는 차별적이면서도 현실적인 아이디어를 제시해 이번 대회 주제인 '부산다움을 드러내는 창의적인 부산 관광'에 적합하다는 평가를 받았다.
+                                    지역소멸 문제를 온 가족이 즐기는 모바일 게임으로 해결한다는 차별적이면서도 현실적인 아이디어를 제시해 이번 대회 주제인 &apos;부산다움을 드러내는 창의적인 부산 관광&apos;에 적합하다는 평가를 받았다.
                                 </p>
                             </div>
                         </a>
@@ -286,7 +286,7 @@ export default function TeamPage() {
                                     K7U-Belt 창업 아이디어 경진대회 성료
                                 </h3>
                                 <p className="text-gray-600 leading-relaxed group-hover:text-gray-500 transition-colors">
-                                    국립한밭대학교 3단계산학연협력선도대학육성사업단(LINC 3.0)은 지난 21일 교내 산학연협동관에서 국립한밭대, 국립군산대, 국립금오공대, 국립부경대, 국립창원대, 국립한국교통대, 서울과학기술대 7개 대학 학생들이 참여한 '2024 K7U-Belt 창업 아이디어 경진대회'를 개최했다고 26일 밝혔다.
+                                    국립한밭대학교 3단계산학연협력선도대학육성사업단(LINC 3.0)은 지난 21일 교내 산학연협동관에서 국립한밭대, 국립군산대, 국립금오공대, 국립부경대, 국립창원대, 국립한국교통대, 서울과학기술대 7개 대학 학생들이 참여한 &apos;2024 K7U-Belt 창업 아이디어 경진대회&apos;를 개최했다고 26일 밝혔다.
                                 </p>
                             </div>
                         </a>
