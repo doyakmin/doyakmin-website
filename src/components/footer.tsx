@@ -1,4 +1,5 @@
 import PrivacyModalTrigger from "@/components/privacy_modal_trigger";
+import TermsModalTrigger from "@/components/temrs_modal_trigger";
 
 export default function Footer() {
     return (
@@ -40,7 +41,7 @@ export default function Footer() {
                     </p>
                     <div className="flex space-x-6 mt-4 sm:mt-0">
                         <PrivacyModalTrigger />
-                        <a href="https://naver.com" className="text-gray-500 hover:text-gray-300 text-sm transition-colors">이용약관</a>
+                        <TermsModalTrigger />
                     </div>
                 </div>
             </div>
