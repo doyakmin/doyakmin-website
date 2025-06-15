@@ -33,7 +33,7 @@ export default function PrivacyModal({ isOpen, onClose }: PrivacyModalProps) {
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center">
             {/* 배경 오버레이 */}
-            <div className="absolute inset-0 backdrop-blur-sm" onClick={onClose}></div>
+            <div className="absolute inset-0 backdrop-blur-sm -inset-x-6" onClick={onClose}></div>
 
             {/* 모달 컨텐츠 */}
             <div className="relative bg-white rounded-lg shadow-2xl w-full max-w-4xl mx-4 max-h-[90vh] flex flex-col">
@@ -298,11 +298,11 @@ export default function PrivacyModal({ isOpen, onClose }: PrivacyModalProps) {
                                         <div>
                                             <p className="font-medium text-sm">④ 마케팅 분석툴 / 광고 플랫폼 사업자 Opt-Out 기능 활용</p>
                                             <ul className="ml-4 list-disc list-inside text-sm space-y-1">
-                                                <li>AppsFlyer : <a href="https://www.appsflyer.com/optout" className="text-blue-600 hover:underline">https://www.appsflyer.com/optout</a></li>
-                                                <li>Unity Ads : <a href="https://unity3d.com/legal/privacy-policy" className="text-blue-600 hover:underline">https://unity3d.com/legal/privacy-policy</a></li>
-                                                <li>Google AdMob : <a href="https://policies.google.com/privacy" className="text-blue-600 hover:underline">https://policies.google.com/privacy</a></li>
-                                                <li>Facebook : <a href="https://www.facebook.com/policies/cookies/" className="text-blue-600 hover:underline">https://www.facebook.com/policies/cookies/</a></li>
-                                                <li>Vungle : <a href="https://vungle.com/privacy/#section-3-3" className="text-blue-600 hover:underline">https://vungle.com/privacy/#section-3-3</a></li>
+                                                <li>AppsFlyer : <a href="https://www.appsflyer.com/optout" className="text-blue-600 hover:underline ">https://www.appsflyer.com/optout</a></li>
+                                                <li>Unity Ads : <a href="https://unity3d.com/legal/privacy-policy" className="text-blue-600 hover:underline ">https://unity3d.com/legal/privacy-policy</a></li>
+                                                <li>Google AdMob : <a href="https://policies.google.com/privacy" className="text-blue-600 hover:underline ">https://policies.google.com/privacy</a></li>
+                                                <li>Facebook : <a href="https://www.facebook.com/policies/cookies/" className="text-blue-600 hover:underline ">https://www.facebook.com/policies/cookies/</a></li>
+                                                <li>Vungle : <a href="https://vungle.com/privacy/#section-3-3" className="text-blue-600 hover:underline ">https://vungle.com/privacy/#section-3-3</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -384,9 +384,9 @@ export default function PrivacyModal({ isOpen, onClose }: PrivacyModalProps) {
 
                             <div className="text-sm space-y-1">
                                 <p>- 개인정보침해신고센터 : (국번없이) 118 (privacy.kisa.or.kr)</p>
-                                <p>- 개인정보분쟁조정위원회 : 1833-6972 (<a href="http://www.kopico.go.kr" className="text-blue-600 hover:underline">www.kopico.go.kr</a>)</p>
+                                <p>- 개인정보분쟁조정위원회 : 1833-6972 (<a href="http://www.kopico.go.kr" className="text-blue-600 hover:underline ">www.kopico.go.kr</a>)</p>
                                 <p>- 대검찰청 사이버수사과 : (국번없이) 1301 (cybercid.spo.go.kr)</p>
-                                <p>- 경찰청 사이버안전지킴이 : (국번없이) 182 (<a href="http://www.police.go.kr/www/security/cyber.jsp" className="text-blue-600 hover:underline">www.police.go.kr/www/security/cyber.jsp</a>)</p>
+                                <p>- 경찰청 사이버안전지킴이 : (국번없이) 182 (<a href="http://www.police.go.kr/www/security/cyber.jsp" className="text-blue-600 hover:underline ">www.police.go.kr/www/security/cyber.jsp</a>)</p>
                             </div>
                         </div>
 
