@@ -16,19 +16,9 @@ export default function Footer() {
                         <div className="space-y-2 text-sm text-gray-500">
                             <p>주식회사 도약민</p>
                             <p>대표이사: 정민영</p>
-                            <p>사업자등록번호: [번호]</p>
-                            <p>통신판매업신고: [번호]</p>
+                            <p>사업자등록번호: [번호. !!여기를 채워주세요!!]</p>
+                            <p>통신판매업신고: [번호. !!여기를 채워주세요!!]</p>
                         </div>
-                    </div>
-
-                    {/* Quick Links */}
-                    <div>
-                        <h4 className="text-white font-semibold mb-4">빠른 링크</h4>
-                        <ul className="space-y-2">
-                            <li><a href="/games" className="text-gray-400 hover:text-white transition-colors">게임</a></li>
-                            <li><a href="/careers" className="text-gray-400 hover:text-white transition-colors">팀소개</a></li>
-                            <li><a href="/contact" className="text-gray-400 hover:text-white transition-colors">문의하기</a></li>
-                        </ul>
                     </div>
 
                     {/* Contact & Social */}
@@ -44,12 +34,11 @@ export default function Footer() {
                 {/* Bottom Bar */}
                 <div className="mt-8 pt-8 border-t border-gray-800 flex flex-col sm:flex-row justify-between items-center">
                     <p className="text-gray-500 text-sm">
-                        © 2024 주식회사 도약민. All rights reserved.
+                        © 2025 주식회사 도약민. All rights reserved.
                     </p>
                     <div className="flex space-x-6 mt-4 sm:mt-0">
-                        <a href="/privacy" className="text-gray-500 hover:text-gray-300 text-sm transition-colors">개인정보처리방침</a>
-                        <a href="/terms" className="text-gray-500 hover:text-gray-300 text-sm transition-colors">이용약관</a>
-                        <a href="/legal" className="text-gray-500 hover:text-gray-300 text-sm transition-colors">법적고지</a>
+                        <a href="/privacy" className="text-gray-500 hover:text-gray-300 text-sm transition-colors">개인정보처리방침 !!없으면 알려주세요!!</a>
+                        <a href="/terms" className="text-gray-500 hover:text-gray-300 text-sm transition-colors">이용약관 !!없으면 알려주세요!!</a>
                     </div>
                 </div>
             </div>
