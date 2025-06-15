@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import GameImageCarousel from "@/components/game_image_carousel";
 
 export default function Games() {
     return (
@@ -22,17 +23,7 @@ export default function Games() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
                         {/* Game Image */}
-                        <div className="order-1 lg:order-1 lg:col-span-2">
-                            <div className="relative group">
-                                <Image
-                                    src="/image/game_introduce.jpg"
-                                    alt="doyakmin enjoy"
-                                    width={800}
-                                    height={600}
-                                    className="w-full h-auto object-cover rounded-2xl transition-all duration-500"
-                                />
-                            </div>
-                        </div>
+                        <GameImageCarousel />
 
                         {/* Game Info */}
                         <div className="order-2 lg:order-2 lg:col-span-1">
