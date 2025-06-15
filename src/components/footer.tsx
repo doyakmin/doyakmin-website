@@ -22,7 +22,7 @@ export default function Footer() {
                     </div>
 
                     {/* Contact & Social */}
-                    <div>
+                    <div className="col-span-1 md:col-span-2">
                         <h4 className="text-white font-semibold mb-4">연락처</h4>
                         <div className="space-y-2 text-gray-400 text-sm mb-6">
                             <p>이메일: doyakmin@gmail.com</p>
@@ -38,7 +38,7 @@ export default function Footer() {
                     </p>
                     <div className="flex space-x-6 mt-4 sm:mt-0">
                         <a href="/privacy" className="text-gray-500 hover:text-gray-300 text-sm transition-colors">개인정보처리방침 !!없으면 알려주세요!!</a>
-                        <a href="/terms" className="text-gray-500 hover:text-gray-300 text-sm transition-colors">이용약관 !!없으면 알려주세요!!</a>
+                        <a href="/terms" className="text-gray-500 hover:text-gray-300 text-sm transition-colors">이용약관 !! 없으면 알려주세요!!</a>
                     </div>
                 </div>
             </div>

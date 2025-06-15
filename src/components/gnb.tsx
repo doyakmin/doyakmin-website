@@ -37,7 +37,7 @@ export default function GlobalNavigation() {
                             <a href="/games" className="relative px-5 py-2 text-xl font-medium text-gray-300 hover:text-emerald-400 transition-all duration-300 group">
                                 <span className="relative z-10">게임</span>
                             </a>
-                            <a href="/teams" className="relative px-5 py-2 text-xl font-medium text-gray-300 hover:text-emerald-400 transition-all duration-300 group">
+                            <a href="/team" className="relative px-5 py-2 text-xl font-medium text-gray-300 hover:text-emerald-400 transition-all duration-300 group">
                                 <span className="relative z-10">팀 소개</span>
                             </a>
                             <a href="/contact" className="relative px-5 py-2 text-xl font-medium text-gray-300 hover:text-emerald-400 transition-all duration-300 group">
@@ -69,7 +69,7 @@ export default function GlobalNavigation() {
                         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-black/95 backdrop-blur-md rounded-xl m-4 border border-gray-800/50">
                             <a href="/" className="text-gray-300 hover:text-emerald-400 hover:bg-emerald-500/10 block px-4 py-3 text-base font-medium rounded-lg transition-all duration-300">홈</a>
                             <a href="/games" className="text-gray-300 hover:text-emerald-400 hover:bg-emerald-500/10 block px-4 py-3 text-base font-medium rounded-lg transition-all duration-300">게임</a>
-                            <a href="/teams" className="text-gray-300 hover:text-emerald-400 hover:bg-emerald-500/10 block px-4 py-3 text-base font-medium rounded-lg transition-all duration-300">팀 소개</a>
+                            <a href="/team" className="text-gray-300 hover:text-emerald-400 hover:bg-emerald-500/10 block px-4 py-3 text-base font-medium rounded-lg transition-all duration-300">팀 소개</a>
                             <a href="/contact" className="text-gray-300 hover:text-emerald-400 hover:bg-emerald-500/10 block px-4 py-3 text-base font-medium rounded-lg transition-all duration-300">문의</a>
                         </div>
                     </div>

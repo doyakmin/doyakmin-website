@@ -5,15 +5,15 @@ export default function Home() {
       <main className="min-h-screen font-sans text-white bg-black">
           {/* Hero Section */}
           <section className="relative w-full h-screen">
-              <video
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  className="absolute top-0 left-0 w-full h-full object-cover object-[center_40%]"
-              >
-                  <source src="/video/hero_video.mp4" type="video/mp4" />
-              </video>
+              {/*<video*/}
+              {/*    autoPlay*/}
+              {/*    muted*/}
+              {/*    loop*/}
+              {/*    playsInline*/}
+              {/*    className="absolute top-0 left-0 w-full h-full object-cover object-[center_40%]"*/}
+              {/*>*/}
+              {/*    <source src="/video/hero_video.mp4" type="video/mp4" />*/}
+              {/*</video>*/}
           </section>
 
           {/* Core Values Section */}
