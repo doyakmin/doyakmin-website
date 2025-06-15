@@ -1,5 +1,3 @@
-import Image from 'next/image'
-
 export default function TeamPage() {
     return (
         <main className="min-h-screen font-sans text-white bg-black">
