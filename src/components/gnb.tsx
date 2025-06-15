@@ -39,7 +39,7 @@ export default function GlobalNavigation() {
                                 <span className="relative z-10">게임</span>
                             </Link>
                             <Link href="/team" className="relative px-5 py-2 text-xl font-medium text-gray-300 hover:text-emerald-400 transition-all duration-300 group">
-                                <span className="relative z-10">팀 소개</span>
+                                <span className="relative z-10">회사</span>
                             </Link>
                             <Link href="/contact" className="relative px-5 py-2 text-xl font-medium text-gray-300 hover:text-emerald-400 transition-all duration-300 group">
                                 <span className="relative z-10">문의</span>
@@ -70,7 +70,7 @@ export default function GlobalNavigation() {
                         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-black/95 backdrop-blur-md rounded-xl m-4 border border-gray-800/50">
                             <Link href="/" className="text-gray-300 hover:text-emerald-400 hover:bg-emerald-500/10 block px-4 py-3 text-base font-medium rounded-lg transition-all duration-300">홈</Link>
                             <Link href="/games" className="text-gray-300 hover:text-emerald-400 hover:bg-emerald-500/10 block px-4 py-3 text-base font-medium rounded-lg transition-all duration-300">게임</Link>
-                            <Link href="/team" className="text-gray-300 hover:text-emerald-400 hover:bg-emerald-500/10 block px-4 py-3 text-base font-medium rounded-lg transition-all duration-300">팀 소개</Link>
+                            <Link href="/team" className="text-gray-300 hover:text-emerald-400 hover:bg-emerald-500/10 block px-4 py-3 text-base font-medium rounded-lg transition-all duration-300">회사</Link>
                             <Link href="/contact" className="text-gray-300 hover:text-emerald-400 hover:bg-emerald-500/10 block px-4 py-3 text-base font-medium rounded-lg transition-all duration-300">문의</Link>
                         </div>
                     </div>
