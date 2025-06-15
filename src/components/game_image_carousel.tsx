@@ -1,15 +1,10 @@
 'use client'
 
 import Image from 'next/image'
-import { useState, useRef } from 'react'
+import { useState } from 'react'
 
 export default function GameImageCarousel() {
     const [currentImageIndex, setCurrentImageIndex] = useState(0)
-    const [isDragging, setIsDragging] = useState(false)
-    const [startX, setStartX] = useState(0)
-    const [currentX, setCurrentX] = useState(0)
-    const [dragOffset, setDragOffset] = useState(0)
-    const containerRef = useRef<HTMLDivElement>(null)
 
     const images: { src: string; alt: string }[] = [
         {
@@ -34,89 +29,15 @@ export default function GameImageCarousel() {
         )
     }
 
-    // 마우스/터치 이벤트 핸들러
-    const handleStart = (clientX: number) => {
-        setIsDragging(true)
-        setStartX(clientX)
-        setCurrentX(clientX)
-        setDragOffset(0)
-    }
-
-    const handleMove = (clientX: number) => {
-        if (!isDragging) return
-
-        const diffX = clientX - startX
-        setCurrentX(clientX)
-        setDragOffset(diffX)
-    }
-
-    const handleEnd = () => {
-        if (!isDragging) return
-
-        const diffX = currentX - startX
-        const threshold = 100 // 최소 드래그 거리
-
-        if (diffX > threshold) {
-            goToPrevious()
-        } else if (diffX < -threshold) {
-            goToNext()
-        }
-
-        setIsDragging(false)
-        setStartX(0)
-        setCurrentX(0)
-        setDragOffset(0)
-    }
-
-    // 마우스 이벤트
-    const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
-        e.preventDefault()
-        handleStart(e.clientX)
-    }
-
-    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-        handleMove(e.clientX)
-    }
-
-    const handleMouseUp = () => {
-        handleEnd()
-    }
-
-    // 터치 이벤트
-    const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
-        handleStart(e.touches[0].clientX)
-    }
-
-    const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
-        e.preventDefault()
-        handleMove(e.touches[0].clientX)
-    }
-
-    const handleTouchEnd = () => {
-        handleEnd()
-    }
-
     // 이미지 위치 계산
     const getImageTransform = (imageIndex: number) => {
         const baseOffset = (imageIndex - currentImageIndex) * 100
-        const realTimeDragOffset = isDragging ? (dragOffset / (containerRef.current?.offsetWidth || 1)) * 100 : 0
-
-        return `translateX(${baseOffset + realTimeDragOffset}%)`
+        return `translateX(${baseOffset}%)`
     }
 
     return (
         <div className="order-1 lg:order-1 lg:col-span-2">
-            <div
-                ref={containerRef}
-                className="relative group cursor-grab active:cursor-grabbing select-none overflow-hidden rounded-2xl"
-                onMouseDown={handleMouseDown}
-                onMouseMove={handleMouseMove}
-                onMouseUp={handleMouseUp}
-                onMouseLeave={handleMouseUp}
-                onTouchStart={handleTouchStart}
-                onTouchMove={handleTouchMove}
-                onTouchEnd={handleTouchEnd}
-            >
+            <div className="relative group overflow-hidden rounded-2xl">
                 {/* 이미지 컨테이너 */}
                 <div className="relative w-full h-0 pb-[75%]"> {/* 4:3 비율 유지 */}
                     {images.map((image, index) => (
@@ -125,20 +46,74 @@ export default function GameImageCarousel() {
                             className="absolute top-0 left-0 w-full h-full"
                             style={{
                                 transform: getImageTransform(index),
-                                transition: isDragging ? 'none' : 'transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1)'
+                                transition: 'transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1)'
                             }}
                         >
                             <Image
                                 src={image.src}
                                 alt={image.alt}
                                 fill
-                                className="object-cover pointer-events-none"
+                                className="object-cover"
                                 draggable={false}
                                 sizes="(max-width: 1024px) 100vw, 66vw"
                             />
                         </div>
                     ))}
                 </div>
+
+                {/* 이전 버튼 */}
+                <button
+                    onClick={goToPrevious}
+                    className="absolute left-4 top-1/2 transform -translate-y-1/2
+                             bg-black/70 text-white w-12 h-12 rounded-full
+                             flex items-center justify-center
+                             opacity-0 group-hover:opacity-100
+                             transition-all duration-300
+                             hover:bg-black/90 hover:scale-110
+                             backdrop-blur-sm z-10"
+                    aria-label="이전 이미지"
+                >
+                    <svg
+                        className="w-6 h-6"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M15 19l-7-7 7-7"
+                        />
+                    </svg>
+                </button>
+
+                {/* 다음 버튼 */}
+                <button
+                    onClick={goToNext}
+                    className="absolute right-4 top-1/2 transform -translate-y-1/2
+                             bg-black/70 text-white w-12 h-12 rounded-full
+                             flex items-center justify-center
+                             opacity-0 group-hover:opacity-100
+                             transition-all duration-300
+                             hover:bg-black/90 hover:scale-110
+                             backdrop-blur-sm z-10"
+                    aria-label="다음 이미지"
+                >
+                    <svg
+                        className="w-6 h-6"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M9 5l7 7-7 7"
+                        />
+                    </svg>
+                </button>
 
                 {/* 이미지 인디케이터 */}
                 <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 opacity-0 group-hover:opacity-100 transition-all duration-300 z-10">
@@ -151,15 +126,10 @@ export default function GameImageCarousel() {
                                     ? 'bg-white'
                                     : 'bg-white/50 hover:bg-white/75'
                             }`}
+                            aria-label={`이미지 ${index + 1}로 이동`}
                         />
                     ))}
                 </div>
-
-                {/* 드래그 힌트 */}
-                <div className="absolute top-4 right-4 bg-black/70 text-white px-3 py-2 rounded-lg text-sm opacity-0 group-hover:opacity-100 transition-all duration-300 backdrop-blur-sm z-10">
-                    ← 드래그해서 넘기기 →
-                </div>
-
             </div>
         </div>
     )
