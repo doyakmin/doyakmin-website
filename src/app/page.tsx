@@ -34,7 +34,7 @@ export default function Home() {
                           <div className="relative p-8 bg-gray-900 rounded-2xl hover:border-emerald-400/50 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-emerald-500/20">
                               <div className="w-48 h-48 mx-auto mb-6 rounded-2xl flex items-center justify-center bg-emerald-600/20">
                                   <Image
-                                      src="/image/enjoy.jpg"
+                                      src="/image/enjoy.png"
                                       alt="doyakmin enjoy"
                                       width={192}
                                       height={192}
@@ -58,7 +58,7 @@ export default function Home() {
                           <div className="relative p-8 bg-gray-900 rounded-2xl hover:border-emerald-400/50 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-emerald-500/20">
                               <div className="w-48 h-48 mx-auto mb-6 rounded-2xl flex items-center justify-center bg-emerald-600/20">
                                   <Image
-                                      src="/image/coprosperity.jpg"
+                                      src="/image/coprosperity.png"
                                       alt="doyakmin enjoy"
                                       width={192}
                                       height={192}
