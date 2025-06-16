@@ -39,7 +39,7 @@ export default function GameImageCarousel() {
         <div className="order-1 lg:order-1 lg:col-span-2">
             <div className="relative group overflow-hidden rounded-2xl">
                 {/* 이미지 컨테이너 */}
-                <div className="relative w-full h-0 pb-[75%]"> {/* 4:3 비율 유지 */}
+                <div className="relative w-full h-0 pb-[60%]">
                     {images.map((image, index) => (
                         <div
                             key={index}
