@@ -16,7 +16,7 @@ export default function GlobalNavigation() {
                         <Link href="/" className="flex items-center space-x-2">
                             <div className="relative w-8 h-8">
                                 <Image
-                                    src="/image/logo.png"
+                                    src="/image/mark.png"
                                     alt="doyakmin logo"
                                     width={48}
                                     height={48}
