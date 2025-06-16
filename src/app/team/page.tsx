@@ -60,11 +60,11 @@ export default function TeamPage() {
                             <div className="relative p-10 bg-emerald-100 rounded-2xl">
                                 <div className="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden bg-gradient-to-br from-emerald-600/20 to-emerald-800/20 flex items-center justify-center">
                                     <Image
-                                        src='/image/profile/character.jpg'
-                                        alt="임시 프로필"
-                                        width="256"
-                                        height="256"
-                                        className="w-full h-full object-cover"
+                                        src='/image/profile/person_dev_kim.png'
+                                        alt="개발자 김민서 프로필"
+                                        width="64"
+                                        height="64"
+                                        className="w-full h-full object-cover object-right-top"
                                     />
                                 </div>
 
@@ -75,7 +75,7 @@ export default function TeamPage() {
                                     개발자
                                 </p>
                                 <p className="text-gray-700 text-sm text-center break-all">
-                                    mikoesnimi02@gmail.com
+                                    mikoesnim02@gmail.com
                                 </p>
                             </div>
                         </div>
@@ -85,11 +85,11 @@ export default function TeamPage() {
                             <div className="relative p-10 bg-emerald-100 rounded-2xl">
                                 <div className="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden bg-gradient-to-br from-emerald-600/20 to-emerald-800/20 flex items-center justify-center">
                                     <Image
-                                        src='/image/profile/character.jpg'
-                                        alt="임시 프로필"
+                                        src='/image/profile/person_dev_park.jpg'
+                                        alt="개발자 박상현 프로필"
                                         width="256"
                                         height="256"
-                                        className="w-full h-full object-cover"
+                                        className="w-full h-full object-cover object-top"
                                     />
                                 </div>
 
@@ -100,7 +100,7 @@ export default function TeamPage() {
                                     개발자
                                 </p>
                                 <p className="text-gray-700 text-sm text-center">
-                                    이메일 준비중
+                                    teiwoong@naver.com
                                 </p>
                             </div>
                         </div>
