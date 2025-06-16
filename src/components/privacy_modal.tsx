@@ -33,7 +33,7 @@ export default function PrivacyModal({ isOpen, onClose }: PrivacyModalProps) {
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center">
             {/* 배경 오버레이 */}
-            <div className="absolute inset-0 backdrop-blur-sm -inset-x-6" onClick={onClose}></div>
+            <div className="absolute inset-0 backdrop-blur-sm" onClick={onClose}></div>
 
             {/* 모달 컨텐츠 */}
             <div className="relative bg-white rounded-lg shadow-2xl w-full max-w-4xl mx-4 max-h-[90vh] flex flex-col">

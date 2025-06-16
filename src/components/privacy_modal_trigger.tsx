@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import PrivacyModal from "@/components/privacy_modal";
+import { createPortal } from 'react-dom'
 
 export default function PrivacyModalTrigger() {
     const [showPrivacyModal, setShowPrivacyModal] = useState(false)
@@ -15,10 +16,10 @@ export default function PrivacyModalTrigger() {
                 개인정보처리방침
             </button>
 
-            <PrivacyModal
-                isOpen={showPrivacyModal}
-                onClose={() => setShowPrivacyModal(false)}
-            />
+            {showPrivacyModal && createPortal(
+                <PrivacyModal isOpen={showPrivacyModal} onClose={() => setShowPrivacyModal(false)} />,
+                document.body
+            )}
         </>
     )
 }

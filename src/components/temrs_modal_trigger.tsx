@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import TermsModal from "@/components/terms_modal";
+import {createPortal} from "react-dom";
 
 export default function TermsModalTrigger() {
     const [showTermsModal, setShowTermsModal] = useState(false)
@@ -15,10 +16,10 @@ export default function TermsModalTrigger() {
                 이용약관
             </button>
 
-            <TermsModal
-                isOpen={showTermsModal}
-                onClose={() => setShowTermsModal(false)}
-            />
+            {showTermsModal && createPortal(
+                <TermsModal isOpen={showTermsModal} onClose={() => setShowTermsModal(false)} />,
+                document.body
+            )}
         </>
     )
 }
