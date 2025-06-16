@@ -79,7 +79,7 @@ export default function TeamPage() {
                                         alt="개발자 김민서 프로필"
                                         width="256"
                                         height="256"
-                                        className="w-full h-full object-cover"
+                                        className="w-full h-full object-cover object-top"
                                     />
                                 </div>
 
