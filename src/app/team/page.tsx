@@ -21,7 +21,7 @@ export default function TeamPage() {
             <section className="py-20">
                 <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
-                        <h2 className="text-4xl md:text-5xl font-bold  mb-6">
+                        <h2 className="text-4xl md:text-5xl font-bold mb-6">
                             팀원 소개
                         </h2>
                         <p className="text-lg text-gray-700">
@@ -44,7 +44,22 @@ export default function TeamPage() {
                                 </div>
 
                                 <h3 className="text-xl font-bold text-black mb-2 text-center">
-                                    정민영
+                                    <a
+                                        href="https://search.naver.com/search.naver?where=nexearch&sm=top_sug.pre&fbm=0&acr=2&acq=%EC%A0%95%EB%AF%BC%EC%98%81&qdt=0&ie=utf8&query=%EC%A0%95%EB%AF%BC%EC%98%81&ackey=xb8uh409"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center gap-1 hover:text-blue-600 transition-colors"
+                                    >
+                                        정민영
+                                        <svg
+                                            className="w-3 h-3 text-gray-500"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                        </svg>
+                                    </a>
                                 </h3>
                                 <p className="text-emerald-500 font-semibold text-center mb-3">
                                     대표이사
@@ -62,8 +77,8 @@ export default function TeamPage() {
                                     <Image
                                         src='/image/profile/person_dev_kim.jpg'
                                         alt="개발자 김민서 프로필"
-                                        width="512"
-                                        height="512"
+                                        width="256"
+                                        height="256"
                                         className="w-full h-full object-cover"
                                     />
                                 </div>
@@ -101,6 +116,43 @@ export default function TeamPage() {
                                 </p>
                                 <p className="text-gray-700 text-sm text-center">
                                     teiwoong@naver.com
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Partners Section */}
+            <section className="py-20">
+                <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center mb-16">
+                        <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                            파트너사
+                        </h2>
+                        <p className="text-lg text-gray-700">
+                            함께 성장해나가는 소중한 파트너
+                        </p>
+                    </div>
+
+                    <div className="flex justify-center">
+                        <div className="group relative max-w-md">
+                            <div className="relative p-10">
+                                <div className="w-48 h-48 mx-auto mb-6 rounded-2xl overflow-hidden bg-gradient-to-br from-emerald-600/20 to-emerald-800/20 flex items-center justify-center">
+                                    <Image
+                                        src='/image/profile/brandia.jpg'
+                                        alt="브랜디아 로고"
+                                        width="256"
+                                        height="256"
+                                        className="w-full h-full object-cover rounded-2xl"
+                                    />
+                                </div>
+
+                                <h3 className="text-2xl font-bold text-gray-700 mb-4 text-center">
+                                    브랜디아
+                                </h3>
+                                <p className="text-gray-700 text-sm text-center break-all">
+                                    brandia.shj@gmail.com
                                 </p>
                             </div>
                         </div>
