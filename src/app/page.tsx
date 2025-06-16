@@ -4,13 +4,13 @@ export default function Home() {
   return (
       <main className="min-h-screen font-sans text-black bg-white">
           {/* Hero Section */}
-          <section className="relative w-full h-screen">
+          <section className="relative w-full h-[70vh] sm:h-screen">
               <video
                   autoPlay
                   muted
                   loop
                   playsInline
-                  className="absolute top-0 left-0 w-full h-full object-cover object-[center_40%]"
+                  className="absolute top-0 left-0 w-full h-full object-cover object-[53%_center]"
               >
                   <source src="/video/hero_video.mp4" type="video/mp4" />
               </video>
