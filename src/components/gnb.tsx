@@ -7,13 +7,18 @@ import Link from "next/link";
 export default function GlobalNavigation() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
 
+    // 메뉴 아이템 클릭 시 모바일 메뉴 닫기
+    const handleMenuClick = () => {
+        setIsMenuOpen(false)
+    }
+
     return (
         <nav className="fixed top-0 left-0 right-0 z-50 bg-gray-800 backdrop-blur-md border-b border-gray-900/50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-20">
                     {/* Logo */}
                     <div className="flex-shrink-0">
-                        <Link href="/" className="flex items-center space-x-2">
+                        <Link href="/" className="flex items-center space-x-2" onClick={handleMenuClick}>
                             <div className="relative w-8 h-8">
                                 <Image
                                     src="/image/mark.png"
@@ -68,10 +73,34 @@ export default function GlobalNavigation() {
                 {isMenuOpen && (
                     <div className="md:hidden">
                         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 rounded-xl m-4 border border-gray-800/50">
-                            <Link href="/" className="text-gray-300 hover:text-emerald-400 hover:bg-emerald-500/10 block px-4 py-3 text-base font-medium rounded-lg transition-all duration-300">홈</Link>
-                            <Link href="/games" className="text-gray-300 hover:text-emerald-400 hover:bg-emerald-500/10 block px-4 py-3 text-base font-medium rounded-lg transition-all duration-300">게임</Link>
-                            <Link href="/team" className="text-gray-300 hover:text-emerald-400 hover:bg-emerald-500/10 block px-4 py-3 text-base font-medium rounded-lg transition-all duration-300">회사</Link>
-                            <Link href="/contact" className="text-gray-300 hover:text-emerald-400 hover:bg-emerald-500/10 block px-4 py-3 text-base font-medium rounded-lg transition-all duration-300">문의</Link>
+                            <Link
+                                href="/"
+                                className="text-gray-300 hover:text-emerald-400 hover:bg-emerald-500/10 block px-4 py-3 text-base font-medium rounded-lg transition-all duration-300"
+                                onClick={handleMenuClick}
+                            >
+                                홈
+                            </Link>
+                            <Link
+                                href="/games"
+                                className="text-gray-300 hover:text-emerald-400 hover:bg-emerald-500/10 block px-4 py-3 text-base font-medium rounded-lg transition-all duration-300"
+                                onClick={handleMenuClick}
+                            >
+                                게임
+                            </Link>
+                            <Link
+                                href="/team"
+                                className="text-gray-300 hover:text-emerald-400 hover:bg-emerald-500/10 block px-4 py-3 text-base font-medium rounded-lg transition-all duration-300"
+                                onClick={handleMenuClick}
+                            >
+                                회사
+                            </Link>
+                            <Link
+                                href="/contact"
+                                className="text-gray-300 hover:text-emerald-400 hover:bg-emerald-500/10 block px-4 py-3 text-base font-medium rounded-lg transition-all duration-300"
+                                onClick={handleMenuClick}
+                            >
+                                문의
+                            </Link>
                         </div>
                     </div>
                 )}
