@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Map from "@/components/map";
 
 export default function ContactPage() {
     return (
@@ -77,15 +78,8 @@ export default function ContactPage() {
                     </div>
 
                     {/* 지도 영역 */}
-                    <div className="w-full h-96 bg-gray-100 rounded-2xl flex items-center justify-center border-2 border-dashed border-gray-300">
-                        <div className="text-center">
-                            <div className="w-16 h-16 mx-auto mb-4 bg-gray-200 rounded-xl flex items-center justify-center">
-                                <span className="text-2xl">🗺️</span>
-                            </div>
-                            <p className="text-gray-500 font-medium">
-                                네이버 지도가 여기에 표시됩니다
-                            </p>
-                        </div>
+                    <div>
+                        <Map />
                     </div>
                 </div>
             </section>
