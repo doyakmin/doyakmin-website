@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react"
 
 declare global {
     interface Window {
-        naver: any
+        naver: naver.maps.Map
     }
 }
 
@@ -71,7 +71,7 @@ export default function Map() {
         }
 
         document.head.appendChild(script)
-    }, [])
+    }, [clientId])
 
     return (
         <div
