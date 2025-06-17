@@ -21,7 +21,7 @@ export default function Map() {
 
             const { naver } = window
 
-            const location = new naver.maps.LatLng(35.087969, 128.902312)
+            const location = new naver.maps.LatLng(35.087969, 128.902000)
 
             const map = new naver.maps.Map(mapElement.current, {
                 center: location,
@@ -76,7 +76,7 @@ export default function Map() {
     return (
         <div
             ref={mapElement}
-            style={{ width: "100%", height: "400px" }}
+            style={{ width: "100%", height: "500px" }}
         />
     )
 }
