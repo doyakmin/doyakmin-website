@@ -36,22 +36,37 @@ export default function Map() {
 
             const infoWindow = new naver.maps.InfoWindow({
                 content: `
-          <div style="padding:10px;line-height:1.5;">
-            <b>명지오션시티9로 50</b><br/>
-            부산광역시 강서구 명지오션시티9로 50<br/>
-            <a href="https://map.naver.com/p/search/명지오션시티9로%2050" target="_blank" style="color:blue;">
-              네이버 지도에서 보기
-            </a>
-          </div>
-        `,
+                    <div style="padding:12px 16px; min-width: 220px; font-size: 14px; line-height: 1.6; color: #333;">
+                      <div style="font-weight: 600; font-size: 15px; margin-bottom: 4px;">
+                        주식회사 도약민
+                      </div>
+                      <div style="margin-bottom: 12px;">
+                        부산광역시 강서구 명지오션시티9로 50
+                      </div>
+                      <div style="text-align: center;"> <!-- 중앙 정렬 핵심 -->
+                        <a
+                          href="https://map.naver.com/p/search/명지오션시티9로%2050"
+                          target="_blank"
+                          style="
+                            display: inline-block;
+                            padding: 6px 12px;
+                            background-color: #03c75a;
+                            color: white;
+                            border-radius: 4px;
+                            font-weight: 500;
+                            text-decoration: none;
+                          "
+                        >
+                          네이버 지도에서 보기
+                        </a>
+                      </div>
+                    </div>
+                  `,
             })
 
-            // 마커 클릭 시 정보창 토글
             naver.maps.Event.addListener(marker, "click", () => {
                 infoWindow.open(map, marker)
             })
-
-            // 처음부터 정보창 열기
             infoWindow.open(map, marker)
         }
 
