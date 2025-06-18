@@ -8,6 +8,9 @@ import './globals.css'
 export const metadata: Metadata = {
     title: '도약민 | GAMES MAKETH THE WORLD ANEW',
     description: '위치 기반 게임 \'한국지\' 제작사 (주)도약민. 게임으로 세상을 새롭게, 지역을 여행처럼!',
+    icons: {
+        icon: "/image/favicon.png",
+    },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
