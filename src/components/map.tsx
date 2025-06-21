@@ -21,7 +21,7 @@ export default function Map() {
 
             const { naver } = window
 
-            const location = new naver.maps.LatLng(35.087969, 128.902000)
+            const location = new naver.maps.LatLng(35.087900, 128.902000)
 
             const map = new naver.maps.Map(mapElement.current, {
                 center: location,
@@ -41,11 +41,11 @@ export default function Map() {
                         주식회사 도약민
                       </div>
                       <div style="margin-bottom: 12px;">
-                        부산광역시 강서구 명지오션시티9로 50
+                        부산광역시 강서구 명지오션시티9로 50, 103호
                       </div>
                       <div style="text-align: center;"> <!-- 중앙 정렬 핵심 -->
                         <a
-                          href="https://map.naver.com/p/search/명지오션시티9로%2050"
+                          href="https://map.naver.com/p/search/도약민"
                           target="_blank"
                           style="
                             display: inline-block;
