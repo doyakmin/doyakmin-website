@@ -46,6 +46,9 @@ export default function GlobalNavigation() {
                             <Link href="/team" className="relative px-5 py-2 text-xl font-medium text-gray-300 hover:text-emerald-400 transition-all duration-300 group">
                                 <span className="relative z-10">회사</span>
                             </Link>
+                            <Link href="/news" className="relative px-5 py-2 text-xl font-medium text-gray-300 hover:text-emerald-400 transition-all duration-300 group">
+                                <span className="relative z-10">소식</span>
+                            </Link>
                             <Link href="/contact" className="relative px-5 py-2 text-xl font-medium text-gray-300 hover:text-emerald-400 transition-all duration-300 group">
                                 <span className="relative z-10">문의</span>
                             </Link>
@@ -93,6 +96,13 @@ export default function GlobalNavigation() {
                                 onClick={handleMenuClick}
                             >
                                 회사
+                            </Link>
+                            <Link
+                                href="/news"
+                                className="text-gray-300 hover:text-emerald-400 hover:bg-emerald-500/10 block px-4 py-3 text-base font-medium rounded-lg transition-all duration-300"
+                                onClick={handleMenuClick}
+                            >
+                                소식
                             </Link>
                             <Link
                                 href="/contact"
