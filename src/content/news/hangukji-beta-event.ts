@@ -1,6 +1,7 @@
 export const hangukjiBetaEvent = {
     slug: 'hangukji-beta-event',
-    title: '한국지 베타 이벤트 안내     (경성대·부경대)',
+    title: '한국지 베타 이벤트 안내    
+              (경성대·부경대)',
     date: '2025-08-03',
     author: '도약민',
     content: `
@@ -20,7 +21,7 @@ export const hangukjiBetaEvent = {
 
         <h2 class="text-2xl font-bold mb-4">🎁 총 경품 규모</h2>
         <ul class="list-disc list-inside mb-6">
-            <li>총 200만 원 상당, 350명 내외 수령 상</li>
+            <li>총 200만 원 상당, 350명 내외 수령 예상</li>
             <li>아이패드·에어팟·버즈 등 전자기기 경품</li>
             <li>배달의민족 상품권</li>
             <li>오빠다방 부경대점 아이스 아메리카노 벤티 사이즈 무료 쿠폰 (300잔)</li>
