@@ -1,7 +1,6 @@
 export const hangukjiBetaEvent = {
     slug: 'hangukji-beta-event',
-    title: '한국지 베타 이벤트 안내    
-              (경성대·부경대)',
+    title: '한국지 베타 이벤트 안내 \n (경성대·부경대)',
     date: '2025-08-03',
     author: '도약민',
     content: `
@@ -52,7 +51,7 @@ export const hangukjiBetaEvent = {
                 <ul class="list-disc list-inside">
                     <li>하루 1회, 보유 건물에서 ‘보물찾기’를 진행할 수 있습니다.</li>
                     <li>일정 확률로 제휴 카페 쿠폰(총 300잔 한정)이 즉시 발급됩니다.</li>
-                    <li>쿠폰은 매장 방문 시 사용용 가능합니다.</li>
+                    <li>쿠폰은 매장 방문 시 사용 가능합니다.</li>
                 </ul>
             </div>
             <div>dd
