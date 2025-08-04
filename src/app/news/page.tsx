@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { hangukjiBetaEvent } from '@/content/news/hangukji-beta-event';
 
 // 향후 여러 공지사항을 관리할 것을 대비하여 배열로 만듭니다.
@@ -28,12 +29,29 @@ export default function NewsPage() {
                         {allPosts.map((post) => (
                             <Link key={post.slug} href={`/news/${post.slug}`} className="block group">
                                 <article className="p-8 border border-gray-200 rounded-2xl hover:bg-emerald-50 transition-colors duration-300 hover:shadow-lg">
-                                    <h2 className="text-3xl font-bold text-gray-800 group-hover:text-emerald-600 mb-3">
-                                        {post.title}
-                                    </h2>
-                                    <p className="text-gray-500">
-                                        {post.date} · {post.author}
-                                    </p>
+                                    <div className="flex items-start justify-between">
+                                        <div className="flex-1">
+                                            <h2 className="text-3xl font-bold text-gray-800 group-hover:text-emerald-600 mb-3">
+                                                {post.title}
+                                            </h2>
+                                            <p className="text-gray-500">
+                                                {post.date} · {post.author}
+                                            </p>
+                                        </div>
+                                        
+                                        {/* 한국지 로고 */}
+                                        {post.slug === 'hangukji-beta-event' && (
+                                            <div className="ml-6 flex-shrink-0">
+                                                <Image
+                                                    src="/image/hankookji_logo_small.png"
+                                                    alt="한국지 로고"
+                                                    width={80}
+                                                    height={80}
+                                                    className="w-16 h-16 md:w-20 md:h-20 rounded-xl shadow-md group-hover:scale-105 transition-transform duration-300"
+                                                />
+                                            </div>
+                                        )}
+                                    </div>
                                 </article>
                             </Link>
                         ))}
