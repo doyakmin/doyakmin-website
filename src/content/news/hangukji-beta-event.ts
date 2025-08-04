@@ -1,7 +1,6 @@
 export const hangukjiBetaEvent = {
     slug: 'hangukji-beta-event',
-    title: '한국지 베타 이벤트 안내    
-              (경성대·부경대)',
+    title: '한국지 베타 이벤트 안내 \n (경성대·부경대)',
     date: '2025-08-03',
     author: '도약민',
     content: `
@@ -28,6 +27,7 @@ export const hangukjiBetaEvent = {
             <li>총 200만 원 상당, 350명 내외 수령 예상</li>
             <li>아이패드·에어팟·버즈 등 전자기기 경품</li>
             <li>배달의민족 상품권</li>
+            <li>커피 모바일 쿠폰 (300잔)</li>
             <li>오빠다방 부경대점 아이스 아메리카노 벤티 사이즈 무료 쿠폰 (300잔)</li>
         </ul>
         <p class="text-sm text-gray-600 mb-6">※ 5만 원 초과 경품은 제세공과금(22%)이 부과되며, 수상자는 관련 서류 제출이 필요합니다.</p>
@@ -51,10 +51,10 @@ export const hangukjiBetaEvent = {
                 <ul class="list-disc list-inside">
                     <li>하루 1회, 보유 건물에서 ‘보물찾기’를 진행할 수 있습니다.</li>
                     <li>일정 확률로 제휴 카페 쿠폰(총 300잔 한정)이 즉시 발급됩니다.</li>
-                    <li>쿠폰은 매장 방문 시 사용용 가능합니다.</li>
+                    <li>쿠폰은 매장 방문 시 사용 가능합니다.</li>
                 </ul>
             </div>
-            <div>
+            <div>dd
                 <h3 class="text-xl font-semibold mb-2">③ 대학 본부 건물 점령 보상</h3>
                 <ul class="list-disc list-inside">
                     <li>이벤트 종료일 10월 31일 23:59 기준, 경성대 또는 부경대 대학 본부 건물을 보유한 플레이어에게 경품 지급.</li>

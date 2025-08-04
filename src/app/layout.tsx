@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import GlobalNavigation from '@/components/gnb'
 import { Inter } from 'next/font/google'
 import Footer from "@/components/footer";
+import EventPopupModal from '@/components/event_popup_modal'
 const inter = Inter({ subsets: ['latin'] })
 import './globals.css'
 
@@ -47,6 +48,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 {children}
             </main>
             <Footer/>
+            <EventPopupModal />
         </body>
         </html>
     );
