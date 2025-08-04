@@ -52,7 +52,13 @@ export default function NewsDetailPage({ params }: { params: { slug: string } })
                             
                             {/* 다운로드 버튼 섹션 */}
                             <div className="bg-emerald-50 p-6 rounded-xl mb-6 not-prose">
-                                <h3 className="text-lg font-semibold mb-4 text-center">📱 한국지 앱 다운로드</h3>
+                                <h3 className="text-lg font-semibold mb-4 text-center flex items-center justify-center gap-2">
+                                    <svg className="w-6 h-6 text-emerald-600" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17 2H7C5.9 2 5 2.9 5 4v16c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM7 4h10v12H7V4zm0 14h10v2H7v-2z"/>
+                                        <circle cx="12" cy="18.5" r="1"/>
+                                    </svg>
+                                    한국지 앱 다운로드
+                                </h3>
                                 <div className="flex justify-center">
                                     <AppDownloadButtons />
                                 </div>
