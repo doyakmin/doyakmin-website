@@ -20,7 +20,7 @@ export const hangukjiBetaEvent = {
 
         <h2 class="text-2xl font-bold mb-4">🎁 총 경품 규모</h2>
         <ul class="list-disc list-inside mb-6">
-            <li>총 200만 원 상당, 350명 내외 수령 에상</li>
+            <li>총 200만 원 상당, 350명 내외 수령 상</li>
             <li>아이패드·에어팟·버즈 등 전자기기 경품</li>
             <li>배달의민족 상품권</li>
             <li>오빠다방 부경대점 아이스 아메리카노 벤티 사이즈 무료 쿠폰 (300잔)</li>
@@ -45,7 +45,7 @@ export const hangukjiBetaEvent = {
                 <h3 class="text-xl font-semibold mb-2">② 보물찾기 커피 쿠폰</h3>
                 <ul class="list-disc list-inside">
                     <li>하루 1회, 보유 건물에서 ‘보물찾기’를 진행할 수 있습니다.</li>
-                    <li>일정 확률로 제휴 카페(오빠 다방 부경대점) 아이스 아메리카노 벤티 사이즈 무료 쿠폰(총 300잔 한정)이 즉시 발급됩니다.</li>
+                    <li>일정 확률로 제휴 카페 쿠폰(총 300잔 한정)이 즉시 발급됩니다.</li>
                     <li>쿠폰은 매장 방문 시 사용용 가능합니다.</li>
                 </ul>
             </div>
