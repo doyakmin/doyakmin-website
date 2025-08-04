@@ -54,7 +54,7 @@ export const hangukjiBetaEvent = {
                     <li>쿠폰은 매장 방문 시 사용 가능합니다.</li>
                 </ul>
             </div>
-            <div>dd
+            <div>
                 <h3 class="text-xl font-semibold mb-2">③ 대학 본부 건물 점령 보상</h3>
                 <ul class="list-disc list-inside">
                     <li>이벤트 종료일 10월 31일 23:59 기준, 경성대 또는 부경대 대학 본부 건물을 보유한 플레이어에게 경품 지급.</li>
@@ -74,7 +74,6 @@ export const hangukjiBetaEvent = {
 
         <h2 class="text-2xl font-bold mb-4">🚀 참여 방법</h2>
         <ol class="list-decimal list-inside mb-6">
-            <li>앱스토어 또는 플레이스토어에서 ‘한국지’ 검색</li>
             <li>앱 다운로드 후 설치</li>
             <li>GPS 사용 허용</li>
             <li>닉네임 설정 및 회원가입</li>
