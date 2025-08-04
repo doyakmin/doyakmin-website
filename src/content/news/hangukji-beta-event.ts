@@ -1,11 +1,11 @@
 export const hangukjiBetaEvent = {
     slug: 'hangukji-beta-event',
-    title: '한국지 베타 이벤트 안내 \n (경성대·부경대)',
+    title: '한국지 베타 이벤트 안내 \n  (경성대·부경대)',
     date: '2025-08-03',
     author: '도약민',
     content: `
         <div class="mb-6">
-             <img src="/images/hangukji-banner.jpg" alt="한국지 베타 이벤트 배너" class="w-full rounded-lg shadow-md mb-6" />
+             <img src="/image/event/hangukji-beta-event-poster.jpg" alt="한국지 베타 이벤트 배너" class="w-full rounded-lg shadow-md mb-6" />
         </div>
     
         <h2 class="text-2xl font-bold mb-4">📅 이벤트 기간</h2>
