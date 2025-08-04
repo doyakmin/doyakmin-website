@@ -27,7 +27,12 @@ export default function NewsDetailPage({ params }: { params: { slug: string } })
                 {/* Post Header */}
                 <header className="mb-12 text-center">
                     <h1 className="text-5xl md:text-6xl font-bold mb-6">
-                        {post.title}
+                        {post.title.split('\n').map((line, index) => (
+                            <span key={index}>
+                                {line}
+                                {index < post.title.split('\n').length - 1 && <br />}
+                            </span>
+                        ))}
                     </h1>
                     <p className="text-lg text-gray-500">
                         {post.date} · {post.author}
