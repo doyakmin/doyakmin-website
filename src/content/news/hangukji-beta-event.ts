@@ -1,9 +1,14 @@
 export const hangukjiBetaEvent = {
     slug: 'hangukji-beta-event',
-    title: '한국지 베타 이벤트 안내 (경성대·부경대)',
+    title: '한국지 베타 이벤트 안내    
+              (경성대·부경대)',
     date: '2025-08-03',
     author: '도약민',
     content: `
+        <div class="mb-6">
+             <img src="/images/hangukji-banner.jpg" alt="한국지 베타 이벤트 배너" class="w-full rounded-lg shadow-md mb-6" />
+        </div>
+    
         <h2 class="text-2xl font-bold mb-4">📅 이벤트 기간</h2>
         <ul class="list-disc list-inside mb-6">
             <li><strong>시작일:</strong> 2025년 9월 1일(월) 00:00</li>
@@ -20,10 +25,11 @@ export const hangukjiBetaEvent = {
 
         <h2 class="text-2xl font-bold mb-4">🎁 총 경품 규모</h2>
         <ul class="list-disc list-inside mb-6">
-            <li>총 200만 원 상당(총 350명 내외 수령 예상)</li>
+            <li>총 200만 원 상당, 350명 내외 수령 예상</li>
             <li>아이패드·에어팟·버즈 등 전자기기 경품</li>
             <li>배달의민족 상품권</li>
             <li>커피 모바일 쿠폰 (300잔)</li>
+            <li>오빠다방 부경대점 아이스 아메리카노 벤티 사이즈 무료 쿠폰 (300잔)</li>
         </ul>
         <p class="text-sm text-gray-600 mb-6">※ 5만 원 초과 경품은 제세공과금(22%)이 부과되며, 수상자는 관련 서류 제출이 필요합니다.</p>
 
@@ -45,11 +51,11 @@ export const hangukjiBetaEvent = {
                 <h3 class="text-xl font-semibold mb-2">② 보물찾기 커피 쿠폰</h3>
                 <ul class="list-disc list-inside">
                     <li>하루 1회, 보유 건물에서 ‘보물찾기’를 진행할 수 있습니다.</li>
-                    <li>일정 확률로 제휴 카페 아메리카노 모바일 쿠폰(총 110잔 한정)이 즉시 발급됩니다.</li>
-                    <li>쿠폰은 매장 방문 시 교환 가능합니다.</li>
+                    <li>일정 확률로 제휴 카페 쿠폰(총 300잔 한정)이 즉시 발급됩니다.</li>
+                    <li>쿠폰은 매장 방문 시 사용용 가능합니다.</li>
                 </ul>
             </div>
-            <div>
+            <div>dd
                 <h3 class="text-xl font-semibold mb-2">③ 대학 본부 건물 점령 보상</h3>
                 <ul class="list-disc list-inside">
                     <li>이벤트 종료일 10월 31일 23:59 기준, 경성대 또는 부경대 대학 본부 건물을 보유한 플레이어에게 경품 지급.</li>
@@ -99,6 +105,7 @@ export const hangukjiBetaEvent = {
             <li>지역 상황에 따라 배송이 지연될 수 있으머, 반송되거나 번호 등 기재 오류로 인한 오류발송은 다시 배송하지 않습니다.</li>
             <li>이벤트를 참여하시는 모든 분들은 개인정보 제공을 거부할 권리가 있으며, 동의 거부 시 이벤트 추첨에서 제외가 됩니다.</li>
             <li>모든 경품은 당사 사정에 따라 동등 또는 유사한 가치의 다른 상품으로 대체될 수 있습니다.</li>
+            <li>참여자 한명당 한 개 계정에 한하여 경품을 받을 수 있습니다.</li>
         </ul>
 
         <h2 class="text-2xl font-bold mb-4">📮 이벤트 관련 문의</h2>
