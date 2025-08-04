@@ -20,11 +20,10 @@ export const hangukjiBetaEvent = {
 
         <h2 class="text-2xl font-bold mb-4">🎁 총 경품 규모</h2>
         <ul class="list-disc list-inside mb-6">
-            <li>총 200만 원 상당</li>
+            <li>총 200만 원 상당(총 350명 내외 수령 예상)</li>
             <li>아이패드·에어팟·버즈 등 전자기기 경품</li>
             <li>배달의민족 상품권</li>
             <li>커피 모바일 쿠폰 (300잔)</li>
-            <li>총 350명 내외 수령 예상</li>
         </ul>
         <p class="text-sm text-gray-600 mb-6">※ 5만 원 초과 경품은 제세공과금(22%)이 부과되며, 수상자는 관련 서류 제출이 필요합니다.</p>
 

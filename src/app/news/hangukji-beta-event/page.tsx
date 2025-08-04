@@ -8,7 +8,7 @@ export default function NewsDetailPage() {
             <article className="max-w-4xl mx-auto py-20 px-4 sm:px-6 lg:px-8">
                 {/* Post Header */}
                 <header className="mb-12 text-center">
-                    <h1 className="text-5xl md:text-6xl font-bold mb-6">
+                    <h1 className="text-5xl md:text-6xl font-bold mb-6 whitespace-nowrap">
                         {post.title}
                     </h1>
                     <p className="text-lg text-gray-500">
