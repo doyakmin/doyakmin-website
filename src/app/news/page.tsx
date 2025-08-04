@@ -1,11 +1,12 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { hangukjiBetaEvent } from '@/content/news/hangukji-beta-event';
-
-// 향후 여러 공지사항을 관리할 것을 대비하여 배열로 만듭니다.
-const allPosts = [hangukjiBetaEvent];
+import { termsOfService } from '@/content/news/terms-of-service';
+import { privacyPolicy } from '@/content/news/privacy-policy';
 
 export default function NewsPage() {
+    const allPosts = [hangukjiBetaEvent, termsOfService, privacyPolicy].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
     return (
         <main className="min-h-screen font-sans text-black bg-white">
             {/* Hero Section */}

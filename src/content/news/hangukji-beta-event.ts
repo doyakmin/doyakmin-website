@@ -2,12 +2,15 @@ export const hangukjiBetaEvent = {
     slug: 'hangukji-beta-event',
     title: '한국지 베타 이벤트 안내\n(경성대·부경대)',
     date: '2025-08-03',
-    author: '도약민',
+    author: '(주)도약민',
     content: `
         <div class="mb-6">
              <img src="/image/event/hangukji-beta-event-poster.jpg" alt="한국지 베타 이벤트 배너" class="w-full rounded-lg shadow-md mb-6" />
         </div>
     
+        <div class="mb-6">
+             <img src="/image/event/beta_openevent.png" alt="한국지 베타 오픈 이벤트 배너" class="w-full rounded-lg shadow-md mb-6" />
+        </div>
         <h2 class="text-2xl font-bold mb-4">📅 이벤트 기간</h2>
         <ul class="list-disc list-inside mb-6">
             <li><strong>시작일:</strong> 2025년 9월 1일(월) 00:00</li>
@@ -73,8 +76,20 @@ export const hangukjiBetaEvent = {
         </div>
 
         <h2 class="text-2xl font-bold mb-4">🚀 참여 방법</h2>
+        <div class="bg-emerald-50 p-6 rounded-xl mb-6 not-prose">
+            <h3 class="text-lg font-semibold mb-4 text-center flex items-center justify-center gap-2">
+                <svg class="w-6 h-6 text-emerald-600" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17 2H7C5.9 2 5 2.9 5 4v16c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM7 4h10v12H7V4zm0 14h10v2H7v-2z"/>
+                    <circle cx="12" cy="18.5" r="1"/>
+                </svg>
+                한국지 앱 다운로드 (버튼 클릭)
+            </h3>
+            <div class="flex justify-center">
+                <!-- AppDownloadButtons 컴포넌트가 이 자리에 렌더링됩니다. -->
+            </div>
+        </div>
         <ol class="list-decimal list-inside mb-6">
-            <li>앱 다운로드 후 설치</li>
+            <li>위 버튼을 클릭하여 앱스토어에서 '한국지' 다운로드</li>
             <li>GPS 사용 허용</li>
             <li>닉네임 설정 및 회원가입</li>
             <li>건물 점령, 보물찾기, PvP 대결 등 이벤트 콘텐츠에 참여</li>
