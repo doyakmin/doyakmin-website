@@ -1,25 +1,27 @@
 import { hangukjiBetaEvent } from '@/content/news/hangukji-beta-event';
+import { termsOfService } from '@/content/news/terms-of-service';
+import { privacyPolicy } from '@/content/news/privacy-policy';
 import AppDownloadButtons from '@/components/app_download_buttons';
+import { notFound } from 'next/navigation';
 
-// 향후 여러 공지사항을 관리할 것을 대비하여 배열로 만듭니다.
-const allPosts = [hangukjiBetaEvent];
+const allPosts = [hangukjiBetaEvent, termsOfService, privacyPolicy];
 
-// slug에 해당하는 포스트를 찾는 함수
 export async function generateStaticParams() {
     return allPosts.map((post) => ({
         slug: post.slug,
     }));
 }
 
-function getPost(slug: string) {
-    return allPosts.find((post) => post.slug === slug);
+function getPost(params: { slug: string }) {
+    const post = allPosts.find((p) => p.slug === params.slug);
+    return post;
 }
 
-export default function NewsDetailPage({ params }: { params: { slug: string } }) {
-    const post = getPost(params.slug);
+export default function NewsPostPage({ params }: { params: { slug: string } }) {
+    const post = getPost(params);
 
     if (!post) {
-        return <div>공지사항을 찾을 수 없습니다.</div>;
+        notFound();
     }
 
     return (
@@ -57,7 +59,7 @@ export default function NewsDetailPage({ params }: { params: { slug: string } })
                                         <path d="M17 2H7C5.9 2 5 2.9 5 4v16c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM7 4h10v12H7V4zm0 14h10v2H7v-2z"/>
                                         <circle cx="12" cy="18.5" r="1"/>
                                     </svg>
-                                    한국지 앱 다운로드
+                                    한국지 앱 다운로드 (버튼 클릭)
                                 </h3>
                                 <div className="flex justify-center">
                                     <AppDownloadButtons />
@@ -66,7 +68,6 @@ export default function NewsDetailPage({ params }: { params: { slug: string } })
                             
                             <ol className="list-decimal list-inside mb-6">
                                 <li>위 버튼을 클릭하여 앱스토어에서 '한국지' 다운로드</li>
-                                <li>앱 다운로드 후 설치</li>
                                 <li>GPS 사용 허용</li>
                                 <li>닉네임 설정 및 회원가입</li>
                                 <li>건물 점령, 보물찾기, PvP 대결 등 이벤트 콘텐츠에 참여</li>
