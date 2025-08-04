@@ -5,6 +5,10 @@ export const hangukjiBetaEvent = {
     date: '2025-08-03',
     author: '도약민',
     content: `
+        <div class="mb-6">
+             <img src="/images/hangukji-banner.jpg" alt="한국지 베타 이벤트 배너" class="w-full rounded-lg shadow-md mb-6" />
+        </div>
+    
         <h2 class="text-2xl font-bold mb-4">📅 이벤트 기간</h2>
         <ul class="list-disc list-inside mb-6">
             <li><strong>시작일:</strong> 2025년 9월 1일(월) 00:00</li>
