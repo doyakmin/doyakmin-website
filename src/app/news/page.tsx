@@ -32,7 +32,7 @@ export default function NewsPage() {
                                 <article className="p-8 border border-gray-200 rounded-2xl hover:bg-emerald-50 transition-colors duration-300 hover:shadow-lg">
                                     <div className="flex items-start justify-between">
                                         <div className="flex-1">
-                                            <h2 className="text-3xl font-bold text-gray-800 group-hover:text-emerald-600 mb-3">
+                                            <h2 className="text-2xl font-bold text-gray-800 group-hover:text-emerald-600 mb-3">
                                                 {post.title}
                                             </h2>
                                             <p className="text-gray-500">

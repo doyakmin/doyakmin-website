@@ -29,7 +29,7 @@ export default function NewsPostPage({ params }: { params: { slug: string } }) {
             <article className="max-w-4xl mx-auto py-20 px-4 sm:px-6 lg:px-8">
                 {/* Post Header */}
                 <header className="mb-12 text-center">
-                    <h1 className="text-5xl md:text-6xl font-bold mb-6">
+                    <h1 className="text-4xl md:text-5xl font-bold mb-6">
                         {post.title.split('\n').map((line, index) => (
                             <span key={index}>
                                 {line}
