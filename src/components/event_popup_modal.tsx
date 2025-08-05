@@ -147,7 +147,7 @@ export default function EventPopupModal({ isEnabled = true }: EventPopupModalPro
             id="event-popup-description"
             className="text-gray-600 text-sm mb-4"
           >
-            경성대·부경대 학생 대상<br />
+            9~10월 경성대·부경대 학생 대상<br />
             총 200만원 상당의 경품을 받아가세요!
           </p>
 
