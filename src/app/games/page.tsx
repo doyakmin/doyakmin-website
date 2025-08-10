@@ -69,7 +69,7 @@ export default function Games() {
 
 
             {/* Features Section */}
-            <section className="relative py-30 bg-emerald-700/20">
+            <section className="relative py-20 pb-28 bg-emerald-700/20">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
                         <h2 className="text-4xl md:text-5xl font-bold mb-6">

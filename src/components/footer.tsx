@@ -35,31 +35,31 @@ export default function Footer() {
                 </div>
 
                 {/* Bottom Bar */}
-                <div className="mt-8 pt-8 border-t border-gray-800 flex flex-col sm:flex-row justify-between items-center">
-                    <p className="text-gray-500 text-sm">
-                        © 2025 주식회사 도약민. All rights reserved.
+                <div className="mt-8 border-t border-gray-700 pt-8 flex flex-col sm:flex-row justify-between items-center">
+                    <p className="text-sm text-gray-500 mb-4 sm:mb-0">
+                        © {new Date().getFullYear()} (주)도약민. All rights reserved.
                     </p>
-                    <div className="flex space-x-8 mt-4 sm:mt-0">
-                        <a
-                            href="https://cafe.naver.com/hangukji/5?tc=shared_link"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-gray-500 hover:text-gray-300 text-sm transition-colors cursor-pointer underline-offset-4 hover:underline"
-                        >
-                            운영정책
-                        </a>
-                        <Link
-                            href="/news/privacy-policy"
-                            className="text-gray-500 hover:text-gray-300 text-sm transition-colors cursor-pointer underline-offset-4 hover:underline"
-                        >
-                            개인정보처리방침
-                        </Link>
-                        <Link
-                            href="/news/terms-of-service"
-                            className="text-gray-500 hover:text-gray-300 text-sm transition-colors cursor-pointer underline-offset-4 hover:underline"
-                        >
-                            이용약관
-                        </Link>
+                    <div className="flex items-center space-x-6">
+                        <div className="flex flex-col sm:flex-row items-center text-center sm:text-left space-y-2 sm:space-y-0 sm:space-x-6">
+                            <a
+                                href="/policy/operation"
+                                className="text-gray-500 hover:text-gray-300 text-sm transition-colors cursor-pointer underline-offset-4 hover:underline"
+                            >
+                                운영정책
+                            </a>
+                            <Link
+                                href="/news/privacy-policy"
+                                className="text-gray-500 hover:text-gray-300 text-sm transition-colors cursor-pointer underline-offset-4 hover:underline"
+                            >
+                                개인정보처리방침
+                            </Link>
+                            <Link
+                                href="/news/terms-of-service"
+                                className="text-gray-500 hover:text-gray-300 text-sm transition-colors cursor-pointer underline-offset-4 hover:underline"
+                            >
+                                이용약관
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </div>
