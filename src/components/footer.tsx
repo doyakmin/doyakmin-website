@@ -1,5 +1,4 @@
-import PrivacyModalTrigger from "@/components/privacy_modal_trigger";
-import TermsModalTrigger from "@/components/temrs_modal_trigger";
+import Link from "next/link";
 
 export default function Footer() {
     return (
@@ -49,8 +48,18 @@ export default function Footer() {
                         >
                             운영정책
                         </a>
-                        <PrivacyModalTrigger />
-                        <TermsModalTrigger />
+                        <Link
+                            href="/news/privacy-policy"
+                            className="text-gray-500 hover:text-gray-300 text-sm transition-colors cursor-pointer underline-offset-4 hover:underline"
+                        >
+                            개인정보처리방침
+                        </Link>
+                        <Link
+                            href="/news/terms-of-service"
+                            className="text-gray-500 hover:text-gray-300 text-sm transition-colors cursor-pointer underline-offset-4 hover:underline"
+                        >
+                            이용약관
+                        </Link>
                     </div>
                 </div>
             </div>
