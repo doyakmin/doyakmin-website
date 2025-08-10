@@ -1,133 +1,347 @@
 export const termsOfService = {
   slug: 'terms-of-service',
   title: '이용 약관',
-  date: '2024-07-30',
+  date: '2025-04-01', // 문서의 시행일자로 업데이트
   author: '(주)도약민',
+  summary: '주식회사 도약민이 제공하는 게임 서비스 이용과 관련한 회사와 회원의 권리, 의무 및 책임사항 등을 규정합니다.',
   content: `
-    <div class="article_wrap ArticleContainerWrap">
-      <div class="article_container" id="article_container">
-        <div class="article_viewer" style="padding-bottom: 0px;">
-          <div class="content_area">
-            <div class="ContentRenderer">
-              <div class="content_view">
-                <div class="article_body">
-                  <div class="se-component se-text se-l-default" id="SE-f5543818-4a57-41e7-a92c-eb1d91a92e62" style="font-size: 16px;">
-                    <div class="se-component-content">
-                      <div class="se-section se-section-text se-l-default">
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-09411985-e555-4424-a745-a74d412e87c0" style="line-height: 1.8;">제1장 총칙</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="se-component se-text se-l-default" id="SE-3dfa99d4-c48f-4318-8098-b3917a151b75" style="font-size: 16px;">
-                    <div class="se-component-content">
-                      <div class="se-section se-section-text se-l-default">
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-0d859e9a-58f5-4f40-8b01-a67b5b03513b" style="line-height: 1.8;">&ZeroWidthSpace;</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-f3f20d6f-7023-4560-8f3e-726ff5de12d5" style="line-height: 1.8;">제1조 (목적)</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-2c1bbd0c-f3e1-4566-a28a-77e8a93e5066" style="line-height: 1.8;">본 약관은 (주)도약민(이하 "회사")이 제공하는 '한국지' 게임 서비스(이하 "서비스")의 이용과 관련하여 회사와 회원 간의 권리, 의무 및 책임사항, 기타 필요한 사항을 규정함을 목적으로 합니다.</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-0d96d278-f73f-4e01-af5e-8557997a9561" style="line-height: 1.8;">&ZeroWidthSpace;</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-92434552-32a7-479c-b172-23c2a6881c15" style="line-height: 1.8;">제2조 (용어의 정의)</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-8b30d30c-2fc8-498c-9a4f-5614917ed685" style="line-height: 1.8;">1. "서비스"라 함은 회사가 제공하는 '한국지' 게임 및 관련 제반 서비스를 의미합니다.</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-773a4d0f-4e89-4e78-be7d-1c394747970d" style="line-height: 1.8;">2. "회원"이라 함은 본 약관에 따라 회사와 이용계약을 체결하고 회사가 제공하는 서비스를 이용하는 고객을 의미합니다.</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-2c70949d-3f8d-4e20-8356-65123d46777c" style="line-height: 1.8;">3. "계정"이라 함은 회원의 식별과 서비스 이용을 위하여 회원이 정하고 회사가 승인하는 문자 또는 숫자의 조합을 의미합니다.</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-3932a3bf-9a74-4537-8ff7-bd3f50ed4969" style="line-height: 1.8;">4. "콘텐츠"라 함은 회사가 서비스 내에서 제공하는 모든 유료 또는 무료 콘텐츠를 의미합니다.</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-c49129e1-e634-45e0-998f-a95147575cc5" style="line-height: 1.8;">&ZeroWidthSpace;</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-fca59728-eb6e-44ca-8176-d3493dfd59aa" style="line-height: 1.8;">제3조 (약관의 효력 및 변경)</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-683a45c0-1126-4d22-b2f7-248356a52479" style="line-height: 1.8;">1. 본 약관은 서비스 초기 화면이나 공식 커뮤니티에 게시하여 회원에게 공지함으로써 효력이 발생합니다.</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-36287c89-2900-410a-bfa6-b8b80e8162e7" style="line-height: 1.8;">2. 회사는 필요 시 관련 법령에 위배되지 않는 범위 내에서 본 약관을 개정할 수 있습니다.</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-92901ee1-7360-449e-bca5-b65a5078a05c" style="line-height: 1.8;">3. 약관 개정 시, 회사는 적용일자 및 개정사유를 명시하여 현행약관과 함께 서비스 초기 화면이나 공식 커뮤니티에 그 적용일자 7일 이전부터 적용일자 전일까지 공지합니다. 다만, 회원에게 불리한 약관의 개정의 경우에는 적용일자 30일 이전부터 공지합니다.</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-4d6934c9-5a5f-40e8-96f3-4e357904ca9f" style="line-height: 1.8;">4. 회원이 개정약관에 동의하지 않는 경우, 서비스 이용을 중단하고 탈퇴할 수 있습니다.</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-9b7d8ac6-b184-4869-95e5-f55a1d52a265" style="line-height: 1.8;">&ZeroWidthSpace;</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-e2f01f4c-e18e-48a5-8356-91d6e19199a4" style="line-height: 1.8;">제2장 이용계약의 체결</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-4809930f-ed28-4034-8c83-ff1a603c4f79" style="line-height: 1.8;">&ZeroWidthSpace;</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-c938450f-213c-4977-834c-1e233512275b" style="line-height: 1.8;">제4조 (이용 신청 및 승낙)</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-b50a2550-e260-4ab8-91c1-4b13a1a54728" style="line-height: 1.8;">1. 이용계약은 회원이 되고자 하는 자가 본 약관의 내용에 동의를 한 다음 회사가 정한 절차에 따라 이용신청을 하고, 회사가 이러한 신청에 대하여 승낙함으로써 체결됩니다.</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-621cae5e-63f6-494a-8d19-4a001a189f3a" style="line-height: 1.8;">2. 회사는 다음 각 호에 해당하는 신청에 대하여는 승낙을 하지 않거나 사후에 이용계약을 해지할 수 있습니다.</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-c4bd5d21-4340-4c3d-b44c-3c32115d7a6e" style="line-height: 1.8;">   가. 실명이 아니거나 타인의 명의를 이용한 경우</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-96f8c7e4-080c-40ad-be86-31a477382f7c" style="line-height: 1.8;">   나. 허위의 정보를 기재하거나, 회사가 제시하는 내용을 기재하지 않은 경우</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-44d56d78-b19c-4903-8472-359f42b36cd8" style="line-height: 1.8;">   다. 14세 미만 아동이 법정대리인의 동의를 얻지 않은 경우</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-295f70b7-f01f-46ad-86a0-2f9eb583b27b" style="line-height: 1.8;">   라. 기타 귀책사유로 인하여 승인이 불가능하거나 기타 규정한 제반 사항을 위반하며 신청하는 경우</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-2070e6a3-2d25-4c07-b649-166d0ef0627e" style="line-height: 1.8;">&ZeroWidthSpace;</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-9844080a-9694-4d87-991f-0e2ffb22108b" style="line-height: 1.8;">제5조 (개인정보보호 의무)</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-7c301c38-54b9-4780-9a3c-b07229e61298" style="line-height: 1.8;">회사는 관련 법령이 정하는 바에 따라 회원의 개인정보를 보호하기 위해 노력합니다. 개인정보의 보호 및 사용에 대해서는 관련 법령 및 회사의 개인정보처리방침이 적용됩니다.</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-959c9535-ca4c-47b2-b430-e51c897f2560" style="line-height: 1.8;">&ZeroWidthSpace;</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-0fd68ce9-0d12-40f4-a4f5-7d5268c12f0e" style="line-height: 1.8;">제3장 계약 당사자의 의무</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-96f7c70e-128a-4d74-9580-c081e69b5522" style="line-height: 1.8;">&ZeroWidthSpace;</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-59367258-c290-482d-a2d9-13835c6e88e1" style="line-height: 1.8;">제6조 (회사의 의무)</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-f4214227-8090-4e5a-a316-01ecf56353d4" style="line-height: 1.8;">1. 회사는 법령과 본 약관이 금지하거나 공서양속에 반하는 행위를 하지 않으며, 계속적이고 안정적으로 서비스를 제공하기 위하여 최선을 다하여 노력합니다.</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-9e2e604f-1d37-4d7a-a436-1e07b897fd3f" style="line-height: 1.8;">2. 회사는 회원이 안전하게 서비스를 이용할 수 있도록 개인정보 보호를 위한 보안시스템을 갖추어야 하며, 개인정보처리방침을 공시하고 준수합니다.</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-a09c2794-67d7-40d9-81a1-9a7000e31cd5" style="line-height: 1.8;">&ZeroWidthSpace;</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-f3769c9b-6dd7-4a00-afbc-28f01b63bd50" style="line-height: 1.8;">제7조 (회원의 의무)</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-a823e206-8c9a-4f51-87c1-073e878563c6" style="line-height: 1.8;">1. 회원은 다음 행위를 하여서는 안 됩니다.</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-e29f170e-3c7d-411a-be29-d6e04f9812df" style="line-height: 1.8;">   가. 신청 또는 변경 시 허위 내용의 등록</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-68393521-b386-4444-93dd-16d7d5662ef4" style="line-height: 1.8;">   나. 타인의 정보 도용</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-d890b793-1b91-447a-8f4f-42e8820c75c8" style="line-height: 1.8;">   다. 회사가 게시한 정보의 변경</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-b4ac7a43-6d08-41ac-ad8f-51f71df4285b" style="line-height: 1.8;">   라. 회사가 정한 정보 이외의 정보(컴퓨터 프로그램 등) 등의 송신 또는 게시</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-c8c3e66f-5b11-4775-92c9-63640b784534" style="line-height: 1.8;">   마. 회사와 기타 제3자의 저작권 등 지적재산권에 대한 침해</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-92e9eb90-e7eb-443b-814e-f2d4f26019a8" style="line-height: 1.8;">   바. 회사 및 기타 제3자의 명예를 손상시키거나 업무를 방해하는 행위</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-547e1320-a612-4211-9a4f-55447a83d09a" style="line-height: 1.8;">   사. 외설 또는 폭력적인 메시지, 화상, 음성, 기타 공서양속에 반하는 정보를 서비스에 공개 또는 게시하는 행위</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-1f4a9b9a-4e89-4b6e-a320-b4da79f72b7b" style="line-height: 1.8;">   아. 기타 불법적이거나 부당한 행위</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-15128038-f938-466d-ad02-7c98c19985fe" style="line-height: 1.8;">2. 회원은 관계법, 본 약관의 규정, 이용안내 및 서비스와 관련하여 공지한 주의사항, 회사가 통지하는 사항 등을 준수하여야 하며, 기타 회사의 업무에 방해되는 행위를 하여서는 안 됩니다.</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-512089b0-a544-48f8-b80c-7b001a1e389e" style="line-height: 1.8;">&ZeroWidthSpace;</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-556b27e8-e508-4f05-b778-43d941a39f60" style="line-height: 1.8;">제4장 서비스 이용</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-b72d2e16-a3fe-4b07-8b09-38b8d4f4d2f8" style="line-height: 1.8;">&ZeroWidthSpace;</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-e221b6d0-6bd0-4e11-aa95-d2ca01476fef" style="line-height: 1.8;">제8조 (서비스의 제공 및 변경)</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-1175658e-0c03-4c91-ab2b-586b866c98aa" style="line-height: 1.8;">1. 회사는 회원에게 아래와 같은 서비스를 제공합니다.</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-e945c796-0373-455b-b99b-d754b2b2b115" style="line-height: 1.8;">   가. '한국지' 게임 서비스</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-4d57ca7f-4428-4448-a0e2-66d48342718e" style="line-height: 1.8;">   나. 커뮤니티 서비스</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-871869e0-ed9f-43ea-ba78-4a6c6c74d6f8" style="line-height: 1.8;">   다. 기타 회사가 추가 개발하거나 다른 회사와의 제휴계약 등을 통해 회원에게 제공하는 일체의 서비스</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-c651f930-b3b4-4e2b-b892-abf9ff22ebda" style="line-height: 1.8;">2. 회사는 서비스의 내용, 이용방법, 이용시간에 대하여 변경이 있는 경우 변경사유, 변경될 서비스의 내용 및 제공일자 등은 그 변경 전에 서비스 초기 화면에 게시하여야 합니다.</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-c4cd7a0f-6ce2-491b-9a99-b1d7d0a51f93" style="line-height: 1.8;">&ZeroWidthSpace;</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-db58df2c-4e89-49ed-bb25-e51c11030e28" style="line-height: 1.8;">제9조 (서비스의 중단)</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-77f62c0b-1ca8-4395-9271-e94119d582f3" style="line-height: 1.8;">1. 회사는 컴퓨터 등 정보통신설비의 보수점검, 교체 및 고장, 통신두절 또는 운영상 상당한 이유가 있는 경우 서비스의 제공을 일시적으로 중단할 수 있습니다.</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-12a1f26a-939d-473d-9ce6-11fcd68212e3" style="line-height: 1.8;">2. 사업종목의 전환, 사업의 포기, 업체 간의 통합 등의 이유로 서비스를 제공할 수 없게 되는 경우에는 회사는 회원에게 통지하고 당초 회사에서 제시한 조건에 따라 회원에게 보상합니다.</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-1b8f59f6-6c1f-4903-bf6b-952174cbe601" style="line-height: 1.8;">&ZeroWidthSpace;</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-3f95b546-d275-472d-8bdc-3549666f77e6" style="line-height: 1.8;">제10조 (정보의 제공 및 광고의 게재)</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-2de4e3f1-2c09-40de-a5d6-d0891d4d3d75" style="line-height: 1.8;">회사는 회원의 서비스 이용 중 필요하다고 인정되는 다양한 정보를 공지사항이나 전자우편 등의 방법으로 회원에게 제공할 수 있습니다. 다만, 회원은 관련법에 따른 거래관련 정보 및 고객문의 등에 대한 답변 등을 제외하고는 언제든지 수신 거부를 할 수 있습니다.</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-924b17c1-0c5a-4e69-9ed9-f131a4ca9933" style="line-height: 1.8;">&ZeroWidthSpace;</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-d2f01f05-7729-4d69-a1d2-054593ccf9a6" style="line-height: 1.8;">제11조 (게시물의 관리)</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-a8e7e1f7-e45f-4318-80f0-8c2ff550f836" style="line-height: 1.8;">회사는 회원의 게시물이 "정보통신망 이용촉진 및 정보보호 등에 관한 법률" 및 "저작권법"등 관련법에 위반되는 내용을 포함하는 경우, 권리자는 관련법이 정한 절차에 따라 해당 게시물의 게시중단 및 삭제 등을 요청할 수 있으며, 회사는 관련법에 따라 조치를 취하여야 합니다.</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-96f13b1f-7b75-4673-9097-f58c7e9ca971" style="line-height: 1.8;">&ZeroWidthSpace;</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-683a48e7-df90-482a-a95e-18e388c5ba9d" style="line-height: 1.8;">제5장 청약철회, 계약 해제·해지 및 이용제한</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-5179044a-f2b4-4b53-b9ed-e7e01b7a69b7" style="line-height: 1.8;">&ZeroWidthSpace;</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-7d8b5a04-de15-4623-a15e-4c7c8c62c906" style="line-height: 1.8;">제12조 (청약 철회)</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-8b387e79-5e76-47b2-a401-443b749d0541" style="line-height: 1.8;">1. 회원이 구매한 유료 콘텐츠는 계약 체결일 또는 유료 콘텐츠 이용 가능일로부터 7일 이내에 별도의 수수료 없이 청약철회를 할 수 있습니다.</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-f38b2ac8-7b9a-4d2c-8d1e-e2c72b2d0752" style="line-height: 1.8;">2. 다음 각 호의 경우에는 청약철회가 제한될 수 있습니다.</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-21448651-de8a-4933-9111-97a6e147e44a" style="line-height: 1.8;">   가. 구매 후 즉시 사용이 시작되거나 적용되는 유료 콘텐츠</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-355995b0-3353-4876-8806-2591e63a15c8" style="line-height: 1.8;">   나. 일부 사용된 유료 콘텐츠</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-08d486aa-c764-44ed-8526-a05d6776856a" style="line-height: 1.8;">   다. 선물하기 등 타인으로부터 선물 받은 유료 콘텐츠</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-2a81878d-69f8-450b-857e-324da5776d63" style="line-height: 1.8;">   라. 이벤트 등을 통해 무상으로 제공받은 유료 콘텐츠</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-09411985-e555-4424-a745-a74d412e87c0" style="line-height: 1.8;">&ZeroWidthSpace;</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-3dfa99d4-c48f-4318-8098-b3917a151b75" style="line-height: 1.8;">제13조 (계약 해제 및 해지)</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-f3f20d6f-7023-4560-8f3e-726ff5de12d5" style="line-height: 1.8;">회원은 언제든지 서비스 내 정보 관리 기능을 통하여 이용계약을 해지(회원탈퇴)할 수 있습니다.</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-2c1bbd0c-f3e1-4566-a28a-77e8a93e5066" style="line-height: 1.8;">&ZeroWidthSpace;</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-0d96d278-f73f-4e01-af5e-8557997a9561" style="line-height: 1.8;">제14조 (이용제한 등)</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-92434552-32a7-479c-b172-23c2a6881c15" style="line-height: 1.8;">회사는 회원이 본 약관의 의무를 위반하거나 서비스의 정상적인 운영을 방해한 경우, 경고, 일시정지, 영구이용정지 등으로 서비스 이용을 단계적으로 제한할 수 있습니다.</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-8b30d30c-2fc8-498c-9a4f-5614917ed685" style="line-height: 1.8;">&ZeroWidthSpace;</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-773a4d0f-4e89-4e78-be7d-1c394747970d" style="line-height: 1.8;">제6장 기타</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-2c70949d-3f8d-4e20-8356-65123d46777c" style="line-height: 1.8;">&ZeroWidthSpace;</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-3932a3bf-9a74-4537-8ff7-bd3f50ed4969" style="line-height: 1.8;">제15조 (손해배상)</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-c49129e1-e634-45e0-998f-a95147575cc5" style="line-height: 1.8;">회사의 귀책사유로 인하여 회원에게 손해가 발생한 경우, 회사는 회원에게 발생한 손해를 배상할 책임을 집니다.</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-fca59728-eb6e-44ca-8176-d3493dfd59aa" style="line-height: 1.8;">&ZeroWidthSpace;</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-683a45c0-1126-4d22-b2f7-248356a52479" style="line-height: 1.8;">제16조 (면책조항)</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-36287c89-2900-410a-bfa6-b8b80e8162e7" style="line-height: 1.8;">1. 회사는 천재지변 또는 이에 준하는 불가항력으로 인하여 서비스를 제공할 수 없는 경우에는 서비스 제공에 관한 책임이 면제됩니다.</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-92901ee1-7360-449e-bca5-b65a5078a05c" style="line-height: 1.8;">2. 회사는 회원의 귀책사유로 인한 서비스 이용의 장애에 대하여는 책임을 지지 않습니다.</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-4d6934c9-5a5f-40e8-96f3-4e357904ca9f" style="line-height: 1.8;">3. 회사는 회원이 서비스와 관련하여 게재한 정보, 자료, 사실의 신뢰도, 정확성 등의 내용에 관하여는 책임을 지지 않습니다.</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-9b7d8ac6-b184-4869-95e5-f55a1d52a265" style="line-height: 1.8;">&ZeroWidthSpace;</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-e2f01f4c-e18e-48a5-8356-91d6e19199a4" style="line-height: 1.8;">제17조 (준거법 및 재판관할)</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-4809930f-ed28-4034-8c83-ff1a603c4f79" style="line-height: 1.8;">1. 회사와 회원 간 제기된 소송은 대한민국법을 준거법으로 합니다.</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-c938450f-213c-4977-834c-1e233512275b" style="line-height: 1.8;">2. 회사와 회원 간 발생한 분쟁에 관한 소송은 민사소송법상의 관할법원에 제소합니다.</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-b50a2550-e260-4ab8-91c1-4b13a1a54728" style="line-height: 1.8;">&ZeroWidthSpace;</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-621cae5e-63f6-494a-8d19-4a001a189f3a" style="line-height: 1.8;">부칙</p>
-                        <p class="se-text-paragraph se-text-paragraph-align-left" id="SE-c4bd5d21-4340-4c3d-b44c-3c32115d7a6e" style="line-height: 1.8;">본 약관은 2024년 7월 30일부터 시행됩니다.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+    <div class="prose lg:prose-xl max-w-none">
+      <p><strong>제1조. 목적</strong></p>
+      <p>이 약관은 주식회사 도약민 (이하 "회사")가 제공하는 "게임 서비스" 이용과 관련하여 "회사"와 "회원"과의 권리ㆍ의무 및 책임사항, 기타 필요한 사항을 규정함을 목적으로 합니다.</p>
+      
+      <p><strong>제2조. 정의</strong></p>
+      <ol class="list-decimal list-inside space-y-2">
+        <li>"게임 서비스"라 함은 "회사"가 제 3자의 "플랫폼"을 통해 배포하는 게임 및 기타 "회사"가 제공하는 일체의 제반 서비스를 의미합니다.</li>
+        <li>"회원"이란 "게임 서비스"에 접속하여 이 약관에 따라 "회사"와 이용계약을 체결하고, "회사"가 제공하는 "게임 서비스"를 이용하는 고객을 의미합니다.</li>
+        <li>"계정정보"란 " 회원"의 "회원번호"와 외부 계정정보, 기기정보, 별명, 회원가입 시 제공한 정보, 친구목록 등 "회원"이 "회사"에 제공한 정보와 게임이용정보 (캐릭터 정보, 아이템, 레벨 등), 이용요금 결제 정보 등의 생성정보를 통칭합니다.</li>
+        <li>"회원번호"란 "회사"가 "회원"이 이용하는 게임 혹은 "스마트기기" 별로 임의적으로 부여하는 고유의 식별 정보를 의미합니다.</li>
+        <li>"스마트기기"란 "회원"이 "게임 서비스"를 이용할 수 있는 단말기 등(PC, 휴대폰, 태블릿, 게임기, 휴대용 멀티미디어 기기 등을 포함하여 향수 기술발전으로 출시되는 새로운 형태의 기기 또한 포함한다.)을 의미합니다.</li>
+        <li>"사이버 포인트"란 "게임 서비스"의 효율적 이용을 위해 "회사"가 임의로 책정, 지급, 조정, 회수 할 수 있는 재산적 가치가 없는 서비스 상의 가상 데이터를 의미합니다.</li>
+        <li>"유료서비스"란 "회사"가 "회원"에게 "게임 서비스" 이용의 대가로 요금을 과금하거나, 아이템이나 게임머니 등 유ㆍ무형의 상품을 판매하는 것을 의미합니다.</li>
+        <li>"계정연결"이란 "회원번호" 대신 "회원"이 입력한 외부 계정(한게임 등)의 아이디를 "계정정보" 저장 값으로 이용하는 것을 의미합니다.</li>
+        <li>"정보저장게임"이란 게임 진행 중 정보통신망을 통한 계속적 통신이 이루어지는 네트워크 기반 게임물로 해당 게임정보가 회사의 서버에 저장되는 게임을 의미합니다.</li>
+        <li>"제휴 서비스"란 "회사"가 카카오톡, 라인 등과 같은 메신저 서비스와 제휴 계약을 체결하여 "회원"이 제휴된 메신저 서비스에의 가입을 통해서도 게임을 이용할 수 있도록 하는 것을 의미합니다.</li>
+        <li>"플랫폼"이란 "회원"이 "스마트기기"에서 어플리케이션 다운로드 내지는 프로그램 설치 등을 통해 게임을 이용할 수 있는 기능을 제공하는 제반 프로그램과 서비스(구글 Play스토어, App Store, STEAM, EPIC GAMES STORE 등을 포함하나 이에 한정하지 않음)를 의미합니다.</li>
+      </ol>
+
+      <p><strong>제3조. 약관의 게시와 개정</strong></p>
+      <ol class="list-decimal list-inside space-y-2">
+        <li>"회사"는 이 약관의 내용을 "회원"이 쉽게 알 수 있도록 "게임 서비스" 내에 게시합니다.</li>
+        <li>"회사"는 '약관의 규제에 관한 법률', '정보통신망 이용촉진 및 정보보호 등에 관한 법률' 등 관계법령을 위배하지 않는 범위에서 이 약관을 개정할 수 있습니다.</li>
+        <li>"회사"가 이 약관을 개정할 경우에는 적용일자 및 개정내용, 개정사유 등을 명시하여 그 적용일자로 부터 최소한 7일 이전(회원에게 불리하거나 중대한 사항의 변경은 30일 이전)부터 그 적용일자 경과 후 상당기간이 경과할 때까지 "게임 서비스" 초기화면과의 연결화면 또는 전자우편, 쪽지, 로그인 시 동의 창 등 가능한 전자적 수단을 통해 공지합니다.</li>
+        <li>"회사"가 전항에 따라 개정 약관을 공지 또는 통지하면서 "회원"에게 적용일 전까지 동의 또는 거부의 의사표시를 하지 않으면 변경에 동의한 것으로 본다는 뜻을 명확하게 공지 또는 통지하였음에도 "회원"이 명시적으로 거부의 의사표시를 하지 아니한 경우, "회원"이 개정약관에 동의한 것으로 봅니다.</li>
+        <li>"회원"이 개정 약관의 적용에 동의하지 않으면 "회사"는 해당 "회원"에 대해 개정 약관의 내용을 적용할 수 없으며, 이 경우 "회사" 또는 "회원"은 이용계약을 해지할 수 있습니다.</li>
+      </ol>
+      
+      <p><strong>제4조. 이용계약의 체결 및 적용</strong></p>
+      <ol class="list-decimal list-inside space-y-2">
+        <li>이용계약은 "회원"이 되고자 하는 이용자(이하 "가입신청자")가 이 약관의 내용에 대하여 동의를 한 다음 "게임 서비스" 이용 신청을 하고, "회사"가 이러한 신청에 대해서 승낙함으로써 체결됩니다.</li>
+        <li>"회사"는 "가입신청자"의 신청에 대하여 "게임 서비스" 이용을 승낙함을 원칙으로 합니다. 다만, "회사"는 다음 각호의 어느 하나에 해당하는 이용신청에 대해서는 승낙을 하지 않거나, 사후에 이용계약을 취소할 수 있습니다.
+          <ul class="list-disc list-inside ml-6 mt-2 space-y-1">
+            <li>제3자의 "스마트기기", 유ㆍ무선전화, 은행계좌 등을 무단으로 이용 또는 도용하여 서비스 이용요금을 결제한 경우</li>
+            <li>'게임산업진흥에 관한 법률', '정보통신망 이용촉진 및 정보보호 등에 관한 법률' 및 그 밖에 관계 법령에서 금지하는 위법행위를 할 목적으로 이용신청을 하는 경우</li>
+            <li>"회사"에서 개발사와의 계약, 관계법령 및 "회사"에서 정한 정책적 이유로 "게임 서비스"를 제공하지 않는 국가에서 비정상적이거나 우회적인 방법을 통해 "게임 서비스"를 이용하는 경우</li>
+            <li>연령제한 게임에서 제공가능연령 미달자가 이용신청을 하는 경우</li>
+            <li>그밖에 제1호 내지 제3호에 준하는 사유나 관계법령, 정부 정책 상 승낙이 부적절하다고 판단되는 경우</li>
+          </ul>
+        </li>
+        <li>미성년자는 관계법령에 의하여 법정대리인의 동의를 받아 이용신청을 할 경우가 발생할 수 있습니다.</li>
+        <li>"회사"는 다음 각호의 어느 하나에 해당하는 경우 그 사유가 해소될 때까지 승낙을 유보할 수 있습니다.
+          <ul class="list-disc list-inside ml-6 mt-2 space-y-1">
+            <li>"회사"의 설비에 여유가 없거나, 특정 "스마트기기" 지원이 어렵거나, 기술적 장애가 있는 경우</li>
+            <li>"게임 서비스" 상의 장애 또는 서비스 이용요금, 결제수단의 장애가 발생한 경우</li>
+            <li>그 밖의 사유로 이용신청의 승낙이 곤란한 경우</li>
+          </ul>
+        </li>
+      </ol>
+      
+      <p><strong>제5조. 개인정보 등 정보보호</strong></p>
+      <ol class="list-decimal list-inside space-y-2">
+        <li>"회사"는 "게임 서비스"에 가입한 "회원"을 식별하기 위하여 스마트기기 정보를 수집할 수 있습니다. 단, "회사"에서 수집하는 스마트기기 정보는 수집 시점에서 즉시 일방향 암호화(해시)되어 본래 고유의 값을 확인 불가능한 형태로 저장됩니다.</li>
+        <li>"회원"의 상태정보, 별명, 사진은 "회원"이 다른 "회원"과의 소통과정에서 자신을 설명하기 위해 등록하는 정보로써, "게임 서비스"에서 타 "회원"들에게 공개될 수 있습니다.</li>
+        <li>"회원"은 "제휴 서비스"를 통하여 "게임 서비스"를 이용하는 경우 "게임 서비스"의 이용기록이 "회원"의 "제휴 서비스" 상의 프로필, 닉네임 등과 함께 제3자에게 노출될 수 있음에 동의합니다. 만약, 제3자에게 관련 정보가 노출되기를 원하지 않는 경우 "게임 서비스" 내 기능을 통해 노출 여부를 설정할 수 있습니다.</li>
+        <li>"회원"의 개인정보의 보호 및 사용에 대해서는 관계법령 및 "회사"의 개인정보처리방침이 적용됩니다. 단, "회사"의 공식 사이트 이외의 단순히 링크된 제3자의 사이트 및 서비스에서는 "회사"의 개인정보처리방침이 적용되지 않습니다.</li>
+        <li>"회사"는 객관적으로 "계정정보" 도용 피해가 우려되는 경우 또는 회원이 서비스를 1년 이상 이용하지 않은 경우에는 회원정보의 보호 및 운영의 효율성을 위해 임시조치, 이용제한, "계정정보" 삭제 등 필요한 조치를 취할 수 있습니다.</li>
+        <li>"회사"는 AR(증강현실) 기능 이용 시 촬영·스캔된 주변 환경 정보(위치 기반 이미지, 동영상 등)를 수집·저장할 수 있으며, 이는 서비스 품질 개선, 보안, 게임 콘텐츠 개발 목적으로만 사용합니다.</li>
+        <li>"회원"은 AR 기능 이용 시 주변 안전에 유의하고, 타인의 초상권·사생활·재산권을 침해하지 않아야 합니다. "회원"의 과실 또는 고의로 발생한 분쟁·손해에 대해서는 "회원"이 전적으로 책임을 집니다.</li>
+      </ol>
+
+      <p><strong>제6조. 회사의 의무</strong></p>
+      <ol class="list-decimal list-inside space-y-2">
+        <li>"회사"는 관계법령과 이 약관이 금지하거나 미풍양속에 반하는 행위를 하지 않으며, 계속적이고 안정적으로 "게임 서비스"를 제공하기 위하여 최선을 다하여 노력합니다.</li>
+        <li>"회사"는 "회원"이 안전하게 "게임 서비스"를 이용할 수 있도록 개인정보(신용정보 포함)보호를 위해 보안시스템을 갖추어야 하며, 개인정보처리방침을 공시하고 준수합니다. "회사"는 이 약관 및 개인정보처리방침에서 정한 경우를 제외하고는 "회원"의 개인정보가 제3자에게 공개 또는 제공되지 않도록 합니다.</li>
+        <li>"회사"는 "게임 서비스"이용과 관련하여 "회원"으로부터 제기된 의견이나 불만이 정당하다고 인정할 경우에는 이를 처리하여야 합니다. "회원"이 제기한 의견이나 불만사항에 대해서는 전자우편 등을 통하여 "회원"에게 처리과정 및 결과를 전달합니다.</li>
+        <li>"회사"가 "회원"에 대해 통지 하는 경우 7일 이상 "게임 서비스" 내에 게시하거나 전자우편, 전자메모 등으로 알립니다.</li>
+        <li>"회사"는 "게임 서비스" 제공시 "게임 서비스"의 이용에 필요한 최소한의 기술사양에 관한 정보를 제공합니다.</li>
+        <li>"회사"는 '게임산업진흥에 관한 법률' 등 관련 법령에 따라 표시할 의무가 있는 확률형 아이템 관련 정보를 게임서비스 내 또는 그 연결화면 등에 표시합니다. 이 경우, 구체적인 표시 방법 등은 관련 법령에서 정하는 바에 따릅니다.</li>
+      </ol>
+      
+      <p><strong>제7조. 회원의 의무</strong></p>
+      <ol class="list-decimal list-inside space-y-2">
+        <li>"스마트기기" 및 "계정정보"에 관한 관리책임은 "회원"에게 있습니다. "회원"이 본인의 "계정정보"를 소홀히 관리하거나, 제3자에게 이용을 승낙함으로써 발생하는 손해에 대하여는 "회원"에게 책임이 있습니다.</li>
+        <li>"회원"은 다음의 행위를 하여서는 안됩니다.
+            <ul class="list-disc list-inside ml-6 mt-2 space-y-1">
+                <li>신청 또는 변경 시 허위내용의 등록</li>
+                <li>타인의 정보 및 결제수단, 외부 계정 도용</li>
+                <li>"회사"가 게시한 정보의 변경</li>
+                <li>다른 "회원"의 개인정보 및 "계정정보"를 무단 수집하는 행위</li>
+                <li>"회사"의 사전 동의 없이 영리 목적의 광고성 정보를 전송하기 위하여 이용하는 행위</li>
+                <li>리버스엔지니어링, 디컴파일, 디스어셈블 및 기타 일체의 가공행위를 통하여 "게임 서비스"를 복제, 분해 또는 모방 기타 변형하는 행위 또는 이를 유출, 공개하는 행위</li>
+                <li>자동 접속, 자동 입력 프로그램 등을 사용하는 등 정상적인 용법과 다른 방법으로 "게임 서비스"를 이용하여 "회사"의 서버에 부하를 일으켜 "회사"의 정상적인 활동을 방해하는 행위</li>
+                <li>금전 등의 대가를 지불하고 타인에게 게임 진행을 요청하는 등(대리 육성 등)의 행위</li>
+                <li>프로그램의 버그, 오동작을 고의로 반복 이용하거나 유포하는 행위</li>
+                <li>본인 아닌 제3자에게 접속권한을 부여하는 행위</li>
+                <li>"회사"와 기타 제3자의 지적재산권을 침해하는 행위</li>
+                <li>"회사" 및 기타 제3자의 명예를 손상시키거나 업무를 방해하는 행위</li>
+                <li>외설 또는 폭력적인 메시지, 화상, 음성, 기타 공서양속에 반하는 정보를 "게임 서비스"에 공개 또는 게시하는 행위</li>
+                <li>"회사"의 동의 없이 영리를 목적으로 "게임 서비스"를 사용하는 행위</li>
+                <li>기타 불법적이거나 부당한 행위</li>
+                <li>GPS 스푸핑, 위치 정보 변조 또는 조작 행위</li>
+                <li>동일 서비스에 대해 복수 계정을 생성·운영하는 행위</li>
+                <li>계정을 타인과 거래, 판매, 대여하는 행위</li>
+                <li>자동화 스크립트, 봇(Bot) 등 비정상적 접근 도구 사용</li>
+                <li>게임 내 결제, 보상, 순위 등에 부정 영향을 미치는 모든 행위</li>
+            </ul>
+        </li>
+        <li>"회원"은 "회사"가 제공하는 "게임 서비스"를 이 약관, 운영정책 및 "회사"가 설정한 규칙에 따라 이용할 수 있습니다. "회원"은 관계법령, 이 약관의 규정, 이용안내 및 "게임 서비스"와 관련하여 공지한 주의사항, "회사"가 통지하는 사항 등을 준수하여야 하며, 기타 "회사"의 업무에 방해되는 행위를 하여서는 안 됩니다.</li>
+      </ol>
+      
+      <p><strong>제8조. "게임 서비스"의 제공 및 변경</strong></p>
+      <ol class="list-decimal list-inside space-y-2">
+        <li>"회사"는 단독으로 또는 다른 회사와 제휴하여 "회원"에게 아래와 같은 "게임 서비스"를 제공합니다.
+            <ul class="list-disc list-inside ml-6 mt-2 space-y-1">
+                <li>게임서비스</li>
+                <li>커뮤니티 서비스</li>
+                <li>보안서비스</li>
+                <li>고객보호 서비스</li>
+                <li>"회원"의 성향, 관심, 이용기록 분석 등을 통한 개인 맞춤형 상품 추천 서비스</li>
+                <li>기타 추가 개발하여 "회원"에게 제공하는 일체의 서비스</li>
+            </ul>
+        </li>
+        <li>"게임 서비스"는 1일 24시간 제공을 원칙으로 합니다. 단, "회사"의 운영정책 및 관계법령에 따라 서비스 및 " 회원" 별로 제공시간, 횟수, 내용 등이 제한될 수 있습니다.</li>
+        <li>"회사"는 정기점검, 설비 점검, 고장, 운영상 상당한 이유가 있는 경우 "게임 서비스"의 제공을 일시 중단할 수 있으며 이 경우 제6조 제4항에 정한 방법으로 "회원"에게 공지합니다. 다만, 사전에 공지할 수 없는 부득이한 사유가 있는 경우 사후에 공지할 수 있습니다.</li>
+        <li>"회사"는 "게임 서비스" 내용의 결정, 변경, 유지, 보수, 종료에 관한 포괄적인 권한을 가집니다. "회사"는 영업의 폐지, 합병, 분할, 당해 서비스의 수익 악화, 게임성 유지 등 상당한 이유가 있는 경우, 제공하고 있는 전부 또는 일부 게임이나 "게임 서비스"를 변경하거나 종료할 수 있으며, 이 경우 제6조 제4항에 정한 방법으로 변경 전 7일 이상, 종료 전 30일 이상 사전 공지합니다. 다만, 사전에 공지할 수 없는 부득이한 사정이 있는 경우 사후에 공지할 수 있습니다.</li>
+        <li>"회사"는 "게임 서비스"의 효율적 이용 및 운영을 위해 게임 아이템, 게임머니, "사이버포인트" 등의 이용내역을 확인하거나 일부 또는 전부를 조정 및 회수, 종료할 수 있으며, 제 6조 제4항에 정한 방법으로 변경 전 7일 이상, 종료 전 30일 이상 사전 공지합니다. 다만, 사전에 공지할 수 없는 부득이한 사정이 있는 경우 사후에 공지할 수 있습니다.</li>
+        <li>"회사"가 제4항에 따라 "게임서비스"를 종료하거나, 제5항에 따라 게임 아이템, 게임머니, "사이버포인트" 등을 소멸시키는 경우, " 회원"은 무료서비스 및 사용기간이 남아있지 않은 "유료서비스"에 대하여 손해배상을 청구할 수 없습니다.</li>
+        <li>"게임 서비스"의 지적재산권은 "회사"에 있으며, "회사"는 "회원"에게 "회사"가 정한 이용조건에 따라 "게임 서비스", 게임캐릭터, 아이템, 게임머니 및 "사이버포인트" 등을 이용할 수 있는 이용권한만을 부여합니다. "회사"가 별도로 허락하지 않는 한 "회원"은 제3자에게 양도나 대여, 판매, 담보제공 등을 할 수 없습니다.</li>
+        <li>"회사"의 "게임 서비스"는 "계정연결"을 설정할 경우에 한하여 타 "스마트기기"에서도 연결 계정으로 접속하여 "계정정보"의 일부 또는 전부를 이전하거나 공유하여 사용할 수 있습니다. "정보저장게임" 해당 여부 및 "계정연결"시 이전, 공유 가능한 "계정정보"는 기술적 사항과 운영정책 등을 고려하여 개별 게임앱 별로 정해지며, 운영상 필요 및 외부 계정 제공 업체의 정책에 따라 변경되거나 중단될 수 있습니다.</li>
+        <li>"계정연결"에 이용된 외부 계정은 다른 외부 계정으로 변경할 수 없으며, "회원"이 "계정연결"에 이용된 외부 계정을 정상적으로 이용할 수 없는 경우 "게임 서비스" 이용이 제한될 수 있습니다.</li>
+        <li>"회사"는 "게임 서비스" 내에 광고를 게재할 수 있습니다.</li>
+      </ol>
+
+      <p><strong>제9조. 이벤트, 오프라인 활동 및 경품</strong></p>
+      <ol class="list-decimal list-inside space-y-2">
+        <li>"회사"는 서비스 내·외부에서 이벤트를 개최할 수 있으며, 당첨자 선정 기준, 경품 내용, 지급일정 등은 별도의 공지 또는 해당 이벤트 페이지에 안내합니다.</li>
+        <li>"회원"은 "회사"가 주최·주관·후원하는 오프라인 이벤트, 대회, 프로모션, 모임 등에 참여할 경우, 본인의 건강 상태를 확인하고 안전에 유의하여야 합니다.</li>
+        <li>이벤트 참여 중 발생한 부상·질병·재산 손해 등은 "회사"의 고의 또는 중대한 과실이 없는 한 "회사"가 책임지지 않습니다.</li>
+        <li>이벤트에서 촬영된 사진, 영상, 음성, 초상, 닉네임, 게임 내 기록 등은 "회사"의 홍보·마케팅 목적으로 무상 사용될 수 있으며, "회원"은 이에 동의합니다.</li>
+        <li>이벤트 참가를 위한 유료 티켓은 원칙적으로 환불 불가하며, 양도는 "회사" 사전 승인 시에만 가능합니다.</li>
+        <li>"회원"은 이벤트 현장에서 안내되는 모든 규칙·지침·안전수칙을 준수해야 하며, 이를 위반할 경우 "회사"는 퇴장 조치 또는 향후 이벤트 참가 제한을 할 수 있습니다.</li>
+        <li>경품은 안내된 사양·이미지와 실제 지급품이 다를 수 있으며, 재고 부족·운영상 필요 시 동등 이상의 다른 경품으로 대체할 수 있습니다.</li>
+        <li>1회 경품 가액이 5만원을 초과하는 경우 제세공과금(경품가액의 22%)은 이용자가 부담하며, 제세공과금 납부 및 본인 확인이 완료되지 않으면 지급이 불가합니다.</li>
+        <li>다음 각 호에 해당하는 경우 당첨 및 지급이 취소됩니다.
+            <ul class="list-disc list-inside ml-6 mt-2 space-y-1">
+                <li>부정한 방법(위치 조작, 매크로 사용 등)으로 이벤트에 참여한 경우</li>
+                <li>타인의 계정을 이용하거나 개인정보를 도용한 경우</li>
+                <li>당첨자 발표일로부터 7일 이내에 연락이 불가능한 경우</li>
+                <li>기타 이벤트 페이지에 나와있는 당첨 및 지급 취소 사유에 해당하는 경우</li>
+            </ul>
+        </li>
+        <li>경품 배송·수령 과정에서 발생하는 제3자의 고의·과실로 인한 손해에 대해서는 회사가 책임지지 않습니다.</li>
+        <li>회사는 법령에 따른 경우를 제외하고 경품과 관련된 이용자의 개인정보를 이벤트 종료 후 즉시 파기합니다.</li>
+      </ol>
+      
+      <p><strong>제10조. 저작권 등의 귀속</strong></p>
+      <ol class="list-decimal list-inside space-y-2">
+        <li>"게임 서비스" 내 "회사"가 제작한 콘텐츠 등에 대한 저작권 및 기타 지식재산권은 "회사"의 소유입니다. "회사"는 "게임 서비스"와 관련하여 "회원"에게 "회사"가 정한 이용조건에 따라 게임이나 캐릭터, 게임아이템, 게임머니, 사이버포인트 등을 이용할 수 있는 이용권한 만을 부여하며, "회원"은 이를 유상 양도, 판매, 담보제공 등의 처분행위를 할 수 없습니다.</li>
+        <li>"회원"은 "회사"가 제공하는 "게임 서비스"를 이용함으로써 얻은 정보 중 "회사" 또는 제3자에게 지식재산권이 귀속된 정보를 "회사" 또는 제3자의 사전 승낙 없이 복제, 전송, 출판, 배포, 방송 기타 방법에 의하여 영리 목적으로 이용하거나 제3자에게 이용하게 하여서는 안됩니다.</li>
+        <li>"회원"은 게임 내에서 보여지거나 "게임 서비스"와 관련하여 "회원" 또는 다른 이용자가 게임 또는 "게임 서비스"를 통해 업로드 또는 전송하는 대화 텍스트를 포함한 커뮤니케이션, 이미지, 사운드 및 모든 자료 및 정보(이하, "회원 콘텐츠"라 합니다)에 대하여 "회사"가 다음과 같은 방법과 조건으로 이용하는 것을 허락합니다.
+            <ul class="list-disc list-inside ml-6 mt-2 space-y-1">
+                <li>가) 해당 "회원 콘텐츠"를 이용, 편집, 형식의 변경 및 기타 변형하는 것(공표, 복제, 공연, 전송, 배포, 방송, 2차적저작물 작성 등 어떠한 형태로든 이용 가능하며, 이용 기간과 지역에는 제한이 없음)</li>
+                <li>나) "회원 콘텐츠"를 제작한 자의 사전 동의 없이 거래를 목적으로 "회원 콘텐츠"를 판매, 대여, 양도행위를 하지 않음</li>
+            </ul>
+        </li>
+        <li>게임 내에서 보여지지 않고 "게임 서비스"와 일체화되지 않은 "회원"의 "회원 콘텐츠" (예컨대, 일반게시판 등에서의 게시물)에 대하여 "회사"는 검색 결과 내지 "게임 서비스" 및 관련 프로모션 등에 노출될 수 있으며, 해당 노출을 위해 필요한 범위 내에서는 일부 수정, 복제, 편집하여 게시할 수 있습니다. 이 경우 "회사"는 저작권법을 준수하며, "회원"은 언제든지 고객센터 또는 "게임 서비스" 내 관리기능을 통해 해당 게시물에 대해 삭제, 검색결과 제외, 비공개 등의 조치를 취할 수 있습니다.</li>
+        <li>"회사"는 본 조 제3항 및 제4항 이외의 방법으로 "회원"의 게시물을 이용하고자 하는 경우에는 전화, 팩스, 전자우편 등을 통해 사전에 "회원"의 동의를 얻어야 합니다.</li>
+        <li>"회사"는 "회원"이 게시하거나 등록하는 "게임 서비스" 내의 게시물, 게시 내용에 대해 제7조에서 규정하는 금지행위에 해당된다고 판단되는 경우, 사전 통지 없이 이를 삭제하거나 이동 또는 등록을 거부할 수 있습니다.</li>
+        <li>본 조 제3항 및 제4항은 "회사"가 "게임 서비스"를 운영하는 동안 유효하며, 회원 탈퇴 후에도 계속적으로 적용됩니다.</li>
+      </ol>
+      
+      <p><strong>제11조. 행동규범, 일반 금지사항 및 당사의 집행권 등</strong></p>
+      <p>귀하는 서비스를 이용하는 동안 귀하 자신의 행동, 사용자 콘텐츠 및 증강현실 콘텐츠와 그로 인하여 발생하는 모든 결과에 대해 책임을 지는 것에 동의합니다. 또한, 관련 법령상 귀하에게 그러할 권리를 부여하지 않는 한, 다음의 행위를 하지 않을 것에 동의합니다.</p>
+      <ol class="list-decimal list-inside space-y-2">
+        <li>다른 사용자들의 식별가능정보를 해당 사용자들의 명시적인 허가 없이 서비스를 통해 수집, 저장 또는 공유하는 행위</li>
+        <li>서비스 또는 콘텐츠(사용자 또는 게임플레이 관련 정보 포함)를 발췌, 스크랩 또는 색인하는 행위</li>
+        <li>서비스 또는 콘텐츠나 그 일부를 상업적인 목적으로 또는 본 약관이 허용하지 않는 방식으로 이용하는 행위로서, (a) 앱 내 아이템 또는 앱 외부 판매용 리소스를 수집하는 행위, (b) 앱 외부에서의 지급에 대한 대가로 앱 내에서 서비스를 수행하는 행위, 또는 (c) 앱 또는 귀하 계정을 판매, 재판매 또는 대여하는 행위를 포함하되 이에 한정되지 아니함.</li>
+        <li>당사 및 기타 일반적으로 이용 가능한 제3자의 웹 브라우저에서 제공된 것 이외의 기술 및 수단(자동화 소프트웨어, 봇(bots), 스파이더(spiders), 크롤러(crawlers), 데이터 마이닝 툴, 또는 종류를 불문하는 해킹(hacks), 툴, 에이전트, 엔진 및 기기를 포함하되 이에 한정되지 아니함)을 통해 서비스 또는 콘텐츠에 접근, 검색하거나 서비스로부터 콘텐츠의 다운로드를 시도하는 행위</li>
+        <li>서비스 또는 콘텐츠 제공에 사용된 소프트웨어를 해독, 역컴파일, 분해 또는 역엔지니어링하려고 시도하는 행위</li>
+        <li>서비스 또는 콘텐츠를 보호하기 위하여 당사, 당사 제공업체 또는 기타 제3자(다른 사용자 포함)가 시행하는 기술적 조치를 우회, 제거, 비활성화, 복호화(descramble)하거나 회피하는 행위</li>
+        <li>당사의 명시적인 서면 동의 없이, 서비스 또는 서비스 내 개별 요소, 당사의 명칭, 상표, 로고나 기타 전유적 정보, 페이지의 레이아웃과 디자인 또는 앱을 사용, 표시, 미러링(mirror)하거나 표현하는 행위</li>
+        <li>제3자의 특허, 저작권, 상표, 영업비밀, 인격권 또는 기타 지적재산권이나 초상권 및 사생활을 침해, 악용 및 위반하는 콘텐츠를 공지, 게시, 제출, 저장 또는 전송하는 행위</li>
+        <li>서비스, 당사 전산시스템 또는 당사 제공업체들의 기술 배포 시스템의 비공개 영역에 접근하고 이를 조작하거나 이용하는 행위</li>
+        <li>당사 시스템, 네트워크 또는 서비스의 취약성을 탐색, 스캔 또는 테스트하거나, 보안 또는 인증 조치를 위반하려고 시도하는 행위</li>
+        <li>당사의 명시적인 서면 동의 없이, 메타 태그(meta tags) 또는 기타 숨겨진 텍스트나 메타 데이터(meta data)를 통해 당사의 상표, 로고, URL 또는 제품명을 이용하는 행위</li>
+        <li>TCP/TPCI 패킷 헤더 또는 이메일이나 뉴스그룹 게시물의 헤더 정보 일부를 위조하거나, 어떤 방식으로든 서비스 또는 콘텐츠를 이용하여 변경 및 위장되거나 허위의 소스 특정 정보를 송신하는 행위</li>
+        <li>사용자, 호스트 또는 네트워크 접근을 방해하거나 방해를 시도하는 행위로서, 서비스에 바이러스를 송신하거나, 과잉부담을 주거나, 플러딩(flooding), 스팸(spamming) 및 메일 폭탄(mail-bombing)을 송신하는 행위를 포함하되 이에 한정되지 아니함.</li>
+        <li>서비스 또는 콘텐츠에 표시되는 귀속, 경고 및 링크를 삭제, 훼손 또는 어떤 방식으로든 변경하는 행위</li>
+        <li>관련 법령을 위반하는 행위</li>
+        <li>다른 개인으로 하여금 전술한 행위를 수행하도록 장려하거나 이를 가능하게 하는 행위</li>
+      </ol>
+      <p>당사는 서비스 또는 콘텐츠에 대한 접근이나 그 이용의 모니터링, 콘텐츠의 검토 및 편집 의무를 부담하지 않으나, 서비스 운영, 본 약관의 준수 보장, 관련 법령이나 기타 법적 요건을 준수하기 위한 목적으로 이를 행할 권리를 가집니다. 당사는 단독 재량으로 언제든지 통지 없이 여하한 콘텐츠에 대한 접근을 제거하거나 비활성화할 수 있는 권리를 가집니다. 당사는 불쾌감을 주거나 본 약관을 위반하는 것으로 판단되는 콘텐츠를 제거할 수 있습니다. 당사는 본 약관의 위반을 조사하거나 서비스에 영향을 미치는 행동을 조사할 권리를 가집니다. 또한, 당사는 법률을 위반하는 사용자 등을 기소하기 위하여 법률집행당국과 논의 및 협력할 수 있습니다.</p>
+      <p>웹사이트 또는 앱의 적법한 운영을 약화시키거나 조작하는 행위를 포함하되 이에 한정되지 아니하고, 서비스를 저해하거나 침해하려는 시도는 (주)도약민의 약관을 위반하는 것이며, 형사 및 민사 법률의 위반을 구성할 수 있습니다.</p>
+      
+      <p><strong>제12조. 계약해지 등</strong></p>
+      <ol class="list-decimal list-inside space-y-2">
+        <li>"회원"은 언제든지 "게임 서비스" 홈페이지 내 고객센터 또는 설정 내 탈퇴하기 메뉴 등을 통하여 이용계약 해지 신청(회원탈퇴)을 할 수 있습니다. "회원"이 회원탈퇴를 신청한 경우 "회사"는 "회원" 본인 여부를 확인할 수 있으며, 관계법령 등이 정하는 바에 따라 이를 즉시 처리합니다. 단, "회사"는 이용자의 회원가입 후 일정시간 동안 서비스 부정이용 방지 등의 사유로 즉시 탈퇴를 제한할 수 있습니다.</li>
+        <li>"회원"이 이용계약을 해지할 경우, 관계법령 및 개인정보처리방침에 따라 "회사"가 회원정보를 보유하는 경우를 제외하고는 해지 즉시 "회원"의 계정정보를 포함한 모든 데이터는 소멸됩니다.</li>
+        <li>"회사"의 재무적 문제 발생, 주요 자산에 대한 압류나 가압류, 규제당국 인허가 박탈 등으로 인해 "게임 서비스" 운영이 불가할 경우, 이용계약이 해지될 수 있습니다.</li>
+      </ol>
+
+      <p><strong>제13조. 회사의 이용제한 조치 및 계약해지</strong></p>
+      <ol class="list-decimal list-inside space-y-2">
+        <li>"회사"는 "회원"이 이 약관의 의무를 위반하거나 "게임 서비스"의 정상적인 운영을 방해한 경우, 경고, 일시정지, 영구이용정지 등으로 "게임 서비스" 이용을 단계적으로 제한하거나 이용계약을 해지 할 수 있습니다.</li>
+        <li>"회사"는 전항에도 불구하고, '저작권법' 및 '컴퓨터프로그램 보호법'을 위반한 불법프로그램의 제공 및 운영방해, '정보통신망 이용촉진 및 정보보호 등에 관한 법률'을 위반한 불법통신 및 해킹, 악성프로그램의 배포, 접속권한 초과행위, '게임산업진흥에 관한 법률'을 위반한 게임머니 중개, 알선, 매입, 제3자의 개인정보ㆍ결제정보 도용 등과 같이 관계법령을 위반한 경우 또는 게임운영에 악영향을 미치는 경우(운영자 사칭, 게임 내 사기, 반복적 버그 악용 등)에는 즉시 영구이용정지, 계약해지를 할 수 있습니다.</li>
+        <li>"회사"는 최근의 서비스 이용일로부터 연속하여 1년 이상 "회사"의 서비스를 이용하지 않은 "회원"에 대하여 이용계약을 해지할 수 있습니다.</li>
+        <li>"회사"는 본 조의 이용제한 범위 내에서 다음 각호의 어느 하나에 해당하는 행위의 구체적인 유형, 제한의 조건 및 세부내용을 별도 운영원칙으로 정할 수 있으며 "회원"은 해당 운영원칙을 준수하여 "게임 서비스"를 이용할 의무가 있습니다.
+            <ul class="list-disc list-inside ml-6 mt-2 space-y-1">
+                <li>"회원"의 계정, 캐릭터명 등 명칭 사용과 관련한 제한</li>
+                <li>네이버 카페 등 "회사"가 운영하는 게시판 이용에 대한 제한</li>
+                <li>게임이용방법에 대한 제한</li>
+                <li>기타 "회원"의 의무와 관련된 사항으로 회사가 "게임 서비스" 운영상 필요한 제한</li>
+            </ul>
+        </li>
+        <li>"회사"의 이용제한이 정당한 경우, "회사"는 이용제한 및 계약해지로 인하여 " 회원"이 입은 손해를 배상하지 않으며, "유료서비스" 이용과 관련된 잔여 정보의 환불이 불가합니다.</li>
+        <li>"회원"이 "회사"의 이용제한에 불복하고자 할 때에는 제한이 있은 날로부터 1주일 이내에 "회사"의 이용제한에 불복하는 이유를 기재한 이의신청서를 서면, 전자우편 또는 이에 준하는 방법으로 "회사"에 제출하여야 합니다. "회원"의 이의가 정당하다고 "회사"가 인정하는 경우 "회사"는 즉시 "게임 서비스"의 이용을 재개합니다.</li>
+      </ol>
+      
+      <p><strong>제14조. 대금결제</strong></p>
+      <ol class="list-decimal list-inside space-y-2">
+        <li>"유료서비스"에 대한 구매 대금의 부과와 납부는 원칙적으로 "플랫폼" 사업자가 정하는 정책이나 방법을 따릅니다. 또한 각 결제수단 별 한도는 "회사", "플랫폼" 사업자가 정하는 정책 또는 정부의 방침에 따라 부여되거나 조정될 수 있습니다.</li>
+        <li>"유료서비스"의 구매대금을 외화로 결제하는 경우 환율의 변동이나, 신용카드사 등의 결제수단 제공자가 "회원"에게 부과하는 수수료 등으로 인하여 실제 결제 금액이 서비스의 상점 등에서 표시된 가격과 달라질 수 있습니다.</li>
+      </ol>
+      
+      <p><strong>제15조. 청약철회</strong></p>
+      <ol class="list-decimal list-inside space-y-2">
+        <li>"유료서비스"는 청약철회가 가능한 "게임 서비스"와 청약철회가 제한되는 "게임 서비스"로 구분되어 제공되며, 이러한 내용은 " 회원"이 "유료서비스"를 구매할 시 고지 합니다. "회원"이 청약철회가 가능한 "유료서비스"를 구매한 경우 구매일 또는 이용가능일로부터 7일 이내에 청약철회(구매취소)를 할 수 있습니다. 단, 시용상품을 제공한 경우와 한시적 또는 일부 이용 등의 방법을 제공한 경우는 청약철회 대상에서 제외되며, 청약철회가 불가능한 서비스에 대하여는 운영정책을 통하여 별도 고지할 수 있습니다.</li>
+        <li>선물 및 이벤트 등 "회사"나 제3자로부터 무상으로 제공받은 아이템, 캐릭터, 게임머니 등의 상품 및 청약철회 요청 당시 이미 사용하였거나 사용한 것으로 간주되는 "유료서비스" 등 이에 준하는 특성을 가진 일부 "유료서비스"에 대하여는 '전자상거래 등에서의 소비자 보호에 관한 법률' 및 "콘텐츠산업 진흥법"에 따라 청약철회(구매취소)가 제한될 수 있습니다.</li>
+        <li>"회원"은 제1항 및 제2항에도 불구하고 "게임 서비스"의 내용이 표시∙광고의 내용과 다르거나 계약내용과 다르게 이행된 경우에는 해당 "게임 서비스"를 이용할 수 있는 날로부터 3개월 이내, 그 사실을 안 날 또는 알 수 있었던 날로부터 30일 이내에 청약철회를 할 수 있습니다.</li>
+        <li>청약철회를 한 경우 "회원"은 "유료서비스"를 반환 또는 삭제합니다. "회사"는 "유료서비스"를 반환 받은 날로부터 3 영업일 이내(단, 수납확인이 필요한 결제 수단의 경우 수납확인일로부터 3영업일 이내)에 결제와 동일한 수단으로 환급하거나, 동일한 방법으로 환불이 불가능한 경우 "회사"가 사전에 고지한 방법으로 환불하며, "회원"이 신용카드 또는 전자화폐 등의 결제수단으로 대금을 지급한 때에는 지체 없이 당해 결제수단을 제공한 사업자로 하여금 대금의 청구를 정지 또는 취소하도록 요청합니다.</li>
+        <li>"회사"는 본 조의 절차에 따른 환급이 지연된 경우, '전자상거래 등에서의 소비자 보호에 관한 법률'에 따른 지연 배상금을 환불금 지급 시 합산하여 지급합니다.</li>
+      </ol>
+
+      <p><strong>제16조. 피해보상, 환불 등</strong></p>
+      <ol class="list-decimal list-inside space-y-2">
+        <li>"회사"는 고의 또는 중대한 과실에 의하여 "회원"에게 손해를 끼친 경우 "회원"의 해당 손해에 대하여 배상합니다.</li>
+        <li>"회사"가 제8조 제4항에 따라 "회사"가 제공하고 있는 게임 또는 "게임 서비스"를 종료하여 "회원"이 "유료서비스"를 이용할 수 없게 된 경우, 아래와 같은 기준에 따라 환불절차를 진행합니다.
+            <ul class="list-disc list-inside ml-6 mt-2 space-y-1">
+                <li>환불은 "유료서비스" 중 "회원"이 플랫폼 사업자가 제공하는 결제서비스를 통하여 직접 구매한 부분에 한하여 진행됩니다.</li>
+                <li>무상으로 지급되거나 "회원"이 플랫폼 사업자가 제공하는 결제서비스를 통하여 직접 구매하지 않은 게임 애플리케이션, 게임머니, 코인류 상품, 아바타, 아이템 등의 상품 및 이용기간이 만료된 "유료서비스"는 환불대상에서 제외됩니다.</li>
+                <li>"유료서비스"의 사용기간은 판매 시 별도 고지가 없는 한 코인류 상품의 경우 마지막 사용일로부터 1년, 코인류 상품을 제외한 "유료서비스"는 구매 후 1년으로 합니다.</li>
+            </ul>
+        </li>
+        <li>"회사"는 제2항의 경우 "게임 서비스" 중단 이후 30일 이상의 기간을 정하여 그 기간 동안 환불 절차 이행을 위한 전담 창구 등 고객 대응 수단을 마련하여 운영합니다.</li>
+        <li>제2항에도 불구하고 "플랫폼" 사업자 정책에 따라 환불이 제한되는 경우 "회사"는 "회원"에게 환불을 진행하지 않을 수 있습니다. 이 경우 "회사"는 "회원"에게 환불이 제한된다는 사실을 안내합니다.</li>
+        <li>환불은 납부 확인이 된 경우에 한해 신청일로부터 3영업일 이내 구매한 결제 수단으로 함을 원칙으로 하며, 수납확인이 필요한 결제 수단의 경우 수납확인일로부터 3영업일 이내에 환급합니다. 동일한 방법으로 환불이 불가한 경우 "회사"가 사전에 고지한 방법으로 환불 처리합니다.</li>
+        <li>"회사"의 책임 있는 사유로 과오금이 발생한 경우 "회사"는 계약비용, 수수료 등에 관계없이 과오금 전액을 환급합니다. 구매한 결제수단과 동일한 방법으로 환급이 불가능한 경우 "회사"가 사전에 고지한 방법으로 환급 처리합니다. 다만, "회원"의 책임 있는 사유로 과오금이 발생한 경우, 과오금의 환급에 소요되는 비용은 합리적인 범위 내에서 "회원"이 부담합니다.</li>
+      </ol>
+
+      <p><strong>제17조. 책임제한</strong></p>
+      <ol class="list-decimal list-inside space-y-2">
+        <li>"회사"는 정보통신망의 사용불가 및 장애, 제8조 3항에서 정한 사항, 천재지변 또는 국가비상사태, 정전 및 이에 준하는 불가항력 상황이 발생함으로 인하여 "게임 서비스"를 제공할 수 없는 경우에는 "게임 서비스" 제공에 관한 책임이 면제됩니다.</li>
+        <li>"회사"는 "회원"의 귀책사유로 인한 "게임 서비스" 이용의 중지, 사용제한, 데이터 삭제, 장애, 불이익에 대하여는 책임을 지지 않습니다.</li>
+        <li>"회사"는 "계정연결"에 사용된 외부 계정을 발급하는 업체가 제공, 관리하는 영역 (발급, 인증, 사용, 외부 연결 정책, 제한 정책 등)으로 인한 "게임 서비스"의 사용제한, 장애, 불이익, 중지에 대해 "회사"는 책임지지 않습니다.</li>
+        <li>"회사"는 "회사"의 고의 또는 중대한 과실이 없는 정보통신망 이용 환경으로 인하여 발생하는 문제 또는 "회원"의 "스마트기기", PC 등의 각종 유무선 장치의 사용 환경으로 인하여 발생하는 제반 문제에 대해서는 책임이 면제됩니다.</li>
+        <li>"회사"는 "회원"이 "게임 서비스"와 관련하여 게재한 정보, 자료, 사실의 신뢰도, 정확성 등의 내용에 관하여는 책임을 지지 않습니다.</li>
+        <li>"회사"는 "회원" 간 또는 "회원"과 제3자 상호간에 "게임 서비스"을 매개로 하여 거래 등을 한 경우에는 책임이 면제됩니다.</li>
+        <li>"회사"는 무료로 제공되는 "게임 서비스" 이용 및 변경, 중단과 관련하여 관계법령에 특별한 규정이 없는 한 책임을 지지 않습니다.</li>
+        <li>"회사"는 '청소년보호법', '게임산업진흥에 관한 법률' 등 관계 법령, 정부 정책 및 본인 또는 법정대리인의 선택 또는 이용자 보호프로그램 정책에 따라 "게임 서비스"의 이용시간을 제한하거나 "회원"에 따라 "게임 서비스"의 이용시간 등을 제한할 수 있으며, 이러한 제한사항 및 제한에 따라 발생하는 "게임 서비스" 이용관련 제반 사항에 대해서는 책임이 면제됩니다.</li>
+      </ol>
+
+      <p><strong>제18조. 위치기반서비스 이용약관</strong></p>
+      <p><strong>목적</strong></p>
+      <p>본 조항은 회원(이용약관에 동의한 개인위치정보주체)이 당사(이하 "회사")가 제공하는 위치기반서비스를 이용함에 있어, 회사와 회원의 권리·의무 및 기타 필요한 사항을 규정함을 목적으로 합니다.</p>
+      <p><strong>관계법령의 적용</strong></p>
+      <p>본 조항은 신의성실의 원칙에 따라 공정하게 적용하며, 본 조항에 명시되지 아니한 사항에 대하여는 (주)도약 이용약관 및 관계 법령에 따릅니다.</p>
+      <p><strong>서비스의 내용 및 보유 목적·기간</strong></p>
+      <ol class="list-decimal list-inside space-y-2">
+          <li>회사가 제공하는 위치기반서비스 및 개인위치정보의 보유 목적과 기간은 다음과 같습니다.
+              <div class="overflow-x-auto my-4">
+                  <table class="min-w-full border-collapse border border-gray-300 text-sm">
+                      <thead class="bg-gray-50">
+                          <tr>
+                              <th class="border border-gray-300 p-2 font-semibold">서비스 명</th>
+                              <th class="border border-gray-300 p-2 font-semibold">서비스 내용 및 개인위치정보 보유 목적</th>
+                              <th class="border border-gray-300 p-2 font-semibold">개인위치정보 보유기간</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr>
+                              <td class="border border-gray-300 p-2 align-top">위치기반 게임 및 애플리케이션 제공<br/>(해당 게임 및 애플리케이션은 (주)도약민 게임 및 앱 리소스에 보다 상세히 기재되어 있음)</td>
+                              <td class="border border-gray-300 p-2 align-top">-(주)도약민의 앱과 게임을 운영하고 게임 내 리소스 위치를 계획하기 위하여 회원의 위치 및 모바일 기기와 관련된 특정 정보를 파악함<br/>-위치기반서비스를 제공하기 위한 목적으로 개인위치정보를 보유함</td>
+                              <td class="border border-gray-300 p-2 align-top">서비스 제공에 필요한 기간</td>
+                          </tr>
+                      </tbody>
+                  </table>
               </div>
-            </div>
-          </div>
-        </div>
+          </li>
+          <li>회사는 「위치정보의 보호 및 이용 등에 관한 법률」 제16조 제2항에 따라 위치정보 이용·제공사실 확인자료를 자동 기록·보존하며, 해당 자료는 최소 6개월 이상 보관합니다.</li>
+          <li>이용·제공 목적을 달성한 때에는 관련 법령에 따라 보관이 요구되는 경우를 제외하고 즉시 파기하거나 익명 처리합니다.</li>
+      </ol>
+      <p><strong>이용요금</strong></p>
+      <p>회사가 제공하는 위치기반서비스는 무료로 이용할 수 있으나, 무선 서비스 이용 시 발생하는 데이터 통신료는 별도이며, 회원이 가입한 이동통신사의 정책에 따릅니다.</p>
+      <p><strong>개인위치정보의 이용 또는 제공</strong></p>
+      <ol class="list-decimal list-inside space-y-2">
+          <li>회사는 회원의 동의를 받아 개인위치정보를 이용하거나 제3자에게 제공할 수 있습니다.</li>
+          <li>제3자 제공 시, 제공받는 자·목적·시점 등을 회원에게 사전 고지하고 동의를 받으며, 제공 시 매회 즉시 통보합니다.</li>
+          <li>단, 회원이 지정한 다른 통신단말장치·이메일로 통보하거나, 법령에 따라 통합 통보를 선택할 수 있습니다.</li>
+          <li>회원은 이용·제공 목적, 제공받는 자의 범위, 통보방법 등에 대해 일부 동의를 유보할 수 있습니다.</li>
+      </ol>
+      <p><strong>개인위치정보주체의 권리</strong></p>
+      <ol class="list-decimal list-inside space-y-2">
+          <li>회원은 언제든지 위치정보 처리 중지를 요구할 수 있으며, 회사는 즉시 파기 또는 익명 처리합니다.</li>
+          <li>이용·제공의 일시 중지도 요구할 수 있으며, 회사는 거절할 수 없습니다.</li>
+          <li>회원은 본인에 대한 위치정보 이용·제공 사실 확인자료와 제3자 제공 이유·내용의 열람·정정을 요구할 수 있습니다.</li>
+      </ol>
+      <p><strong>법정대리인의 권리</strong></p>
+      <ol class="list-decimal list-inside space-y-2">
+          <li>14세 미만 회원의 경우, 법정대리인의 동의를 함께 받습니다.</li>
+          <li>법정대리인은 제6항의 권리를 동일하게 가집니다.</li>
+      </ol>
+      <p><strong>연락처</strong></p>
+      <div class="not-prose rounded-md border border-gray-200 bg-gray-50 p-4">
+        <p class="mb-1"><strong>상호:</strong> 주식회사 도약민</p>
+        <p class="mb-1"><strong>대표자:</strong> 정민영</p>
+        <p class="mb-1"><strong>주소:</strong> 부산광역시 강서구 명지오션시티 9로 50, 상가동 103호</p>
+        <p><strong>이메일:</strong> jmy@doyakmin.com</p>
       </div>
+
+      <p><strong>제19조. 베타서비스</strong></p>
+      <ol class="list-decimal list-inside space-y-2">
+          <li>회사는 정식 서비스 출시 전 일부 이용자를 대상으로 베타서비스를 운영할 수 있습니다.</li>
+          <li>베타서비스는 안정성, 기능, 성능, 디자인 등에 대한 검증을 목적으로 하며, 예고 없이 변경·중단될 수 있습니다.</li>
+          <li>회사는 베타서비스 이용 과정에서 발생한 데이터 손실, 오류, 불안정한 접속 등에 대해 고의 또는 중대한 과실이 없는 한 책임을 지지 않습니다.</li>
+          <li>회원은 베타서비스 이용 과정에서 제공한 의견, 제안, 자료 등을 회사가 서비스 개선·개발 목적으로 무상·비독점적으로 이용하는 것에 동의합니다.</li>
+          <li>유료 상품을 제외한 베타서비스에서 수집된 모든 데이터는 정식 서비스에 이전되지 않을 수 있습니다.</li>
+      </ol>
+
+      <p><strong>제20조. 약관 외 준칙</strong></p>
+      <ol class="list-decimal list-inside space-y-2">
+          <li>"회사"는 개별 게임서비스 등에 대하여 별도의 이용약관 및 운영정책(이하 "개별 서비스약관 등")을 둘 수 있으며, 해당 내용이 이 약관과 상충할 경우에는 개별 서비스약관 등이 우선하여 적용됩니다.</li>
+          <li>이 약관에 정하지 아니한 사항이나 해석에 대해서는 개별 서비스약관 등 및 '전자상거래 등에서의 소비자보호에 관한 법률', '약관의 규제에 관한 법률', '게임산업진흥에 관한 법률', '정보통신망이용촉진 및 정보보호 등에 관한 법률', '콘텐츠산업 진흥법' 등 관계법령에 따릅니다.</li>
+      </ol>
+      
+      <p><strong>제21조. 준거법 및 재판관할</strong></p>
+      <ol class="list-decimal list-inside space-y-2">
+          <li>"회사"와 "회원"간 제기된 소송은 대한민국법을 준거법으로 합니다.</li>
+          <li>"회사"와 "회원"간 발생한 분쟁에 관한 소송은 대한민국 부산지방법원을 관할법원으로 합니다.</li>
+      </ol>
+
+      <p><strong>&lt;부칙&gt;</strong></p>
+      <ol class="list-decimal list-inside">
+        <li>이 약관은 2025년 4월 1일부터 시행됩니다.</li>
+      </ol>
+      <br/>
+      <p>©doyakmin Inc. All rights reserved.</p>
     </div>
   `,
 }; 

@@ -30,10 +30,10 @@ export default function NewsPostPage({ params }: { params: { slug: string } }) {
                 {/* Post Header */}
                 <header className="mb-12 text-center">
                     <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                        {post.title.split('\n').map((line, index) => (
+                        {post.title.split('\\n').map((line, index) => (
                             <span key={index}>
                                 {line}
-                                {index < post.title.split('\n').length - 1 && <br />}
+                                {index < post.title.split('\\n').length - 1 && <br />}
                             </span>
                         ))}
                     </h1>
