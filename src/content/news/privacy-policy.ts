@@ -26,7 +26,7 @@ export const privacyPolicy = {
         <li>고지 의무(변경 이력)</li>
       </ol>
 
-      <h4>1. 수집하는 개인정보의 항목</h4>
+      <h4 class="mt-8">1. 수집하는 개인정보의 항목</h4>
       <p>회사는 서비스 제공에 필요한 최소한의 개인정보만 수집합니다.</p>
       <p><strong>(1) 게임 서비스 이용 시</strong></p>
       <ul class="list-disc list-inside space-y-1">
@@ -50,7 +50,7 @@ export const privacyPolicy = {
           <li>*이용자는 선택항목 동의를 거부할 수 있으며, 필수항목 거부 시 해당 서비스 제공이 제한될 수 있습니다.</li>
       </ul>
       
-      <h4>2. 개인정보의 수집 및 이용목적</h4>
+      <h4 class="mt-8">2. 개인정보의 수집 및 이용목적</h4>
       <ul class="list-disc list-inside space-y-1">
         <li>본인 식별/인증, 계정 생성·연동(플랫폼 계정 포함)</li>
         <li>문의 응대, 민원 처리 및 결과 통지</li>
@@ -61,7 +61,7 @@ export const privacyPolicy = {
         <li>법령 준수 및 분쟁 대응, 기록 보존</li>
       </ul>
 
-      <h4>3. 개인정보의 처리 및 보유기간</h4>
+      <h4 class="mt-8">3. 개인정보의 처리 및 보유기간</h4>
       <ul class="list-disc list-inside space-y-1">
         <li>원칙: 수집·이용 목적 달성 시 지체 없이 파기</li>
         <li>회사 정책에 따른 보관
@@ -84,7 +84,7 @@ export const privacyPolicy = {
         <li>위치정보 이용·제공 사실 확인자료: 최소 6개월(위치정보법 제16조제2항)</li>
       </ul>
 
-      <h4>4. 개인정보 제공</h4>
+      <h4 class="mt-8">4. 개인정보 제공</h4>
       <p><strong>(1) 처리위탁</strong></p>
       <p>안전하고 효율적인 서비스 제공을 위해 아래 업무를 위탁합니다. 위탁계약 시 개인정보 보호에 관한 의무를 규정합니다.</p>
       <div class="overflow-x-auto my-4">
@@ -144,7 +144,7 @@ export const privacyPolicy = {
         </table>
       </div>
 
-      <h4>5. 개인정보의 파기절차 및 방법</h4>
+      <h4 class="mt-8">5. 개인정보의 파기절차 및 방법</h4>
       <ul class="list-disc list-inside space-y-1">
         <li>절차: 목적 달성 즉시 파기. 법정 보관 사유가 있는 경우 별도 DB/분리보관 후 기한 만료 즉시 파기.</li>
         <li>방법:
@@ -155,7 +155,7 @@ export const privacyPolicy = {
         </li>
       </ul>
 
-      <h4>6. 이용자의 권리·의무 및 행사방법</h4>
+      <h4 class="mt-8">6. 이용자의 권리·의무 및 행사방법</h4>
       <ul class="list-disc list-inside space-y-1">
         <li>열람·정정·삭제·처리정지 요구 가능.</li>
         <li>신청 방법: 앱 내 고객센터/설정, 이메일, 서면 등</li>
@@ -164,7 +164,7 @@ export const privacyPolicy = {
         <li>탈퇴 또는 삭제 요청한 정보는 본 방침 제3조 및 법정 보관 규정에 따라 처리합니다.</li>
       </ul>
 
-      <h4>7. 개인정보 자동 수집 장치(광고ID/쿠키/SDK)와 거부 방법</h4>
+      <h4 class="mt-8">7. 개인정보 자동 수집 장치(광고ID/쿠키/SDK)와 거부 방법</h4>
       <ul class="list-disc list-inside space-y-1">
         <li>회사는 맞춤형 광고/분석을 위해 광고식별자(ADID/IDFA) 및 SDK를 사용할 수 있습니다.</li>
         <li>거부 방법(모바일)
@@ -191,26 +191,26 @@ export const privacyPolicy = {
         <li>Opt-out 시 일부 맞춤 기능/광고 노출이 제한될 수 있으나, 비개인화 광고는 제공될 수 있습니다.</li>
       </ul>
       
-      <h4>8. 개인정보의 안전성 확보조치</h4>
+      <h4 class="mt-8">8. 개인정보의 안전성 확보조치</h4>
       <ul class="list-disc list-inside space-y-1">
         <li>관리적: 내부관리계획 수립·연 1회 이상 점검, 최소권한 원칙, 정기 보안/개인정보 교육</li>
         <li>기술적: 접근권한 통제, 침입차단/탐지, 중요정보 암호화 저장·전송, 접속기록 보관 및 위변조 방지, 보안패치 정기 갱신</li>
         <li>물리적: 자료 보관구역 출입통제, 잠금장치 보관, 백업/재해복구 체계 운영</li>
       </ul>
 
-      <h4>9. 아동의 개인정보 보호</h4>
+      <h4 class="mt-8">9. 아동의 개인정보 보호</h4>
       <ul class="list-disc list-inside space-y-1">
         <li>회사는 원칙적으로 만 14세 미만 아동의 개인정보를 법정대리인 동의 없이 수집하지 않습니다.</li>
         <li>만 14세 미만 아동 서비스 제공이 필요한 경우, 법정대리인의 동의를 받고 본인확인 절차를 거칩니다. 동의가 없으면 수집·이용하지 않습니다.</li>
       </ul>
       
-      <h4>10. 민감정보 처리에 관한 사항</h4>
+      <h4 class="mt-8">10. 민감정보 처리에 관한 사항</h4>
       <ul class="list-disc list-inside space-y-1">
         <li>회사는 민감정보(사상·신념·건강·생체정보 등)를 수집하지 않습니다.</li>
         <li>이용자가 채팅/이미지/음성 등으로 민감정보를 업로드하는 경우, 노출 최소화를 위해 자동/수동 필터링 또는 삭제 조치를 취할 수 있습니다.</li>
       </ul>
 
-      <h4>11. 권한(접근권한) 이용에 관한 안내</h4>
+      <h4 class="mt-8">11. 권한(접근권한) 이용에 관한 안내</h4>
       <ul class="list-disc list-inside space-y-1">
         <li>위치(필수): 위치기반 게임 기능 제공(GPS/네트워크)</li>
         <li>카메라/마이크/사진·미디어(선택): AR 캡처·업로드, 고객센터 첨부</li>
@@ -218,13 +218,13 @@ export const privacyPolicy = {
         <li>*각 권한은 단말 설정에서 변경 가능하며, 거부 시 일부 기능 사용이 제한될 수 있습니다</li>
       </ul>
 
-      <h4>12. 개인정보 보호책임자 및 담당부서</h4>
+      <h4 class="mt-8">12. 개인정보 보호책임자 및 담당부서</h4>
       <ul class="list-disc list-inside space-y-1">
         <li>개인정보 보호책임자: 정민영 / 정보보안실 / 이메일: jmy@doyakmin.com</li>
         <li>접수 채널: 앱 내 고객센터 또는 이메일로 요청(열람·정정·삭제·처리정지 등)</li>
       </ul>
       
-      <h4>13. 권익침해 구제방법</h4>
+      <h4 class="mt-8">13. 권익침해 구제방법</h4>
       <ul class="list-disc list-inside space-y-1">
         <li>개인정보침해신고센터: 국번없이 118 / privacy.kisa.or.kr</li>
         <li>개인정보분쟁조정위원회: 1833-6972 / www.kopico.go.kr</li>
@@ -232,13 +232,13 @@ export const privacyPolicy = {
         <li>경찰청 사이버범죄 신고: 국번없이 182 / ecrm.police.go.kr</li>
       </ul>
 
-      <h4>14. 고지 의무(변경 이력)</h4>
+      <h4 class="mt-8">14. 고지 의무(변경 이력)</h4>
       <ul class="list-disc list-inside space-y-1">
         <li>본 방침의 중요한 변경(권리 또는 의무에 중대한 영향)은 최소 30일 전, 그 외 변경은 최소 7일 전 공지합니다.</li>
         <li>이전 버전 열람 경로: 홈페이지/앱 내 ‘개인정보처리방침’ 메뉴에서 열람 가능하도록 제공합니다.</li>
       </ul>
 
-      <h4>부칙</h4>
+      <h4 class="mt-8">부칙</h4>
       <ul class="list-disc list-inside">
         <li>개인정보처리방침 버전: 2025.04.01-Rev.2</li>
         <li>시행일자: 2025.04.01</li>
