@@ -10,7 +10,7 @@ export const hangukjiBetaEvent = {
         </div>
     
         <div class="mb-6">
-             <img src="/image/event/beta_openevent.png" alt="한국지 베타 오픈 이벤트 배너" class="w-full rounded-lg shadow-md mb-6" />
+             <img src="/image/event/beta_openevent.jpg" alt="한국지 베타 오픈 이벤트 배너" class="w-full rounded-lg shadow-md mb-6" />
         </div>
         <h2 class="text-2xl font-bold mb-4">📅 이벤트 기간</h2>
         <ul class="list-disc list-inside mb-6">

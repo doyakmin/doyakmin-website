@@ -126,7 +126,7 @@ export default function EventPopupModal({ isEnabled = true }: EventPopupModalPro
         {/* 이벤트 포스터 이미지 */}
         <div className="relative">
           <Image
-            src="/image/event/hangukji-beta-event-poster.jpg"
+            src="/image/event/hangukji-beta-event-poster.png"
             alt="한국지 베타 이벤트 포스터 - 경성대·부경대 대상"
             width={400}
             height={500}
