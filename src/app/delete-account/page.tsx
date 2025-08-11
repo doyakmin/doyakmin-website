@@ -14,7 +14,7 @@ export default function DeleteAccountPage() {
     const formData = new FormData(event.currentTarget);
     
     // ⚠️ 중요: 2단계에서 복사한 본인의 Apps Script 웹 앱 URL로 반드시 교체해야 합니다.
-    const scriptURL = '여기에_복사한_웹_앱_URL을_붙여넣으세요';
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwrSjpeg7-No6w80JlBIF872vKnSQdmXl_KsKMN0lIx1Xq7ctbcfKO48ObzYd-5d-Ru/exec';
 
     try {
       const response = await fetch(scriptURL, {
