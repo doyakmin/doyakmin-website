@@ -6,7 +6,7 @@ export const hangukjiBetaEvent = {
     summary: '한국지 베타 테스트에 참여하고 특별한 보상을 받아가세요! 경성대·부경대 학생들을 대상으로 진행되는 이번 이벤트에 많은 참여 바랍니다.',
     content: `
         <div class="mb-6">
-             <img src="/image/event/hangukji-beta-event-poster.jpg" alt="한국지 베타 이벤트 배너" class="w-full rounded-lg shadow-md mb-6" />
+             <img src="/image/event/hangukji-beta-event-poster.png" alt="한국지 베타 이벤트 배너" class="w-full rounded-lg shadow-md mb-6" />
         </div>
     
         <div class="mb-6">
@@ -21,17 +21,17 @@ export const hangukjiBetaEvent = {
 
         <h2 class="text-2xl font-bold mb-4">👥 참여 대상</h2>
         <ul class="list-disc list-inside mb-6">
-            <li>경성대학교 재학생</li>
-            <li>부경대학교 재학생</li>
-            <li>양교 관련자(교직원 등)</li>
+            <li>- 경성대학교 재학생</li>
+            <li>- 부경대학교 재학생</li>
+            <li>- 양교 관련자(교직원 등)</li>
         </ul>
 
         <h2 class="text-2xl font-bold mb-4">🎁 총 경품 규모</h2>
         <ul class="list-disc list-inside mb-6">
             <li>총 200만 원 상당, 350명 내외 수령 예상</li>
-            <li>아이패드·에어팟·버즈 등 전자기기 경품</li>
-            <li>배달의민족 상품권</li>
-            <li>오빠다방 부경대점 아이스 아메리카노 벤티 사이즈 무료 쿠폰 (300잔)</li>
+            <li>- 아이패드·에어팟·버즈 등 전자기기 경품</li>
+            <li>- 배달의민족 상품권</li>
+            <li>- 오빠다방 부경대점 아이스 아메리카노 벤티 사이즈 무료 쿠폰 (300잔)</li>
         </ul>
         <p class="text-sm text-gray-600 mb-6">※ 5만 원 초과 경품은 제세공과금(22%)이 부과되며, 수상자는 관련 서류 제출이 필요합니다.</p>
 
