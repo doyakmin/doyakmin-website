@@ -91,7 +91,7 @@ export default function TeamPage() {
                                     개발자
                                 </p>
                                 <p className="text-gray-700 text-sm text-center break-all">
-                                    mikoesnim02@gmail.com
+                                    kms@doyakmin.com
                                 </p>
                             </div>
                         </div>

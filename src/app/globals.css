@@ -19,3 +19,14 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Ensure list bullets render inside article content (news pages use .prose wrapper) */
+.prose ul {
+  list-style: disc;
+  list-style-position: inside;
+}
+
+.prose ol {
+  list-style: decimal;
+  list-style-position: inside;
+}
