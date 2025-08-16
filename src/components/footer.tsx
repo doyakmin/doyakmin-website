@@ -27,7 +27,7 @@ export default function Footer() {
                     <div className="col-span-1 md:col-span-2">
                         <h4 className="text-white font-semibold mb-4">연락처</h4>
                         <div className="space-y-2 text-gray-400 text-sm mb-6">
-                            <p>이메일: doyakmin@gmail.com</p>
+                            <p>이메일: jmy@doyakmin.com</p>
                             <p>전화: 0507-1341-5455</p>
                             <p>주소: 부산광역시 강서구 명지오션시티9로 50, 103호</p>
                         </div>
