@@ -30,12 +30,15 @@ export default function NewsPostPage({ params }: { params: { slug: string } }) {
                 {/* Post Header */}
                 <header className="mb-12 text-center">
                     <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                        {post.title.split('\\n').map((line, index) => (
-                            <span key={index}>
-                                {line}
-                                {index < post.title.split('\\n').length - 1 && <br />}
-                            </span>
-                        ))}
+                        {(() => {
+                            const titleLines = post.title.split(/\n|\\n/);
+                            return titleLines.map((line, index) => (
+                                <span key={index}>
+                                    {line}
+                                    {index < titleLines.length - 1 && <br />}
+                                </span>
+                            ));
+                        })()}
                     </h1>
                     <p className="text-lg text-gray-500">
                         {post.date} · {post.author}
