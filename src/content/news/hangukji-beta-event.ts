@@ -21,9 +21,9 @@ export const hangukjiBetaEvent = {
 
         <h2 class="text-2xl font-bold mb-4">👥 참여 대상</h2>
         <ul class="list-disc list-inside mb-6">
-            <li>- 경성대학교 재학생</li>
-            <li>- 부경대학교 재학생</li>
-            <li>- 양교 관련자(교직원 등)</li>
+            <li>경성대학교 재학생</li>
+            <li>부경대학교 재학생</li>
+            <li>양교 관련자(교직원 등)</li>
         </ul>
 
         <h2 class="text-2xl font-bold mb-4">🎁 총 경품 규모</h2>
