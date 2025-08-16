@@ -33,7 +33,12 @@ export default function NewsPage() {
                                     <div className="flex items-start justify-between">
                                         <div className="flex-1">
                                             <h2 className="text-2xl font-bold text-gray-800 group-hover:text-emerald-600 mb-3">
-                                                {post.title}
+                                                {post.title.split(/\n|\\n/).map((line, i, arr) => (
+                                                    <span key={i}>
+                                                        {line}
+                                                        {i < arr.length - 1 && <br />}
+                                                    </span>
+                                                ))}
                                             </h2>
                                             <p className="text-gray-500">
                                                 {post.date} · {post.author}

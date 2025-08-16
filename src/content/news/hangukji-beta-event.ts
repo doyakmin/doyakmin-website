@@ -1,6 +1,6 @@
 export const hangukjiBetaEvent = {
     slug: 'hangukji-beta-event',
-    title: '한국지 9~10월 베타 이벤트 안내\n(경성대·부경대)',
+    title: '한국지 9~10월 베타 이벤트 안내\\n(경성대·부경대)',
     date: '2025-08-03',
     author: '(주)도약민',
     summary: '한국지 베타 테스트에 참여하고 특별한 보상을 받아가세요! 경성대·부경대 학생들을 대상으로 진행되는 이번 이벤트에 많은 참여 바랍니다.',
