@@ -12,9 +12,15 @@ export default function AppDownloadButtons({ className = "" }: AppDownloadButton
 
   // Google Play 링크
   const googlePlayLink = "https://play.google.com/store/apps/details?id=com.doyakmin.hangookji"
+  // iOS 사전예약 폼 링크
+  const appleFormLink = "https://docs.google.com/forms/d/e/1FAIpQLSczC4CBOK6-yOHc2YcHai11Gz4Nh0M_BMKs1XE_sIBUf66enQ/viewform?usp=header"
 
   const handleAppleStoreClick = () => {
-    setShowComingSoonModal(true)
+    // setShowComingSoonModal(true)
+    const opened = window.open(appleFormLink, '_blank', 'noopener,noreferrer')
+    if (!opened) {
+      window.location.href = appleFormLink
+    }
   }
 
   const handleGooglePlayClick = () => {
@@ -27,11 +33,11 @@ export default function AppDownloadButtons({ className = "" }: AppDownloadButton
       <button
         onClick={handleAppleStoreClick}
         className="transition-transform hover:scale-105 hover:shadow-lg"
-        aria-label="App Store - 준비중"
+        aria-label="iOS 사전예약 폼으로 이동"
       >
         <Image
           src="/image/download/download_apple.png"
-          alt="App Store에서 다운로드 - 준비중"
+          alt="iOS 사전예약 폼으로 이동"
           width={140}
           height={42}
           className="h-10 w-auto"
