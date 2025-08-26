@@ -14,7 +14,7 @@ export const hangukjiBetaEvent = {
         </div>
         <h2 class="text-2xl font-bold mb-4">📅 이벤트 기간</h2>
         <ul class="list-disc list-inside mb-6">
-            <li><strong>시작일:</strong> 2025년 9월 1일(월) 00:00</li>
+            <li><strong>시작일:</strong> 2025년 9월 8일(월) 00:00</li>
             <li><strong>종료일:</strong> 2025년 10월 31일(금) 23:59</li>
             <li><strong>기간:</strong> 총 2개월 (주말·공휴일 포함, 24시간 참여 가능)</li>
         </ul>
