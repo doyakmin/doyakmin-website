@@ -287,7 +287,7 @@ export default function TeamPage() {
                     <div className="grid grid-cols-1 gap-6">
                         {/* 보도자료 1 */}
                         <a
-                            href="https://www.pknu.ac.kr/main/51?action=view&no=721366d"
+                            href="https://www.pknu.ac.kr/main/51?action=view&no=721366"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="group relative block"
@@ -304,7 +304,7 @@ export default function TeamPage() {
                                 </div>
                                 <div className="w-30 h-30 bg-emerald-600/20 rounded-lg flex items-center justify-center flex-shrink-0">
                                     <Image
-                                        src="/image/news/news1.jpg"
+                                        src="/image/news/news1.png"
                                         alt="보도자료 이미지1"
                                         width={80}
                                         height={80}
