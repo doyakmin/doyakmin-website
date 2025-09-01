@@ -287,7 +287,7 @@ export default function TeamPage() {
                     <div className="grid grid-cols-1 gap-6">
                         {/* 보도자료 1 */}
                         <a
-                            href="https://naver.me/GxL2nZQd"
+                            href="https://www.pknu.ac.kr/main/51?action=view&no=721366d"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="group relative block"
