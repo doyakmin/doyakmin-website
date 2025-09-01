@@ -295,10 +295,11 @@ export default function TeamPage() {
                             <div className="relative p-6 bg-gradient-to-br from-emerald-900/20 to-emerald-800/10 border border-emerald-600/30 rounded-xl hover:border-emerald-400/50 transition-all duration-300 hover:transform hover:scale-[1.02] hover:shadow-lg cursor-pointer flex items-center gap-6">
                                 <div className="flex-1">
                                     <h3 className="text-lg font-semibold text-emerald-500 mb-3">
-                                        국립부경대, 창업 아이디어 경진대회 &apos;대상·우수상&apos;
+                                        국립부경대생 스타트업 개발 모바일 게임 &apos;주목&apos;
                                     </h3>
                                     <p className="text-gray-600 leading-relaxed group-hover:text-gray-500 transition-colors">
-                                        부경대 경영학부 정민영 학생과 경상국립대 의예과 김민서 학생으로 구성된 연합 창업동아리 &apos;도약민&apos; 팀(지도교수 한재호)이 대상을 받았습니다.
+                                        부산 지역 대학생 스타트업이 지역 관광을 접목한 모바일 게임 &apos;한국지&apos;를 개발했다. 국립부경대학교 창업동아리 &apos;도약민&apos;팀은 &apos;한국지&apos;를 개발해 창업에 성공한 데 이어, 
+                                        오는 9월 8일 &apos;한국지&apos; 베타 서비스를 시작한다.
                                     </p>
                                 </div>
                                 <div className="w-30 h-30 bg-emerald-600/20 rounded-lg flex items-center justify-center flex-shrink-0">
