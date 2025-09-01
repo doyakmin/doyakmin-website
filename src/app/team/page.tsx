@@ -304,8 +304,8 @@ export default function TeamPage() {
                                 </div>
                                 <div className="w-30 h-30 bg-emerald-600/20 rounded-lg flex items-center justify-center flex-shrink-0">
                                     <Image
-                                        src="/image/news/news1.png"
-                                        alt="보도자료 이미지1"
+                                        src="/image/news/news5.jpg"
+                                        alt="보도자료 이미지5"
                                         width={80}
                                         height={80}
                                         className="w-full h-full object-cover rounded-lg"
