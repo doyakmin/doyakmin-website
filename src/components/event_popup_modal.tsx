@@ -141,14 +141,14 @@ export default function EventPopupModal({ isEnabled = true }: EventPopupModalPro
             id="event-popup-title"
             className="text-xl font-bold text-gray-900 mb-2"
           >
-            🎉 한국지 베타 이벤트
+            🚨 긴급 공지: 이벤트 일정 변경
           </h2>
           <p 
             id="event-popup-description"
             className="text-gray-600 text-sm mb-4"
           >
-            9~10월 경성대·부경대 학생 대상<br />
-            총 200만원 상당의 경품을 받아가세요!
+            시작일이 <strong>9월 8일 → 9월 11일</strong>, 종료일이 <strong>11월 11일</strong>로 변경되었습니다.<br />
+            불편을 끼쳐드려 죄송합니다. 더욱 안정적인 환경으로 보답하겠습니다.
           </p>
 
           {/* 액션 버튼들 */}

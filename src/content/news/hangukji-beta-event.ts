@@ -14,8 +14,8 @@ export const hangukjiBetaEvent = {
         </div>
         <h2 class="text-2xl font-bold mb-4">📅 이벤트 기간</h2>
         <ul class="list-disc list-inside mb-6">
-            <li><strong>시작일:</strong> 2025년 9월 8일(월) 00:00</li>
-            <li><strong>종료일:</strong> 2025년 11월 7일(금) 23:59</li>
+            <li><strong>시작일:</strong> 2025년 9월 11일(목) 00:00</li>
+            <li><strong>종료일:</strong> 2025년 11월 11일(화) 23:59</li>
             <li><strong>기간:</strong> 총 2개월 (주말·공휴일 포함, 24시간 참여 가능)</li>
         </ul>
 
@@ -60,7 +60,7 @@ export const hangukjiBetaEvent = {
             <div>
                 <h3 class="text-xl font-semibold mb-2">③ 대학 본부 건물 점령 보상</h3>
                 <ul class="list-disc list-inside">
-                    <li>이벤트 종료일 11월 7일 23:59 기준, 경성대 또는 부경대 대학 본부 건물을 보유한 플레이어에게 경품 지급.</li>
+                    <li>이벤트 종료일 11월 11일 23:59 기준, 경성대 또는 부경대 대학 본부 건물을 보유한 플레이어에게 경품 지급.</li>
                     <li><strong>경품:</strong> 배달의민족 상품권 5만 원권 (각 1명)</li>
                     <li>랭킹 보상과 중복 수상 불가(중복 시 한쪽을 선택해야 하며, 포기한 보상은 차순위자에게 이월)</li>
                 </ul>
