@@ -127,8 +127,10 @@ export default function EventPopupModal({ isEnabled = true }: EventPopupModalPro
         <div className="relative bg-red-600 text-white text-center py-3">
           <span className="text-sm font-semibold">긴급 공지</span>
         </div>
+        
 
-        {/* 이벤트 포스터 이미지 (유지) */}
+        {/*
+        이벤트 포스터 이미지 (임시 비노출 - 필요 시 아래 주석 해제)
         <div className="relative">
           <Image
             src="/image/event/hangukji-beta-event-poster.png"
@@ -139,6 +141,7 @@ export default function EventPopupModal({ isEnabled = true }: EventPopupModalPro
             priority
           />
         </div>
+        */}
 
         {/* 텍스트 정보 */}
         <div className="p-6">
