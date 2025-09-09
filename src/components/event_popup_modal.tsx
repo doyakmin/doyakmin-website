@@ -123,14 +123,7 @@ export default function EventPopupModal({ isEnabled = true }: EventPopupModalPro
           </svg>
         </button>
 
-        {/* 헤더 배너 (긴급 공지) */}
-        <div className="relative bg-red-600 text-white text-center py-3">
-          <span className="text-sm font-semibold">긴급 공지</span>
-        </div>
-        
-
-        {/*
-        이벤트 포스터 이미지 (임시 비노출 - 필요 시 아래 주석 해제)
+        {/* 이벤트 포스터 이미지 */}
         <div className="relative">
           <Image
             src="/image/event/hangukji-beta-event-poster.png"
@@ -141,7 +134,6 @@ export default function EventPopupModal({ isEnabled = true }: EventPopupModalPro
             priority
           />
         </div>
-        */}
 
         {/* 텍스트 정보 */}
         <div className="p-6">
@@ -149,24 +141,24 @@ export default function EventPopupModal({ isEnabled = true }: EventPopupModalPro
             id="event-popup-title"
             className="text-xl font-bold text-gray-900 mb-2"
           >
-            🚨 서비스 점검 안내
+            🎉 한국지 베타 이벤트
           </h2>
           <p 
             id="event-popup-description"
             className="text-gray-600 text-sm mb-4"
           >
-            치명적인 오류를 확인하여 즉시 점검 중입니다. 현재 <strong>iOS, Android 서비스가 임시 중단</strong>되었으며,<br />
-            <strong>오늘 오후 10시</strong> 전후 복구를 목표로 하고 있습니다(변동 시 즉시 재공지).
+            9~10월 경성대·부경대 학생 대상<br />
+            총 200만원 상당의 경품을 받아가세요!
           </p>
 
           {/* 액션 버튼들 */}
           <div className="flex flex-col space-y-3">
             <Link
-              href="/news/emergency-notice-2025-09-08"
+              href="/news/hangukji-beta-event"
               className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-4 rounded-lg transition-colors text-center"
               onClick={handleClose}
             >
-              긴급공지 보기
+              자세히 보기
             </Link>
             
             <div className="flex space-x-2">

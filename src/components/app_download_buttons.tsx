@@ -12,8 +12,8 @@ export default function AppDownloadButtons({ className = "" }: AppDownloadButton
 
   // Google Play 링크
   const googlePlayLink = "https://play.google.com/store/apps/details?id=com.doyakmin.hangookji"
-  // iOS 사전예약 폼 링크
-  const appleFormLink = "https://docs.google.com/forms/d/e/1FAIpQLSczC4CBOK6-yOHc2YcHai11Gz4Nh0M_BMKs1XE_sIBUf66enQ/viewform?usp=header"
+  // iOS App Store 링크
+  const appleFormLink = "https://apps.apple.com/kr/app/id6749147315"
 
   const handleAppleStoreClick = () => {
     // setShowComingSoonModal(true)
