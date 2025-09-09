@@ -123,7 +123,8 @@ export default function EventPopupModal({ isEnabled = true }: EventPopupModalPro
           </svg>
         </button>
 
-        {/* 이벤트 포스터 이미지 */}
+        {/*
+        이벤트 포스터 이미지 (임시 비노출)
         <div className="relative">
           <Image
             src="/image/event/hangukji-beta-event-poster.png"
@@ -134,6 +135,7 @@ export default function EventPopupModal({ isEnabled = true }: EventPopupModalPro
             priority
           />
         </div>
+        */}
 
         {/* 텍스트 정보 */}
         <div className="p-6">
@@ -141,20 +143,21 @@ export default function EventPopupModal({ isEnabled = true }: EventPopupModalPro
             id="event-popup-title"
             className="text-xl font-bold text-gray-900 mb-2"
           >
-            🎉 한국지 베타 이벤트
+            🔐 로그인 이용 안내
           </h2>
           <p 
             id="event-popup-description"
             className="text-gray-600 text-sm mb-4"
           >
-            9~10월 경성대·부경대 학생 대상<br />
-            총 200만원 상당의 경품을 받아가세요!
+            여러분이 한국지를 플레이해 주셔서 정말 감사합니다.<br />
+            현재 <strong>Google 계정 로그인</strong>에 일시적 장애가 있어 당분간 <strong>게스트 로그인만 이용 가능</strong>합니다.<br />
+            불편을 드려 정말 죄송하고, 계정 로그인 재개 시 바로 안내드릴게요.
           </p>
 
           {/* 액션 버튼들 */}
           <div className="flex flex-col space-y-3">
             <Link
-              href="/news/hangukji-beta-event"
+              href="/news/emergency-notice-2025-09-09"
               className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-4 rounded-lg transition-colors text-center"
               onClick={handleClose}
             >
