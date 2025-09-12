@@ -11,7 +11,7 @@ export const emergencyNotice20250909 = {
             불편을 드려 정말 죄송합니다.
         </p>
 
-        <h3 class="text-lg font-semibold mb-2">지금 상황</h3>
+        <h3 class="text-lg font-semibold mb-2">현상황</h3>
         <ul class="list-disc list-inside text-gray-700 mb-6">
             <li>인증/로그인 및 일부 데이터 연동 구간에서 원인 분석과 수정 작업을 진행 중이에요.</li>
             <li>계정 로그인 재개 시, 본 페이지와 팝업을 통해 가장 먼저 알려드릴게요.</li>
@@ -20,7 +20,7 @@ export const emergencyNotice20250909 = {
         <h3 class="text-lg font-semibold mb-2">문의/피드백</h3>
         <ul class="list-disc list-inside text-gray-700 mb-6">
             <li>접수된 <strong>구글 로그인 불가</strong>와 <strong>튜토리얼 관련 오류</strong>는 이번 주 내 수정·배포를 목표로 하고 있어요.</li>
-            <li>문제가 반복되면 <strong>닉네임/발생 시간/증상</strong>을 적어 보내주시면 원인 파악에 큰 도움이 됩니다.</li>
+            <li>문제가 반복되면 <strong>발생 시간/증상</strong>을 적어 보내주시면 원인 파악에 큰 도움이 됩니다.</li>
         </ul>
 
         <h3 class="text-lg font-semibold mb-2">추가 안내</h3>
