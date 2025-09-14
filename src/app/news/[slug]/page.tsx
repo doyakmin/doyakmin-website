@@ -2,10 +2,11 @@ import { hangukjiBetaEvent } from '@/content/news/hangukji-beta-event';
 import { termsOfService } from '@/content/news/terms-of-service';
 import { privacyPolicy } from '@/content/news/privacy-policy';
 import { emergencyNotice20250909 } from '@/content/news/emergency-notice-2025-09-09';
+import { news6ImageNotice } from '@/content/news/news6-image-notice';
 import AppDownloadButtons from '@/components/app_download_buttons';
 import { notFound } from 'next/navigation';
 
-const allPosts = [emergencyNotice20250909, hangukjiBetaEvent, termsOfService, privacyPolicy];
+const allPosts = [news6ImageNotice, emergencyNotice20250909, hangukjiBetaEvent, termsOfService, privacyPolicy];
 
 export async function generateStaticParams() {
     return allPosts.map((post) => ({
