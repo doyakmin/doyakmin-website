@@ -149,9 +149,9 @@ export default function EventPopupModal({ isEnabled = true }: EventPopupModalPro
             id="event-popup-description"
             className="text-gray-600 text-sm mb-4"
           >
-            여러분이 한국지를 플레이해 주셔서 정말 감사합니다.<br />
-            현재 <strong>Google 계정 로그인</strong>에 일시적 장애가 있어 당분간 <strong>게스트 로그인만 이용 가능</strong>합니다.<br />
-            불편을 드려 정말 죄송하고, 계정 로그인 재개 시 바로 안내드릴게요.
+            한국지를 이용해 주셔서 정말 감사합니다.<br />
+            현재 <strong>게스트 로그인만 이용 가능</strong>합니다.<br />
+            구글, 애플 계정 로그인 연동 시 바로 안내드릴게요.
           </p>
 
           {/* 액션 버튼들 */}
