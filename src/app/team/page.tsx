@@ -283,8 +283,35 @@ export default function TeamPage() {
                             도약민의 성과와 활동을 다룬 언론 보도
                         </p>
                     </div>
-
+                    
                     <div className="grid grid-cols-1 gap-6">
+                            {/* 보도자료 5 */}
+                                                <a
+                            href="https://m.newsprime.co.kr/section_view.html?no=705537"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="group relative block"
+                        >
+                            <div className="relative p-6 bg-gradient-to-br from-emerald-900/20 to-emerald-800/10 border border-emerald-600/30 rounded-xl hover:border-emerald-400/50 transition-all duration-300 hover:transform hover:scale-[1.02] hover:shadow-lg cursor-pointer flex items-center gap-6">
+                                <div className="flex-1">
+                                    <h3 className="text-lg font-semibold text-emerald-500 mb-3">
+                                        2025 관광이음주간…도약민·딜레이레스트·에피스페이스, 혁신 기술 선보여
+                                    </h3>
+                                    <p className="text-gray-600 leading-relaxed group-hover:text-gray-500 transition-colors">
+                                        정민영 도약민 대표는 위치 기반 점령형 게임을 기반으로 한 서비스는 게임과 지역 상권을 연결해 젊은 관광객의 체류 경험을 확장시키는 전략을 선보였다.
+                                    </p>
+                                </div>
+                                <div className="w-30 h-30 bg-emerald-600/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <Image
+                                        src="/image/news/giweek-2025-prime.jpg"
+                                        alt="보도자료 이미지 GIWeek 2025"
+                                        width={80}
+                                        height={80}
+                                        className="w-full h-full object-cover rounded-lg"
+                                    />
+                                </div>
+                            </div>
+                        </a>
                         {/* 보도자료 1 */}
                         <a
                             href="https://www.pknu.ac.kr/main/51?action=view&no=721366"
@@ -313,6 +340,8 @@ export default function TeamPage() {
                                 </div>
                             </div>
                         </a>
+
+
 
                         {/* 보도자료 2 */}
                         <a
