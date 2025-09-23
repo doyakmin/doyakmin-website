@@ -12,6 +12,9 @@ export const hangukjiBetaEvent = {
         <div class="mb-6">
              <img src="/image/event/beta_openevent.jpg" alt="한국지 베타 오픈 이벤트 배너" class="w-full rounded-lg shadow-md mb-6" />
         </div>
+        <div class="mb-6">
+             <img src="/image/news/news6.png" alt="제휴소개 안내" class="w-full rounded-lg shadow-md mb-6" />
+        </div>
         <h2 class="text-2xl font-bold mb-4">📅 이벤트 기간</h2>
         <ul class="list-disc list-inside mb-6">
             <li><strong>시작일:</strong> 2025년 9월 8일(월) 00:00</li>
