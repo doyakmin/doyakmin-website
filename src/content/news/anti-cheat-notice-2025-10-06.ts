@@ -12,16 +12,31 @@ export const antiCheatNotice20251006 = {
             이에 따라 해당 계정의 점령 건물은 <strong>전부 회수(압수)</strong> 조치되었음을 안내드립니다.
         </p>
 
-        <h3 class="text-lg font-semibold mb-2">제재 기준 및 안내</h3>
+        <h4 class="font-semibold mb-2">1. 사실관계 및 조치</h4>
+        <p class="text-gray-700 mb-6">
+            회사는 내부 로그(시간대별 좌표, 이동속도, 접속정보 등)에 대한 정밀 분석 결과, 정상적인 이동 패턴과 합치되지 아니하는
+            <strong>비정상 위치 이동</strong> 정황을 다수 확인하였습니다. 이에 따라 해당 계정의 <strong>점령 내역 109개</strong>를 운영정책에 근거하여
+            일괄 회수하였고, 관련 기록은 <strong>무효</strong>로 처리되었습니다.
+        </p>
+
+        <h4 class="font-semibold mb-2">2. 적용 근거(운영정책)</h4>
         <ul class="list-disc list-inside text-gray-700 mb-6">
-            <li>동일 계정에서 유사한 패턴이 반복될 경우, <strong>계정 이용 제한(차단)</strong> 등 추가 제재가 이루어질 수 있습니다.</li>
-            <li>비정상적인 방법으로 이벤트에 참여할 경우, <strong>이용약관 및 이벤트 주의사항</strong>에 따라 경품 당첨 취소 또는 이미 제공된 경품의 회수 조치가 진행될 수 있습니다.</li>
-            <li>현재 <strong>이전 참여 계정</strong>들에 대하여도 로그를 면밀히 검토 중이며, 즉시 제재가 없더라도 <strong>부정행위가 확인된 계정은 이벤트 당첨 대상에서 제외</strong>될 수 있습니다.</li>
+            <li><strong>3.1 회사의 권리 1)·2)</strong>: 비정상 현상 발생 시 서비스 일시중단·접근 제한 및 약관·정책 위반 계정 제재 가능</li>
+            <li><strong>5.1·5.2 서비스 이용 제한</strong>: 사안의 중대성·영향도에 따른 이용 제한 및 게임 내 획득 콘텐츠 회수(디바이스·IP 제한 포함) 가능</li>
+            <li><strong>4.1.3 불법 프로그램 / 4.1.7 비인가 프로그램</strong>: 비정상적 플레이를 유발하는 인증되지 않은 수단 사용에 대한 제재</li>
+            <li><strong>11-3 이벤트 당첨</strong>: 약관·정책 위반 시 당첨 취소 및 지급 내역 회수 가능</li>
         </ul>
 
+        <h4 class="font-semibold mb-2">3. 향후 조치 및 유의사항</h4>
+        <p class="text-gray-700 mb-6">
+            동일 또는 유사한 행위가 반복되거나 추가 사실이 확인되는 경우, 운영정책에 따라 <strong>영구 이용 제한</strong> 및
+            <strong>법적 조치</strong>가 이루어질 수 있습니다. 공정한 게임 환경 유지를 위한 불가피한 조치임을 양지하여 주시기 바랍니다.
+            본 사안은 홈페이지 및 공식 네이버 카페를 통해서도 안내될 예정입니다.
+        </p>
+        
         <h3 class="text-lg font-semibold mb-2">이의 신청 및 문의</h3>
         <p class="text-gray-700 mb-6">
-            이의가 있으신 경우, <a href="/contact" class="text-emerald-600 underline">고객센터</a>로 문의해 주시면 확인된 증거 자료를 투명하게 안내드리겠습니다.
+            본 조치에 관하여 문의 또는 이의가 있으신 경우, <a href="/contact" class="text-emerald-600 underline">고객센터</a>(☎ 0507-1341-5455, 이메일 jmy@doyakmin.com)로 연락 주시기 바랍니다.
         </p>
 
         <p class="text-gray-700 mb-6">
