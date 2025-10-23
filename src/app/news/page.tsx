@@ -5,9 +5,11 @@ import { termsOfService } from '@/content/news/terms-of-service';
 import { privacyPolicy } from '@/content/news/privacy-policy';
 import { emergencyNotice20250909 } from '@/content/news/emergency-notice-2025-09-09';
 import { antiCheatNotice20251006 } from '@/content/news/anti-cheat-notice-2025-10-06';
+import { abnormalLogoutNotice20251023 } from '@/content/news/abnormal-logout-notice-2025-10-23';
+import { unPeaceFestival20251025 } from '@/content/news/un-peace-festival-2025-10-25';
 
 export default function NewsPage() {
-    const allPosts = [antiCheatNotice20251006, emergencyNotice20250909, hangukjiBetaEvent, termsOfService, privacyPolicy].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    const allPosts = [unPeaceFestival20251025, abnormalLogoutNotice20251023, antiCheatNotice20251006, emergencyNotice20250909, hangukjiBetaEvent, termsOfService, privacyPolicy].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
     return (
         <main className="min-h-screen font-sans text-black bg-white">
