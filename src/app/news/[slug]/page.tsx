@@ -4,10 +4,11 @@ import { privacyPolicy } from '@/content/news/privacy-policy';
 import { emergencyNotice20250909 } from '@/content/news/emergency-notice-2025-09-09';
 import { antiCheatNotice20251006 } from '@/content/news/anti-cheat-notice-2025-10-06';
 import { abnormalLogoutNotice20251023 } from '@/content/news/abnormal-logout-notice-2025-10-23';
+import { unPeaceFestival20251025 } from '@/content/news/un-peace-festival-2025-10-25';
 import AppDownloadButtons from '@/components/app_download_buttons';
 import { notFound } from 'next/navigation';
 
-const allPosts = [abnormalLogoutNotice20251023, antiCheatNotice20251006, emergencyNotice20250909, hangukjiBetaEvent, termsOfService, privacyPolicy];
+const allPosts = [unPeaceFestival20251025, abnormalLogoutNotice20251023, antiCheatNotice20251006, emergencyNotice20250909, hangukjiBetaEvent, termsOfService, privacyPolicy];
 
 export async function generateStaticParams() {
     return allPosts.map((post) => ({
