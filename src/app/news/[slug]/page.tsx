@@ -5,10 +5,13 @@ import { emergencyNotice20250909 } from '@/content/news/emergency-notice-2025-09
 import { antiCheatNotice20251006 } from '@/content/news/anti-cheat-notice-2025-10-06';
 import { abnormalLogoutNotice20251023 } from '@/content/news/abnormal-logout-notice-2025-10-23';
 import { unPeaceFestival20251025 } from '@/content/news/un-peace-festival-2025-10-25';
+import { eventEndNotice20251107 } from '@/content/news/event-end-notice-2025-11-07';
+import { winnerAnnouncement20251109 } from '@/content/news/winner-announcement-2025-11-09';
 import AppDownloadButtons from '@/components/app_download_buttons';
+import CountdownTimer from '@/components/countdown_timer';
 import { notFound } from 'next/navigation';
 
-const allPosts = [unPeaceFestival20251025, abnormalLogoutNotice20251023, antiCheatNotice20251006, emergencyNotice20250909, hangukjiBetaEvent, termsOfService, privacyPolicy];
+const allPosts = [winnerAnnouncement20251109, eventEndNotice20251107, unPeaceFestival20251025, abnormalLogoutNotice20251023, antiCheatNotice20251006, emergencyNotice20250909, hangukjiBetaEvent, termsOfService, privacyPolicy];
 
 export async function generateStaticParams() {
     return allPosts.map((post) => ({
@@ -82,6 +85,21 @@ export default function NewsPostPage({ params }: { params: { slug: string } }) {
                             
                             {/* 나머지 컨텐츠 */}
                             <div dangerouslySetInnerHTML={{ __html: post.content.split('<h2 class="text-2xl font-bold mb-4">📢 당첨자 발표 및 정보 제출 안내</h2>')[1] ? '<h2 class="text-2xl font-bold mb-4">📢 당첨자 발표 및 정보 제출 안내</h2>' + post.content.split('<h2 class="text-2xl font-bold mb-4">📢 당첨자 발표 및 정보 제출 안내</h2>')[1] : '' }} />
+                        </>
+                    ) : post.slug === 'winner-announcement-2025-11-09' ? (
+                        <>
+                            {/* 카운트다운 타이머 전까지 */}
+                            <div dangerouslySetInnerHTML={{ __html: post.content.split('<div id="countdown-timer-container"')[0] }} />
+                            
+                            {/* 카운트다운 타이머 컴포넌트 */}
+                            <div className="mb-8 not-prose">
+                                <CountdownTimer 
+                                    targetDate="2025-11-16T23:59:59+09:00"
+                                />
+                            </div>
+                            
+                            {/* 나머지 컨텐츠 */}
+                            <div dangerouslySetInnerHTML={{ __html: post.content.split('</div>').slice(post.content.split('</div>').findIndex(part => part.includes('countdown-timer-container')) + 1).join('</div>') }} />
                         </>
                     ) : (
                         <div dangerouslySetInnerHTML={{ __html: post.content }} />
