@@ -1,9 +1,9 @@
 export const eventEndNotice20251107 = {
     slug: 'event-end-notice-2025-11-07',
-    title: '🎊 베타 이벤트 종료 및 당첨자 발표 일정 안내',
+    title: '🎊 베타 이벤트 당첨자 발표',
     date: '2025-11-07',
     author: '(주)도약민',
-    summary: '경성대·부경대 베타 이벤트가 성공적으로 종료되었습니다. 당첨자 발표 일정 및 경품 수령 절차를 안내드립니다.',
+    summary: '경성대·부경대 베타 이벤트가 성공적으로 종료되었습니다. 당첨자 발표 및 경품 수령 절차를 안내드립니다.',
     content: `
         <div class="mb-8">
             <div class="bg-emerald-50 border-l-4 border-emerald-600 p-6 rounded-r-lg">
@@ -16,23 +16,28 @@ export const eventEndNotice20251107 = {
             </div>
         </div>
 
-        <h2 class="text-2xl font-bold mb-4">📊 최종 랭킹 집계 중</h2>
+        <h2 class="text-2xl font-bold mb-4">🎉 최종 랭킹 집계 완료</h2>
         <p class="text-gray-700 mb-6">
-            현재 운영팀에서 최종 랭킹을 집계하고 있습니다.<br/>
-            공정한 이벤트 운영을 위해 <strong>부정행위 여부</strong>를 면밀히 확인하고 있으며,
-            정상적으로 참여하신 모든 분들의 데이터를 검증 중입니다.
+            최종 랭킹 집계가 모두 완료되었습니다!<br/>
+            공정한 이벤트 운영을 위해 <strong>부정행위 여부</strong>를 면밀히 확인하였으며,
+            정상적으로 참여하신 모든 분들의 데이터 검증이 완료되었습니다.
         </p>
 
-        <div class="bg-blue-50 p-6 rounded-xl mb-6">
-            <h3 class="text-lg font-semibold mb-3 flex items-center">
-                <svg class="w-6 h-6 mr-2 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+        <div class="bg-emerald-50 p-6 rounded-xl mb-6 border-2 border-emerald-500">
+            <h3 class="text-lg font-semibold mb-3 flex items-center justify-center">
+                <svg class="w-6 h-6 mr-2 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/>
                 </svg>
-                📅 당첨자 발표 예정일
+                🏆 당첨자 발표
             </h3>
             <div class="text-center">
-                <p class="text-3xl font-bold text-blue-700 mb-2">2025년 11월 9일 (일) 이내</p>
-                <p class="text-gray-600">공식 홈페이지 소식란을 통해 발표됩니다</p>
+                <p class="text-xl font-semibold text-gray-700 mb-4">당첨자 명단이 발표되었습니다!</p>
+                <a 
+                    href="/news/winner-announcement-2025-11-09"
+                    class="inline-block bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-8 rounded-xl transition-all transform hover:scale-105 shadow-lg text-lg"
+                >
+                    당첨자 발표 확인하기 →
+                </a>
             </div>
         </div>
 
@@ -74,7 +79,7 @@ export const eventEndNotice20251107 = {
                 <strong>당첨자 발표 후</strong>, 경품 수령을 위해 아래 정보를 제출해주셔야 합니다.
             </p>
             <ul class="list-disc list-inside text-gray-700 space-y-2 ml-4">
-                <li><strong>제출 기한:</strong> 당첨자 발표일로부터 7일 이내 (11월 16일 토요일 23:59까지)</li>
+                <li><strong>제출 기한:</strong> 당첨자 발표일로부터 5일 이내 (11월 14일 금요일 23:59까지)</li>
                 <li><strong>제출 방법:</strong> 당첨자 발표 공지에 포함된 구글폼 링크</li>
                 <li><strong>제출 내용:</strong>
                     <ul class="list-circle list-inside ml-6 mt-2 space-y-1">
@@ -120,11 +125,11 @@ export const eventEndNotice20251107 = {
                         <td class="px-6 py-4 text-sm text-gray-700"><strong class="text-emerald-600">당첨자 발표</strong></td>
                     </tr>
                     <tr class="bg-gray-50">
-                        <td class="px-6 py-4 text-sm text-gray-700">11월 10일 (월) ~ 16일 (일)</td>
+                        <td class="px-6 py-4 text-sm text-gray-700">11월 9일 (토) ~ 14일 (금)</td>
                         <td class="px-6 py-4 text-sm text-gray-700">당첨자 정보 제출 기간</td>
                     </tr>
                     <tr>
-                        <td class="px-6 py-4 text-sm text-gray-700">11월 17일 (월) 이후</td>
+                        <td class="px-6 py-4 text-sm text-gray-700">11월 15일 (금) 이후</td>
                         <td class="px-6 py-4 text-sm text-gray-700">경품 순차 발송</td>
                     </tr>
                 </tbody>

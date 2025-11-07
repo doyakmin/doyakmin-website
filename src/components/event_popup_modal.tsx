@@ -219,27 +219,27 @@ export default function EventPopupModal({ isEnabled = true }: EventPopupModalPro
                 id="event-popup-title"
                 className="text-xl font-bold text-gray-900 mb-2"
               >
-                🎊 베타 이벤트 종료 안내
+                🎉 당첨자 발표 완료!
               </h2>
               <p 
                 id="event-popup-description"
                 className="text-gray-600 text-sm mb-4"
               >
-                경성대·부경대 베타 이벤트가<br />
-                성공적으로 종료되었습니다!<br /><br />
-                📊 <strong>현재 최종 랭킹을 집계 중</strong>입니다.<br /><br />
-                <strong className="text-emerald-600">당첨자 발표: 11월 9일 (일) 이내</strong><br />
-                발표 방법: 공식 홈페이지 소식란
+                경성대·부경대 베타 이벤트<br />
+                당첨자가 발표되었습니다!<br /><br />
+                🏆 <strong>최종 랭킹 집계 완료</strong><br /><br />
+                ✅ <strong className="text-emerald-600">당첨 여부 확인하기</strong><br />
+                📝 정보 제출 마감: 11/16 (토) 23:59
               </p>
 
               {/* 액션 버튼들 */}
               <div className="flex flex-col space-y-3">
                 <Link
-                  href="/news/event-end-notice-2025-11-07"
+                  href="/news/winner-announcement-2025-11-09"
                   className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-4 rounded-lg transition-colors text-center"
                   onClick={handleClose}
                 >
-                  자세히 보기
+                  당첨자 발표 확인하기
                 </Link>
                 
                 <div className="flex space-x-2">
@@ -275,7 +275,7 @@ export default function EventPopupModal({ isEnabled = true }: EventPopupModalPro
                 베타 이벤트 당첨자가<br />
                 발표되었습니다!<br /><br />
                 ✅ <strong>당첨 여부 확인하기</strong><br />
-                📝 <strong className="text-red-600">정보 제출 마감: 11/16 (토) 23:59</strong><br /><br />
+                📝 <strong className="text-red-600">정보 제출 마감: 11/14 (금) 23:59</strong><br /><br />
                 ⚠️ 기한 내 미제출 시 당첨 취소
               </p>
 
@@ -286,7 +286,7 @@ export default function EventPopupModal({ isEnabled = true }: EventPopupModalPro
                   className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-4 rounded-lg transition-colors text-center"
                   onClick={handleClose}
                 >
-                  당첨자 명단 보기
+                  당첨자 발표 확인하기
                 </Link>
                 
                 <div className="flex space-x-2">

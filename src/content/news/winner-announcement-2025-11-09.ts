@@ -13,8 +13,8 @@ export const winnerAnnouncement20251109 = {
                 </h2>
                 <p class="text-gray-700 text-lg leading-relaxed">
                     2개월간의 열정적인 점령 전쟁이 끝났습니다!<br/>
-                    총 <strong class="text-emerald-600">350명</strong>의 탐험가님들께 경품을 드립니다.<br/>
-                    당첨자 분들은 <strong class="text-red-600">11월 16일 (일) 23:59까지</strong> 정보를 제출해주세요! 🎁
+                    총 <strong class="text-emerald-600">22명</strong>의 탐험가님들께 경품을 드립니다.<br/>
+                    당첨자 분들은 <strong class="text-red-600">11월 14일 (금) 23:59까지</strong> 정보를 제출해주세요! 🎁
                 </p>
             </div>
         </div>
@@ -29,14 +29,14 @@ export const winnerAnnouncement20251109 = {
                     📝 당첨자 정보 제출하기
                 </h3>
                 <p class="text-gray-600 mb-6">
-                    당첨자이신 분은 아래 버튼을 클릭하여 정보를 제출해주세요.<br/>
+                    당첨자이신 분은 아래 버튼을 클릭하여 <strong class="text-red-600">11월 14일 (금) 23:59까지</strong> 정보를 제출해주세요.<br/>
                     <strong class="text-red-600">기한 내 미제출 시 당첨이 취소됩니다.</strong>
                 </p>
                 <a 
-                    href="https://forms.gle/example" 
+                    href="https://forms.gle/NvLyGyq9znNyMnYi8" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    class="inline-block bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 px-8 rounded-xl transition-all transform hover:scale-105 shadow-lg text-lg"
+                    class="inline-flex items-center justify-center w-full max-w-2xl min-w-[28rem] whitespace-nowrap bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 px-24 rounded-xl transition-all transform hover:scale-105 shadow-lg text-lg"
                 >
                     🔗 구글폼에서 정보 제출하기
                 </a>
@@ -51,12 +51,12 @@ export const winnerAnnouncement20251109 = {
                 <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
                 </svg>
-                ⚠️ 중요 안내
+                중요 안내
             </h3>
             <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4">
-                <li><strong>제출 마감: 2025년 11월 16일 (일) 23:59</strong></li>
-                <li>기한 내 미제출 시 당첨이 자동 취소되며, 차순위자에게 경품이 이월됩니다.</li>
-                <li>부정행위가 확인된 경우 당첨이 무효 처리됩니다.</li>
+                <li><strong>제출 마감: 2025년 11월 14일 (금) 23:59</strong></li>
+                <li>기한 내 미제출 시 당첨이 자동 취소됩니다.</li>
+                <li>부정행위가 확인된 경우 당첨이 무효 처리되고 법적 조치로 이어질 수 있습니다.</li>
             </ul>
         </div>
 
@@ -67,8 +67,8 @@ export const winnerAnnouncement20251109 = {
             
             <!-- 1. 랭킹 순위 보상 -->
             <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200">
-                <div class="bg-gradient-to-r from-yellow-400 to-orange-400 px-6 py-4">
-                    <h3 class="text-2xl font-bold text-white flex items-center">
+                <div class="bg-gradient-to-r from-yellow-100 to-orange-100 px-6 py-4 border-b-2 border-orange-300">
+                    <h3 class="text-2xl font-bold text-gray-900 flex items-center">
                         <span class="text-3xl mr-3">🏆</span>
                         랭킹 순위 보상 (20명)
                     </h3>
@@ -86,138 +86,135 @@ export const winnerAnnouncement20251109 = {
                             </thead>
                             <tbody class="divide-y divide-gray-200">
                                 <tr class="bg-yellow-50 hover:bg-yellow-100 transition-colors">
-                                    <td class="px-4 md:px-6 py-4 text-sm font-bold">🥇 1위</td>
-                                    <td class="px-4 md:px-6 py-4 text-sm font-semibold">탐험왕***</td>
-                                    <td class="px-4 md:px-6 py-4 text-sm">248개</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm font-bold text-gray-800">🥇 1위</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm font-semibold text-gray-800">미농이야</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">231개</td>
                                     <td class="px-4 md:px-6 py-4 text-sm font-semibold text-emerald-600">Apple 아이패드 11세대</td>
                                 </tr>
                                 <tr class="bg-gray-50 hover:bg-gray-100 transition-colors">
-                                    <td class="px-4 md:px-6 py-4 text-sm font-bold">🥈 2위</td>
-                                    <td class="px-4 md:px-6 py-4 text-sm font-semibold">점령러***</td>
-                                    <td class="px-4 md:px-6 py-4 text-sm">235개</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm font-bold text-gray-800">🥈 2위</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm font-semibold text-gray-800">신형만</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">159개</td>
                                     <td class="px-4 md:px-6 py-4 text-sm font-semibold text-emerald-600">Apple 에어팟 프로 2세대</td>
                                 </tr>
                                 <tr class="bg-orange-50 hover:bg-orange-100 transition-colors">
-                                    <td class="px-4 md:px-6 py-4 text-sm font-bold">🥉 3위</td>
-                                    <td class="px-4 md:px-6 py-4 text-sm font-semibold">한국지마스터***</td>
-                                    <td class="px-4 md:px-6 py-4 text-sm">223개</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm font-bold text-gray-800">🥉 3위</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm font-semibold text-gray-800">나에게읽어주던시</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">88개</td>
                                     <td class="px-4 md:px-6 py-4 text-sm font-semibold text-emerald-600">갤럭시 버즈 3 프로</td>
                                 </tr>
                                 <tr class="hover:bg-gray-50 transition-colors">
-                                    <td class="px-4 md:px-6 py-4 text-sm">4위</td>
-                                    <td class="px-4 md:px-6 py-4 text-sm">경성대짱***</td>
-                                    <td class="px-4 md:px-6 py-4 text-sm">215개</td>
-                                    <td class="px-4 md:px-6 py-4 text-sm">배민 상품권 3만원</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">4위</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">금정이</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">82개</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">배민 상품권 3만원</td>
                                 </tr>
                                 <tr class="hover:bg-gray-50 transition-colors">
-                                    <td class="px-4 md:px-6 py-4 text-sm">5위</td>
-                                    <td class="px-4 md:px-6 py-4 text-sm">부경왕자***</td>
-                                    <td class="px-4 md:px-6 py-4 text-sm">208개</td>
-                                    <td class="px-4 md:px-6 py-4 text-sm">배민 상품권 3만원</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">5위</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">seolsup</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">45개</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">배민 상품권 3만원</td>
                                 </tr>
                                 <tr class="hover:bg-gray-50 transition-colors">
-                                    <td class="px-4 md:px-6 py-4 text-sm">6위</td>
-                                    <td class="px-4 md:px-6 py-4 text-sm">건물수집가***</td>
-                                    <td class="px-4 md:px-6 py-4 text-sm">201개</td>
-                                    <td class="px-4 md:px-6 py-4 text-sm">배민 상품권 3만원</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">6위</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">우주</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">35개</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">배민 상품권 3만원</td>
                                 </tr>
                                 <tr class="hover:bg-gray-50 transition-colors">
-                                    <td class="px-4 md:px-6 py-4 text-sm">7위</td>
-                                    <td class="px-4 md:px-6 py-4 text-sm">점령왕***</td>
-                                    <td class="px-4 md:px-6 py-4 text-sm">195개</td>
-                                    <td class="px-4 md:px-6 py-4 text-sm">배민 상품권 3만원</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">9위</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">응우웬</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">23개</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">배민 상품권 3만원</td>
                                 </tr>
                                 <tr class="hover:bg-gray-50 transition-colors">
-                                    <td class="px-4 md:px-6 py-4 text-sm">8위</td>
-                                    <td class="px-4 md:px-6 py-4 text-sm">대륙정복자***</td>
-                                    <td class="px-4 md:px-6 py-4 text-sm">189개</td>
-                                    <td class="px-4 md:px-6 py-4 text-sm">배민 상품권 3만원</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">8위</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">송이</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">23개</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">배민 상품권 3만원</td>
                                 </tr>
                                 <tr class="hover:bg-gray-50 transition-colors">
-                                    <td class="px-4 md:px-6 py-4 text-sm">9위</td>
-                                    <td class="px-4 md:px-6 py-4 text-sm">부산토박이***</td>
-                                    <td class="px-4 md:px-6 py-4 text-sm">182개</td>
-                                    <td class="px-4 md:px-6 py-4 text-sm">배민 상품권 3만원</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">9위</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">김세현1</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">22개</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">배민 상품권 3만원</td>
                                 </tr>
                                 <tr class="hover:bg-gray-50 transition-colors">
-                                    <td class="px-4 md:px-6 py-4 text-sm">10위</td>
-                                    <td class="px-4 md:px-6 py-4 text-sm">열정맨***</td>
-                                    <td class="px-4 md:px-6 py-4 text-sm">176개</td>
-                                    <td class="px-4 md:px-6 py-4 text-sm">배민 상품권 3만원</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">10위</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">백경22</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">19개</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">배민 상품권 3만원</td>
                                 </tr>
                                 <tr class="bg-blue-50 hover:bg-blue-100 transition-colors">
-                                    <td class="px-4 md:px-6 py-4 text-sm">11위</td>
-                                    <td class="px-4 md:px-6 py-4 text-sm">캠퍼스러너***</td>
-                                    <td class="px-4 md:px-6 py-4 text-sm">170개</td>
-                                    <td class="px-4 md:px-6 py-4 text-sm">배민 상품권 1만원</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">11위</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">유지니</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">12개</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">배민 상품권 1만원</td>
                                 </tr>
                                 <tr class="bg-blue-50 hover:bg-blue-100 transition-colors">
-                                    <td class="px-4 md:px-6 py-4 text-sm">12위</td>
-                                    <td class="px-4 md:px-6 py-4 text-sm">지도마스터***</td>
-                                    <td class="px-4 md:px-6 py-4 text-sm">165개</td>
-                                    <td class="px-4 md:px-6 py-4 text-sm">배민 상품권 1만원</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">12위</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">떡볶이</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">6개</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">배민 상품권 1만원</td>
                                 </tr>
                                 <tr class="bg-blue-50 hover:bg-blue-100 transition-colors">
-                                    <td class="px-4 md:px-6 py-4 text-sm">13위</td>
-                                    <td class="px-4 md:px-6 py-4 text-sm">영토확장***</td>
-                                    <td class="px-4 md:px-6 py-4 text-sm">158개</td>
-                                    <td class="px-4 md:px-6 py-4 text-sm">배민 상품권 1만원</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">13위</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">부산왕</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">4개</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">배민 상품권 1만원</td>
                                 </tr>
                                 <tr class="bg-blue-50 hover:bg-blue-100 transition-colors">
-                                    <td class="px-4 md:px-6 py-4 text-sm">14위</td>
-                                    <td class="px-4 md:px-6 py-4 text-sm">학교탐험가***</td>
-                                    <td class="px-4 md:px-6 py-4 text-sm">152개</td>
-                                    <td class="px-4 md:px-6 py-4 text-sm">배민 상품권 1만원</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">14위</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">pknu</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">4개</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">배민 상품권 1만원</td>
                                 </tr>
                                 <tr class="bg-blue-50 hover:bg-blue-100 transition-colors">
-                                    <td class="px-4 md:px-6 py-4 text-sm">15위</td>
-                                    <td class="px-4 md:px-6 py-4 text-sm">점령시작***</td>
-                                    <td class="px-4 md:px-6 py-4 text-sm">147개</td>
-                                    <td class="px-4 md:px-6 py-4 text-sm">배민 상품권 1만원</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">15위</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">min0625</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">4개</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">배민 상품권 1만원</td>
                                 </tr>
                                 <tr class="bg-blue-50 hover:bg-blue-100 transition-colors">
-                                    <td class="px-4 md:px-6 py-4 text-sm">16위</td>
-                                    <td class="px-4 md:px-6 py-4 text-sm">건물왕***</td>
-                                    <td class="px-4 md:px-6 py-4 text-sm">141개</td>
-                                    <td class="px-4 md:px-6 py-4 text-sm">배민 상품권 1만원</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">16위</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">제후니</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">3개</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">배민 상품권 1만원</td>
                                 </tr>
                                 <tr class="bg-blue-50 hover:bg-blue-100 transition-colors">
-                                    <td class="px-4 md:px-6 py-4 text-sm">17위</td>
-                                    <td class="px-4 md:px-6 py-4 text-sm">매일점령***</td>
-                                    <td class="px-4 md:px-6 py-4 text-sm">135개</td>
-                                    <td class="px-4 md:px-6 py-4 text-sm">배민 상품권 1만원</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">18위</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">행벅이란</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">1개</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">배민 상품권 1만원</td>
                                 </tr>
                                 <tr class="bg-blue-50 hover:bg-blue-100 transition-colors">
-                                    <td class="px-4 md:px-6 py-4 text-sm">18위</td>
-                                    <td class="px-4 md:px-6 py-4 text-sm">게임러버***</td>
-                                    <td class="px-4 md:px-6 py-4 text-sm">130개</td>
-                                    <td class="px-4 md:px-6 py-4 text-sm">배민 상품권 1만원</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">19위</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">라스</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">1개</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">배민 상품권 1만원</td>
                                 </tr>
                                 <tr class="bg-blue-50 hover:bg-blue-100 transition-colors">
-                                    <td class="px-4 md:px-6 py-4 text-sm">19위</td>
-                                    <td class="px-4 md:px-6 py-4 text-sm">한국지팬***</td>
-                                    <td class="px-4 md:px-6 py-4 text-sm">125개</td>
-                                    <td class="px-4 md:px-6 py-4 text-sm">배민 상품권 1만원</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">21위</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">버장</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">1개</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">배민 상품권 1만원</td>
                                 </tr>
                                 <tr class="bg-blue-50 hover:bg-blue-100 transition-colors">
-                                    <td class="px-4 md:px-6 py-4 text-sm">20위</td>
-                                    <td class="px-4 md:px-6 py-4 text-sm">신나는점령***</td>
-                                    <td class="px-4 md:px-6 py-4 text-sm">120개</td>
-                                    <td class="px-4 md:px-6 py-4 text-sm">배민 상품권 1만원</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">22위</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">jihwan051</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">1개</td>
+                                    <td class="px-4 md:px-6 py-4 text-sm text-gray-800">배민 상품권 1만원</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
-                    <p class="text-xs md:text-sm text-gray-500 mt-4">
-                        ※ 닉네임은 개인정보 보호를 위해 일부 마스킹 처리되었습니다.
-                    </p>
                 </div>
             </div>
 
             <!-- 2. 대학 본부 건물 점령 보상 -->
             <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200">
-                <div class="bg-gradient-to-r from-blue-500 to-purple-500 px-6 py-4">
-                    <h3 class="text-2xl font-bold text-white flex items-center">
+                <div class="bg-gradient-to-r from-emerald-100 to-teal-100 px-6 py-4 border-b-2 border-emerald-300">
+                    <h3 class="text-2xl font-bold text-gray-900 flex items-center">
                         <span class="text-3xl mr-3">🏛️</span>
                         대학 본부 점령 보상 (2명)
                     </h3>
@@ -227,25 +224,25 @@ export const winnerAnnouncement20251109 = {
                         2025년 11월 7일 (금) 23:59 기준 본부 건물 보유자
                     </p>
                     <div class="space-y-4">
-                        <div class="bg-emerald-50 border-l-4 border-emerald-500 p-4 rounded-r-lg">
+                        <div class="bg-gray-50 border-l-4 border-emerald-500 p-4 rounded-r-lg">
                             <div class="flex justify-between items-center">
                                 <div>
                                     <h4 class="font-bold text-lg text-gray-800">경성대학교 본부</h4>
-                                    <p class="text-gray-600">닉네임: <strong>경성수호자***</strong></p>
+                                    <p class="text-gray-600">닉네임: <strong>우주</strong></p>
                                 </div>
                                 <div class="text-right">
                                     <p class="font-semibold text-emerald-600">배민 상품권 5만원</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg">
+                        <div class="bg-gray-50 border-l-4 border-emerald-500 p-4 rounded-r-lg">
                             <div class="flex justify-between items-center">
                                 <div>
                                     <h4 class="font-bold text-lg text-gray-800">부경대학교 본부</h4>
-                                    <p class="text-gray-600">닉네임: <strong>부경지킴이***</strong></p>
+                                    <p class="text-gray-600">닉네임: <strong>김세현1</strong></p>
                                 </div>
                                 <div class="text-right">
-                                    <p class="font-semibold text-blue-600">배민 상품권 5만원</p>
+                                    <p class="font-semibold text-emerald-600">배민 상품권 5만원</p>
                                 </div>
                             </div>
                         </div>
@@ -255,35 +252,35 @@ export const winnerAnnouncement20251109 = {
 
             <!-- 3. 게임 피드백 추첨 -->
             <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200">
-                <div class="bg-gradient-to-r from-green-500 to-teal-500 px-6 py-4">
-                    <h3 class="text-2xl font-bold text-white flex items-center">
+                <div class="bg-gradient-to-r from-green-100 to-teal-100 px-6 py-4 border-b-2 border-green-300">
+                    <h3 class="text-2xl font-bold text-gray-900 flex items-center">
                         <span class="text-3xl mr-3">💬</span>
                         게임 피드백 추첨 (5명)
                     </h3>
                 </div>
                 <div class="p-6">
                     <p class="text-sm text-gray-600 mb-4">
-                        소중한 피드백을 남겨주신 분들 중 추첨
+                        소중한 피드백을 남겨주신 분들 중 5분을 추첨하였습니다.
                     </p>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
-                            <p class="font-semibold text-gray-800">피드백왕***</p>
+                            <p class="font-semibold text-gray-800">송이</p>
                             <p class="text-sm text-emerald-600">배민 상품권 1만원</p>
                         </div>
                         <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
-                            <p class="font-semibold text-gray-800">개선제안자***</p>
+                            <p class="font-semibold text-gray-800">sawweeee</p>
                             <p class="text-sm text-emerald-600">배민 상품권 1만원</p>
                         </div>
                         <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
-                            <p class="font-semibold text-gray-800">버그헌터***</p>
+                            <p class="font-semibold text-gray-800">순두부찌개는흐리멍텅</p>
                             <p class="text-sm text-emerald-600">배민 상품권 1만원</p>
                         </div>
                         <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
-                            <p class="font-semibold text-gray-800">유저의견***</p>
+                            <p class="font-semibold text-gray-800">소영</p>
                             <p class="text-sm text-emerald-600">배민 상품권 1만원</p>
                         </div>
                         <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
-                            <p class="font-semibold text-gray-800">응원러***</p>
+                            <p class="font-semibold text-gray-800">떡볶이</p>
                             <p class="text-sm text-emerald-600">배민 상품권 1만원</p>
                         </div>
                     </div>
@@ -298,28 +295,28 @@ export const winnerAnnouncement20251109 = {
             <h3 class="text-xl font-bold mb-4 text-gray-800">제출해야 할 정보</h3>
             <div class="space-y-4">
                 <div class="flex items-start">
-                    <span class="flex-shrink-0 w-8 h-8 bg-emerald-500 text-white rounded-full flex items-center justify-center font-bold mr-4">1</span>
+                    <span class="flex-shrink-0 min-w-[20px] w-5 h-5 border border-gray-800 text-gray-800 rounded-full flex items-center justify-center font-semibold text-xs mr-2">1</span>
                     <div>
                         <h4 class="font-semibold text-gray-800 mb-1">게임 내 UID</h4>
                         <p class="text-sm text-gray-600">앱 실행 → 우측 상단 설정(⚙️) → 화면 상단의 UID 복사</p>
                     </div>
                 </div>
                 <div class="flex items-start">
-                    <span class="flex-shrink-0 w-8 h-8 bg-emerald-500 text-white rounded-full flex items-center justify-center font-bold mr-4">2</span>
+                    <span class="flex-shrink-0 min-w-[20px] w-5 h-5 border border-gray-800 text-gray-800 rounded-full flex items-center justify-center font-semibold text-xs mr-2">2</span>
                     <div>
                         <h4 class="font-semibold text-gray-800 mb-1">내 정보창 스크린샷</h4>
-                        <p class="text-sm text-gray-600">앱 내 '내 정보' 화면 전체 캡처 (닉네임, 점령 수 등 확인용)</p>
+                        <p class="text-sm text-gray-600">앱 내 왼쪽 위 버튼을 클릭하여 '내 정보' 화면 캡처 (닉네임, 점령 수 등 확인용)</p>
                     </div>
                 </div>
                 <div class="flex items-start">
-                    <span class="flex-shrink-0 w-8 h-8 bg-emerald-500 text-white rounded-full flex items-center justify-center font-bold mr-4">3</span>
+                    <span class="flex-shrink-0 min-w-[20px] w-5 h-5 border border-gray-800 text-gray-800 rounded-full flex items-center justify-center font-semibold text-xs mr-2">3</span>
                     <div>
                         <h4 class="font-semibold text-gray-800 mb-1">개인 정보</h4>
                         <p class="text-sm text-gray-600">이름, 연락처(휴대폰), 배송 주소</p>
                     </div>
                 </div>
                 <div class="flex items-start">
-                    <span class="flex-shrink-0 w-8 h-8 bg-emerald-500 text-white rounded-full flex items-center justify-center font-bold mr-4">4</span>
+                    <span class="flex-shrink-0 min-w-[20px] w-5 h-5 border border-gray-800 text-gray-800 rounded-full flex items-center justify-center font-semibold text-xs mr-2">4</span>
                     <div>
                         <h4 class="font-semibold text-gray-800 mb-1">학교 인증</h4>
                         <p class="text-sm text-gray-600">학생증 사본 또는 재학증명서 (경성대/부경대 재학 확인용)</p>
@@ -345,7 +342,7 @@ export const winnerAnnouncement20251109 = {
                     Q. 경품은 언제 받을 수 있나요?
                 </summary>
                 <div class="p-4 pt-0 text-gray-600">
-                    <p>정보 제출 마감일인 11월 16일 이후, <strong>11월 17일(월)부터 순차적으로 발송</strong>됩니다. 배송 현황은 제출하신 연락처로 개별 안내드립니다.</p>
+                    <p>정보 제출 마감일인 11월 14일 이후, <strong>11월 15일(금)부터 순차적으로 발송</strong>됩니다. 배송 현황은 제출하신 연락처로 개별 안내드립니다.</p>
                 </div>
             </details>
 
@@ -364,15 +361,6 @@ export const winnerAnnouncement20251109 = {
                 </summary>
                 <div class="p-4 pt-0 text-gray-600">
                     <p>한국지 앱 실행 → 우측 상단 <strong>설정 아이콘(⚙️)</strong> → 화면 상단에 표시된 <strong>UID를 길게 눌러 복사</strong>하실 수 있습니다.</p>
-                </div>
-            </details>
-
-            <details class="bg-white border border-gray-200 rounded-lg overflow-hidden">
-                <summary class="cursor-pointer p-4 font-semibold text-gray-800 hover:bg-gray-50 transition-colors">
-                    Q. 기한을 넘기면 정말 당첨이 취소되나요?
-                </summary>
-                <div class="p-4 pt-0 text-gray-600">
-                    <p>네, <strong>11월 16일 (일) 23:59까지 미제출 시 당첨이 자동 취소</strong>되며, 차순위자에게 경품이 이월됩니다. 반드시 기한 내에 제출해주세요!</p>
                 </div>
             </details>
         </div>
