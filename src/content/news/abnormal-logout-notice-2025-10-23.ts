@@ -24,5 +24,3 @@ export const abnormalLogoutNotice20251023 = {
         <p class="text-gray-700">불편을 드린 점 진심으로 사과드리며, 빠른 시일 내 정상화하겠습니다. 감사합니다.<br/>㈜도약민 한국지 운영팀 드림</p>
     `
 };
-
-
