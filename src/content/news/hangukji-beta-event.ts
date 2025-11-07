@@ -42,7 +42,7 @@ export const hangukjiBetaEvent = {
         <div class="space-y-4 mb-6">
             <div>
                 <h3 class="text-xl font-semibold mb-2">① 랭킹 순위 보상</h3>
-                <p>이벤트 기간 동안 건물 점령 수를 집계하여 순위를 산정합니다. 총 20명의 상위 랭커에게 아래와 같은 경품이 제공됩니다.</p>
+                <p>이벤트 종료일 11월 7일 23:59 기준, 총 20명의 상위 랭커에게 아래와 같은 경품이 제공됩니다.</p>
                 <ul class="list-disc list-inside mt-2">
                     <li><strong>1위:</strong> Apple 아이패드 11세대 128GB, Wi‑Fi (1명)</li>
                     <li><strong>2위:</strong> Apple 에어팟 프로 2세대 (1명)</li>
