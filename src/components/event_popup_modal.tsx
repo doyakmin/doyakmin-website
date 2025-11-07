@@ -166,35 +166,11 @@ export default function EventPopupModal({ isEnabled = true }: EventPopupModalPro
 
         {/* 텍스트 정보 - Phase별 다른 컨텐츠 */}
         <div className="p-6">
-          <h2 
-            id="event-popup-title"
-            className="text-xl font-bold text-gray-900 mb-2"
-          >
-            🔐 로그인 이용 안내
-          </h2>
-          <p 
-            id="event-popup-description"
-            className="text-gray-600 text-sm mb-4"
-          >
-            한국지를 이용해 주셔서 정말 감사합니다.<br />
-            현재 <strong>게스트 로그인만 이용 가능</strong>합니다.<br />
-            구글, 애플 계정 로그인 연동 시 바로 안내드릴게요.
-          </p>
-
-          {/* 액션 버튼들 */}
-          <div className="flex flex-col space-y-3">
-            <Link
-              href="/news/emergency-notice-2025-09-09"
-              className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-4 rounded-lg transition-colors text-center"
-              onClick={handleClose}
-            >
-              자세히 보기
-            </Link>
-            
-            <div className="flex space-x-2">
-              <button
-                onClick={handleClose}
-                className="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium py-2 px-3 rounded-lg transition-colors text-sm"
+          {currentPhase === 'prize-claim-guide' && (
+            <>
+              <h2 
+                id="event-popup-title"
+                className="text-xl font-bold text-gray-900 mb-2"
               >
                 🎁 베타 이벤트 경품 수령 안내
               </h2>
