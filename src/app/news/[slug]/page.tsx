@@ -94,7 +94,7 @@ export default function NewsPostPage({ params }: { params: { slug: string } }) {
                             {/* 카운트다운 타이머 컴포넌트 */}
                             <div className="mb-8 not-prose">
                                 <CountdownTimer 
-                                    targetDate="2025-11-16T23:59:59+09:00"
+                                    targetDate="2025-11-14T23:59:59+09:00"
                                 />
                             </div>
                             
