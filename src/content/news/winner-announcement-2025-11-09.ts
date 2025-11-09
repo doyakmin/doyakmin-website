@@ -13,7 +13,7 @@ export const winnerAnnouncement20251109 = {
                 </h2>
                 <p class="text-gray-700 text-lg leading-relaxed">
                     2개월간의 열정적인 점령 전쟁이 끝났습니다!<br/>
-                    총 <strong class="text-emerald-600">22명</strong>의 탐험가님들께 경품을 드립니다.<br/>
+                    총 <strong class="text-emerald-600">27명</strong>의 탐험가님들께 경품을 드립니다.<br/>
                     당첨자 분들은 <strong class="text-red-600">11월 14일 (금) 23:59까지</strong> 정보를 제출해주세요! 🎁
                 </p>
             </div>
@@ -297,8 +297,8 @@ export const winnerAnnouncement20251109 = {
                 <div class="flex items-start">
                     <span class="flex-shrink-0 min-w-[20px] w-5 h-5 border border-gray-800 text-gray-800 rounded-full flex items-center justify-center font-semibold text-xs mr-2">1</span>
                     <div>
-                        <h4 class="font-semibold text-gray-800 mb-1">게임 내 UID</h4>
-                        <p class="text-sm text-gray-600">앱 실행 → 우측 상단 설정(⚙️) → 화면 상단의 UID 복사</p>
+                        <h4 class="font-semibold text-gray-800 mb-1">게임 내 PID</h4>
+                        <p class="text-sm text-gray-600">앱 실행 → 우측 상단 설정(⚙️) → 화면 상단의 PID 복사</p>
                     </div>
                 </div>
                 <div class="flex items-start">
@@ -357,10 +357,10 @@ export const winnerAnnouncement20251109 = {
 
             <details class="bg-white border border-gray-200 rounded-lg overflow-hidden">
                 <summary class="cursor-pointer p-4 font-semibold text-gray-800 hover:bg-gray-50 transition-colors">
-                    Q. UID는 어디서 확인하나요?
+                    Q. PID는 어디서 확인하나요?
                 </summary>
                 <div class="p-4 pt-0 text-gray-600">
-                    <p>한국지 앱 실행 → 우측 상단 <strong>설정 아이콘(⚙️)</strong> → 화면 상단에 표시된 <strong>UID를 길게 눌러 복사</strong>하실 수 있습니다.</p>
+                    <p>한국지 앱 실행 → 우측 상단 <strong>설정 아이콘(⚙️)</strong> → 화면 상단에 표시된 <strong>PID를 길게 눌러 복사</strong>하실 수 있습니다.</p>
                 </div>
             </details>
         </div>

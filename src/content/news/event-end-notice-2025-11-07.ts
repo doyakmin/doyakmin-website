@@ -83,7 +83,7 @@ export const eventEndNotice20251107 = {
                 <li><strong>제출 방법:</strong> 당첨자 발표 공지에 포함된 구글폼 링크</li>
                 <li><strong>제출 내용:</strong>
                     <ul class="list-circle list-inside ml-6 mt-2 space-y-1">
-                        <li>게임 내 UID (설정 화면에서 확인 가능)</li>
+                        <li>게임 내 PID (설정 화면에서 확인 가능)</li>
                         <li>내 정보창 스크린샷</li>
                         <li>이름, 연락처, 배송 주소</li>
                         <li>학교 인증 (학생증 또는 재학증명서 사본)</li>
