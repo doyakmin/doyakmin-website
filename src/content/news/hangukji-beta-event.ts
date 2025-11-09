@@ -104,7 +104,7 @@ export const hangukjiBetaEvent = {
             <li><strong>정보 제출:</strong> 당첨자는 공지사항 내 구글폼에 아래 정보를 제출해야 합니다.
                 <ol class="list-disc list-inside ml-6 mt-2">
                     <li>내 정보창 캡쳐본</li> <!-- numbered list로 변경 -->
-                    <li>UID (게임 내 ‘설정’ 화면 상단에서 복사)</li>
+                    <li>PID (게임 내 ‘설정’ 화면 상단에서 복사)</li>
                     <li>이름, 연락처, 주소 등 경품 배송에 필요한 정보</li>
                 </ol>
             </li>
