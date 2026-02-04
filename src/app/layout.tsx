@@ -15,6 +15,8 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+    const isEventPopupEnabled = process.env.NEXT_PUBLIC_EVENT_POPUP_ENABLED === 'true'
+
     return (
         <html lang="ko">
         <head>
@@ -48,7 +50,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 {children}
             </main>
             <Footer/>
-            <EventPopupModal />
+            <EventPopupModal isEnabled={isEventPopupEnabled} />
         </body>
         </html>
     );
