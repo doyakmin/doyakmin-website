@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 
-export default function DeleteAccountPage() {
+export default function DeleteAccountNamguPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [message, setMessage] = useState('');
 
@@ -13,9 +13,10 @@ export default function DeleteAccountPage() {
     setMessage('');
 
     const formData = new FormData(event.currentTarget);
-    
-    // ⚠️ 중요: 2단계에서 복사한 본인의 Apps Script 웹 앱 URL로 반드시 교체해야 합니다.
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbwrSjpeg7-No6w80JlBIF872vKnSQdmXl_KsKMN0lIx1Xq7ctbcfKO48ObzYd-5d-Ru/exec';
+
+    // ⚠️ 중요: 기존 /delete-account와 동일한 Apps Script 웹 앱 URL을 사용합니다.
+    const scriptURL =
+      'https://script.google.com/macros/s/AKfycbwrSjpeg7-No6w80JlBIF872vKnSQdmXl_KsKMN0lIx1Xq7ctbcfKO48ObzYd-5d-Ru/exec';
 
     try {
       const response = await fetch(scriptURL, {
@@ -45,32 +46,34 @@ export default function DeleteAccountPage() {
       <section className="py-20">
         <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl font-bold md:text-5xl">계정 삭제 요청</h1>
+            <h1 className="text-4xl font-bold md:text-5xl">계정 삭제 요청 (남구 앱 Walkerholic)</h1>
             <div className="mt-5 flex items-center justify-center gap-2 text-sm text-gray-600">
-              <span className="rounded-full bg-gray-100 px-3 py-1 font-medium text-gray-800">한국지</span>
+              <span className="rounded-full bg-gray-100 px-3 py-1 font-medium text-gray-800">Walkerholic</span>
               <span className="text-gray-400">|</span>
-              <Link href="/delete-account/namgu" className="underline underline-offset-4 hover:text-emerald-700">
-                남구 앱(Walkerholic)으로 이동
+              <Link href="/delete-account" className="underline underline-offset-4 hover:text-emerald-700">
+                다른 서비스(한국지)로 이동
               </Link>
             </div>
           </div>
 
           <div className="mt-12 rounded-lg border border-gray-200 bg-gray-50 p-8">
             <p className="mb-6 text-gray-600">
-              한국지 서비스의 계정 삭제를 원하시면 아래 정보를 입력해주세요.
+              남구 앱 Walkerholic 서비스의 계정 삭제를 원하시면 아래 정보를 입력해주세요.
               <br />
               접수 후 영업일 기준 7일 이내에 처리되며, 완료 시 입력하신 이메일로 안내해 드립니다.
               <br />
               <strong className="font-semibold text-red-600">
-                계정이 삭제되면 모든 개인 정보와 활동 기록(보유 건물, 랭킹, 재화 등)이 영구적으로 삭제되며 복구할 수 없습니다.
+                계정이 삭제되면 모든 개인 정보와 활동 기록이 영구적으로 삭제되며 복구할 수 없습니다.
               </strong>
             </p>
 
             <form onSubmit={handleSubmit}>
               <div className="space-y-6">
+                <input type="hidden" name="service" value="namgu-walkerholic" />
+
                 <div>
                   <label htmlFor="email" className="mb-2 block text-sm font-medium text-gray-700">
-                    이메일 주소 (가입 시 사용한 이메일)
+                    이메일 주소 (가입/로그인 시 사용한 이메일)
                   </label>
                   <input
                     type="email"
@@ -81,9 +84,10 @@ export default function DeleteAccountPage() {
                     placeholder="your-email@example.com"
                   />
                 </div>
+
                 <div>
                   <label htmlFor="nickname" className="mb-2 block text-sm font-medium text-gray-700">
-                    닉네임
+                    닉네임/사용자명
                   </label>
                   <input
                     type="text"
@@ -91,10 +95,11 @@ export default function DeleteAccountPage() {
                     id="nickname"
                     required
                     className="block w-full rounded-md border-gray-300 shadow-sm focus:border-emerald-500 focus:ring-emerald-500 sm:text-sm"
-                    placeholder="게임에서 사용하는 닉네임"
+                    placeholder="앱에서 사용하는 닉네임/사용자명"
                   />
                 </div>
-                 <div>
+
+                <div>
                   <label htmlFor="uid" className="mb-2 block text-sm font-medium text-gray-700">
                     UID (선택사항)
                   </label>
@@ -103,9 +108,23 @@ export default function DeleteAccountPage() {
                     name="uid"
                     id="uid"
                     className="block w-full rounded-md border-gray-300 shadow-sm focus:border-emerald-500 focus:ring-emerald-500 sm:text-sm"
-                    placeholder="게임 설정 화면에서 확인 가능합니다"
+                    placeholder="앱 설정 화면 등에서 확인 가능한 경우 입력"
                   />
                 </div>
+
+                <div>
+                  <label htmlFor="phone" className="mb-2 block text-sm font-medium text-gray-700">
+                    휴대폰 번호 (선택사항)
+                  </label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    id="phone"
+                    className="block w-full rounded-md border-gray-300 shadow-sm focus:border-emerald-500 focus:ring-emerald-500 sm:text-sm"
+                    placeholder="010-1234-5678"
+                  />
+                </div>
+
                 <div className="flex items-center">
                   <input
                     id="privacy-agree"
@@ -130,7 +149,11 @@ export default function DeleteAccountPage() {
               </div>
             </form>
             {message && (
-              <div className={`mt-6 rounded-md p-4 ${message.includes('성공') ? 'bg-emerald-50 text-emerald-800' : 'bg-red-50 text-red-800'}`}>
+              <div
+                className={`mt-6 rounded-md p-4 ${
+                  message.includes('성공') ? 'bg-emerald-50 text-emerald-800' : 'bg-red-50 text-red-800'
+                }`}
+              >
                 <p>{message}</p>
               </div>
             )}
@@ -139,4 +162,4 @@ export default function DeleteAccountPage() {
       </section>
     </main>
   );
-} 
+}
