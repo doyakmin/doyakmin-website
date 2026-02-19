@@ -42,3 +42,22 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 If you have any question about this project,
 search for username "millwheel" in github or
 send email to sionwer5@gmail.com
+
+## Contact Form -> Google Sheets Setup
+
+The `/contact` and `/support/walkerholic` pages support form submission to Google Apps Script.
+
+1. Create a Google Sheet and copy its Spreadsheet ID.
+2. Open **Extensions > Apps Script** in that Sheet.
+3. Add a `doPost(e)` script that appends these fields to a row:
+   `submittedAt, source, service, name, email, category, message`
+4. Deploy as **Web app**:
+   - Execute as: `Me`
+   - Who has access: `Anyone`
+5. Copy the deployed Web App URL and set:
+
+```bash
+NEXT_PUBLIC_CONTACT_SCRIPT_URL=https://script.google.com/macros/s/xxxx/exec
+```
+
+If this env var is not set, the form submit button is disabled and users will see an email fallback message.
