@@ -174,6 +174,7 @@ export default function PrivacyPage() {
               rows={[
                 ['Google LLC (Firebase)', '인증, 데이터베이스, 푸시 알림, 서버 운영', '회원 탈퇴 시 또는 위탁 계약 종료 시'],
                 ['Google LLC (Google Play)', '구독 결제 처리', '결제 관련 법령 보관 기간'],
+                ['Apple Inc.', 'App Store 구독 결제 처리', '결제 관련 법령 보관 기간'],
               ]}
             />
           </article>
@@ -245,7 +246,8 @@ export default function PrivacyPage() {
             <h2 className="text-lg font-bold text-gray-900">제9조 (건강 데이터 관련)</h2>
             <div className="mt-3 space-y-1.5 text-sm leading-relaxed text-gray-600 md:text-base">
               <p>걸음수 데이터는 오직 미션 달성 측정 목적으로만 사용됩니다.</p>
-              <p>Android 기기에서는 신체 활동 권한(ACTIVITY_RECOGNITION), Health Connect 연동을 통해 수집합니다.</p>
+              <p>iOS 기기: CoreMotion 센서를 통해 걸음수를 측정합니다 (Apple HealthKit은 사용하지 않습니다).</p>
+              <p>Android 기기: 신체 활동 권한(ACTIVITY_RECOGNITION), Health Connect 연동을 통해 수집합니다.</p>
               <p>걸음수 데이터는 제3자에게 제공되지 않으며, 회원 탈퇴 시 삭제됩니다.</p>
             </div>
           </article>
