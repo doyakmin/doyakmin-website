@@ -29,7 +29,7 @@ export default function NewsPage() {
                 <div className="game-container">
                     <p className="game-eyebrow">News Room</p>
                     <h1 className="game-title mt-5">소식</h1>
-                    <p className="mt-6 max-w-2xl text-xl font-semibold leading-relaxed text-white/78">
+                    <p className="game-readable mt-6 text-xl font-semibold leading-relaxed text-white/78">
                         한국지와 도약민의 업데이트, 이벤트, 공지를 확인하세요.
                     </p>
                 </div>

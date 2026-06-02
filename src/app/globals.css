@@ -27,6 +27,8 @@ body {
   background: var(--game-night);
   color: var(--game-ink);
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif;
+  word-break: keep-all;
+  overflow-wrap: break-word;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -61,6 +63,7 @@ body {
     font-weight: 950;
     line-height: 0.96;
     letter-spacing: -0.055em;
+    text-wrap: balance;
   }
 
   .game-heading {
@@ -68,12 +71,19 @@ body {
     font-weight: 950;
     line-height: 0.98;
     letter-spacing: -0.045em;
+    text-wrap: balance;
   }
 
   .game-copy {
     font-size: 18px;
     line-height: 1.7;
     color: #526071;
+    text-wrap: pretty;
+  }
+
+  .game-readable {
+    max-width: 34rem;
+    text-wrap: pretty;
   }
 
   .game-button {

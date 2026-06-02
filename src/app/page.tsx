@@ -49,7 +49,7 @@ export default function Home() {
                             <br />
                             Own the city.
                         </h1>
-                        <p className="mt-6 max-w-xl text-xl font-semibold leading-relaxed text-white/82">
+                        <p className="game-readable mt-6 text-xl font-semibold leading-relaxed text-white/82">
                             한국지는 현실의 위치를 게임판으로 바꾸는 모바일 점령형 게임입니다.
                         </p>
                         <div className="mt-8 flex flex-wrap gap-4">
@@ -97,8 +97,10 @@ export default function Home() {
                         <h2 className="game-heading mt-4 text-[#111827]">
                             전국이 전장이 되고, 산책이 전략이 됩니다.
                         </h2>
-                        <p className="game-copy mt-6">
+                        <p className="game-copy game-readable mt-6">
                             건물을 점령하고, 주변 플레이어와 경쟁하고, 지역을 방문하는 이유를 게임 안에서 만들어냅니다.
+                        </p>
+                        <p className="game-copy game-readable mt-3">
                             도약민은 이동이 곧 플레이가 되는 경험을 설계합니다.
                         </p>
                         <div className="mt-7 flex flex-wrap gap-3">
@@ -158,7 +160,7 @@ export default function Home() {
                             Download
                         </p>
                         <h2 className="game-heading mt-4 text-[#111827]">한국지를 지금 플레이하세요.</h2>
-                        <p className="mt-5 max-w-xl text-lg font-bold leading-relaxed text-[#111827]/78">
+                        <p className="game-readable mt-5 text-lg font-bold leading-relaxed text-[#111827]/78">
                             내 주변의 건물과 지역이 게임 속 영토가 됩니다. 앱을 다운로드하고 첫 점령을 시작해보세요.
                         </p>
                     </div>

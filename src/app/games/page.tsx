@@ -28,8 +28,10 @@ export default function Games() {
                     <div>
                         <p className="game-eyebrow">First Title</p>
                         <h1 className="game-title mt-5">한국지</h1>
-                        <p className="mt-6 max-w-xl text-xl font-semibold leading-relaxed text-white/78">
-                            지역 소멸 문제 해결을 위한 GPS 기반 모바일 점령형 게임.
+                        <p className="game-readable mt-6 text-xl font-semibold leading-relaxed text-white/78">
+                            지역 소멸 문제 해결을 위한 GPS 기반 모바일 점령형 게임입니다.
+                        </p>
+                        <p className="game-readable mt-3 text-xl font-semibold leading-relaxed text-white/78">
                             전국의 지도가 곧 플레이어의 전장이 됩니다.
                         </p>
                         <div className="mt-8 flex flex-wrap gap-3">
@@ -67,7 +69,7 @@ export default function Games() {
                 <div className="game-container grid items-center gap-10 lg:grid-cols-[1fr_0.85fr]">
                     <div>
                         <h2 className="game-heading">지금 바로 첫 영토를 차지하세요.</h2>
-                        <p className="mt-5 max-w-xl text-lg font-bold leading-relaxed text-[#111827]/78">
+                        <p className="game-readable mt-5 text-lg font-bold leading-relaxed text-[#111827]/78">
                             한국지는 iOS와 Google Play에서 만날 수 있습니다.
                         </p>
                     </div>

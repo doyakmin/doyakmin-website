@@ -10,7 +10,7 @@ export default function ContactPage() {
                     <div>
                         <p className="game-eyebrow">Contact</p>
                         <h1 className="game-title mt-5">함께 더 큰 게임판을 만들까요?</h1>
-                        <p className="mt-6 max-w-2xl text-xl font-semibold leading-relaxed text-white/78">
+                        <p className="game-readable mt-6 text-xl font-semibold leading-relaxed text-white/78">
                             제휴, 협업, 앱 문의를 남겨주시면 도약민 팀이 확인 후 안내드립니다.
                         </p>
                     </div>
@@ -18,7 +18,7 @@ export default function ContactPage() {
                     <div className="game-card bg-white p-6 text-[#111827]">
                         <p className="text-sm font-black uppercase tracking-[0.16em] text-[#0c7a90]">Community</p>
                         <h2 className="mt-3 text-3xl font-black tracking-tighter">한국지 네이버 카페</h2>
-                        <p className="mt-3 text-base font-bold leading-relaxed text-[#526071]">
+                        <p className="game-readable mt-3 text-base font-bold leading-relaxed text-[#526071]">
                             게임 소식과 공략을 확인하고 다른 플레이어들과 소통해보세요.
                         </p>
                         <a

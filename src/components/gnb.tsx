@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
+import LanguageSelector from './language_selector'
 
 const navItems = [
     { href: '/', label: '홈' },
@@ -46,9 +47,12 @@ export default function GlobalNavigation() {
                         ))}
                     </div>
 
-                    <Link href="/games" className="hidden game-button min-h-10 px-4 text-sm md:inline-flex">
-                        PLAY
-                    </Link>
+                    <div className="hidden items-center gap-3 md:flex">
+                        <LanguageSelector />
+                        <Link href="/games" className="game-button min-h-10 px-4 text-sm">
+                            PLAY
+                        </Link>
+                    </div>
 
                     <button
                         type="button"
@@ -71,6 +75,9 @@ export default function GlobalNavigation() {
             {isMenuOpen && (
                 <div className="border-t-2 border-white/10 bg-[#07111f] md:hidden">
                     <div className="game-container py-3">
+                        <div className="mb-2 px-1">
+                            <LanguageSelector />
+                        </div>
                         {navItems.map((item) => (
                             <Link
                                 key={item.href}

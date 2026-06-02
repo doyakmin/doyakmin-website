@@ -53,7 +53,7 @@ export default function TeamPage() {
                             <br />
                             for movement.
                         </h1>
-                        <p className="mt-6 max-w-2xl text-xl font-semibold leading-relaxed text-white/78">
+                        <p className="game-readable mt-6 text-xl font-semibold leading-relaxed text-white/78">
                             도약민은 현실의 이동과 지역 경험을 게임으로 바꾸는 스튜디오입니다.
                         </p>
                     </div>
