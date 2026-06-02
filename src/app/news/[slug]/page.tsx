@@ -32,11 +32,14 @@ export default function NewsPostPage({ params }: { params: { slug: string } }) {
     }
 
     return (
-        <main className="min-h-screen font-sans text-black bg-white">
-            <article className="max-w-4xl mx-auto py-20 px-4 sm:px-6 lg:px-8">
+        <main className="bg-[#f4f7fb] text-[#111827]">
+            <article className="game-container py-20">
                 {/* Post Header */}
-                <header className="mb-12 text-center">
-                    <h1 className="text-4xl md:text-5xl font-bold mb-6">
+                <header className="game-card mb-10 p-8 text-center md:p-12">
+                    <p className="mb-4 text-sm font-black uppercase tracking-[0.14em] text-[#0c7a90]">
+                        {post.date} · {post.author}
+                    </p>
+                    <h1 className="text-4xl font-black leading-tight tracking-tighter md:text-5xl">
                         {(() => {
                             const titleLines = post.title.split(/\n|\\n/);
                             return titleLines.map((line, index) => (
@@ -47,13 +50,10 @@ export default function NewsPostPage({ params }: { params: { slug: string } }) {
                             ));
                         })()}
                     </h1>
-                    <p className="text-lg text-gray-500">
-                        {post.date} · {post.author}
-                    </p>
                 </header>
 
                 {/* Post Content */}
-                <div className="prose lg:prose-xl max-w-none">
+                <div className="prose max-w-none rounded-[28px] border-2 border-[#111827] bg-white p-6 md:p-10 lg:prose-xl">
                     {post.slug === 'hangukji-beta-event' ? (
                         <>
                             {/* 이벤트 기간 */}
@@ -63,9 +63,9 @@ export default function NewsPostPage({ params }: { params: { slug: string } }) {
                             <h2 className="text-2xl font-bold mb-4">🚀 참여 방법</h2>
                             
                             {/* 다운로드 버튼 섹션 */}
-                            <div className="bg-emerald-50 p-6 rounded-xl mb-6 not-prose">
+                            <div className="mb-6 rounded-[24px] border-2 border-[#111827] bg-[#b7ff2a]/35 p-6 not-prose">
                                 <h3 className="text-lg font-semibold mb-4 text-center flex items-center justify-center gap-2">
-                                    <svg className="w-6 h-6 text-emerald-600" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <svg className="w-6 h-6 text-[#111827]" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M17 2H7C5.9 2 5 2.9 5 4v16c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM7 4h10v12H7V4zm0 14h10v2H7v-2z"/>
                                         <circle cx="12" cy="18.5" r="1"/>
                                     </svg>
@@ -108,4 +108,4 @@ export default function NewsPostPage({ params }: { params: { slug: string } }) {
             </article>
         </main>
     );
-} 
+}

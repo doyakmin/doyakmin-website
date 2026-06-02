@@ -77,7 +77,7 @@ export default function AppDownloadButtons({ className = "" }: AppDownloadButton
               </p>
               <button
                 onClick={() => setShowComingSoonModal(false)}
-                className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-2 rounded-lg transition-colors"
+                className="game-button"
               >
                 확인
               </button>

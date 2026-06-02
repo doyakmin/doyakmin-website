@@ -1,143 +1,78 @@
-import GameImageCarousel from "@/components/game_image_carousel";
+import GameImageCarousel from '@/components/game_image_carousel'
+import AppDownloadButtons from '@/components/app_download_buttons'
+
+const features = [
+    {
+        title: 'REAL MAP',
+        body: '실제 위치와 건물을 기반으로 플레이가 펼쳐집니다.',
+    },
+    {
+        title: 'CAPTURE',
+        body: '내 주변 영토를 점령하고 확장하는 전략이 핵심입니다.',
+    },
+    {
+        title: 'BATTLE',
+        body: '플레이어와 경쟁하며 점령지를 지켜내세요.',
+    },
+    {
+        title: 'LOCAL QUEST',
+        body: '지역을 방문하고 머무는 경험이 게임의 보상이 됩니다.',
+    },
+]
 
 export default function Games() {
     return (
-        <main className="min-h-screen font-sans text-black bg-white">
-            {/*Hero Section*/}
-            <section className="relative py-20 bg-emerald-700/20">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center">
-                        <h1 className="text-5xl md:text-6xl font-bold mb-6">
-                            GAMES
-                        </h1>
-                        <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-                            게임을 통해 세상을 새롭게 만들어갑니다
+        <main className="bg-[#f4f7fb] text-[#111827]">
+            <section className="bg-[#07111f] py-24 text-white">
+                <div className="game-container grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+                    <div>
+                        <p className="game-eyebrow">First Title</p>
+                        <h1 className="game-title mt-5">한국지</h1>
+                        <p className="mt-6 max-w-xl text-xl font-semibold leading-relaxed text-white/78">
+                            지역 소멸 문제 해결을 위한 GPS 기반 모바일 점령형 게임.
+                            전국의 지도가 곧 플레이어의 전장이 됩니다.
+                        </p>
+                        <div className="mt-8 flex flex-wrap gap-3">
+                            {['GPS', 'PVP', '점령전', '전략'].map((tag) => (
+                                <span key={tag} className="game-tag">
+                                    {tag}
+                                </span>
+                            ))}
+                        </div>
+                    </div>
+
+                    <GameImageCarousel />
+                </div>
+            </section>
+
+            <section className="py-24">
+                <div className="game-container">
+                    <div className="max-w-3xl">
+                        <p className="game-eyebrow text-[#0c7a90]">How it plays</p>
+                        <h2 className="game-heading mt-4">움직이고, 점령하고, 경쟁하세요.</h2>
+                    </div>
+
+                    <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+                        {features.map((feature) => (
+                            <article key={feature.title} className="game-card p-6">
+                                <p className="text-sm font-black tracking-[0.16em] text-[#0c7a90]">{feature.title}</p>
+                                <p className="mt-8 text-lg font-black leading-tight">{feature.body}</p>
+                            </article>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            <section className="bg-[#b7ff2a] py-20">
+                <div className="game-container grid items-center gap-10 lg:grid-cols-[1fr_0.85fr]">
+                    <div>
+                        <h2 className="game-heading">지금 바로 첫 영토를 차지하세요.</h2>
+                        <p className="mt-5 max-w-xl text-lg font-bold leading-relaxed text-[#111827]/78">
+                            한국지는 iOS와 Google Play에서 만날 수 있습니다.
                         </p>
                     </div>
-                </div>
-            </section>
-
-            {/* 한국지 Game Section */}
-            <section className="relative py-20">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
-                        {/* Game Image */}
-                        <GameImageCarousel />
-
-                        {/* Game Info */}
-                        <div className="order-2 lg:order-2 lg:col-span-1">
-                            <div className="relative">
-                                {/* Game Title */}
-                                <div className="mb-8">
-                                    <h2 className="text-4xl md:text-6xl font-bold text-emerald-400 mb-4">
-                                        한국지
-                                    </h2>
-                                    <div className="w-24 h-1 bg-gradient-to-r from-emerald-400 to-blue-400 rounded-full"></div>
-                                </div>
-
-                                {/* Game Description */}
-                                <div className="mb-8">
-                                    <h3 className="text-xl font-semibold text-white mb-4">한줄 소개</h3>
-                                    <p className="text-lg text-gray-900 leading-relaxed">
-                                        지역 소멸 문제 해결을 위한 GPS 기반의 모바일 점령형 게임
-                                    </p>
-                                </div>
-
-                                {/* Game Tags */}
-                                <div className="mb-8">
-                                    <div className="flex flex-wrap gap-3">
-                                        <span className="px-4 py-2 bg-emerald-600/20 text-emerald-400 rounded-full text-sm font-medium border border-emerald-600/30 hover:bg-emerald-600/30 transition-colors hover:cursor-default">
-                                            # GPS
-                                        </span>
-                                        <span className="px-4 py-2 bg-emerald-600/20 text-emerald-400 rounded-full text-sm font-medium border border-emerald-600/30 hover:bg-emerald-600/30 transition-colors hover:cursor-default">
-                                            # PVP
-                                        </span>
-                                        <span className="px-4 py-2 bg-emerald-600/20 text-emerald-400 rounded-full text-sm font-medium border border-emerald-600/30 hover:bg-emerald-600/30 transition-colors hover:cursor-default">
-                                            # 점령전
-                                        </span>
-                                        <span className="px-4 py-2 bg-emerald-600/20 text-emerald-400 rounded-full text-sm font-medium border border-emerald-600/30 hover:bg-emerald-600/30 transition-colors hover:cursor-default">
-                                            # 전략
-                                        </span>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-
-            {/* Features Section */}
-            <section className="relative py-20 pb-28 bg-emerald-700/20">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center mb-16">
-                        <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                            게임 특징
-                        </h2>
-                        <div className="w-24 h-1 bg-gradient-to-r from-emerald-400 to-blue-300 rounded-full mx-auto"></div>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        {/* GPS 기반 */}
-                        <div className="group relative h-full">
-                            <div className="relative h-full p-6 bg-gray-900 rounded-2xl hover:border-emerald-400/50 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-emerald-500/20 flex flex-col">
-                                <div className="w-16 h-16 mx-auto mb-4 bg-emerald-600/20 rounded-xl flex items-center justify-center">
-                                    <span className="text-2xl">📍</span>
-                                </div>
-                                <h3 className="text-lg font-bold text-emerald-400 mb-2 text-center group-hover:text-emerald-300 transition-colors">
-                                    GPS 기반
-                                </h3>
-                                <p className="text-gray-300 text-sm text-center flex-grow leading-relaxed group-hover:text-white transition-colors">
-                                    실제 위치를 활용한 현실 연동 게임플레이
-                                </p>
-                            </div>
-                        </div>
-
-                        {/* PVP 전투 */}
-                        <div className="group relative h-full">
-                            <div className="relative h-full p-6 bg-gray-900 rounded-2xl hover:border-emerald-400/50 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-emerald-500/20 flex flex-col">
-                                <div className="w-16 h-16 mx-auto mb-4 bg-emerald-600/20 rounded-xl flex items-center justify-center">
-                                    <span className="text-2xl">⚔️</span>
-                                </div>
-                                <h3 className="text-lg font-bold text-emerald-400 mb-2 text-center group-hover:text-emerald-300 transition-colors">
-                                    PVP 전투
-                                </h3>
-                                <p className="text-gray-300 text-sm text-center flex-grow leading-relaxed group-hover:text-white transition-colors">
-                                    플레이어 간 실시간 대전과 경쟁
-                                </p>
-                            </div>
-                        </div>
-
-                        {/* 점령 시스템 */}
-                        <div className="group relative h-full">
-                            <div className="relative h-full p-6 bg-gray-900 rounded-2xl hover:border-emerald-400/50 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-emerald-500/20 flex flex-col">
-                                <div className="w-16 h-16 mx-auto mb-4 bg-emerald-600/20 rounded-xl flex items-center justify-center">
-                                    <span className="text-2xl">🏰</span>
-                                </div>
-                                <h3 className="text-lg font-bold text-emerald-400 mb-2 text-center group-hover:text-emerald-300 transition-colors">
-                                    점령 시스템
-                                </h3>
-                                <p className="text-gray-300 text-sm text-center flex-grow leading-relaxed group-hover:text-white transition-colors">
-                                    지역을 점령하고 영토를 확장하는 전략 게임
-                                </p>
-                            </div>
-                        </div>
-
-                        {/* 지역 활성화 */}
-                        <div className="group relative h-full">
-                            <div className="relative h-full p-6 bg-gray-900 rounded-2xl hover:border-emerald-400/50 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-emerald-500/20 flex flex-col">
-                                <div className="w-16 h-16 mx-auto mb-4 bg-emerald-600/20 rounded-xl flex items-center justify-center">
-                                    <span className="text-2xl">🌱</span>
-                                </div>
-                                <h3 className="text-lg font-bold text-emerald-400 mb-2 text-center group-hover:text-emerald-300 transition-colors">
-                                    지역 활성화
-                                </h3>
-                                <p className="text-gray-300 text-sm text-center flex-grow leading-relaxed group-hover:text-white transition-colors">
-                                    게임을 통한 실제 지역 경제 기여
-                                </p>
-                            </div>
-                        </div>
+                    <div className="game-card bg-white p-8">
+                        <AppDownloadButtons />
                     </div>
                 </div>
             </section>

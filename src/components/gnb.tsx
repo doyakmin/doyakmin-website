@@ -1,8 +1,8 @@
 'use client'
 
 import Image from 'next/image'
-import { useState } from 'react'
 import Link from 'next/link'
+import { useState } from 'react'
 
 const navItems = [
     { href: '/', label: '홈' },
@@ -20,53 +20,48 @@ export default function GlobalNavigation() {
     }
 
     return (
-        <nav className="fixed left-0 right-0 top-0 z-50 bg-black/95 text-white backdrop-blur-md">
-            <div className="mx-auto max-w-6xl px-4 sm:px-6">
-                <div className="flex h-11 items-center justify-between">
-                    <Link href="/" className="flex items-center gap-2" onClick={handleMenuClick}>
+        <nav className="fixed left-0 right-0 top-0 z-50 border-b-2 border-[#111827] bg-[#07111f]/95 text-white backdrop-blur-md">
+            <div className="game-container">
+                <div className="flex h-14 items-center justify-between">
+                    <Link href="/" className="flex items-center gap-3" onClick={handleMenuClick}>
                         <Image
                             src="/image/mark.png"
                             alt="도약민 로고"
-                            width={22}
-                            height={22}
-                            className="h-[22px] w-[22px] rounded-[5px] object-cover"
+                            width={34}
+                            height={34}
+                            className="h-[34px] w-[34px] rounded-xl border-2 border-white/20 object-cover"
                         />
-                        <span className="text-[12px] font-normal tracking-[-0.01em] text-white/90">
-                            도약민
-                        </span>
+                        <span className="text-lg font-black tracking-tight">DOYAKMIN</span>
                     </Link>
 
-                    <div className="hidden items-center gap-8 md:flex">
+                    <div className="hidden items-center gap-2 md:flex">
                         {navItems.map((item) => (
                             <Link
                                 key={item.href}
                                 href={item.href}
-                                className="text-[12px] font-normal tracking-[-0.01em] text-white/75 transition-colors hover:text-white"
+                                className="rounded-xl px-4 py-2 text-sm font-extrabold text-white/72 transition-colors hover:bg-white/10 hover:text-[#b7ff2a]"
                             >
                                 {item.label}
                             </Link>
                         ))}
                     </div>
 
-                    <Link
-                        href="/games"
-                        className="hidden rounded-full bg-[#0066cc] px-3 py-1 text-[12px] leading-none text-white transition-transform active:scale-95 md:inline-flex"
-                    >
-                        한국지
+                    <Link href="/games" className="hidden game-button min-h-10 px-4 text-sm md:inline-flex">
+                        PLAY
                     </Link>
 
                     <button
                         type="button"
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
-                        className="inline-flex h-11 w-11 items-center justify-center text-white/80 transition-colors hover:text-white md:hidden"
+                        className="inline-flex h-11 w-11 items-center justify-center rounded-xl border-2 border-white/20 text-white md:hidden"
                         aria-label="메뉴 열기"
                         aria-expanded={isMenuOpen}
                     >
                         <svg className="h-5 w-5" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                             {isMenuOpen ? (
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M6 18L18 6M6 6l12 12" />
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.2" d="M6 18L18 6M6 6l12 12" />
                             ) : (
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M4 7h16M4 12h16M4 17h16" />
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.2" d="M4 7h16M4 12h16M4 17h16" />
                             )}
                         </svg>
                     </button>
@@ -74,13 +69,13 @@ export default function GlobalNavigation() {
             </div>
 
             {isMenuOpen && (
-                <div className="border-t border-white/10 bg-black md:hidden">
-                    <div className="mx-auto max-w-6xl px-4 py-3">
+                <div className="border-t-2 border-white/10 bg-[#07111f] md:hidden">
+                    <div className="game-container py-3">
                         {navItems.map((item) => (
                             <Link
                                 key={item.href}
                                 href={item.href}
-                                className="block rounded-[8px] px-3 py-3 text-[17px] tracking-[-0.01em] text-white/85 transition-colors hover:bg-white/10 hover:text-white"
+                                className="block rounded-2xl px-4 py-4 text-lg font-black text-white/86 hover:bg-white/10 hover:text-[#b7ff2a]"
                                 onClick={handleMenuClick}
                             >
                                 {item.label}

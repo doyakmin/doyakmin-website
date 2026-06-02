@@ -72,7 +72,7 @@ export default function GoogleSheetContactForm({ service, className = "" }: Goog
   return (
     <form className={`space-y-5 ${className}`} onSubmit={handleSubmit}>
       <div>
-        <label htmlFor={`name-${service}`} className="mb-2 block text-sm font-medium text-gray-700">
+        <label htmlFor={`name-${service}`} className="mb-2 block text-sm font-black text-[#111827]">
           이름
         </label>
         <input
@@ -80,13 +80,13 @@ export default function GoogleSheetContactForm({ service, className = "" }: Goog
           name="name"
           type="text"
           required
-          className="block w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/40"
+          className="block w-full rounded-2xl border-2 border-[#111827] px-4 py-3 text-sm font-bold shadow-none focus:outline-none focus:ring-4 focus:ring-[#b7ff2a]/60"
           placeholder="성함을 입력해주세요"
         />
       </div>
 
       <div>
-        <label htmlFor={`reply-contact-${service}`} className="mb-2 block text-sm font-medium text-gray-700">
+        <label htmlFor={`reply-contact-${service}`} className="mb-2 block text-sm font-black text-[#111827]">
           답변 받을 연락처 (이메일 또는 카카오톡 ID)
         </label>
         <input
@@ -94,13 +94,13 @@ export default function GoogleSheetContactForm({ service, className = "" }: Goog
           name="replyContact"
           type="text"
           required
-          className="block w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/40"
+          className="block w-full rounded-2xl border-2 border-[#111827] px-4 py-3 text-sm font-bold shadow-none focus:outline-none focus:ring-4 focus:ring-[#b7ff2a]/60"
           placeholder="예: your-email@example.com 또는 kakaotalk_id"
         />
       </div>
 
       <div>
-        <label htmlFor={`category-${service}`} className="mb-2 block text-sm font-medium text-gray-700">
+        <label htmlFor={`category-${service}`} className="mb-2 block text-sm font-black text-[#111827]">
           문의 유형
         </label>
         <select
@@ -108,7 +108,7 @@ export default function GoogleSheetContactForm({ service, className = "" }: Goog
           name="category"
           required
           defaultValue=""
-          className="block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm shadow-sm focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/40"
+          className="block w-full rounded-2xl border-2 border-[#111827] bg-white px-4 py-3 text-sm font-bold shadow-none focus:outline-none focus:ring-4 focus:ring-[#b7ff2a]/60"
         >
           <option value="" disabled>
             유형을 선택해주세요
@@ -121,7 +121,7 @@ export default function GoogleSheetContactForm({ service, className = "" }: Goog
       </div>
 
       <div>
-        <label htmlFor={`message-${service}`} className="mb-2 block text-sm font-medium text-gray-700">
+        <label htmlFor={`message-${service}`} className="mb-2 block text-sm font-black text-[#111827]">
           문의 내용
         </label>
         <textarea
@@ -129,7 +129,7 @@ export default function GoogleSheetContactForm({ service, className = "" }: Goog
           name="message"
           required
           rows={6}
-          className="block w-full rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/40"
+          className="block w-full rounded-2xl border-2 border-[#111827] px-4 py-3 text-sm font-bold shadow-none focus:outline-none focus:ring-4 focus:ring-[#b7ff2a]/60"
           placeholder="문의 내용을 자세히 입력해주세요"
         />
       </div>
@@ -137,15 +137,15 @@ export default function GoogleSheetContactForm({ service, className = "" }: Goog
       <button
         type="submit"
         disabled={isSubmitting || !scriptURL}
-        className="w-full rounded-md bg-emerald-600 px-4 py-3 text-base font-semibold text-white shadow-sm transition-colors hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:bg-gray-400"
+        className="game-button w-full disabled:cursor-not-allowed disabled:bg-gray-300 disabled:text-gray-500"
       >
         {isSubmitting ? "접수 중..." : "문의 등록하기"}
       </button>
 
       {message && (
         <div
-          className={`rounded-md p-4 text-sm ${
-            submitStatus === "success" ? "bg-emerald-50 text-emerald-800" : "bg-red-50 text-red-700"
+          className={`rounded-2xl border-2 p-4 text-sm font-bold ${
+            submitStatus === "success" ? "border-[#111827] bg-[#b7ff2a]/40 text-[#111827]" : "border-red-500 bg-red-50 text-red-700"
           }`}
         >
           {message}

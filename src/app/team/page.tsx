@@ -43,79 +43,58 @@ const pressLinks = [
 
 export default function TeamPage() {
     return (
-        <main className="min-h-screen bg-white text-[#1d1d1f]">
-            <section className="flex min-h-[60vh] items-center justify-center bg-[#f5f5f7] px-6 py-20 text-center">
-                <div className="mx-auto max-w-4xl">
-                    <p className="mb-3 text-[17px] font-semibold tracking-[-0.01em] text-[#0066cc]">
-                        DOYAKMIN Inc.
-                    </p>
-                    <h1 className="text-[44px] font-semibold leading-[1.07] tracking-[-0.02em] sm:text-[64px]">
-                        회사 소개
-                    </h1>
-                    <p className="mx-auto mt-5 max-w-2xl text-[21px] leading-[1.47] tracking-[-0.01em] text-[#333333]">
-                        게임을 통해 세상을 새롭게 만들어가는 도약민을 소개합니다.
-                    </p>
-                </div>
-            </section>
+        <main className="bg-[#f4f7fb] text-[#111827]">
+            <section className="bg-[#07111f] py-24 text-white">
+                <div className="game-container grid items-center gap-12 lg:grid-cols-[1fr_0.8fr]">
+                    <div>
+                        <p className="game-eyebrow">Studio</p>
+                        <h1 className="game-title mt-5">
+                            We make games
+                            <br />
+                            for movement.
+                        </h1>
+                        <p className="mt-6 max-w-2xl text-xl font-semibold leading-relaxed text-white/78">
+                            도약민은 현실의 이동과 지역 경험을 게임으로 바꾸는 스튜디오입니다.
+                        </p>
+                    </div>
 
-            <section className="px-6 py-20">
-                <div className="mx-auto max-w-5xl text-center">
-                    <h2 className="text-[40px] font-semibold leading-[1.1] tracking-[-0.02em] sm:text-[56px]">
-                        대표이사
-                    </h2>
-                    <p className="mx-auto mt-4 max-w-xl text-[21px] leading-[1.47] tracking-[-0.01em] text-[#333333]">
-                        도약민을 이끌어가는 대표이사를 소개합니다.
-                    </p>
-
-                    <article className="mx-auto mt-12 max-w-sm">
-                        <div className="mx-auto h-56 w-56 overflow-hidden rounded-full bg-[#f5f5f7]">
+                    <article className="game-card bg-white p-7 text-center text-[#111827]">
+                        <div className="mx-auto h-[248px] w-[248px] overflow-hidden rounded-[28px] border-2 border-[#111827] bg-[#f4f7fb]">
                             <Image
                                 src="/image/profile/person_ceo.png"
-                                alt="대표이사 정민영 프로필"
-                                width={320}
-                                height={320}
+                                alt="정민영 대표이사 프로필"
+                                width={360}
+                                height={360}
                                 className="h-full w-full object-cover object-top"
                                 priority
                             />
                         </div>
-                        <h3 className="mt-6 text-[28px] font-semibold leading-[1.14] tracking-[-0.01em]">
+                        <h2 className="mt-6 text-4xl font-black tracking-tighter">
                             <a
                                 href="https://search.naver.com/search.naver?where=nexearch&sm=top_sug.pre&fbm=0&acr=2&acq=%EC%A0%95%EB%AF%BC%EC%98%81&qdt=0&ie=utf8&query=%EC%A0%95%EB%AF%BC%EC%98%81&ackey=xb8uh409"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="transition-colors hover:text-[#0066cc]"
+                                className="hover:text-[#0c7a90]"
                             >
                                 정민영
                             </a>
-                        </h3>
-                        <p className="mt-2 text-[17px] leading-[1.47] tracking-[-0.01em] text-[#333333]">
-                            대표이사
-                        </p>
-                        <p className="mt-2 break-all text-[14px] leading-[1.43] tracking-[-0.01em] text-[#7a7a7a]">
-                            minyoung5454@naver.com
-                        </p>
+                        </h2>
+                        <p className="mt-2 text-base font-black text-[#0c7a90]">대표이사</p>
+                        <p className="mt-2 break-all text-sm font-bold text-[#526071]">minyoung5454@naver.com</p>
                     </article>
                 </div>
             </section>
 
-            <section className="bg-[#272729] px-6 py-20 text-white">
-                <div className="mx-auto max-w-6xl">
-                    <div className="text-center">
-                        <p className="mb-3 text-[17px] font-semibold tracking-[-0.01em] text-[#2997ff]">
-                            History
-                        </p>
-                        <h2 className="text-[40px] font-semibold leading-[1.1] tracking-[-0.02em] sm:text-[56px]">
-                            도약민의 여정
-                        </h2>
-                    </div>
+            <section className="py-24">
+                <div className="game-container">
+                    <p className="game-eyebrow text-[#0c7a90]">History</p>
+                    <h2 className="game-heading mt-4">도약민의 플레이 로그</h2>
 
-                    <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-2">
+                    <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
                         {historyItems.map((group) => (
-                            <article key={group.year} className="rounded-[18px] border border-white/10 p-6">
-                                <h3 className="text-[34px] font-semibold leading-[1.1] tracking-[-0.02em]">
-                                    {group.year}
-                                </h3>
-                                <ul className="mt-5 space-y-3 text-left text-[17px] leading-[1.47] tracking-[-0.01em] text-[#cccccc]">
+                            <article key={group.year} className="game-card p-7">
+                                <h3 className="text-5xl font-black tracking-tighter">{group.year}</h3>
+                                <ul className="mt-6 space-y-3 text-base font-bold leading-relaxed text-[#526071]">
                                     {group.items.map((item) => (
                                         <li key={item}>{item}</li>
                                     ))}
@@ -126,25 +105,18 @@ export default function TeamPage() {
                 </div>
             </section>
 
-            <section className="bg-[#f5f5f7] px-6 py-20">
-                <div className="mx-auto max-w-4xl">
-                    <div className="text-center">
-                        <p className="mb-3 text-[17px] font-semibold tracking-[-0.01em] text-[#0066cc]">
-                            Press
-                        </p>
-                        <h2 className="text-[40px] font-semibold leading-[1.1] tracking-[-0.02em] sm:text-[56px]">
-                            보도자료
-                        </h2>
-                    </div>
-
-                    <div className="mt-12 divide-y divide-[#e0e0e0] rounded-[18px] bg-white">
+            <section className="bg-[#ffb02e] py-24">
+                <div className="game-container">
+                    <p className="text-sm font-black uppercase tracking-[0.16em] text-[#111827]/70">Press</p>
+                    <h2 className="game-heading mt-4">보도자료</h2>
+                    <div className="mt-10 grid grid-cols-1 gap-4">
                         {pressLinks.map((link) => (
                             <a
                                 key={link.href}
                                 href={link.href}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="block px-6 py-5 text-[17px] leading-[1.47] tracking-[-0.01em] transition-colors hover:text-[#0066cc]"
+                                className="game-card block p-6 text-lg font-black transition-transform hover:-translate-y-1"
                             >
                                 {link.title}
                             </a>

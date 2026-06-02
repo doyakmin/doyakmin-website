@@ -36,10 +36,10 @@ export default function GameImageCarousel() {
     }
 
     return (
-        <div className="order-1 lg:order-1 lg:col-span-2">
-            <div className="relative group overflow-hidden rounded-2xl">
+        <div className="w-full">
+            <div className="game-card-dark group relative overflow-hidden p-3">
                 {/* 이미지 컨테이너 */}
-                <div className="relative w-full h-0 pb-[60%]">
+                <div className="relative h-0 w-full overflow-hidden rounded-[22px] pb-[60%]">
                     {images.map((image, index) => (
                         <div
                             key={index}
@@ -65,11 +65,11 @@ export default function GameImageCarousel() {
                 <button
                     onClick={goToPrevious}
                     className="absolute left-4 top-1/2 transform -translate-y-1/2
-                             bg-black/70 text-white w-12 h-12 rounded-full
+                             bg-[#111827]/80 text-white w-12 h-12 rounded-2xl border-2 border-white/20
                              flex items-center justify-center
                              opacity-0 group-hover:opacity-100
                              transition-all duration-300
-                             hover:bg-black/90 hover:scale-110
+                             hover:bg-[#111827] hover:scale-105
                              backdrop-blur-sm z-10"
                     aria-label="이전 이미지"
                 >
@@ -92,11 +92,11 @@ export default function GameImageCarousel() {
                 <button
                     onClick={goToNext}
                     className="absolute right-4 top-1/2 transform -translate-y-1/2
-                             bg-black/70 text-white w-12 h-12 rounded-full
+                             bg-[#111827]/80 text-white w-12 h-12 rounded-2xl border-2 border-white/20
                              flex items-center justify-center
                              opacity-0 group-hover:opacity-100
                              transition-all duration-300
-                             hover:bg-black/90 hover:scale-110
+                             hover:bg-[#111827] hover:scale-105
                              backdrop-blur-sm z-10"
                     aria-label="다음 이미지"
                 >
@@ -123,8 +123,8 @@ export default function GameImageCarousel() {
                             onClick={() => setCurrentImageIndex(index)}
                             className={`w-3 h-3 rounded-full transition-all duration-300 ${
                                 currentImageIndex === index
-                                    ? 'bg-white'
-                                    : 'bg-white/50 hover:bg-white/75'
+                                    ? 'bg-[#b7ff2a]'
+                                    : 'bg-white/60 hover:bg-white'
                             }`}
                             aria-label={`이미지 ${index + 1}로 이동`}
                         />
