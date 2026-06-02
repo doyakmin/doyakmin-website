@@ -18,21 +18,21 @@ export default function TeamPage() {
                 </div>
             </section>
 
-            {/* Team Members Section */}
+            {/* CEO Section */}
             <section className="py-20">
                 <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
                         <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                            팀원 소개
+                            대표이사
                         </h2>
                         <p className="text-lg text-gray-700">
-                            함께 꿈을 실현해나가는 도약민의 멤버들
+                            도약민을 이끌어가는 대표이사를 소개합니다
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div className="flex justify-center">
                         {/* 정민영 - 대표 */}
-                        <div className="group relative">
+                        <div className="group relative max-w-md">
                             <div className="relative p-10 bg-emerald-100 rounded-2xl">
                                 <div className="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden bg-gradient-to-br from-emerald-600/20 to-emerald-800/20 flex items-center justify-center">
                                     <Image
@@ -67,93 +67,6 @@ export default function TeamPage() {
                                 </p>
                                 <p className="text-gray-700 text-sm text-center break-all">
                                     minyoung5454@naver.com
-                                </p>
-                            </div>
-                        </div>
-
-                        {/* 김민서 - 개발자 */}
-                        <div className="group relative">
-                            <div className="relative p-10 bg-emerald-100 rounded-2xl">
-                                <div className="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden bg-gradient-to-br from-emerald-600/20 to-emerald-800/20 flex items-center justify-center">
-                                    <Image
-                                        src='/image/profile/person_dev_kim.jpg'
-                                        alt="개발자 김민서 프로필"
-                                        width="256"
-                                        height="256"
-                                        className="w-full h-full object-cover object-top"
-                                    />
-                                </div>
-
-                                <h3 className="text-xl font-bold text-black mb-2 text-center">
-                                    김민서
-                                </h3>
-                                <p className="text-emerald-500 font-semibold text-center mb-3">
-                                    개발자
-                                </p>
-                                <p className="text-gray-700 text-sm text-center break-all">
-                                    kms@doyakmin.com
-                                </p>
-                            </div>
-                        </div>
-
-                        {/* 박상현 - 개발자 */}
-                        <div className="group relative">
-                            <div className="relative p-10 bg-emerald-100 rounded-2xl">
-                                <div className="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden bg-gradient-to-br from-emerald-600/20 to-emerald-800/20 flex items-center justify-center">
-                                    <Image
-                                        src="/image/profile/person_dev_park.jpg"
-                                        alt="개발자 박상현 프로필"
-                                        width="256"
-                                        height="256"
-                                        className="w-full h-full object-cover object-top"
-                                    />
-                                </div>
-
-                                <h3 className="text-xl font-bold text-black mb-2 text-center">
-                                    박상현
-                                </h3>
-                                <p className="text-emerald-500 font-semibold text-center mb-3">
-                                    개발자
-                                </p>
-                                <p className="text-gray-700 text-sm text-center">
-                                    teiwoong@naver.com
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Partners Section */}
-            <section className="py-20">
-                <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center mb-16">
-                        <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                            파트너사
-                        </h2>
-                        <p className="text-lg text-gray-700">
-                            함께 성장해나가는 소중한 파트너
-                        </p>
-                    </div>
-
-                    <div className="flex justify-center">
-                        <div className="group relative max-w-md">
-                            <div className="relative p-10">
-                                <div className="w-48 h-48 mx-auto mb-6 rounded-2xl overflow-hidden bg-gradient-to-br from-emerald-600/20 to-emerald-800/20 flex items-center justify-center">
-                                    <Image
-                                        src="/image/profile/brandia.jpg"
-                                        alt="브랜디아 로고"
-                                        width="256"
-                                        height="256"
-                                        className="w-full h-full object-cover rounded-2xl"
-                                    />
-                                </div>
-
-                                <h3 className="text-2xl font-bold text-gray-700 mb-4 text-center">
-                                    브랜디아
-                                </h3>
-                                <p className="text-gray-700 text-sm text-center break-all">
-                                    brandia.shj@gmail.com
                                 </p>
                             </div>
                         </div>
