@@ -46,9 +46,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </head>
         <body className={inter.className}>
             <GlobalNavigation/>
-            <main className="pt-20">
+            <div className="pt-11">
                 {children}
-            </main>
+            </div>
             <Footer/>
             <EventPopupModal isEnabled={isEventPopupEnabled} />
         </body>

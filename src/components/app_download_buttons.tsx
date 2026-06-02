@@ -32,7 +32,7 @@ export default function AppDownloadButtons({ className = "" }: AppDownloadButton
       {/* Apple Store 버튼 */}
       <button
         onClick={handleAppleStoreClick}
-        className="transition-transform hover:scale-105 hover:shadow-lg"
+        className="transition-transform hover:scale-[1.02] active:scale-95"
         aria-label="iOS 사전예약 폼으로 이동"
       >
         <Image
@@ -47,7 +47,7 @@ export default function AppDownloadButtons({ className = "" }: AppDownloadButton
       {/* Google Play 버튼 */}
       <button
         onClick={handleGooglePlayClick}
-        className="transition-transform hover:scale-105 hover:shadow-lg"
+        className="transition-transform hover:scale-[1.02] active:scale-95"
         aria-label="Google Play에서 한국지 다운로드"
       >
         <Image
@@ -70,9 +70,6 @@ export default function AppDownloadButtons({ className = "" }: AppDownloadButton
             onClick={(e) => e.stopPropagation()}
           >
             <div className="text-center">
-              <div className="mb-4">
-                <span className="text-4xl">🍎</span>
-              </div>
               <h3 className="text-lg font-bold mb-2">App Store 출시 준비중</h3>
               <p className="text-gray-600 mb-4">
                 iOS 버전은 현재 개발 중입니다.<br />
