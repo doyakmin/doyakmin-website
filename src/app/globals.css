@@ -22,6 +22,15 @@ html {
   scroll-behavior: smooth;
 }
 
+html[data-lang="ko"] .i18n-en,
+html[data-lang="en"] .i18n-ko {
+  display: none;
+}
+
+html:not([data-lang]) .i18n-en {
+  display: none;
+}
+
 body {
   min-height: 100vh;
   background: var(--game-night);

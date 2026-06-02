@@ -1,27 +1,31 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import AppDownloadButtons from '@/components/app_download_buttons'
+import TranslatedText from '@/components/translated_text'
 
 const stats = [
-    { value: 'GPS', label: '현실 위치 기반 플레이' },
-    { value: 'PVP', label: '플레이어 경쟁과 점령전' },
-    { value: 'LOCAL', label: '지역 방문을 만드는 게임' },
+    { value: 'GPS', ko: '현실 위치 기반 플레이', en: 'Real location-based play' },
+    { value: 'PVP', ko: '플레이어 경쟁과 점령전', en: 'Player battles and capture' },
+    { value: 'LOCAL', ko: '지역 방문을 만드는 게임', en: 'A game that drives local visits' },
 ]
 
 const values = [
     {
         title: 'PLAY',
-        description: '계속 접속하고 싶은 명확한 재미를 만듭니다.',
+        ko: '계속 접속하고 싶은 명확한 재미를 만듭니다.',
+        en: 'We build clear fun that players want to return to.',
         image: '/image/enjoy.png',
     },
     {
         title: 'CONNECT',
-        description: '플레이어와 지역, 상권과 관광을 자연스럽게 연결합니다.',
+        ko: '플레이어와 지역, 상권과 관광을 자연스럽게 연결합니다.',
+        en: 'We connect players, places, local businesses, and tourism.',
         image: '/image/coprosperity.png',
     },
     {
         title: 'GROW',
-        description: '재미가 오래 이어지는 서비스와 커뮤니티를 키웁니다.',
+        ko: '재미가 오래 이어지는 서비스와 커뮤니티를 키웁니다.',
+        en: 'We grow services and communities where fun lasts.',
         image: '/image/continuing.jpg',
     },
 ]
@@ -50,14 +54,17 @@ export default function Home() {
                             Own the city.
                         </h1>
                         <p className="game-readable mt-6 text-xl font-semibold leading-relaxed text-white/82">
-                            한국지는 현실의 위치를 게임판으로 바꾸는 모바일 점령형 게임입니다.
+                            <TranslatedText
+                                ko="한국지는 현실의 위치를 게임판으로 바꾸는 모바일 점령형 게임입니다."
+                                en="Hangukji is a mobile capture game that turns real-world locations into a game board."
+                            />
                         </p>
                         <div className="mt-8 flex flex-wrap gap-4">
                             <Link href="/games" className="game-button">
-                                한국지 보기
+                                <TranslatedText ko="한국지 보기" en="View Hangukji" />
                             </Link>
                             <Link href="/contact" className="game-button game-button-dark">
-                                제휴 문의
+                                <TranslatedText ko="제휴 문의" en="Partner with us" />
                             </Link>
                         </div>
                     </div>
@@ -84,7 +91,9 @@ export default function Home() {
                     {stats.map((item) => (
                         <div key={item.value} className="rounded-2xl border-2 border-[#111827] bg-white px-5 py-4">
                             <p className="text-3xl font-black tracking-tighter text-[#111827]">{item.value}</p>
-                            <p className="mt-1 text-sm font-bold text-[#526071]">{item.label}</p>
+                            <p className="mt-1 text-sm font-bold text-[#526071]">
+                                <TranslatedText ko={item.ko} en={item.en} />
+                            </p>
                         </div>
                     ))}
                 </div>
@@ -95,13 +104,22 @@ export default function Home() {
                     <div>
                         <p className="game-eyebrow text-[#0c7a90]">Hangukji</p>
                         <h2 className="game-heading mt-4 text-[#111827]">
-                            전국이 전장이 되고, 산책이 전략이 됩니다.
+                            <TranslatedText
+                                ko="전국이 전장이 되고, 산책이 전략이 됩니다."
+                                en="The whole country becomes the arena. Every walk becomes strategy."
+                            />
                         </h2>
                         <p className="game-copy game-readable mt-6">
-                            건물을 점령하고, 주변 플레이어와 경쟁하고, 지역을 방문하는 이유를 게임 안에서 만들어냅니다.
+                            <TranslatedText
+                                ko="건물을 점령하고, 주변 플레이어와 경쟁하고, 지역을 방문하는 이유를 게임 안에서 만들어냅니다."
+                                en="Capture buildings, compete with nearby players, and find a reason to visit real places through the game."
+                            />
                         </p>
                         <p className="game-copy game-readable mt-3">
-                            도약민은 이동이 곧 플레이가 되는 경험을 설계합니다.
+                            <TranslatedText
+                                ko="도약민은 이동이 곧 플레이가 되는 경험을 설계합니다."
+                                en="Doyakmin designs experiences where movement itself becomes play."
+                            />
                         </p>
                         <div className="mt-7 flex flex-wrap gap-3">
                             {['GPS', '점령전', 'PVP', '지역 활성화'].map((tag) => (
@@ -128,7 +146,12 @@ export default function Home() {
                 <div className="game-container">
                     <div className="max-w-3xl">
                         <p className="game-eyebrow">Our Rule</p>
-                        <h2 className="game-heading mt-4">게임은 재미있고, 연결되고, 계속 커져야 합니다.</h2>
+                        <h2 className="game-heading mt-4">
+                            <TranslatedText
+                                ko="게임은 재미있고, 연결되고, 계속 커져야 합니다."
+                                en="Games should be fun, connected, and always growing."
+                            />
+                        </h2>
                     </div>
 
                     <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
@@ -145,7 +168,7 @@ export default function Home() {
                                     {value.title}
                                 </h3>
                                 <p className="mt-3 text-base font-semibold leading-relaxed text-white/72">
-                                    {value.description}
+                                    <TranslatedText ko={value.ko} en={value.en} />
                                 </p>
                             </article>
                         ))}
@@ -159,9 +182,14 @@ export default function Home() {
                         <p className="text-sm font-black uppercase tracking-[0.16em] text-[#111827]/70">
                             Download
                         </p>
-                        <h2 className="game-heading mt-4 text-[#111827]">한국지를 지금 플레이하세요.</h2>
+                        <h2 className="game-heading mt-4 text-[#111827]">
+                            <TranslatedText ko="한국지를 지금 플레이하세요." en="Play Hangukji now." />
+                        </h2>
                         <p className="game-readable mt-5 text-lg font-bold leading-relaxed text-[#111827]/78">
-                            내 주변의 건물과 지역이 게임 속 영토가 됩니다. 앱을 다운로드하고 첫 점령을 시작해보세요.
+                            <TranslatedText
+                                ko="내 주변의 건물과 지역이 게임 속 영토가 됩니다. 앱을 다운로드하고 첫 점령을 시작해보세요."
+                                en="Buildings and places around you become territory in the game. Download the app and start your first capture."
+                            />
                         </p>
                     </div>
                     <div className="game-card bg-white p-8">

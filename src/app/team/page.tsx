@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import TranslatedText from '@/components/translated_text'
 
 const historyItems = [
     {
@@ -54,7 +55,10 @@ export default function TeamPage() {
                             for movement.
                         </h1>
                         <p className="game-readable mt-6 text-xl font-semibold leading-relaxed text-white/78">
-                            도약민은 현실의 이동과 지역 경험을 게임으로 바꾸는 스튜디오입니다.
+                            <TranslatedText
+                                ko="도약민은 현실의 이동과 지역 경험을 게임으로 바꾸는 스튜디오입니다."
+                                en="Doyakmin is a studio that turns movement and local experiences into games."
+                            />
                         </p>
                     </div>
 
@@ -79,7 +83,9 @@ export default function TeamPage() {
                                 정민영
                             </a>
                         </h2>
-                        <p className="mt-2 text-base font-black text-[#0c7a90]">대표이사</p>
+                        <p className="mt-2 text-base font-black text-[#0c7a90]">
+                            <TranslatedText ko="대표이사" en="CEO" />
+                        </p>
                         <p className="mt-2 break-all text-sm font-bold text-[#526071]">minyoung5454@naver.com</p>
                     </article>
                 </div>
@@ -88,7 +94,9 @@ export default function TeamPage() {
             <section className="py-24">
                 <div className="game-container">
                     <p className="game-eyebrow text-[#0c7a90]">History</p>
-                    <h2 className="game-heading mt-4">도약민의 플레이 로그</h2>
+                    <h2 className="game-heading mt-4">
+                        <TranslatedText ko="도약민의 플레이 로그" en="Doyakmin play log" />
+                    </h2>
 
                     <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
                         {historyItems.map((group) => (
@@ -108,7 +116,9 @@ export default function TeamPage() {
             <section className="bg-[#ffb02e] py-24">
                 <div className="game-container">
                     <p className="text-sm font-black uppercase tracking-[0.16em] text-[#111827]/70">Press</p>
-                    <h2 className="game-heading mt-4">보도자료</h2>
+                    <h2 className="game-heading mt-4">
+                        <TranslatedText ko="보도자료" en="Press" />
+                    </h2>
                     <div className="mt-10 grid grid-cols-1 gap-4">
                         {pressLinks.map((link) => (
                             <a

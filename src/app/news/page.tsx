@@ -9,6 +9,7 @@ import { abnormalLogoutNotice20251023 } from '@/content/news/abnormal-logout-not
 import { unPeaceFestival20251025 } from '@/content/news/un-peace-festival-2025-10-25'
 import { eventEndNotice20251107 } from '@/content/news/event-end-notice-2025-11-07'
 import { winnerAnnouncement20251109 } from '@/content/news/winner-announcement-2025-11-09'
+import TranslatedText from '@/components/translated_text'
 
 export default function NewsPage() {
     const allPosts = [
@@ -28,9 +29,14 @@ export default function NewsPage() {
             <section className="bg-[#07111f] py-24 text-white">
                 <div className="game-container">
                     <p className="game-eyebrow">News Room</p>
-                    <h1 className="game-title mt-5">소식</h1>
+                    <h1 className="game-title mt-5">
+                        <TranslatedText ko="소식" en="News" />
+                    </h1>
                     <p className="game-readable mt-6 text-xl font-semibold leading-relaxed text-white/78">
-                        한국지와 도약민의 업데이트, 이벤트, 공지를 확인하세요.
+                        <TranslatedText
+                            ko="한국지와 도약민의 업데이트, 이벤트, 공지를 확인하세요."
+                            en="Check updates, events, and notices from Hangukji and Doyakmin."
+                        />
                     </p>
                 </div>
             </section>

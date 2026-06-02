@@ -4,13 +4,14 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 import LanguageSelector from './language_selector'
+import TranslatedText from './translated_text'
 
 const navItems = [
-    { href: '/', label: '홈' },
-    { href: '/games', label: '게임' },
-    { href: '/team', label: '회사' },
-    { href: '/news', label: '소식' },
-    { href: '/contact', label: '문의' },
+    { href: '/', ko: '홈', en: 'Home' },
+    { href: '/games', ko: '게임', en: 'Games' },
+    { href: '/team', ko: '회사', en: 'Studio' },
+    { href: '/news', ko: '소식', en: 'News' },
+    { href: '/contact', ko: '문의', en: 'Contact' },
 ]
 
 export default function GlobalNavigation() {
@@ -42,7 +43,7 @@ export default function GlobalNavigation() {
                                 href={item.href}
                                 className="rounded-xl px-4 py-2 text-sm font-extrabold text-white/72 transition-colors hover:bg-white/10 hover:text-[#b7ff2a]"
                             >
-                                {item.label}
+                                <TranslatedText ko={item.ko} en={item.en} />
                             </Link>
                         ))}
                     </div>
@@ -85,7 +86,7 @@ export default function GlobalNavigation() {
                                 className="block rounded-2xl px-4 py-4 text-lg font-black text-white/86 hover:bg-white/10 hover:text-[#b7ff2a]"
                                 onClick={handleMenuClick}
                             >
-                                {item.label}
+                                <TranslatedText ko={item.ko} en={item.en} />
                             </Link>
                         ))}
                     </div>

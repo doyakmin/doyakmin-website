@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import TranslatedText from './translated_text'
 
 type SubmitStatus = "idle" | "success" | "error";
 
@@ -73,7 +74,7 @@ export default function GoogleSheetContactForm({ service, className = "" }: Goog
     <form className={`space-y-5 ${className}`} onSubmit={handleSubmit}>
       <div>
         <label htmlFor={`name-${service}`} className="mb-2 block text-sm font-black text-[#111827]">
-          이름
+          <TranslatedText ko="이름" en="Name" />
         </label>
         <input
           id={`name-${service}`}
@@ -87,7 +88,7 @@ export default function GoogleSheetContactForm({ service, className = "" }: Goog
 
       <div>
         <label htmlFor={`reply-contact-${service}`} className="mb-2 block text-sm font-black text-[#111827]">
-          답변 받을 연락처 (이메일 또는 카카오톡 ID)
+          <TranslatedText ko="답변 받을 연락처 (이메일 또는 카카오톡 ID)" en="Reply contact (email or KakaoTalk ID)" />
         </label>
         <input
           id={`reply-contact-${service}`}
@@ -101,7 +102,7 @@ export default function GoogleSheetContactForm({ service, className = "" }: Goog
 
       <div>
         <label htmlFor={`category-${service}`} className="mb-2 block text-sm font-black text-[#111827]">
-          문의 유형
+          <TranslatedText ko="문의 유형" en="Inquiry type" />
         </label>
         <select
           id={`category-${service}`}
@@ -111,18 +112,18 @@ export default function GoogleSheetContactForm({ service, className = "" }: Goog
           className="block w-full rounded-2xl border-2 border-[#111827] bg-white px-4 py-3 text-sm font-bold shadow-none focus:outline-none focus:ring-4 focus:ring-[#b7ff2a]/60"
         >
           <option value="" disabled>
-            유형을 선택해주세요
+            Select a type
           </option>
-          <option value="app">앱 문의</option>
-          <option value="business">협업 제안</option>
-          <option value="event">이벤트 문의</option>
-          <option value="etc">기타</option>
+          <option value="app">App inquiry</option>
+          <option value="business">Business proposal</option>
+          <option value="event">Event inquiry</option>
+          <option value="etc">Other</option>
         </select>
       </div>
 
       <div>
         <label htmlFor={`message-${service}`} className="mb-2 block text-sm font-black text-[#111827]">
-          문의 내용
+          <TranslatedText ko="문의 내용" en="Message" />
         </label>
         <textarea
           id={`message-${service}`}
@@ -139,7 +140,7 @@ export default function GoogleSheetContactForm({ service, className = "" }: Goog
         disabled={isSubmitting || !scriptURL}
         className="game-button w-full disabled:cursor-not-allowed disabled:bg-gray-300 disabled:text-gray-500"
       >
-        {isSubmitting ? "접수 중..." : "문의 등록하기"}
+        {isSubmitting ? "Sending..." : <TranslatedText ko="문의 등록하기" en="Submit inquiry" />}
       </button>
 
       {message && (
