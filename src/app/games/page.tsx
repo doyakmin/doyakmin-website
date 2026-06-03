@@ -28,25 +28,46 @@ const features = [
 
 const mediaHighlights = [
     {
-        src: '/image/game_introduce_2.png',
+        src: '/image/hangukji/hero-conquer.png',
         titleKo: '실제 지도 위에서 펼쳐지는 점령전',
         titleEn: 'Capture battles on a real map',
         bodyKo: '주변 건물과 장소가 플레이어의 영토가 되고, 이동이 곧 전략이 됩니다.',
         bodyEn: 'Nearby buildings and places become territory, turning movement into strategy.',
     },
     {
-        src: '/image/game_introduce.jpg',
+        src: '/image/hangukji/phone-tutorial.png',
         titleKo: '처음 보는 사람도 바로 이해하는 모바일 화면',
         titleEn: 'A mobile screen players can understand fast',
         bodyKo: '캐릭터, 튜토리얼, 지도 화면을 한눈에 보여주어 한국지의 첫인상을 선명하게 만듭니다.',
         bodyEn: 'Characters, tutorials, and map screens make the first impression of Hangukji clear.',
     },
     {
-        src: '/image/news/news6.png',
+        src: '/image/hangukji/gameplay-map.png',
         titleKo: '지역 상권과 이어지는 제휴 보상',
         titleEn: 'Partner rewards connected to local businesses',
         bodyKo: '게임 안의 방문과 활동이 실제 지역 혜택으로 이어지는 구조를 보여줍니다.',
         bodyEn: 'In-game visits and activity can lead to real local benefits.',
+    },
+    {
+        src: '/image/hangukji/feature-coupon.png',
+        titleKo: '한국 전통놀이로 즐기는 훈련',
+        titleEn: 'Training through Korean traditional games',
+        bodyKo: '짧고 직관적인 미니게임으로 한국지의 플레이 리듬을 더합니다.',
+        bodyEn: 'Short, intuitive mini-games add rhythm to Hangukji play.',
+    },
+    {
+        src: '/image/hangukji/feature-ranking.png',
+        titleKo: '점령 기록이 쌓이는 랭킹',
+        titleEn: 'Rankings built from capture records',
+        bodyKo: '주요 점령지와 점령지 수를 비교하며 플레이어의 성취를 보여줍니다.',
+        bodyEn: 'Players can compare key territories and capture counts as visible achievements.',
+    },
+    {
+        src: '/image/hangukji/feature-training.png',
+        titleKo: '한 장으로 전하는 한국지의 재미',
+        titleEn: 'Hangukji fun in one bold visual',
+        bodyKo: '점령, 캐릭터, 지도 화면을 강한 홍보 이미지로 전달합니다.',
+        bodyEn: 'Capture, characters, and map play are presented in one bold promotional image.',
     },
 ]
 
@@ -114,7 +135,7 @@ export default function Games() {
                         </h2>
                     </div>
 
-                    <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-3">
+                    <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
                         {mediaHighlights.map((item) => (
                             <article key={item.src} className="game-card overflow-hidden p-4">
                                 <div className="relative aspect-[4/3] overflow-hidden rounded-[20px] bg-[#f4f7fb]">

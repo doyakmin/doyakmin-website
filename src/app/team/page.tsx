@@ -25,6 +25,11 @@ const historyItems = [
 
 const pressLinks = [
     {
+        title: "KBS 부산 뉴스, GPS 기반 관광 게임 '한국지' 소개",
+        href: 'https://www.youtube.com/results?search_query=%ED%95%9C%EA%B5%AD%EC%A7%80+%EB%8F%84%EC%95%BD%EB%AF%BC+KBS',
+        image: '/image/hangukji/press-kbs.png',
+    },
+    {
         title: '2025 관광이음주간 도약민, 혁신 기술 선보여',
         href: 'https://m.newsprime.co.kr/section_view.html?no=705537',
         image: '/image/news/giweek-2025-prime.jpg',

@@ -74,7 +74,7 @@ export default function Home() {
 
                     <div className="game-card-dark relative overflow-hidden p-4">
                         <Image
-                            src="/image/hangukji-banner.jpg"
+                            src="/image/hangukji/feature-training.png"
                             alt="한국지 게임 배너"
                             width={900}
                             height={700}
@@ -134,11 +134,11 @@ export default function Home() {
 
                     <div className="game-card overflow-hidden p-4">
                         <Image
-                            src="/image/game_introduce.jpg"
+                            src="/image/hangukji/phone-tutorial.png"
                             alt="한국지 게임 소개 이미지"
                             width={960}
                             height={720}
-                            className="aspect-[4/3] w-full rounded-[22px] object-cover"
+                            className="aspect-[4/3] w-full rounded-[22px] object-contain"
                         />
                     </div>
                 </div>
