@@ -48,7 +48,7 @@ export default function Home() {
                 </video>
                 <div className="absolute inset-0 bg-[#07111f]/70" />
 
-                <div className="game-container relative z-10 grid min-h-[calc(100vh-44px)] items-center gap-10 py-20 lg:grid-cols-[1.05fr_0.95fr]">
+                <div className="game-container relative z-10 grid min-h-[calc(100svh-56px)] items-center gap-8 py-12 md:gap-10 md:py-20 lg:grid-cols-[1.05fr_0.95fr]">
                     <div>
                         <p className="game-eyebrow">Doyakmin Game Studio</p>
                         <h1 className="game-title mt-5 max-w-3xl">
@@ -56,13 +56,13 @@ export default function Home() {
                             <br />
                             Own the city.
                         </h1>
-                        <p className="game-readable mt-6 text-xl font-semibold leading-relaxed text-white/82">
+                        <p className="game-readable mt-5 text-lg font-semibold leading-relaxed text-white/82 md:mt-6 md:text-xl">
                             <TranslatedText
                                 ko="한국지는 현실의 위치를 게임판으로 바꾸는 모바일 점령형 게임입니다."
                                 en="Hangukji is a mobile capture game that turns real-world locations into a game board."
                             />
                         </p>
-                        <div className="mt-8 flex flex-wrap gap-4">
+                        <div className="mt-7 grid grid-cols-2 gap-3 sm:flex sm:flex-wrap md:mt-8 md:gap-4">
                             <Link
                                 href="/games"
                                 className="game-button border-white bg-white text-[#111827] shadow-[0_6px_0_rgba(183,255,42,0.8)] hover:bg-white hover:shadow-[0_8px_0_rgba(183,255,42,0.85)]"
@@ -78,24 +78,24 @@ export default function Home() {
                         </div>
                     </div>
 
-                    <div className="relative flex items-center justify-center">
+                    <div className="relative flex items-center justify-center py-4 md:py-0">
                         <Image
                             src="/image/hangukji/logo.png"
                             alt="한국지 로고"
                             width={1000}
                             height={260}
-                            className="h-auto w-full max-w-[620px] object-contain drop-shadow-[0_18px_0_rgba(0,0,0,0.28)]"
+                            className="h-auto w-[92%] max-w-[620px] object-contain drop-shadow-[0_14px_0_rgba(0,0,0,0.24)] md:w-full md:drop-shadow-[0_18px_0_rgba(0,0,0,0.28)]"
                             priority
                         />
                     </div>
                 </div>
             </section>
 
-            <section className="bg-[#b7ff2a] py-6">
+            <section className="bg-[#b7ff2a] py-4 md:py-6">
                 <div className="game-container grid grid-cols-1 gap-3 md:grid-cols-3">
                     {stats.map((item) => (
-                        <div key={item.value} className="rounded-2xl border-2 border-[#111827] bg-white px-5 py-4">
-                            <p className="text-3xl font-black tracking-tighter text-[#111827]">{item.value}</p>
+                        <div key={item.value} className="rounded-2xl border-2 border-[#111827] bg-white px-4 py-3 md:px-5 md:py-4">
+                            <p className="text-2xl font-black tracking-tighter text-[#111827] md:text-3xl">{item.value}</p>
                             <p className="mt-1 text-sm font-bold text-[#526071]">
                                 <TranslatedText ko={item.ko} en={item.en} />
                             </p>
@@ -104,7 +104,7 @@ export default function Home() {
                 </div>
             </section>
 
-            <section className="bg-[#f4f7fb] py-24">
+            <section className="bg-[#f4f7fb] py-14 md:py-24">
                 <div className="game-container grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr]">
                     <div>
                         <p className="game-eyebrow text-[#0c7a90]">Hangukji</p>
@@ -135,7 +135,7 @@ export default function Home() {
                         </div>
                     </div>
 
-                    <div className="game-card overflow-hidden p-4">
+                    <div className="game-card overflow-hidden p-3 md:p-4">
                         <Image
                             src="/image/hangukji/phone-tutorial.png"
                             alt="한국지 튜토리얼 화면"
@@ -147,7 +147,7 @@ export default function Home() {
                 </div>
             </section>
 
-            <section className="bg-[#07111f] py-24 text-white">
+            <section className="bg-[#07111f] py-14 text-white md:py-24">
                 <div className="game-container">
                     <div className="max-w-3xl">
                         <p className="game-eyebrow">Our Rule</p>
@@ -159,7 +159,7 @@ export default function Home() {
                         </h2>
                     </div>
 
-                    <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
+                    <div className="mt-8 grid grid-cols-1 gap-5 md:mt-12 md:grid-cols-3 md:gap-6">
                         {values.map((value) => (
                             <article key={value.titleKo} className="game-card-dark overflow-hidden p-5">
                                 <Image
@@ -181,7 +181,7 @@ export default function Home() {
                 </div>
             </section>
 
-            <section className="bg-[#ffb02e] py-24">
+            <section className="bg-[#ffb02e] py-14 md:py-24">
                 <div className="game-container grid items-center gap-10 lg:grid-cols-[1fr_0.9fr]">
                     <div>
                         <p className="text-sm font-black uppercase tracking-[0.16em] text-[#111827]/70">

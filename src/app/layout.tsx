@@ -46,7 +46,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </head>
         <body className={inter.className}>
             <GlobalNavigation/>
-            <div className="pt-14">
+            <div className="pb-24 pt-14 md:pb-0">
                 {children}
             </div>
             <Footer/>
