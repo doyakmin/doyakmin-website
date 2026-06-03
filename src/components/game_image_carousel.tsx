@@ -9,11 +9,19 @@ export default function GameImageCarousel() {
     const images: { src: string; alt: string }[] = [
         {
             src: "/image/game_introduce.jpg",
-            alt: "한국지 게임 소개 이미지 1"
+            alt: "한국지 모바일 게임 소개 이미지"
         },
         {
             src: "/image/game_introduce_2.png",
-            alt: "한국지 게임 소개 이미지 2"
+            alt: "한국지 실제 플레이와 전투 화면"
+        },
+        {
+            src: "/image/hangukji-banner.jpg",
+            alt: "한국지 베타 버전 출시 포스터"
+        },
+        {
+            src: "/image/news/news6.png",
+            alt: "한국지 지역 제휴 소개 이미지"
         }
     ]
 
@@ -39,7 +47,7 @@ export default function GameImageCarousel() {
         <div className="w-full">
             <div className="game-card-dark group relative overflow-hidden p-3">
                 {/* 이미지 컨테이너 */}
-                <div className="relative h-0 w-full overflow-hidden rounded-[22px] pb-[60%]">
+                <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[22px] bg-white">
                     {images.map((image, index) => (
                         <div
                             key={index}
@@ -53,7 +61,7 @@ export default function GameImageCarousel() {
                                 src={image.src}
                                 alt={image.alt}
                                 fill
-                                className="object-cover"
+                                className="object-contain"
                                 draggable={false}
                                 sizes="(max-width: 1024px) 100vw, 66vw"
                             />

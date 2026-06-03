@@ -11,21 +11,24 @@ const stats = [
 
 const values = [
     {
-        title: 'PLAY',
+        titleKo: '재미',
+        titleEn: 'FUN',
         ko: '계속 접속하고 싶은 명확한 재미를 만듭니다.',
         en: 'We build clear fun that players want to return to.',
         image: '/image/enjoy.png',
     },
     {
-        title: 'CONNECT',
+        titleKo: '상생',
+        titleEn: 'CO-PROSPERITY',
         ko: '플레이어와 지역, 상권과 관광을 자연스럽게 연결합니다.',
         en: 'We connect players, places, local businesses, and tourism.',
         image: '/image/coprosperity.png',
     },
     {
-        title: 'GROW',
-        ko: '재미가 오래 이어지는 서비스와 커뮤니티를 키웁니다.',
-        en: 'We grow services and communities where fun lasts.',
+        titleKo: '지속',
+        titleEn: 'SUSTAIN',
+        ko: '재미와 상생이 오래 이어지는 서비스로 성장합니다.',
+        en: 'We grow into a service where fun and co-prosperity last.',
         image: '/image/continuing.jpg',
     },
 ]
@@ -60,8 +63,8 @@ export default function Home() {
                             />
                         </p>
                         <div className="mt-8 flex flex-wrap gap-4">
-                            <Link href="/games" className="game-button">
-                                <TranslatedText ko="한국지 보기" en="View Hangukji" />
+                            <Link href="/games" className="game-button game-button-dark">
+                                <TranslatedText ko="play" en="Play" />
                             </Link>
                             <Link href="/contact" className="game-button game-button-dark">
                                 <TranslatedText ko="제휴 문의" en="Partner with us" />
@@ -75,12 +78,11 @@ export default function Home() {
                             alt="한국지 게임 배너"
                             width={900}
                             height={700}
-                            className="aspect-[4/3] w-full rounded-[22px] object-cover"
+                            className="h-auto w-full rounded-[22px] object-contain"
                             priority
                         />
                         <div className="absolute bottom-7 left-7 rounded-2xl border-2 border-white/30 bg-[#07111f]/78 px-5 py-4 backdrop-blur">
-                            <p className="text-xs font-black tracking-[0.16em] text-[#b7ff2a]">NOW LIVE</p>
-                            <p className="mt-1 text-2xl font-black tracking-tight">한국지</p>
+                            <p className="text-xs font-black tracking-[0.16em] text-[#b7ff2a]">coming soon</p>
                         </div>
                     </div>
                 </div>
@@ -148,24 +150,24 @@ export default function Home() {
                         <p className="game-eyebrow">Our Rule</p>
                         <h2 className="game-heading mt-4">
                             <TranslatedText
-                                ko="게임은 재미있고, 연결되고, 계속 커져야 합니다."
-                                en="Games should be fun, connected, and always growing."
+                                ko="게임은 재밌어야하고, 연결되어야하며, 지속되어야 합니다."
+                                en="Games should be fun, connected, and sustainable."
                             />
                         </h2>
                     </div>
 
                     <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
                         {values.map((value) => (
-                            <article key={value.title} className="game-card-dark overflow-hidden p-5">
+                            <article key={value.titleKo} className="game-card-dark overflow-hidden p-5">
                                 <Image
                                     src={value.image}
-                                    alt={`${value.title} 이미지`}
+                                    alt={`${value.titleKo} 이미지`}
                                     width={360}
                                     height={260}
                                     className="aspect-[4/3] w-full rounded-[20px] object-cover"
                                 />
                                 <h3 className="mt-5 text-3xl font-black tracking-tighter text-[#b7ff2a]">
-                                    {value.title}
+                                    <TranslatedText ko={value.titleKo} en={value.titleEn} />
                                 </h3>
                                 <p className="mt-3 text-base font-semibold leading-relaxed text-white/72">
                                     <TranslatedText ko={value.ko} en={value.en} />

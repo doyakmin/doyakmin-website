@@ -10,10 +10,7 @@ export default function ContactPage() {
                 <div className="game-container grid items-center gap-10 lg:grid-cols-[1fr_0.85fr]">
                     <div>
                         <p className="game-eyebrow">Contact</p>
-                        <h1 className="game-title mt-5">
-                            <TranslatedText ko="함께 더 큰 게임판을 만들까요?" en="Let’s build a bigger game board together." />
-                        </h1>
-                        <p className="game-readable mt-6 text-xl font-semibold leading-relaxed text-white/78">
+                        <p className="game-readable mt-5 text-xl font-semibold leading-relaxed text-white/78">
                             <TranslatedText
                                 ko="제휴, 협업, 앱 문의를 남겨주시면 도약민 팀이 확인 후 안내드립니다."
                                 en="Send us partnership, collaboration, or app inquiries. The Doyakmin team will get back to you."

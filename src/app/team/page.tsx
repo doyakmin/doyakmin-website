@@ -27,18 +27,22 @@ const pressLinks = [
     {
         title: '2025 관광이음주간 도약민, 혁신 기술 선보여',
         href: 'https://m.newsprime.co.kr/section_view.html?no=705537',
+        image: '/image/news/giweek-2025-prime.jpg',
     },
     {
         title: "부산 지역 대학생 스타트업 개발 모바일 게임 '한국지' 주목",
         href: 'https://www.pknu.ac.kr/main/51?action=view&no=721366',
+        image: '/image/news/news1.jpg',
     },
     {
         title: '국립부경대, 창업 아이디어 경진대회 대상 수상',
         href: 'https://naver.me/xOd6Eh3o',
+        image: '/image/news/news2.png',
     },
     {
         title: "국립부경대-경상국립대 연합팀, '2024 부산다움 트래블톤' 우수상",
         href: 'https://naver.me/xnrlgB9Q',
+        image: '/image/news/news3.jpg',
     },
 ]
 
@@ -49,10 +53,8 @@ export default function TeamPage() {
                 <div className="game-container grid items-center gap-12 lg:grid-cols-[1fr_0.8fr]">
                     <div>
                         <p className="game-eyebrow">Studio</p>
-                        <h1 className="game-title mt-5">
-                            We make games
-                            <br />
-                            for movement.
+                        <h1 className="mt-5 text-5xl font-black leading-[0.95] tracking-tighter md:text-6xl lg:text-7xl">
+                            Games Maketh The World Anew
                         </h1>
                         <p className="game-readable mt-6 text-xl font-semibold leading-relaxed text-white/78">
                             <TranslatedText
@@ -119,16 +121,25 @@ export default function TeamPage() {
                     <h2 className="game-heading mt-4">
                         <TranslatedText ko="보도자료" en="Press" />
                     </h2>
-                    <div className="mt-10 grid grid-cols-1 gap-4">
+                    <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
                         {pressLinks.map((link) => (
                             <a
                                 key={link.href}
                                 href={link.href}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="game-card block p-6 text-lg font-black transition-transform hover:-translate-y-1"
+                                className="game-card block overflow-hidden p-4 transition-transform hover:-translate-y-1"
                             >
-                                {link.title}
+                                <div className="relative aspect-[16/9] overflow-hidden rounded-[18px] bg-white">
+                                    <Image
+                                        src={link.image}
+                                        alt={link.title}
+                                        fill
+                                        className="object-cover"
+                                        sizes="(max-width: 768px) 100vw, 50vw"
+                                    />
+                                </div>
+                                <p className="mt-4 text-lg font-black leading-tight">{link.title}</p>
                             </a>
                         ))}
                     </div>
