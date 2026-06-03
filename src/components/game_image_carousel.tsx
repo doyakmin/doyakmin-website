@@ -8,28 +8,20 @@ export default function GameImageCarousel() {
 
     const images: { src: string; alt: string }[] = [
         {
-            src: "/image/hangukji/feature-training.png",
-            alt: "한국지 이 고을을 차지하라 홍보 이미지"
-        },
-        {
-            src: "/image/hangukji/hero-conquer.png",
-            alt: "한국지 실제 지도 점령 플레이 화면"
-        },
-        {
-            src: "/image/hangukji/phone-tutorial.png",
-            alt: "한국지 모바일 튜토리얼 화면"
-        },
-        {
-            src: "/image/hangukji/gameplay-map.png",
-            alt: "한국지 실제 상점 쿠폰 발급 화면"
-        },
-        {
             src: "/image/hangukji/feature-coupon.png",
             alt: "한국지 전통놀이 훈련 화면"
         },
         {
             src: "/image/hangukji/feature-ranking.png",
             alt: "한국지 랭킹 순위 화면"
+        },
+        {
+            src: "/image/hangukji/feature-training.png",
+            alt: "한국지 이 고을을 차지하라 홍보 이미지"
+        },
+        {
+            src: "/image/hangukji/gameplay-map.png",
+            alt: "한국지 실제 상점 쿠폰 발급 화면"
         }
     ]
 

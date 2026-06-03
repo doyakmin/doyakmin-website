@@ -33,6 +33,13 @@ const values = [
     },
 ]
 
+const hangukjiShowcaseImages = [
+    { src: '/image/hangukji/feature-coupon.png', alt: '한국지 전통놀이 훈련 화면' },
+    { src: '/image/hangukji/feature-ranking.png', alt: '한국지 랭킹 순위 화면' },
+    { src: '/image/hangukji/feature-training.png', alt: '한국지 이 고을을 차지하라 홍보 이미지' },
+    { src: '/image/hangukji/gameplay-map.png', alt: '한국지 실제 상점 쿠폰 발급 화면' },
+]
+
 export default function Home() {
     return (
         <main className="game-shell min-h-screen">
@@ -63,10 +70,16 @@ export default function Home() {
                             />
                         </p>
                         <div className="mt-8 flex flex-wrap gap-4">
-                            <Link href="/games" className="game-button game-button-dark">
+                            <Link
+                                href="/games"
+                                className="game-button border-white bg-white text-[#111827] shadow-[0_6px_0_rgba(183,255,42,0.8)] hover:bg-white hover:shadow-[0_8px_0_rgba(183,255,42,0.85)]"
+                            >
                                 <TranslatedText ko="play" en="Play" />
                             </Link>
-                            <Link href="/contact" className="game-button game-button-dark">
+                            <Link
+                                href="/contact"
+                                className="game-button border-white bg-white text-[#111827] shadow-[0_6px_0_rgba(183,255,42,0.8)] hover:bg-white hover:shadow-[0_8px_0_rgba(183,255,42,0.85)]"
+                            >
                                 <TranslatedText ko="제휴 문의" en="Partner with us" />
                             </Link>
                         </div>
@@ -74,11 +87,11 @@ export default function Home() {
 
                     <div className="game-card-dark relative overflow-hidden p-4">
                         <Image
-                            src="/image/hangukji/feature-training.png"
+                            src="/image/hangukji/phone-tutorial.png"
                             alt="한국지 게임 배너"
-                            width={900}
-                            height={700}
-                            className="h-auto w-full rounded-[22px] object-contain"
+                            width={488}
+                            height={682}
+                            className="mx-auto max-h-[70vh] w-auto max-w-full rounded-[22px] object-contain"
                             priority
                         />
                         <div className="absolute bottom-7 left-7 rounded-2xl border-2 border-white/30 bg-[#07111f]/78 px-5 py-4 backdrop-blur">
@@ -133,13 +146,19 @@ export default function Home() {
                     </div>
 
                     <div className="game-card overflow-hidden p-4">
-                        <Image
-                            src="/image/hangukji/phone-tutorial.png"
-                            alt="한국지 게임 소개 이미지"
-                            width={960}
-                            height={720}
-                            className="aspect-[4/3] w-full rounded-[22px] object-contain"
-                        />
+                        <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
+                            {hangukjiShowcaseImages.map((image) => (
+                                <div key={image.src} className="relative aspect-[9/16] overflow-hidden rounded-[18px] bg-[#f4f7fb]">
+                                    <Image
+                                        src={image.src}
+                                        alt={image.alt}
+                                        fill
+                                        className="object-contain"
+                                        sizes="(max-width: 768px) 50vw, 16vw"
+                                    />
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </section>

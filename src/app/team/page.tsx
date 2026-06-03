@@ -26,7 +26,7 @@ const historyItems = [
 const pressLinks = [
     {
         title: "KBS 부산 뉴스, GPS 기반 관광 게임 '한국지' 소개",
-        href: 'https://www.youtube.com/results?search_query=%ED%95%9C%EA%B5%AD%EC%A7%80+%EB%8F%84%EC%95%BD%EB%AF%BC+KBS',
+        href: 'https://youtu.be/UHrwMiI9XXo?si=MtpjOsWFEuAAISMq',
         image: '/image/hangukji/press-kbs.png',
     },
     {
