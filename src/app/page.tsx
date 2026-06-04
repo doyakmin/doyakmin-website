@@ -159,20 +159,20 @@ export default function Home() {
                         </h2>
                     </div>
 
-                    <div className="mt-8 grid grid-cols-1 gap-5 md:mt-12 md:grid-cols-3 md:gap-6">
+                    <div className="mobile-value-strip mt-8 flex snap-x gap-4 overflow-x-auto pb-3 md:mt-12 md:grid md:grid-cols-3 md:gap-6 md:overflow-visible md:pb-0">
                         {values.map((value) => (
-                            <article key={value.titleKo} className="game-card-dark overflow-hidden p-5">
+                            <article key={value.titleKo} className="game-card-dark min-w-[72%] snap-start overflow-hidden p-4 sm:min-w-[46%] md:min-w-0 md:p-5">
                                 <Image
                                     src={value.image}
                                     alt={`${value.titleKo} 이미지`}
                                     width={360}
                                     height={260}
-                                    className="aspect-[4/3] w-full rounded-[20px] object-cover"
+                                    className="aspect-[4/3] w-full rounded-[16px] object-cover md:rounded-[20px]"
                                 />
-                                <h3 className="mt-5 text-3xl font-black tracking-tighter text-[#b7ff2a]">
+                                <h3 className="mt-4 text-2xl font-black tracking-tighter text-[#b7ff2a] md:mt-5 md:text-3xl">
                                     <TranslatedText ko={value.titleKo} en={value.titleEn} />
                                 </h3>
-                                <p className="mt-3 text-base font-semibold leading-relaxed text-white/72">
+                                <p className="mt-2 text-sm font-semibold leading-relaxed text-white/72 md:mt-3 md:text-base">
                                     <TranslatedText ko={value.ko} en={value.en} />
                                 </p>
                             </article>

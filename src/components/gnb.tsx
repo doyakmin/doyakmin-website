@@ -3,8 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useState } from 'react'
-import { Building2, Home, Mail, Menu, Newspaper, X, Gamepad2 } from 'lucide-react'
+import { Building2, Home, Mail, Newspaper, Gamepad2 } from 'lucide-react'
 import LanguageSelector from './language_selector'
 import TranslatedText from './translated_text'
 
@@ -17,78 +16,52 @@ const navItems = [
 ]
 
 export default function GlobalNavigation() {
-    const [isMenuOpen, setIsMenuOpen] = useState(false)
     const pathname = usePathname()
 
     const handleMenuClick = () => {
-        setIsMenuOpen(false)
     }
 
     return (
-        <nav className="fixed left-0 right-0 top-0 z-50 border-b-2 border-[#111827] bg-[#07111f]/95 text-white backdrop-blur-md">
-            <div className="game-container">
-                <div className="flex h-14 items-center justify-between">
-                    <Link href="/" className="flex items-center gap-3" onClick={handleMenuClick}>
-                        <Image
-                            src="/image/mark.png"
-                            alt="도약민 로고"
-                            width={34}
-                            height={34}
-                            className="h-[34px] w-[34px] rounded-xl border-2 border-white/20 object-cover"
-                        />
-                        <span className="text-lg font-black tracking-tight">DOYAKMIN</span>
-                    </Link>
-
-                    <div className="hidden items-center gap-2 md:flex">
-                        {navItems.map((item) => (
-                            <Link
-                                key={item.href}
-                                href={item.href}
-                                className="rounded-xl px-4 py-2 text-sm font-extrabold text-white/72 transition-colors hover:bg-white/10 hover:text-[#b7ff2a]"
-                            >
-                                <TranslatedText ko={item.ko} en={item.en} />
-                            </Link>
-                        ))}
-                    </div>
-
-                    <div className="hidden items-center gap-3 md:flex">
-                        <LanguageSelector />
-                        <Link href="/games" className="game-button min-h-10 px-4 text-sm">
-                            PLAY
+        <>
+            <nav className="fixed left-0 right-0 top-0 z-50 border-b-2 border-[#111827] bg-[#07111f]/95 text-white backdrop-blur-md">
+                <div className="game-container">
+                    <div className="flex h-14 items-center justify-between">
+                        <Link href="/" className="flex items-center gap-3" onClick={handleMenuClick}>
+                            <Image
+                                src="/image/mark.png"
+                                alt="도약민 로고"
+                                width={34}
+                                height={34}
+                                className="h-[34px] w-[34px] rounded-xl border-2 border-white/20 object-cover"
+                            />
+                            <span className="text-lg font-black tracking-tight">DOYAKMIN</span>
                         </Link>
-                    </div>
 
-                    <button
-                        type="button"
-                        onClick={() => setIsMenuOpen(!isMenuOpen)}
-                        className="inline-flex h-11 w-11 items-center justify-center rounded-xl border-2 border-white/20 text-white md:hidden"
-                        aria-label="메뉴 열기"
-                        aria-expanded={isMenuOpen}
-                    >
-                        {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-                    </button>
-                </div>
-            </div>
+                        <div className="hidden items-center gap-2 md:flex">
+                            {navItems.map((item) => (
+                                <Link
+                                    key={item.href}
+                                    href={item.href}
+                                    className="rounded-xl px-4 py-2 text-sm font-extrabold text-white/72 transition-colors hover:bg-white/10 hover:text-[#b7ff2a]"
+                                >
+                                    <TranslatedText ko={item.ko} en={item.en} />
+                                </Link>
+                            ))}
+                        </div>
 
-            {isMenuOpen && (
-                <div className="border-t-2 border-white/10 bg-[#07111f] md:hidden">
-                    <div className="game-container py-3">
-                        <div className="mb-2 px-1">
+                        <div className="hidden items-center gap-3 md:flex">
+                            <LanguageSelector />
+                            <Link href="/games" className="game-button min-h-10 px-4 text-sm">
+                                PLAY
+                            </Link>
+                        </div>
+
+                        <div className="md:hidden">
                             <LanguageSelector />
                         </div>
-                        {navItems.map((item) => (
-                            <Link
-                                key={item.href}
-                                href={item.href}
-                                className="block rounded-2xl px-4 py-4 text-lg font-black text-white/86 hover:bg-white/10 hover:text-[#b7ff2a]"
-                                onClick={handleMenuClick}
-                            >
-                                <TranslatedText ko={item.ko} en={item.en} />
-                            </Link>
-                        ))}
                     </div>
                 </div>
-            )}
+            </nav>
 
             <div className="fixed bottom-0 left-0 right-0 z-50 border-t-2 border-[#111827] bg-white/96 px-2 pb-[max(8px,env(safe-area-inset-bottom))] pt-2 shadow-[0_-8px_24px_rgba(7,17,31,0.14)] backdrop-blur-md md:hidden">
                 <div className="mx-auto grid max-w-md grid-cols-5 gap-1">
@@ -113,6 +86,6 @@ export default function GlobalNavigation() {
                     })}
                 </div>
             </div>
-        </nav>
+        </>
     )
 }

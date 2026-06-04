@@ -243,4 +243,15 @@ body {
     padding: 7px 12px;
     font-size: 12px;
   }
+
+  .mobile-value-strip {
+    margin-inline: -12px;
+    padding-inline: 12px;
+    scroll-padding-inline: 12px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .mobile-value-strip::-webkit-scrollbar {
+    display: none;
+  }
 }
