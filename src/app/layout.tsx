@@ -1,61 +1,85 @@
 import type { Metadata } from "next";
-import GlobalNavigation from '@/components/gnb'
-import { Inter } from 'next/font/google'
+import { Inter } from "next/font/google";
+import GlobalNavigation from "@/components/gnb";
 import Footer from "@/components/footer";
-import EventPopupModal from '@/components/event_popup_modal'
-const inter = Inter({ subsets: ['latin'] })
-import './globals.css'
+import EventPopupModal from "@/components/event_popup_modal";
+import "./globals.css";
+
+const inter = Inter({ subsets: ["latin"] });
+
+const siteUrl = "https://doyakmin.com";
+const previewImage = "/og-doyakmin-card-v3.jpg";
+const previewImageUrl = `${siteUrl}${previewImage}`;
 
 export const metadata: Metadata = {
-    title: '도약민 | GAMES MAKETH THE WORLD ANEW',
-    description: '위치 기반 게임 \'한국지\' 제작사 (주)도약민. 게임으로 세상을 새롭게, 지역을 여행처럼!',
-    icons: {
-        icon: "/image/favicon.png",
+  metadataBase: new URL(siteUrl),
+  title: "도약민 | GAMES MAKETH THE WORLD ANEW",
+  description:
+    "위치 기반 게임 '한국지' 제작사 (주)도약민. 게임으로 세상을 새롭게, 지역을 여행처럼!",
+  keywords: [
+    "도약민",
+    "(주)도약민",
+    "주식회사 도약민",
+    "한국지",
+    "travel game",
+    "DOYAKMIN",
+    "doyakmin inc",
+    "Hangukji",
+    "위치 기반 게임",
+    "지역 활성화 게임",
+  ],
+  authors: [{ name: "DOYAKMIN Inc." }],
+  icons: {
+    icon: "/image/favicon.png",
+  },
+  verification: {
+    other: {
+      "naver-site-verification": "aec2d0fc84541c932b9130bcaca82f377eeb4562",
     },
-}
+  },
+  alternates: {
+    canonical: siteUrl,
+  },
+  openGraph: {
+    title: "도약민 | 한국지 제작사",
+    description:
+      "위치 기반 게임 '한국지'로 전국을 점령! 게임으로 세상을 새롭게 만드는 도약민.",
+    url: siteUrl,
+    siteName: "도약민",
+    type: "website",
+    locale: "ko_KR",
+    images: [
+      {
+        url: previewImageUrl,
+        secureUrl: previewImageUrl,
+        width: 1200,
+        height: 630,
+        alt: "DOYAKMIN Inc. 로고",
+        type: "image/jpeg",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "도약민 | 한국지 제작사",
+    description:
+      "위치 기반 게임 '한국지'로 전국을 점령! 게임으로 세상을 새롭게 만드는 도약민.",
+    images: [previewImageUrl],
+  },
+};
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-    const isEventPopupEnabled = process.env.NEXT_PUBLIC_EVENT_POPUP_ENABLED === 'true'
+  const isEventPopupEnabled =
+    process.env.NEXT_PUBLIC_EVENT_POPUP_ENABLED === "true";
 
-    return (
-        <html lang="ko">
-        <head>
-            <meta charSet="UTF-8"/>
-            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-            {/* Naver Site Verification */}
-            <meta name="naver-site-verification" content="aec2d0fc84541c932b9130bcaca82f377eeb4562"/>
-
-            {/* SEO */}
-            <meta name="keywords"
-                  content="도약민, (주)도약민, 주식회사 도약민, 한국지, travel game, DOYAKMIN, doyakmin inc, Hangukji, 위치 기반 게임, 지역 활성화 게임"/>
-            <meta name="author" content="DOYAKMIN Inc."/>
-
-            {/* Open Graph */}
-            <meta property="og:title" content="도약민 | 한국지 제작사"/>
-            <meta property="og:description" content="위치 기반 게임 '한국지'로 전국을 점령! 게임으로 세상을 새롭게 만드는 도약민."/>
-            <meta property="og:image" content="https://doyakmin.com/og-doyakmin-card-v2.jpg"/>
-            <meta property="og:image:secure_url" content="https://doyakmin.com/og-doyakmin-card-v2.jpg"/>
-            <meta property="og:image:type" content="image/jpeg"/>
-            <meta property="og:image:width" content="1200"/>
-            <meta property="og:image:height" content="630"/>
-            <meta property="og:url" content="https://doyakmin.com"/>
-            <meta property="og:type" content="website"/>
-
-            {/* Twitter Card */}
-            <meta name="twitter:card" content="summary_large_image"/>
-            <meta name="twitter:title" content="도약민 | 한국지 제작사"/>
-            <meta name="twitter:description" content="위치 기반 게임 '한국지'로 전국을 점령! 게임으로 세상을 새롭게 만드는 도약민."/>
-            <meta name="twitter:image" content="https://doyakmin.com/og-doyakmin-card-v2.jpg"/>
-        </head>
-        <body className={inter.className}>
-            <GlobalNavigation/>
-            <div className="pb-24 pt-14 md:pb-0">
-                {children}
-            </div>
-            <Footer/>
-            <EventPopupModal isEnabled={isEventPopupEnabled} />
-        </body>
-        </html>
-    );
+  return (
+    <html lang="ko">
+      <body className={inter.className}>
+        <GlobalNavigation />
+        <div className="pb-24 pt-14 md:pb-0">{children}</div>
+        <Footer />
+        <EventPopupModal isEnabled={isEventPopupEnabled} />
+      </body>
+    </html>
+  );
 }
