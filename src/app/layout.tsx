@@ -34,9 +34,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             {/* Open Graph */}
             <meta property="og:title" content="도약민 | 한국지 제작사"/>
             <meta property="og:description" content="위치 기반 게임 '한국지'로 전국을 점령! 게임으로 세상을 새롭게 만드는 도약민."/>
-            <meta property="og:image" content="https://doyakmin.com/og-image.jpg"/>
-            <meta property="og:image:secure_url" content="https://doyakmin.com/og-image.jpg"/>
-            <meta property="og:image:type" content="image/jpeg"/>
+            <meta property="og:image" content="https://doyakmin.com/og-image.png"/>
+            <meta property="og:image:secure_url" content="https://doyakmin.com/og-image.png"/>
+            <meta property="og:image:type" content="image/png"/>
             <meta property="og:image:width" content="1200"/>
             <meta property="og:image:height" content="630"/>
             <meta property="og:url" content="https://doyakmin.com"/>
@@ -46,7 +46,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <meta name="twitter:card" content="summary_large_image"/>
             <meta name="twitter:title" content="도약민 | 한국지 제작사"/>
             <meta name="twitter:description" content="위치 기반 게임 '한국지'로 전국을 점령! 게임으로 세상을 새롭게 만드는 도약민."/>
-            <meta name="twitter:image" content="https://doyakmin.com/og-image.jpg"/>
+            <meta name="twitter:image" content="https://doyakmin.com/og-image.png"/>
         </head>
         <body className={inter.className}>
             <GlobalNavigation/>
