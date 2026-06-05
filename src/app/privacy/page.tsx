@@ -15,25 +15,25 @@ function DataTable({
   rows: string[][];
 }) {
   return (
-    <div className="mt-4 overflow-x-auto rounded-lg border border-gray-100">
+    <div className="mt-4 overflow-x-auto rounded-2xl border-2 border-[#111827] bg-white">
       <table className="w-full text-sm">
         <thead>
-          <tr className="border-b border-gray-100 bg-gray-50/80">
+          <tr className="border-b-2 border-[#111827] bg-[#b7ff2a]/45">
             {headers.map((h) => (
               <th
                 key={h}
-                className="px-4 py-2.5 text-left text-xs font-medium uppercase tracking-wider text-gray-500"
+                className="px-4 py-3 text-left text-xs font-black uppercase tracking-[0.12em] text-[#111827]"
               >
                 {h}
               </th>
             ))}
           </tr>
         </thead>
-        <tbody className="divide-y divide-gray-50">
+        <tbody className="divide-y-2 divide-[#111827]/10">
           {rows.map((row, i) => (
-            <tr key={i} className="transition-colors hover:bg-gray-50/50">
+            <tr key={i} className="transition-colors hover:bg-[#f4f7fb]">
               {row.map((cell, j) => (
-                <td key={j} className="px-4 py-2.5 text-gray-600">
+                <td key={j} className="px-4 py-3 font-semibold text-[#526071]">
                   {cell}
                 </td>
               ))}
@@ -47,17 +47,23 @@ function DataTable({
 
 export default function PrivacyPage() {
   return (
-    <main className="min-h-screen bg-white font-sans text-gray-900">
-      <section className="py-16 md:py-20">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+    <main className="bg-[#f4f7fb] text-[#111827]">
+      <section className="bg-[#07111f] py-24 text-white">
+        <div className="game-container">
           {/* Header */}
-          <div className="text-center">
-            <p className="text-sm font-medium text-emerald-600">개인정보처리방침</p>
-            <h1 className="mt-2 text-2xl font-bold tracking-tight text-gray-900 md:text-3xl">
+          <div>
+            <p className="game-eyebrow">Privacy Policy</p>
+            <h1 className="game-heading mt-5">
               Walker홀릭 개인정보처리방침
             </h1>
-            <p className="mt-3 text-sm text-gray-400">시행일: 2026년 2월 16일 | v1.0</p>
+            <p className="mt-5 text-sm font-bold text-white/64">시행일: 2026년 2월 16일 | v1.0</p>
           </div>
+        </div>
+      </section>
+
+      <section className="py-20">
+        <div className="game-container">
+          <div className="game-card p-6 md:p-10">
 
           {/* Intro */}
           <div className="mt-10 text-sm leading-relaxed text-gray-600 md:text-base">
@@ -328,6 +334,7 @@ export default function PrivacyPage() {
           <div className="mt-16 border-t border-gray-100 pt-6 text-center text-sm text-gray-400">
             <p>본 방침은 2026년 2월 16일부터 시행됩니다.</p>
             <p className="mt-1">주식회사 도약민 | doyakmin@gmail.com</p>
+          </div>
           </div>
         </div>
       </section>
