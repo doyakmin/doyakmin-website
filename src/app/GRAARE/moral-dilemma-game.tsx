@@ -3,7 +3,7 @@
 import { FormEvent, useMemo, useState } from 'react'
 import { BookOpen, Coins, HeartPulse, Info, RefreshCcw, Scale, ShieldAlert, UserRound, Users } from 'lucide-react'
 
-type Gender = '남성' | '여성' | '비공개'
+type Gender = '남성' | '여성'
 type Phase = 'setup' | 'guide' | 'play' | 'ending'
 type Tone = '협력' | '저항' | '중립' | '회색'
 type StatKey =
@@ -25,8 +25,8 @@ type HiddenKey = 'guilt' | 'resistance' | 'opportunist'
 
 type Profile = {
     nickname: string
-    gender: Gender
-    startAge: number
+    gender: Gender | ''
+    startAge: number | ''
 }
 
 type Stats = Record<StatKey | HiddenKey, number> & {
@@ -1036,6 +1036,11 @@ function getFamilyEvaluation(player: Player) {
     return '가족은 당신의 선택을 단순히 용서하거나 단죄하지 못했습니다. 그들은 살아남은 날들과 남겨진 질문을 함께 기억했습니다.'
 }
 
+function formatAgeRange(ageRange: number | '') {
+    if (ageRange === '') return '연령대 미선택'
+    return ageRange >= 70 ? '70대 이상' : `${ageRange}대`
+}
+
 function getHistoricalEvaluation(player: Player, judgment: number) {
     if (judgment >= 130) return '기록관은 당신을 시대의 가해 구조에 적극적으로 편입된 인물로 분류했습니다.'
     if (judgment >= 80) return '기록관은 당신의 생존 논리를 인정하면서도 협력 책임을 지울 수 없다고 판단했습니다.'
@@ -1175,8 +1180,8 @@ const toneStyles: Record<Tone, string> = {
 
 export default function MoralDilemmaGame() {
     const [phase, setPhase] = useState<Phase>('setup')
-    const [profile, setProfile] = useState<Profile>({ nickname: '', gender: '비공개', startAge: 18 })
-    const [player, setPlayer] = useState<Player>(() => createPlayer({ nickname: '플레이어', gender: '비공개', startAge: 18 }))
+    const [profile, setProfile] = useState<Profile>({ nickname: '', gender: '', startAge: '' })
+    const [player, setPlayer] = useState<Player>(() => createPlayer({ nickname: '플레이어', gender: '남성', startAge: 10 }))
     const [eventIndex, setEventIndex] = useState(0)
     const [history, setHistory] = useState<HistoryItem[]>([])
     const [lastResult, setLastResult] = useState<string | null>(null)
@@ -1188,14 +1193,17 @@ export default function MoralDilemmaGame() {
     const witnesses = useMemo(() => getWitnesses(player, history), [player, history])
     const socialImage = getSocialImage(player)
     const lastHistory = history.at(-1)
+    const isProfileComplete = profile.nickname.trim().length > 0 && profile.gender !== '' && profile.startAge !== ''
 
     const startGuide = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault()
-        const nickname = profile.nickname.trim() || '플레이어'
+        if (!isProfileComplete) return
+        const nickname = profile.nickname.trim()
         const nextProfile = { ...profile, nickname }
         setProfile(nextProfile)
         setPlayer(createPlayer(nextProfile))
         setPhase('guide')
+        window.scrollTo({ top: 0, behavior: 'smooth' })
     }
 
     const choose = (choice: Choice) => {
@@ -1224,6 +1232,7 @@ export default function MoralDilemmaGame() {
         setPlayer(updated)
         setLastResult(choice.result)
         setIsResultOpen(true)
+        window.scrollTo({ top: 0, behavior: 'smooth' })
 
         if (!nextEvent || updated.family <= 0 || updated.risk >= 95) {
             setPhase('ending')
@@ -1236,8 +1245,8 @@ export default function MoralDilemmaGame() {
 
     const restart = () => {
         setPhase('setup')
-        setProfile({ nickname: '', gender: '비공개', startAge: 18 })
-        setPlayer(createPlayer({ nickname: '플레이어', gender: '비공개', startAge: 18 }))
+        setProfile({ nickname: '', gender: '', startAge: '' })
+        setPlayer(createPlayer({ nickname: '플레이어', gender: '남성', startAge: 10 }))
         setEventIndex(0)
         setHistory([])
         setLastResult(null)
@@ -1258,8 +1267,7 @@ export default function MoralDilemmaGame() {
                 {phase === 'setup' && (
                     <section className="mt-6 grid gap-5 lg:grid-cols-[0.95fr_1.05fr]">
                         <form onSubmit={startGuide} className="border-2 border-[#1c1a17] bg-[#f8f2e7] p-5 shadow-[0_7px_0_#1c1a17] md:p-7">
-                            <p className="text-sm font-black uppercase tracking-[0.16em] text-[#8b2f2f]">시작 설정</p>
-                            <h2 className="mt-2 text-2xl font-black md:text-3xl">당신의 인물을 정해주세요</h2>
+                            <p className="text-sm font-black uppercase tracking-[0.16em] text-[#8b2f2f]">플레이어 정보</p>
 
                             <label className="mt-6 block">
                                 <span className="text-sm font-black">닉네임</span>
@@ -1268,14 +1276,15 @@ export default function MoralDilemmaGame() {
                                     onChange={(event) => setProfile((value) => ({ ...value, nickname: event.target.value }))}
                                     maxLength={12}
                                     placeholder="예: 민준"
+                                    required
                                     className="mt-2 h-12 w-full border-2 border-[#1c1a17] bg-white px-3 text-base font-bold outline-none focus:bg-[#fff9ea]"
                                 />
                             </label>
 
                             <div className="mt-5">
                                 <p className="text-sm font-black">성별</p>
-                                <div className="mt-2 grid grid-cols-3 gap-2">
-                                    {(['남성', '여성', '비공개'] as Gender[]).map((gender) => (
+                                <div className="mt-2 grid grid-cols-2 gap-2">
+                                    {(['남성', '여성'] as Gender[]).map((gender) => (
                                         <button
                                             key={gender}
                                             type="button"
@@ -1296,21 +1305,37 @@ export default function MoralDilemmaGame() {
                                 <span className="text-sm font-black">플레이어 나이</span>
                                 <select
                                     value={profile.startAge}
-                                    onChange={(event) => setProfile((value) => ({ ...value, startAge: Number(event.target.value) }))}
+                                    onChange={(event) => setProfile((value) => ({ ...value, startAge: event.target.value === '' ? '' : Number(event.target.value) }))}
+                                    required
                                     className="mt-2 h-12 w-full border-2 border-[#1c1a17] bg-white px-3 text-base font-bold outline-none focus:bg-[#fff9ea]"
                                 >
-                                    <option value={16}>16세</option>
-                                    <option value={18}>18세</option>
-                                    <option value={20}>20세</option>
+                                    <option value="">연령대를 선택하세요</option>
+                                    <option value={10}>10대</option>
+                                    <option value={20}>20대</option>
+                                    <option value={30}>30대</option>
+                                    <option value={40}>40대</option>
+                                    <option value={50}>50대</option>
+                                    <option value={60}>60대</option>
+                                    <option value={70}>70대 이상</option>
                                 </select>
                             </label>
 
                             <button
                                 type="submit"
-                                className="mt-7 min-h-12 w-full border-2 border-[#1c1a17] bg-[#d1a846] px-5 text-base font-black shadow-[0_5px_0_#1c1a17] transition-transform hover:-translate-y-0.5 active:translate-y-1 active:shadow-[0_2px_0_#1c1a17]"
+                                disabled={!isProfileComplete}
+                                className={`mt-7 min-h-12 w-full border-2 border-[#1c1a17] px-5 text-base font-black shadow-[0_5px_0_#1c1a17] transition-transform active:translate-y-1 active:shadow-[0_2px_0_#1c1a17] ${
+                                    isProfileComplete
+                                        ? 'bg-[#d1a846] hover:-translate-y-0.5'
+                                        : 'cursor-not-allowed bg-[#c8c1b4] text-[#5b5143] shadow-[0_5px_0_#6d665d]'
+                                }`}
                             >
                                 시작하기
                             </button>
+                            {!isProfileComplete && (
+                                <p className="mt-3 text-sm font-bold leading-relaxed text-[#8b2f2f]">
+                                    이름, 성별, 연령대를 모두 입력해야 시작할 수 있습니다.
+                                </p>
+                            )}
                         </form>
 
                         <div className="border-2 border-[#1c1a17] bg-[#2d302f] p-5 text-[#f8f2e7] shadow-[0_7px_0_#1c1a17] md:p-7">
@@ -1343,7 +1368,7 @@ export default function MoralDilemmaGame() {
                         <div className="mt-7 flex flex-wrap items-center gap-3 border-2 border-[#1c1a17] bg-[#eee1cc] p-4">
                             <UserRound className="h-6 w-6 text-[#8b2f2f]" />
                             <p className="text-base font-black">
-                                {profile.nickname} / {profile.gender} / 플레이어 {profile.startAge}세
+                                {profile.nickname} / {profile.gender} / 플레이어 {formatAgeRange(profile.startAge)}
                             </p>
                             <p className="mt-2 text-sm font-bold leading-relaxed text-[#5b5143]">
                                 게임 속 인물은 16세에서 시작합니다. 입력한 나이는 플레이어 통계용으로만 사용됩니다.
@@ -1543,7 +1568,10 @@ export default function MoralDilemmaGame() {
                         isOpen={isResultOpen}
                         result={lastResult}
                         historyItem={lastHistory}
-                        onClose={() => setIsResultOpen(false)}
+                        onClose={() => {
+                            setIsResultOpen(false)
+                            window.scrollTo({ top: 0, behavior: 'smooth' })
+                        }}
                     />
                 )}
             </div>
