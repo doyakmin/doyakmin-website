@@ -594,7 +594,7 @@ function createPlayer(profile: Profile): Player {
     return {
         ...profile,
         ...baseStats,
-        age: profile.startAge,
+        age: 16,
         year: 1,
         job: '가족의 보호자',
         moralFatigue: 0,
@@ -1146,24 +1146,24 @@ function getEnding(player: Player, history: HistoryItem[]) {
 }
 
 const publicStats = [
-    { key: 'money', label: '재산', Icon: Coins, max: 160, inverse: false },
-    { key: 'debt', label: '부채', Icon: Scale, max: 120, inverse: true },
-    { key: 'food', label: '식량', Icon: Coins, max: 100, inverse: false },
-    { key: 'medicine', label: '의약품', Icon: HeartPulse, max: 100, inverse: false },
-    { key: 'family', label: '가족 안정', Icon: Users, max: 100, inverse: false },
-    { key: 'status', label: '사회적 지위', Icon: UserRound, max: 100, inverse: false },
-    { key: 'conscience', label: '양심', Icon: HeartPulse, max: 100, inverse: false },
-    { key: 'rationalization', label: '자기합리화', Icon: Info, max: 100, inverse: true },
-    { key: 'information', label: '정보력', Icon: Info, max: 100, inverse: false },
-    { key: 'misjudgment', label: '오판 위험', Icon: ShieldAlert, max: 100, inverse: true },
-    { key: 'fear', label: '공포심', Icon: ShieldAlert, max: 100, inverse: true },
-    { key: 'surveillance', label: '감시도', Icon: ShieldAlert, max: 100, inverse: true },
-    { key: 'exposureRisk', label: '노출 위험', Icon: ShieldAlert, max: 100, inverse: true },
-    { key: 'risk', label: '위험도', Icon: ShieldAlert, max: 100, inverse: true },
+    { key: 'money', label: '재산', Icon: Coins, max: 160, inverse: false, description: '당장 쓸 수 있는 현금과 선택의 여유입니다.' },
+    { key: 'debt', label: '부채', Icon: Scale, max: 120, inverse: true, description: '높을수록 매년 생활비와 압박이 커집니다.' },
+    { key: 'food', label: '식량', Icon: Coins, max: 100, inverse: false, description: '부족하면 가족 안정과 공포심에 바로 영향을 줍니다.' },
+    { key: 'medicine', label: '의약품', Icon: HeartPulse, max: 100, inverse: false, description: '가족의 건강과 돌봄을 버티게 하는 자원입니다.' },
+    { key: 'family', label: '가족 안정', Icon: Users, max: 100, inverse: false, description: '가족이 당신의 선택을 감당할 수 있는 정도입니다.' },
+    { key: 'status', label: '사회적 지위', Icon: UserRound, max: 100, inverse: false, description: '관공서, 계약, 영향력에 접근할 수 있는 힘입니다.' },
+    { key: 'conscience', label: '양심', Icon: HeartPulse, max: 100, inverse: false, description: '스스로의 선택을 견디는 내면의 안정입니다.' },
+    { key: 'rationalization', label: '자기합리화', Icon: Info, max: 100, inverse: true, description: '높을수록 불편한 선택을 그럴듯하게 덮습니다.' },
+    { key: 'information', label: '정보력', Icon: Info, max: 100, inverse: false, description: '선전과 소문 사이에서 정세를 읽는 힘입니다.' },
+    { key: 'misjudgment', label: '오판 위험', Icon: ShieldAlert, max: 100, inverse: true, description: '높을수록 잘못된 정보로 미래를 판단할 수 있습니다.' },
+    { key: 'fear', label: '공포심', Icon: ShieldAlert, max: 100, inverse: true, description: '두려움이 커질수록 용기 있는 선택이 무거워집니다.' },
+    { key: 'surveillance', label: '감시도', Icon: ShieldAlert, max: 100, inverse: true, description: '제국이 당신을 주시하는 정도입니다.' },
+    { key: 'exposureRisk', label: '노출 위험', Icon: ShieldAlert, max: 100, inverse: true, description: '문서, 소문, 증언으로 드러날 가능성입니다.' },
+    { key: 'risk', label: '위험도', Icon: ShieldAlert, max: 100, inverse: true, description: '체포, 보복, 습격 같은 직접 위험입니다.' },
 ] as const
 
 const derivedStats = [
-    { key: 'moralFatigue', label: '도덕 피로도', Icon: HeartPulse, max: 100, inverse: true },
+    { key: 'moralFatigue', label: '도덕 피로도', Icon: HeartPulse, max: 100, inverse: true, description: '계속 감수한 손실이 양심적 선택을 더 어렵게 만듭니다.' },
 ] as const
 
 const toneStyles: Record<Tone, string> = {
@@ -1180,9 +1180,10 @@ export default function MoralDilemmaGame() {
     const [eventIndex, setEventIndex] = useState(0)
     const [history, setHistory] = useState<HistoryItem[]>([])
     const [lastResult, setLastResult] = useState<string | null>(null)
+    const [isResultOpen, setIsResultOpen] = useState(false)
     const [judgmentView, setJudgmentView] = useState<'family' | 'conscience' | 'money' | 'safety' | 'future'>('family')
     const event = events[eventIndex]
-    const currentAge = player.startAge + event.ageOffset
+    const currentAge = 16 + event.ageOffset
     const ending = useMemo(() => getEnding(player, history), [player, history])
     const witnesses = useMemo(() => getWitnesses(player, history), [player, history])
     const socialImage = getSocialImage(player)
@@ -1199,7 +1200,7 @@ export default function MoralDilemmaGame() {
 
     const choose = (choice: Choice) => {
         const nextEvent = events[eventIndex + 1]
-        const nextAge = nextEvent ? player.startAge + nextEvent.ageOffset : currentAge
+        const nextAge = nextEvent ? 16 + nextEvent.ageOffset : currentAge
         const evidenceCountBefore = player.evidenceList.length
         const updated = applyChoice(player, choice, nextAge, currentAge, event)
         const newEvidenceIds = updated.evidenceList.slice(evidenceCountBefore).map((evidence) => evidence.id)
@@ -1222,6 +1223,7 @@ export default function MoralDilemmaGame() {
         ])
         setPlayer(updated)
         setLastResult(choice.result)
+        setIsResultOpen(true)
 
         if (!nextEvent || updated.family <= 0 || updated.risk >= 95) {
             setPhase('ending')
@@ -1239,6 +1241,7 @@ export default function MoralDilemmaGame() {
         setEventIndex(0)
         setHistory([])
         setLastResult(null)
+        setIsResultOpen(false)
         setJudgmentView('family')
     }
 
@@ -1290,7 +1293,7 @@ export default function MoralDilemmaGame() {
                             </div>
 
                             <label className="mt-5 block">
-                                <span className="text-sm font-black">시작 나이</span>
+                                <span className="text-sm font-black">플레이어 나이</span>
                                 <select
                                     value={profile.startAge}
                                     onChange={(event) => setProfile((value) => ({ ...value, startAge: Number(event.target.value) }))}
@@ -1340,7 +1343,10 @@ export default function MoralDilemmaGame() {
                         <div className="mt-7 flex flex-wrap items-center gap-3 border-2 border-[#1c1a17] bg-[#eee1cc] p-4">
                             <UserRound className="h-6 w-6 text-[#8b2f2f]" />
                             <p className="text-base font-black">
-                                {profile.nickname} / {profile.gender} / {profile.startAge}세에서 시작
+                                {profile.nickname} / {profile.gender} / 플레이어 {profile.startAge}세
+                            </p>
+                            <p className="mt-2 text-sm font-bold leading-relaxed text-[#5b5143]">
+                                게임 속 인물은 16세에서 시작합니다. 입력한 나이는 플레이어 통계용으로만 사용됩니다.
                             </p>
                         </div>
                         <button
@@ -1369,20 +1375,6 @@ export default function MoralDilemmaGame() {
                             <div className="grid gap-0 lg:grid-cols-[0.96fr_1.04fr]">
                                 <SceneVisual event={event} />
                                 <div className="p-5 md:p-7">
-                                    {lastResult && (
-                                        <div className="mb-5 border-2 border-[#1c1a17] bg-[#eee1cc] p-4 text-sm font-bold leading-relaxed text-[#4d4132]">
-                                            <p className="text-xs font-black uppercase tracking-[0.16em] text-[#8b2f2f]">직전 결과</p>
-                                            <p className="mt-2">{lastResult}</p>
-                                            {lastHistory && (
-                                                <div className="mt-3 space-y-1">
-                                                    {lastHistory.summaries.map((summary) => (
-                                                        <p key={summary}>- {summary}</p>
-                                                    ))}
-                                                    {lastHistory.delayedRecord && <p>- 몇 년 전 선택이 돌아왔습니다: {lastHistory.delayedRecord}</p>}
-                                                </div>
-                                            )}
-                                        </div>
-                                    )}
                                     <p className="text-xs font-black uppercase tracking-[0.18em] text-[#8b2f2f]">News</p>
                                     <p className="mt-2 border-b-2 border-[#1c1a17] pb-5 text-base font-bold leading-relaxed text-[#4d4132]">{event.news}</p>
                                     <h2 className="mt-6 text-3xl font-black leading-tight md:text-5xl">{event.title}</h2>
@@ -1545,8 +1537,57 @@ export default function MoralDilemmaGame() {
                         </aside>
                     </section>
                 )}
+
+                {phase === 'play' && lastHistory && (
+                    <ResultModal
+                        isOpen={isResultOpen}
+                        result={lastResult}
+                        historyItem={lastHistory}
+                        onClose={() => setIsResultOpen(false)}
+                    />
+                )}
             </div>
         </main>
+    )
+}
+
+function ResultModal({
+    isOpen,
+    result,
+    historyItem,
+    onClose,
+}: {
+    isOpen: boolean
+    result: string | null
+    historyItem: HistoryItem
+    onClose: () => void
+}) {
+    if (!isOpen) return null
+
+    return (
+        <div className="fixed inset-0 z-[80] flex items-center justify-center bg-[#1c1a17]/70 px-4 py-6">
+            <div className="w-full max-w-2xl border-2 border-[#1c1a17] bg-[#f8f2e7] p-5 shadow-[0_10px_0_#1c1a17] md:p-7">
+                <p className="text-xs font-black uppercase tracking-[0.16em] text-[#8b2f2f]">선택 결과</p>
+                <h3 className="mt-2 text-2xl font-black leading-tight md:text-3xl">{historyItem.choice}</h3>
+                <p className="mt-5 text-lg font-black leading-relaxed text-[#1c1a17]">{result}</p>
+                <div className="mt-5 space-y-2 border-2 border-[#1c1a17] bg-white p-4 text-sm font-bold leading-relaxed text-[#4d4132]">
+                    {historyItem.summaries.map((summary) => (
+                        <p key={summary}>- {summary}</p>
+                    ))}
+                    {historyItem.delayedRecord && <p>- 몇 년 전 선택이 돌아왔습니다: {historyItem.delayedRecord}</p>}
+                </div>
+                <p className="mt-4 border-l-4 border-[#8b2f2f] bg-[#eee1cc] px-4 py-3 text-sm font-bold leading-relaxed text-[#4d4132]">
+                    남은 대가: {historyItem.consequence}
+                </p>
+                <button
+                    type="button"
+                    onClick={onClose}
+                    className="mt-6 min-h-12 w-full border-2 border-[#1c1a17] bg-[#d1a846] px-5 text-base font-black shadow-[0_5px_0_#1c1a17] transition-transform hover:-translate-y-0.5 active:translate-y-1 active:shadow-[0_2px_0_#1c1a17]"
+                >
+                    다음 상황 보기
+                </button>
+            </div>
+        </div>
     )
 }
 
@@ -1698,7 +1739,7 @@ function StatusPanel({ player }: { player: Player }) {
                 </p>
             </div>
             <div className="mt-4 space-y-4">
-                {publicStats.map(({ key, label, Icon, max, inverse }) => {
+                {publicStats.map(({ key, label, Icon, max, inverse, description }) => {
                     const value = player[key]
                     const width = `${Math.min(100, (value / max) * 100)}%`
                     const tone = getStatTone(value, max, inverse)
@@ -1715,10 +1756,11 @@ function StatusPanel({ player }: { player: Player }) {
                                 <div className={`h-full ${tone.bar}`} style={{ width }} />
                             </div>
                             <p className={`mt-1 text-xs font-black ${tone.text}`}>{tone.label}</p>
+                            <p className="mt-1 text-xs font-semibold leading-relaxed text-[#5b5143]">{description}</p>
                         </div>
                     )
                 })}
-                {derivedStats.map(({ key, label, Icon, max, inverse }) => {
+                {derivedStats.map(({ key, label, Icon, max, inverse, description }) => {
                     const value = player[key]
                     const width = `${Math.min(100, (value / max) * 100)}%`
                     const tone = getStatTone(value, max, inverse)
@@ -1735,6 +1777,7 @@ function StatusPanel({ player }: { player: Player }) {
                                 <div className={`h-full ${tone.bar}`} style={{ width }} />
                             </div>
                             <p className={`mt-1 text-xs font-black ${tone.text}`}>{tone.label}</p>
+                            <p className="mt-1 text-xs font-semibold leading-relaxed text-[#5b5143]">{description}</p>
                         </div>
                     )
                 })}
