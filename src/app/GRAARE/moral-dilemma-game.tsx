@@ -1,6 +1,7 @@
 'use client'
 
 import { FormEvent, useMemo, useState } from 'react'
+import Image from 'next/image'
 import { BookOpen, Coins, HeartPulse, Info, RefreshCcw, Scale, ShieldAlert, UserRound, Users } from 'lucide-react'
 
 type Gender = '남성' | '여성'
@@ -118,6 +119,7 @@ type EventCard = {
         label: string
         mood: string
         gradient: string
+        imageSrc?: string
     }
     perspectives?: Partial<Record<'family' | 'conscience' | 'money' | 'safety' | 'future', string>>
     reactions?: Array<{ npc: string; line: string }>
@@ -193,6 +195,7 @@ const events: EventCard[] = [
             label: '점령된 광장',
             mood: '새 깃발, 내려간 간판, 침묵한 사람들',
             gradient: 'from-[#34383c] via-[#837d6d] to-[#c8b487]',
+            imageSrc: '/image/graare/occupied-square.jpg',
         },
         choices: [
             {
@@ -235,6 +238,7 @@ const events: EventCard[] = [
             label: '임시 고용소',
             mood: '구겨진 공고문, 길게 늘어선 청년들',
             gradient: 'from-[#45413a] via-[#9b8f78] to-[#e0c78c]',
+            imageSrc: '/image/graare/employment-office.jpg',
         },
         choices: [
             {
@@ -278,6 +282,7 @@ const events: EventCard[] = [
             label: '회의실의 서약서',
             mood: '검은 잉크, 마르지 않은 도장, 닫힌 문',
             gradient: 'from-[#2e3332] via-[#715f4a] to-[#d7b46b]',
+            imageSrc: '/image/graare/oath-document.jpg',
         },
         choices: [
             {
@@ -320,6 +325,7 @@ const events: EventCard[] = [
             label: '라디오와 신문',
             mood: '서로 다른 제목, 지직거리는 방송, 엇갈린 소문',
             gradient: 'from-[#1d2428] via-[#56666d] to-[#c2ad82]',
+            imageSrc: '/image/graare/radio-newspaper.jpg',
         },
         choices: [
             {
@@ -372,6 +378,7 @@ const events: EventCard[] = [
             label: '은행 상담실',
             mood: '대출 서류, 낡은 결혼반지, 계산기 소리',
             gradient: 'from-[#3f4a4f] via-[#8c7b65] to-[#d6c39a]',
+            imageSrc: '/image/graare/bank-office.jpg',
         },
         choices: [
             {
@@ -414,6 +421,7 @@ const events: EventCard[] = [
             label: '비 내리는 골목',
             mood: '젖은 외투, 낮은 목소리, 꺼진 가로등',
             gradient: 'from-[#1f2a34] via-[#52636a] to-[#a4a097]',
+            imageSrc: '/image/graare/rainy-alley.jpg',
         },
         choices: [
             {
@@ -465,6 +473,7 @@ const events: EventCard[] = [
             label: '군수 창고',
             mood: '쌓인 상자, 철 냄새, 숫자가 늘어나는 장부',
             gradient: 'from-[#252a2e] via-[#6d675c] to-[#b99054]',
+            imageSrc: '/image/graare/munitions-warehouse.jpg',
         },
         choices: [
             {
@@ -516,6 +525,7 @@ const events: EventCard[] = [
             label: '지하 문서고',
             mood: '연기, 서류철, 불빛에 드러난 서명',
             gradient: 'from-[#16191d] via-[#5b443a] to-[#bb7444]',
+            imageSrc: '/image/graare/archive-room.jpg',
         },
         choices: [
             {
@@ -558,6 +568,7 @@ const events: EventCard[] = [
             label: '낡은 식탁',
             mood: '공개된 기록, 접힌 종이, 대답을 기다리는 눈',
             gradient: 'from-[#34312e] via-[#806d58] to-[#d7c09a]',
+            imageSrc: '/image/graare/family-table.jpg',
         },
         choices: [
             {
@@ -1623,7 +1634,21 @@ function SceneVisual({ event }: { event: EventCard }) {
     return (
         <div className="border-b-2 border-[#1c1a17] bg-[#2d302f] p-4 lg:border-b-0 lg:border-r-2">
             <div className={`relative min-h-[260px] overflow-hidden border-2 border-[#1c1a17] bg-gradient-to-br ${event.visual.gradient}`}>
-                <div className="absolute inset-0 opacity-30 [background-image:linear-gradient(90deg,rgba(255,255,255,.22)_1px,transparent_1px),linear-gradient(rgba(255,255,255,.18)_1px,transparent_1px)] [background-size:36px_36px]" />
+                {event.visual.imageSrc ? (
+                    <>
+                        <Image
+                            src={event.visual.imageSrc}
+                            alt={event.visual.label}
+                            fill
+                            sizes="(min-width: 1024px) 42vw, 100vw"
+                            className="object-cover"
+                            priority={event.title === '점령의 날'}
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#141210]/75 via-[#141210]/20 to-transparent" />
+                    </>
+                ) : (
+                    <div className="absolute inset-0 opacity-30 [background-image:linear-gradient(90deg,rgba(255,255,255,.22)_1px,transparent_1px),linear-gradient(rgba(255,255,255,.18)_1px,transparent_1px)] [background-size:36px_36px]" />
+                )}
                 <div className="absolute inset-x-5 bottom-5 border-2 border-[#1c1a17] bg-[#f8f2e7]/92 p-4 shadow-[0_5px_0_rgba(0,0,0,.45)]">
                     <p className="text-xs font-black uppercase tracking-[0.16em] text-[#8b2f2f]">Scene</p>
                     <p className="mt-1 text-2xl font-black">{event.visual.label}</p>
