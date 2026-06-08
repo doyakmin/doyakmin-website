@@ -1,7 +1,6 @@
 'use client'
 
 import { FormEvent, useMemo, useState } from 'react'
-import Image from 'next/image'
 import { BookOpen, Coins, HeartPulse, Info, RefreshCcw, Scale, ShieldAlert, UserRound, Users } from 'lucide-react'
 
 type Gender = '남성' | '여성'
@@ -1636,13 +1635,10 @@ function SceneVisual({ event }: { event: EventCard }) {
             <div className={`relative min-h-[260px] overflow-hidden border-2 border-[#1c1a17] bg-gradient-to-br ${event.visual.gradient}`}>
                 {event.visual.imageSrc ? (
                     <>
-                        <Image
+                        <img
                             src={event.visual.imageSrc}
                             alt={event.visual.label}
-                            fill
-                            sizes="(min-width: 1024px) 42vw, 100vw"
-                            className="object-cover"
-                            priority={event.title === '점령의 날'}
+                            className="absolute inset-0 h-full w-full object-cover"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-[#141210]/75 via-[#141210]/20 to-transparent" />
                     </>
