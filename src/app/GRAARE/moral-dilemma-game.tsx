@@ -1645,11 +1645,6 @@ function SceneVisual({ event }: { event: EventCard }) {
                 ) : (
                     <div className="absolute inset-0 opacity-30 [background-image:linear-gradient(90deg,rgba(255,255,255,.22)_1px,transparent_1px),linear-gradient(rgba(255,255,255,.18)_1px,transparent_1px)] [background-size:36px_36px]" />
                 )}
-                <div className="absolute inset-x-5 bottom-5 border-2 border-[#1c1a17] bg-[#f8f2e7]/92 p-4 shadow-[0_5px_0_rgba(0,0,0,.45)]">
-                    <p className="text-xs font-black uppercase tracking-[0.16em] text-[#8b2f2f]">Scene</p>
-                    <p className="mt-1 text-2xl font-black">{event.visual.label}</p>
-                    <p className="mt-2 text-sm font-bold leading-relaxed text-[#5b5143]">{event.visual.mood}</p>
-                </div>
             </div>
         </div>
     )
