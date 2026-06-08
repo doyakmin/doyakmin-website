@@ -34,10 +34,60 @@ type Stats = Record<StatKey | HiddenKey, number> & {
     peopleTrust: number
 }
 
+type NpcId = 'spouse' | 'child' | 'friendA' | 'friendB' | 'neighbor' | 'empireBoss' | 'journalist'
+
+type NpcMemory = {
+    trust: number
+    fear: number
+    resentment: number
+    debt: number
+    evidence: number
+}
+
+type EvidenceType = 'signed_document' | 'contract' | 'speech' | 'testimony' | 'secret_help' | 'destroyed_evidence'
+
+type Evidence = {
+    id: string
+    type: EvidenceType
+    title: string
+    description: string
+    year: number
+    source: string
+    active: boolean
+}
+
+type DelayedEffect = {
+    id: string
+    triggerYear: number
+    triggerCondition: string
+    description: string
+    effects: Partial<Stats>
+    witnessId?: NpcId
+    evidenceId?: string
+    resolved?: boolean
+}
+
+type GlobalState = {
+    empireStability: number
+    warIntensity: number
+    inflation: number
+    repressionLevel: number
+    liberationChance: number
+    propagandaStrength: number
+}
+
 type Player = Profile & Stats & {
     age: number
+    year: number
     job: string
+    moralFatigue: number
+    povertyYears: number
     flags: string[]
+    npcs: Record<NpcId, NpcMemory>
+    evidenceList: Evidence[]
+    delayedEffects: DelayedEffect[]
+    delayedRecords: string[]
+    globalState: GlobalState
 }
 
 type Choice = {
@@ -45,6 +95,12 @@ type Choice = {
     hint: string
     tone: Tone
     effects: Partial<Stats>
+    values?: string[]
+    burdens?: string[]
+    npcEffects?: Partial<Record<NpcId, Partial<NpcMemory>>>
+    delayedEffects?: Omit<DelayedEffect, 'id' | 'triggerYear' | 'resolved'>[]
+    evidenceCreates?: Omit<Evidence, 'id' | 'year' | 'active'>[]
+    evidenceRemoves?: EvidenceType[]
     result: string
     consequence: string
     flags?: string[]
@@ -63,6 +119,10 @@ type EventCard = {
         mood: string
         gradient: string
     }
+    perspectives?: Partial<Record<'family' | 'conscience' | 'money' | 'safety' | 'future', string>>
+    reactions?: Array<{ npc: string; line: string }>
+    witnesses?: string[]
+    records?: string[]
     choices: Choice[]
 }
 
@@ -74,6 +134,9 @@ type HistoryItem = {
     tone: Tone
     result: string
     consequence: string
+    summaries: string[]
+    evidenceIds: string[]
+    delayedRecord?: string
 }
 
 const baseStats: Stats = {
@@ -96,6 +159,25 @@ const baseStats: Stats = {
     guilt: 0,
     resistance: 0,
     opportunist: 0,
+}
+
+const initialNpcs: Record<NpcId, NpcMemory> = {
+    spouse: { trust: 55, fear: 20, resentment: 10, debt: 0, evidence: 0 },
+    child: { trust: 50, fear: 10, resentment: 0, debt: 0, evidence: 0 },
+    friendA: { trust: 45, fear: 25, resentment: 0, debt: 0, evidence: 0 },
+    friendB: { trust: 35, fear: 20, resentment: 10, debt: 0, evidence: 0 },
+    neighbor: { trust: 42, fear: 18, resentment: 5, debt: 0, evidence: 0 },
+    empireBoss: { trust: 35, fear: 12, resentment: 0, debt: 0, evidence: 0 },
+    journalist: { trust: 30, fear: 18, resentment: 0, debt: 0, evidence: 0 },
+}
+
+const initialGlobalState: GlobalState = {
+    empireStability: 82,
+    warIntensity: 8,
+    inflation: 18,
+    repressionLevel: 24,
+    liberationChance: 4,
+    propagandaStrength: 70,
 }
 
 const events: EventCard[] = [
@@ -513,46 +595,64 @@ function createPlayer(profile: Profile): Player {
         ...profile,
         ...baseStats,
         age: profile.startAge,
+        year: 1,
         job: '가족의 보호자',
+        moralFatigue: 0,
+        povertyYears: 0,
         flags: [],
+        npcs: cloneNpcs(initialNpcs),
+        evidenceList: [],
+        delayedEffects: [],
+        delayedRecords: [],
+        globalState: initialGlobalState,
     }
 }
 
-function applyChoice(player: Player, choice: Choice, nextAge: number) {
-    const next = { ...player }
+function cloneNpcs(npcs: Record<NpcId, NpcMemory>) {
+    return Object.fromEntries(Object.entries(npcs).map(([key, value]) => [key, { ...value }])) as Record<NpcId, NpcMemory>
+}
+
+function applyChoice(player: Player, choice: Choice, nextAge: number, currentAge: number, event: EventCard) {
+    const next = {
+        ...player,
+        npcs: cloneNpcs(player.npcs),
+        evidenceList: [...player.evidenceList],
+        delayedEffects: [...player.delayedEffects],
+        delayedRecords: [...player.delayedRecords],
+    }
+
     Object.entries(choice.effects).forEach(([key, value]) => {
         const statKey = key as keyof Stats
         const max = statKey === 'money' || statKey === 'debt' ? 999 : 100
         next[statKey] = clamp(next[statKey] + (value ?? 0), max)
     })
 
-    if (choice.tone === '협력') {
-        next.rationalization = clamp(next.rationalization + 7)
-        next.surveillance = clamp(next.surveillance - 3)
-    }
+    applyTonePressure(next, choice)
+    applyNpcEffects(next, choice)
+    applyEvidenceEffects(next, choice, currentAge, event)
+    applyDelayedEffects(next, choice, currentAge, event)
 
-    if (choice.tone === '저항') {
-        next.fear = clamp(next.fear + 8)
-        next.surveillance = clamp(next.surveillance + 10)
-        next.exposureRisk = clamp(next.exposureRisk + 8)
-    }
-
-    if (choice.tone === '회색') {
-        next.rationalization = clamp(next.rationalization + 10)
-        next.exposureRisk = clamp(next.exposureRisk + 8)
-    }
+    const globalState = getGlobalStateForAge(nextAge)
+    next.globalState = globalState
 
     const livingPressure = getLivingPressure(next)
-    const annualCost = 8 + Math.floor(next.debt * 0.08) + Math.floor(livingPressure / 12)
+    const annualCost = 8 + Math.floor(next.debt * 0.08) + Math.floor(livingPressure / 12) + Math.floor(globalState.inflation / 18)
     next.money = clamp(next.money - annualCost, 999)
-    next.food = clamp(next.food - 7 + Math.floor(next.money / 60))
+    next.food = clamp(next.food - 7 - Math.floor(globalState.inflation / 30) + Math.floor(next.money / 60))
     next.medicine = clamp(next.medicine - (next.family < 45 ? 8 : 4))
-    next.risk = clamp(next.risk + Math.floor((next.surveillance + next.exposureRisk + next.fear) / 25))
+    next.risk = clamp(next.risk + Math.floor((next.surveillance + next.exposureRisk + next.fear + globalState.repressionLevel) / 32))
 
     if (next.money <= 0) {
         next.debt = clamp(next.debt + 12, 999)
         next.family = clamp(next.family - 12)
         next.conscience = clamp(next.conscience - 4)
+    }
+
+    if (next.money < 12 || next.food < 25) {
+        next.povertyYears += 1
+        next.moralFatigue = clamp(next.moralFatigue + 7)
+    } else {
+        next.povertyYears = 0
     }
 
     if (next.food < 25) {
@@ -570,12 +670,231 @@ function applyChoice(player: Player, choice: Choice, nextAge: number) {
         next.misjudgment = clamp(next.misjudgment + 4)
     }
 
-    const flags = Array.from(new Set([...next.flags, ...(choice.flags ?? [])]))
+    if (choice.tone === '저항' || next.family < 35 || next.risk > 65) {
+        next.moralFatigue = clamp(next.moralFatigue + 5)
+    }
+
+    const triggered = resolveDelayedEffects(next, nextAge)
+    const flags = Array.from(new Set([...next.flags, ...(choice.flags ?? []), ...triggered.flags]))
+
     return {
         ...next,
         age: nextAge,
+        year: next.year + 1,
         job: getJob(flags),
         flags,
+        delayedRecords: [...next.delayedRecords, ...triggered.records],
+    }
+}
+
+function applyTonePressure(player: Player, choice: Choice) {
+    if (choice.tone === '협력') {
+        player.rationalization = clamp(player.rationalization + 7)
+        player.surveillance = clamp(player.surveillance - 3)
+        player.npcs.empireBoss.trust = clamp(player.npcs.empireBoss.trust + 8)
+        player.npcs.neighbor.resentment = clamp(player.npcs.neighbor.resentment + 5)
+    }
+
+    if (choice.tone === '저항') {
+        const fatigueCost = player.moralFatigue > 60 ? 6 : 0
+        player.fear = clamp(player.fear + 8 + fatigueCost)
+        player.surveillance = clamp(player.surveillance + 10)
+        player.exposureRisk = clamp(player.exposureRisk + 8)
+        player.family = clamp(player.family - fatigueCost)
+        player.npcs.friendA.trust = clamp(player.npcs.friendA.trust + 10)
+        player.npcs.spouse.fear = clamp(player.npcs.spouse.fear + 8)
+    }
+
+    if (choice.tone === '회색') {
+        player.rationalization = clamp(player.rationalization + 10)
+        player.exposureRisk = clamp(player.exposureRisk + 8)
+        player.npcs.journalist.evidence = clamp(player.npcs.journalist.evidence + 5)
+    }
+
+    if (choice.tone === '중립') {
+        player.misjudgment = clamp(player.misjudgment + 3)
+    }
+}
+
+function applyNpcEffects(player: Player, choice: Choice) {
+    Object.entries(choice.npcEffects ?? {}).forEach(([npcId, effects]) => {
+        const npc = player.npcs[npcId as NpcId]
+        Object.entries(effects ?? {}).forEach(([key, value]) => {
+            const memoryKey = key as keyof NpcMemory
+            npc[memoryKey] = clamp(npc[memoryKey] + (value ?? 0))
+        })
+    })
+}
+
+function applyEvidenceEffects(player: Player, choice: Choice, currentAge: number, event: EventCard) {
+    const createdEvidence = [...(choice.evidenceCreates ?? []), ...getAutomaticEvidence(choice, event)]
+
+    createdEvidence.forEach((evidence, index) => {
+        player.evidenceList.push({
+            ...evidence,
+            id: `${event.title}-${choice.text}-${currentAge}-${index}`,
+            year: currentAge,
+            active: true,
+        })
+    })
+
+    choice.evidenceRemoves?.forEach((type) => {
+        const target = player.evidenceList.find((evidence) => evidence.type === type && evidence.active)
+        if (target) {
+            target.active = false
+            player.opportunist = clamp(player.opportunist + 1)
+            player.evidenceList.push({
+                id: `destroyed-${target.id}`,
+                type: 'destroyed_evidence',
+                title: '증거 인멸 흔적',
+                description: `${target.title} 기록이 사라졌지만, 삭제 흔적이 남았다.`,
+                year: currentAge,
+                source: '문서고',
+                active: true,
+            })
+        }
+    })
+}
+
+function getAutomaticEvidence(choice: Choice, event: EventCard): Omit<Evidence, 'id' | 'year' | 'active'>[] {
+    const evidence: Omit<Evidence, 'id' | 'year' | 'active'>[] = []
+
+    if (choice.text.includes('서명') || choice.text.includes('서약')) {
+        evidence.push({
+            type: 'signed_document',
+            title: '서명 문서',
+            description: `${event.title}에서 남긴 서명 기록`,
+            source: '제국청',
+        })
+    }
+
+    if (choice.text.includes('계약')) {
+        evidence.push({
+            type: 'contract',
+            title: '군수 계약서',
+            description: `${event.title} 선택으로 남은 계약 기록`,
+            source: '제국청 장부',
+        })
+    }
+
+    if (choice.text.includes('숨겨주') || choice.text.includes('돕')) {
+        evidence.push({
+            type: 'secret_help',
+            title: '비밀 도움 기록',
+            description: `${event.title}에서 누군가를 도운 비공식 기억`,
+            source: '증언',
+        })
+    }
+
+    if (choice.text.includes('신고')) {
+        evidence.push({
+            type: 'testimony',
+            title: '신고 접수 기록',
+            description: `${event.title}에서 접수된 신고 기록`,
+            source: '치안 기록',
+        })
+    }
+
+    return evidence
+}
+
+function applyDelayedEffects(player: Player, choice: Choice, currentAge: number, event: EventCard) {
+    const automatic = getAutomaticDelayedEffects(choice, currentAge, event)
+    const explicit = (choice.delayedEffects ?? []).map((effect, index) => ({
+        ...effect,
+        id: `${event.title}-${choice.text}-delayed-${index}`,
+        triggerYear: currentAge + 15,
+        resolved: false,
+    }))
+
+    player.delayedEffects.push(...automatic, ...explicit)
+}
+
+function getAutomaticDelayedEffects(choice: Choice, currentAge: number, event: EventCard): DelayedEffect[] {
+    if (choice.text.includes('숨겨주')) {
+        return [
+            {
+                id: `${event.title}-neighbor-defense-${currentAge}`,
+                triggerYear: currentAge + 18,
+                triggerCondition: '후반 재판',
+                description: '당신이 도왔던 사람이 기록관에서 변호 증언을 했다.',
+                effects: { peopleTrust: 8, resistance: 1 },
+                witnessId: 'friendA',
+                evidenceId: 'secret_help',
+                resolved: false,
+            },
+        ]
+    }
+
+    if (choice.text.includes('신고')) {
+        return [
+            {
+                id: `${event.title}-accusation-${currentAge}`,
+                triggerYear: currentAge + 16,
+                triggerCondition: '후반 재판',
+                description: '신고당한 사람의 가족이 기록관에서 고발 증언을 했다.',
+                effects: { guilt: 1, peopleTrust: -8 },
+                witnessId: 'neighbor',
+                evidenceId: 'testimony',
+                resolved: false,
+            },
+        ]
+    }
+
+    if (choice.text.includes('계약을 수락')) {
+        return [
+            {
+                id: `${event.title}-contract-evidence-${currentAge}`,
+                triggerYear: currentAge + 12,
+                triggerCondition: '제국 패망 이후',
+                description: '군수 계약서가 책임 심사의 증거로 제출되었다.',
+                effects: { guilt: 1, exposureRisk: 8 },
+                witnessId: 'journalist',
+                evidenceId: 'contract',
+                resolved: false,
+            },
+        ]
+    }
+
+    return []
+}
+
+function resolveDelayedEffects(player: Player, nextAge: number) {
+    const records: string[] = []
+    const flags: string[] = []
+
+    player.delayedEffects = player.delayedEffects.map((effect) => {
+        if (effect.resolved || effect.triggerYear > nextAge) {
+            return effect
+        }
+
+        Object.entries(effect.effects).forEach(([key, value]) => {
+            const statKey = key as keyof Stats
+            const max = statKey === 'money' || statKey === 'debt' ? 999 : 100
+            player[statKey] = clamp(player[statKey] + (value ?? 0), max)
+        })
+
+        if (effect.witnessId) {
+            player.npcs[effect.witnessId].evidence = clamp(player.npcs[effect.witnessId].evidence + 12)
+        }
+
+        records.push(effect.description)
+        flags.push(`delayed_${effect.id}`)
+        return { ...effect, resolved: true }
+    })
+
+    return { records, flags }
+}
+
+function getGlobalStateForAge(age: number): GlobalState {
+    const progress = clamp((age - 18) * 4)
+    return {
+        empireStability: clamp(86 - progress * 0.75),
+        warIntensity: clamp(8 + progress * 0.85),
+        inflation: clamp(18 + progress * 0.7),
+        repressionLevel: clamp(24 + progress * 0.55),
+        liberationChance: clamp(4 + progress * 0.82),
+        propagandaStrength: clamp(72 - progress * 0.28),
     }
 }
 
@@ -645,6 +964,84 @@ function getWitnesses(player: Player, history: HistoryItem[]) {
     }
 
     return witnesses.slice(0, 4)
+}
+
+function getChoiceSummaries(choice: Choice, player: Player) {
+    const summaries: string[] = []
+
+    if ((choice.effects.empireTrust ?? 0) > 0) summaries.push('제국 내 입지가 좋아졌습니다.')
+    if ((choice.effects.peopleTrust ?? 0) > 0) summaries.push('민중의 신뢰가 조금 올라갔습니다.')
+    if ((choice.effects.family ?? 0) > 0) summaries.push('가족은 당분간 안도했습니다.')
+    if ((choice.effects.conscience ?? 0) < 0) summaries.push('양심은 조금 무거워졌습니다.')
+    if ((choice.effects.risk ?? 0) > 0 || player.surveillance > 55) summaries.push('감시와 위험이 커졌습니다.')
+    if (choice.tone === '협력' || choice.tone === '회색') summaries.push('몇몇 기록은 나중에 다시 읽힐 수 있습니다.')
+    if (choice.tone === '저항') summaries.push('누군가는 이 선택을 기억할 것입니다.')
+
+    return summaries.length > 0 ? summaries : ['상황은 크게 달라지지 않았지만, 선택은 기록으로 남았습니다.']
+}
+
+function getSocialImage(player: Player) {
+    if (player.opportunist >= 4 || player.rationalization >= 75) return '말 바꾸는 사람'
+    if (player.flags.includes('war_supplier') || player.money >= 95) return '돈 냄새 나는 사업가'
+    if (player.resistance >= 5 || player.risk >= 70) return '위험한 이상주의자'
+    if (player.empireTrust >= 70 && player.fear >= 55) return '무서운 행정관'
+    if (player.empireTrust >= 55 && player.guilt <= 3) return '착한 협력자'
+    if (player.empireTrust >= 45 || player.status >= 45) return '제국의 사람'
+    return '조용한 생존자'
+}
+
+function getPressureSentences(player: Player) {
+    const sentences: string[] = []
+    const livingPressure = getLivingPressure(player)
+
+    sentences.push(livingPressure > 65 ? '이번 달을 넘기려면 돈이 필요합니다.' : '생활은 아직 버틸 수 있지만 여유롭지는 않습니다.')
+    sentences.push(player.food < 30 ? '식량이 부족해 가족의 말수가 줄었습니다.' : '식량은 당장 버틸 만큼 남아 있습니다.')
+    sentences.push(player.debt > 40 ? '부채 이자가 다음 선택을 좁히고 있습니다.' : '부채 압박은 아직 감당 가능한 수준입니다.')
+    sentences.push(player.family < 45 ? '가족 안정이 흔들리고 있습니다.' : '가족은 아직 당신의 선택을 버티고 있습니다.')
+    sentences.push(player.surveillance > 45 ? '제국의 감시가 가까워졌습니다.' : '감시는 아직 멀리 있는 것처럼 보입니다.')
+    sentences.push(player.exposureRisk > 45 ? '문서 기록이 남을 수 있습니다.' : '이번 선택은 아직 크게 드러나지 않을 수 있습니다.')
+
+    return sentences
+}
+
+function getChoiceValues(choice: Choice) {
+    if (choice.values) return choice.values
+    if (choice.tone === '협력') return ['가족', '돈', '안전']
+    if (choice.tone === '저항') return ['양심', '미래', '관계']
+    if (choice.tone === '회색') return ['기만', '돈', '미래']
+    return ['회피', '안전', '가족']
+}
+
+function getChoiceBurdens(choice: Choice) {
+    if (choice.burdens) return choice.burdens
+    if (choice.tone === '협력') return ['양심', '기록', '민중 시선']
+    if (choice.tone === '저항') return ['가족', '위험', '제국 의심']
+    if (choice.tone === '회색') return ['기록', '노출 위험', '양심']
+    return ['미래 책임', '관계 단절']
+}
+
+function getFamilyEvaluation(player: Player) {
+    if (player.family >= 75 && player.conscience < 35) {
+        return '가족은 살아남았지만, 어떤 침묵이 그 생존을 가능하게 했는지 묻기 시작했습니다.'
+    }
+    if (player.family < 35 && player.resistance >= 4) {
+        return '가족은 당신의 신념을 이해하려 했지만, 그 신념의 비용을 함께 치렀습니다.'
+    }
+    if (player.npcs.spouse.resentment > 45) {
+        return '배우자는 당신이 가족을 위한다고 말할 때마다 무엇을 숨겼는지 떠올렸습니다.'
+    }
+    if (player.npcs.child.trust < 35) {
+        return '자녀는 당신의 설명보다 기록을 먼저 믿게 되었습니다.'
+    }
+    return '가족은 당신의 선택을 단순히 용서하거나 단죄하지 못했습니다. 그들은 살아남은 날들과 남겨진 질문을 함께 기억했습니다.'
+}
+
+function getHistoricalEvaluation(player: Player, judgment: number) {
+    if (judgment >= 130) return '기록관은 당신을 시대의 가해 구조에 적극적으로 편입된 인물로 분류했습니다.'
+    if (judgment >= 80) return '기록관은 당신의 생존 논리를 인정하면서도 협력 책임을 지울 수 없다고 판단했습니다.'
+    if (player.resistance >= 6) return '기록관은 당신의 저항 기록을 확인했지만, 그 선택이 만든 주변의 대가도 함께 적었습니다.'
+    if (player.opportunist >= 5) return '기록관은 당신의 노선 변화와 증거 회피를 가장 불리한 대목으로 보았습니다.'
+    return '기록관은 당신을 선명한 한 문장으로 정리하지 못했습니다. 그래서 더 많은 선택 기록을 남겼습니다.'
 }
 
 function getJob(flags: string[]) {
@@ -765,6 +1162,10 @@ const publicStats = [
     { key: 'risk', label: '위험도', Icon: ShieldAlert, max: 100, inverse: true },
 ] as const
 
+const derivedStats = [
+    { key: 'moralFatigue', label: '도덕 피로도', Icon: HeartPulse, max: 100, inverse: true },
+] as const
+
 const toneStyles: Record<Tone, string> = {
     협력: 'border-[#6d4c1f] bg-[#f5e4b6] text-[#302512]',
     저항: 'border-[#285c4d] bg-[#d7eadf] text-[#14362d]',
@@ -779,10 +1180,13 @@ export default function MoralDilemmaGame() {
     const [eventIndex, setEventIndex] = useState(0)
     const [history, setHistory] = useState<HistoryItem[]>([])
     const [lastResult, setLastResult] = useState<string | null>(null)
+    const [judgmentView, setJudgmentView] = useState<'family' | 'conscience' | 'money' | 'safety' | 'future'>('family')
     const event = events[eventIndex]
     const currentAge = player.startAge + event.ageOffset
     const ending = useMemo(() => getEnding(player, history), [player, history])
     const witnesses = useMemo(() => getWitnesses(player, history), [player, history])
+    const socialImage = getSocialImage(player)
+    const lastHistory = history.at(-1)
 
     const startGuide = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault()
@@ -796,7 +1200,10 @@ export default function MoralDilemmaGame() {
     const choose = (choice: Choice) => {
         const nextEvent = events[eventIndex + 1]
         const nextAge = nextEvent ? player.startAge + nextEvent.ageOffset : currentAge
-        const updated = applyChoice(player, choice, nextAge)
+        const evidenceCountBefore = player.evidenceList.length
+        const updated = applyChoice(player, choice, nextAge, currentAge, event)
+        const newEvidenceIds = updated.evidenceList.slice(evidenceCountBefore).map((evidence) => evidence.id)
+        const summaries = getChoiceSummaries(choice, updated)
 
         setHistory((items) => [
             ...items,
@@ -808,6 +1215,9 @@ export default function MoralDilemmaGame() {
                 tone: choice.tone,
                 result: choice.result,
                 consequence: choice.consequence,
+                summaries,
+                evidenceIds: newEvidenceIds,
+                delayedRecord: updated.delayedRecords.at(-1),
             },
         ])
         setPlayer(updated)
@@ -819,6 +1229,7 @@ export default function MoralDilemmaGame() {
         }
 
         setEventIndex((index) => index + 1)
+        setJudgmentView('family')
     }
 
     const restart = () => {
@@ -828,6 +1239,7 @@ export default function MoralDilemmaGame() {
         setEventIndex(0)
         setHistory([])
         setLastResult(null)
+        setJudgmentView('family')
     }
 
     return (
@@ -946,9 +1358,12 @@ export default function MoralDilemmaGame() {
                         <article className="border-2 border-[#1c1a17] bg-[#f8f2e7] shadow-[0_7px_0_#1c1a17]">
                             <div className="border-b-2 border-[#1c1a17] bg-[#d1a846] px-4 py-3 md:px-6">
                                 <div className="flex flex-wrap items-center justify-between gap-2 text-sm font-black">
-                                    <span>{currentAge}세 / {event.chapter}</span>
-                                    <span>{player.nickname} / {player.job}</span>
+                                    <span>{player.year}년차 / {currentAge}세 / {event.chapter}</span>
+                                    <span>{player.nickname} / {player.job} / {socialImage}</span>
                                 </div>
+                                <p className="mt-1 text-xs font-bold text-[#1c1a17]/70">
+                                    제국 안정 {player.globalState.empireStability} · 전쟁 강도 {player.globalState.warIntensity} · 물가 {player.globalState.inflation} · 해방 가능성 {player.globalState.liberationChance}
+                                </p>
                             </div>
 
                             <div className="grid gap-0 lg:grid-cols-[0.96fr_1.04fr]">
@@ -956,13 +1371,25 @@ export default function MoralDilemmaGame() {
                                 <div className="p-5 md:p-7">
                                     {lastResult && (
                                         <div className="mb-5 border-2 border-[#1c1a17] bg-[#eee1cc] p-4 text-sm font-bold leading-relaxed text-[#4d4132]">
-                                            직전 결과: {lastResult}
+                                            <p className="text-xs font-black uppercase tracking-[0.16em] text-[#8b2f2f]">직전 결과</p>
+                                            <p className="mt-2">{lastResult}</p>
+                                            {lastHistory && (
+                                                <div className="mt-3 space-y-1">
+                                                    {lastHistory.summaries.map((summary) => (
+                                                        <p key={summary}>- {summary}</p>
+                                                    ))}
+                                                    {lastHistory.delayedRecord && <p>- 몇 년 전 선택이 돌아왔습니다: {lastHistory.delayedRecord}</p>}
+                                                </div>
+                                            )}
                                         </div>
                                     )}
                                     <p className="text-xs font-black uppercase tracking-[0.18em] text-[#8b2f2f]">News</p>
                                     <p className="mt-2 border-b-2 border-[#1c1a17] pb-5 text-base font-bold leading-relaxed text-[#4d4132]">{event.news}</p>
                                     <h2 className="mt-6 text-3xl font-black leading-tight md:text-5xl">{event.title}</h2>
                                     <p className="mt-5 text-lg font-semibold leading-relaxed text-[#51483b]">{event.body}</p>
+                                    <PressurePanel player={player} />
+                                    <ReactionPanel event={event} />
+                                    <RecordHintPanel event={event} player={player} />
                                     <div className="mt-6 border-l-4 border-[#8b2f2f] bg-[#eee1cc] px-5 py-4">
                                         <p className="text-xs font-black uppercase tracking-[0.16em] text-[#8b2f2f]">{event.speaker}</p>
                                         <p className="mt-2 text-lg font-black leading-relaxed">“{event.dialogue}”</p>
@@ -970,25 +1397,41 @@ export default function MoralDilemmaGame() {
                                 </div>
                             </div>
 
-                            <div className="grid gap-3 border-t-2 border-[#1c1a17] bg-[#ded2bd] p-4 md:grid-cols-2">
+                            <div className="border-t-2 border-[#1c1a17] bg-[#ded2bd] p-4">
+                                <JudgmentTabs event={event} active={judgmentView} onChange={setJudgmentView} />
+                                <div className="mt-4 grid gap-3 md:grid-cols-2">
                                 {event.choices.map((choice) => (
                                     <button
                                         key={choice.text}
                                         type="button"
                                         onClick={() => choose(choice)}
-                                        className="min-h-[138px] border-2 border-[#1c1a17] bg-white p-4 text-left shadow-[0_4px_0_#1c1a17] transition-transform hover:-translate-y-0.5 active:translate-y-1 active:shadow-[0_2px_0_#1c1a17]"
+                                        className="min-h-[190px] border-2 border-[#1c1a17] bg-white p-4 text-left shadow-[0_4px_0_#1c1a17] transition-transform hover:-translate-y-0.5 active:translate-y-1 active:shadow-[0_2px_0_#1c1a17]"
                                     >
                                         <span className={`inline-flex border px-2 py-1 text-xs font-black ${toneStyles[choice.tone]}`}>{choice.tone}</span>
                                         <span className="mt-3 block text-lg font-black leading-snug">{choice.text}</span>
                                         <span className="mt-2 block text-sm font-bold leading-relaxed text-[#5b5143]">{choice.hint}</span>
+                                        <span className="mt-4 block text-xs font-black uppercase tracking-[0.12em] text-[#8b2f2f]">중심 가치</span>
+                                        <span className="mt-2 flex flex-wrap gap-2">
+                                            {getChoiceValues(choice).map((value) => (
+                                                <span key={value} className="border border-[#1c1a17] bg-[#f5e4b6] px-2 py-1 text-xs font-black">{value}</span>
+                                            ))}
+                                        </span>
+                                        <span className="mt-3 block text-xs font-black uppercase tracking-[0.12em] text-[#5b5143]">예상 부담</span>
+                                        <span className="mt-2 flex flex-wrap gap-2">
+                                            {getChoiceBurdens(choice).map((burden) => (
+                                                <span key={burden} className="border border-[#1c1a17] bg-[#eee1cc] px-2 py-1 text-xs font-black text-[#8b2f2f]">{burden}</span>
+                                            ))}
+                                        </span>
                                     </button>
                                 ))}
+                                </div>
                             </div>
                         </article>
 
                         <aside className="space-y-4">
                             <StatusPanel player={player} />
                             <TrustPanel player={player} />
+                            <EvidenceArchivePanel evidenceList={player.evidenceList} />
                             <LogPanel history={history} />
                         </aside>
                     </section>
@@ -1024,6 +1467,28 @@ export default function MoralDilemmaGame() {
                             </div>
 
                             <section className="mt-8">
+                                <h3 className="text-2xl font-black">제출된 증거 카드</h3>
+                                <div className="mt-4 grid gap-3 md:grid-cols-2">
+                                    {player.evidenceList.filter((evidence) => evidence.active).length === 0 ? (
+                                        <p className="border-2 border-[#1c1a17] bg-white p-4 text-sm font-bold leading-relaxed text-[#5b5143]">
+                                            제출된 문서 증거는 거의 없습니다. 그러나 기록이 없다는 사실도 하나의 평가가 됩니다.
+                                        </p>
+                                    ) : (
+                                        player.evidenceList
+                                            .filter((evidence) => evidence.active)
+                                            .slice(0, 6)
+                                            .map((evidence) => (
+                                                <article key={evidence.id} className="border-2 border-[#1c1a17] bg-white p-4">
+                                                    <p className="text-xs font-black text-[#8b2f2f]">{formatEvidenceType(evidence.type)}</p>
+                                                    <p className="mt-1 text-lg font-black">{evidence.title}</p>
+                                                    <p className="mt-2 text-sm font-semibold leading-relaxed text-[#5b5143]">{evidence.description}</p>
+                                                </article>
+                                            ))
+                                    )}
+                                </div>
+                            </section>
+
+                            <section className="mt-8">
                                 <h3 className="text-2xl font-black">증언</h3>
                                 <div className="mt-4 grid gap-3 md:grid-cols-2">
                                     {witnesses.map((witness) => (
@@ -1031,6 +1496,17 @@ export default function MoralDilemmaGame() {
                                             {witness}
                                         </p>
                                     ))}
+                                </div>
+                            </section>
+
+                            <section className="mt-8 grid gap-3 md:grid-cols-2">
+                                <div className="border-2 border-[#1c1a17] bg-[#eee1cc] p-4">
+                                    <p className="text-sm font-black text-[#8b2f2f]">가족의 평가</p>
+                                    <p className="mt-2 text-sm font-bold leading-relaxed text-[#4d4132]">{getFamilyEvaluation(player)}</p>
+                                </div>
+                                <div className="border-2 border-[#1c1a17] bg-[#eee1cc] p-4">
+                                    <p className="text-sm font-black text-[#8b2f2f]">역사적 평가</p>
+                                    <p className="mt-2 text-sm font-bold leading-relaxed text-[#4d4132]">{getHistoricalEvaluation(player, ending.judgment)}</p>
                                 </div>
                             </section>
 
@@ -1064,6 +1540,7 @@ export default function MoralDilemmaGame() {
                         </article>
                         <aside className="space-y-4">
                             <StatusPanel player={player} />
+                            <EvidenceArchivePanel evidenceList={player.evidenceList} trialMode />
                             <LogPanel history={history} expanded />
                         </aside>
                     </section>
@@ -1088,13 +1565,126 @@ function SceneVisual({ event }: { event: EventCard }) {
     )
 }
 
+function PressurePanel({ player }: { player: Player }) {
+    return (
+        <div className="mt-6 border-2 border-[#1c1a17] bg-white p-4">
+            <p className="text-xs font-black uppercase tracking-[0.16em] text-[#8b2f2f]">현재 압박</p>
+            <div className="mt-3 grid gap-2 md:grid-cols-2">
+                {getPressureSentences(player).map((sentence) => (
+                    <p key={sentence} className="border-l-4 border-[#d1a846] bg-[#f8f2e7] px-3 py-2 text-sm font-bold leading-relaxed text-[#4d4132]">
+                        {sentence}
+                    </p>
+                ))}
+            </div>
+        </div>
+    )
+}
+
+function ReactionPanel({ event }: { event: EventCard }) {
+    const reactions = event.reactions ?? [
+        { npc: event.speaker, line: event.dialogue },
+        { npc: '배우자', line: '당신의 선택이 우리 집까지 흔들 수 있어요.' },
+        { npc: '이웃', line: '사람들은 누가 무엇을 했는지 생각보다 오래 기억합니다.' },
+    ]
+
+    return (
+        <div className="mt-5 border-2 border-[#1c1a17] bg-[#eee1cc] p-4">
+            <p className="text-xs font-black uppercase tracking-[0.16em] text-[#8b2f2f]">주변 인물 반응</p>
+            <div className="mt-3 grid gap-3 md:grid-cols-3">
+                {reactions.slice(0, 3).map((reaction) => (
+                    <div key={`${reaction.npc}-${reaction.line}`} className="border-2 border-[#1c1a17] bg-white p-3">
+                        <p className="text-xs font-black text-[#8b2f2f]">{reaction.npc}</p>
+                        <p className="mt-1 text-sm font-bold leading-relaxed text-[#4d4132]">“{reaction.line}”</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+    )
+}
+
+function RecordHintPanel({ event, player }: { event: EventCard; player: Player }) {
+    const watchers = event.witnesses ?? ['배우자', '이웃', event.speaker]
+    const records = event.records ?? ['서류', '소문', player.empireTrust > 40 ? '제국 장부' : '사람들의 기억']
+
+    return (
+        <div className="mt-5 grid gap-3 md:grid-cols-2">
+            <div className="border-2 border-[#1c1a17] bg-white p-4">
+                <p className="text-xs font-black uppercase tracking-[0.16em] text-[#8b2f2f]">이 선택을 지켜보는 사람들</p>
+                <div className="mt-3 flex flex-wrap gap-2">
+                    {watchers.map((watcher) => (
+                        <span key={watcher} className="border border-[#1c1a17] bg-[#f8f2e7] px-2 py-1 text-xs font-black">{watcher}</span>
+                    ))}
+                </div>
+            </div>
+            <div className="border-2 border-[#1c1a17] bg-white p-4">
+                <p className="text-xs font-black uppercase tracking-[0.16em] text-[#8b2f2f]">기록될 수 있는 것</p>
+                <div className="mt-3 flex flex-wrap gap-2">
+                    {records.map((record) => (
+                        <span key={record} className="border border-[#1c1a17] bg-[#f8f2e7] px-2 py-1 text-xs font-black">{record}</span>
+                    ))}
+                </div>
+            </div>
+        </div>
+    )
+}
+
+function JudgmentTabs({
+    event,
+    active,
+    onChange,
+}: {
+    event: EventCard
+    active: 'family' | 'conscience' | 'money' | 'safety' | 'future'
+    onChange: (value: 'family' | 'conscience' | 'money' | 'safety' | 'future') => void
+}) {
+    const tabs = [
+        { id: 'family', label: '가족 관점', fallback: '이 선택은 가족의 오늘을 얼마나 버티게 하는지 묻습니다.' },
+        { id: 'conscience', label: '양심 관점', fallback: '이 선택은 내가 외면한 사람의 이름을 남길 수 있습니다.' },
+        { id: 'money', label: '돈 관점', fallback: '이 선택은 당장의 현금과 부채를 바꿀 수 있습니다.' },
+        { id: 'safety', label: '안전 관점', fallback: '이 선택은 감시와 노출 위험을 키우거나 줄일 수 있습니다.' },
+        { id: 'future', label: '미래 관점', fallback: '정세가 바뀌면 오늘의 문서가 증거가 될 수 있습니다.' },
+    ] as const
+
+    const current = tabs.find((tab) => tab.id === active) ?? tabs[0]
+
+    return (
+        <div>
+            <div className="flex flex-wrap gap-2">
+                {tabs.map((tab) => (
+                    <button
+                        key={tab.id}
+                        type="button"
+                        onClick={() => onChange(tab.id)}
+                        className={`border-2 border-[#1c1a17] px-3 py-2 text-xs font-black ${
+                            active === tab.id ? 'bg-[#2d302f] text-[#f8f2e7]' : 'bg-white text-[#1c1a17]'
+                        }`}
+                    >
+                        {tab.label}
+                    </button>
+                ))}
+            </div>
+            <p className="mt-3 border-2 border-[#1c1a17] bg-[#f8f2e7] p-3 text-sm font-bold leading-relaxed text-[#4d4132]">
+                {event.perspectives?.[active] ?? current.fallback}
+            </p>
+        </div>
+    )
+}
+
 function StatusPanel({ player }: { player: Player }) {
     const livingPressure = getLivingPressure(player)
     const pressureTone = getStatTone(livingPressure, 100, true)
+    const socialImage = getSocialImage(player)
 
     return (
         <div className="border-2 border-[#1c1a17] bg-[#f8f2e7] p-4 shadow-[0_6px_0_#1c1a17]">
             <p className="text-xs font-black uppercase tracking-[0.16em] text-[#8b2f2f]">상태</p>
+            <div className="mt-4 border-2 border-[#1c1a17] bg-[#2d302f] p-3 text-[#f8f2e7]">
+                <p className="text-xs font-black uppercase tracking-[0.16em] text-[#d1a846]">사회적 이미지</p>
+                <p className="mt-1 text-xl font-black">{socialImage}</p>
+                <p className="mt-2 text-xs font-semibold leading-relaxed text-[#f8f2e7]/70">
+                    사람들은 당신의 선택을 하나의 이미지로 기억하기 시작합니다.
+                </p>
+            </div>
             <div className="mt-4 border-2 border-[#1c1a17] bg-white p-3">
                 <div className="flex items-center justify-between gap-2">
                     <p className="text-sm font-black">생활 압박</p>
@@ -1109,6 +1699,26 @@ function StatusPanel({ player }: { player: Player }) {
             </div>
             <div className="mt-4 space-y-4">
                 {publicStats.map(({ key, label, Icon, max, inverse }) => {
+                    const value = player[key]
+                    const width = `${Math.min(100, (value / max) * 100)}%`
+                    const tone = getStatTone(value, max, inverse)
+                    return (
+                        <div key={key}>
+                            <div className="mb-1 flex items-center justify-between gap-2">
+                                <span className="flex items-center gap-2 text-sm font-black">
+                                    <Icon className={`h-4 w-4 ${tone.text}`} />
+                                    {label}
+                                </span>
+                                <span className={`text-sm font-black ${tone.text}`}>{value}</span>
+                            </div>
+                            <div className="h-4 border-2 border-[#1c1a17] bg-[#ded2bd]">
+                                <div className={`h-full ${tone.bar}`} style={{ width }} />
+                            </div>
+                            <p className={`mt-1 text-xs font-black ${tone.text}`}>{tone.label}</p>
+                        </div>
+                    )
+                })}
+                {derivedStats.map(({ key, label, Icon, max, inverse }) => {
                     const value = player[key]
                     const width = `${Math.min(100, (value / max) * 100)}%`
                     const tone = getStatTone(value, max, inverse)
@@ -1167,6 +1777,47 @@ function TrustPanel({ player }: { player: Player }) {
             </p>
         </div>
     )
+}
+
+function EvidenceArchivePanel({ evidenceList, trialMode = false }: { evidenceList: Evidence[]; trialMode?: boolean }) {
+    const activeEvidence = evidenceList.filter((evidence) => evidence.active)
+    return (
+        <div className="border-2 border-[#1c1a17] bg-[#f8f2e7] p-4 shadow-[0_6px_0_#1c1a17]">
+            <p className="text-xs font-black uppercase tracking-[0.16em] text-[#8b2f2f]">
+                {trialMode ? '제출된 증거' : '기록 보관함'}
+            </p>
+            <div className="mt-4 max-h-[320px] space-y-3 overflow-y-auto pr-1">
+                {activeEvidence.length === 0 ? (
+                    <p className="text-sm font-bold leading-relaxed text-[#5b5143]">
+                        아직 남은 문서 기록이 없습니다.
+                    </p>
+                ) : (
+                    activeEvidence.map((evidence) => (
+                        <article key={evidence.id} className="border-2 border-[#1c1a17] bg-white p-3">
+                            <p className="text-xs font-black text-[#8b2f2f]">{evidence.year}세 / {formatEvidenceType(evidence.type)}</p>
+                            <p className="mt-1 text-sm font-black">{evidence.title}</p>
+                            <p className="mt-1 text-xs font-semibold leading-relaxed text-[#5b5143]">{evidence.description}</p>
+                            <p className="mt-2 text-xs font-black text-[#8b2f2f]">
+                                {trialMode ? '책임 자료로 재분류됨' : '현재는 단순 기록처럼 보임'}
+                            </p>
+                        </article>
+                    ))
+                )}
+            </div>
+        </div>
+    )
+}
+
+function formatEvidenceType(type: EvidenceType) {
+    const labels: Record<EvidenceType, string> = {
+        signed_document: '서명 문서',
+        contract: '계약서',
+        speech: '연설/기사',
+        testimony: '증언',
+        secret_help: '비밀 도움',
+        destroyed_evidence: '인멸 흔적',
+    }
+    return labels[type]
 }
 
 function LogPanel({ history, expanded = false }: { history: HistoryItem[]; expanded?: boolean }) {
