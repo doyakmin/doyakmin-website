@@ -6,7 +6,21 @@ import { BookOpen, Coins, HeartPulse, Info, RefreshCcw, Scale, ShieldAlert, User
 type Gender = '남성' | '여성' | '비공개'
 type Phase = 'setup' | 'guide' | 'play' | 'ending'
 type Tone = '협력' | '저항' | '중립' | '회색'
-type StatKey = 'money' | 'debt' | 'family' | 'status' | 'conscience' | 'information' | 'risk'
+type StatKey =
+    | 'money'
+    | 'debt'
+    | 'food'
+    | 'medicine'
+    | 'family'
+    | 'status'
+    | 'conscience'
+    | 'rationalization'
+    | 'information'
+    | 'misjudgment'
+    | 'fear'
+    | 'surveillance'
+    | 'exposureRisk'
+    | 'risk'
 type HiddenKey = 'guilt' | 'resistance' | 'opportunist'
 
 type Profile = {
@@ -65,10 +79,17 @@ type HistoryItem = {
 const baseStats: Stats = {
     money: 25,
     debt: 0,
+    food: 46,
+    medicine: 30,
     family: 62,
     status: 4,
     conscience: 72,
+    rationalization: 0,
     information: 14,
+    misjudgment: 20,
+    fear: 18,
+    surveillance: 4,
+    exposureRisk: 6,
     risk: 10,
     empireTrust: 6,
     peopleTrust: 34,
@@ -202,6 +223,58 @@ const events: EventCard[] = [
                 result: '당신은 서명했고, 동시에 사본 한 장을 품에 넣었다. 어느 쪽에도 완전히 속하지 못했다.',
                 consequence: '당신은 빠져나갈 길을 남겼다. 그러나 빠져나갈 길을 계산했다는 사실도 기록이 됐다.',
                 flags: ['hidden_oath_copy'],
+            },
+        ],
+    },
+    {
+        ageOffset: 7,
+        chapter: '정보와 오판',
+        title: '어느 소식을 믿을 것인가',
+        news: '제국 신문은 루멘이 안정되고 있다고 보도했다. 시장에서는 반대로 식량 가격이 더 오를 것이라는 소문이 돈다.',
+        body: '같은 사건을 두고 서로 다른 말들이 떠돈다. 무엇을 믿느냐에 따라 올해의 선택은 완전히 달라질 수 있다.',
+        speaker: '기자',
+        dialogue: '정보는 공짜가 아닙니다. 싸게 얻은 정보일수록 누군가가 이미 값을 치렀을지도 모르죠.',
+        visual: {
+            label: '라디오와 신문',
+            mood: '서로 다른 제목, 지직거리는 방송, 엇갈린 소문',
+            gradient: 'from-[#1d2428] via-[#56666d] to-[#c2ad82]',
+        },
+        choices: [
+            {
+                text: '제국 신문만 믿는다',
+                hint: '위험은 낮지만 선전과 오판 가능성이 커진다.',
+                tone: '협력',
+                effects: { empireTrust: 8, fear: -6, misjudgment: 18, information: -4, rationalization: 6 },
+                result: '신문은 질서와 번영을 말했다. 불안은 잠시 줄었지만, 시장의 가격표는 설명되지 않았다.',
+                consequence: '당신은 안정된 정보를 택했다. 그러나 안정된 정보가 반드시 정확한 정보는 아니었다.',
+                flags: ['trusted_empire_news'],
+            },
+            {
+                text: '루멘 사람들의 소문을 모은다',
+                hint: '생활 정보는 얻지만 감정에 휘둘릴 수 있다.',
+                tone: '중립',
+                effects: { information: 10, peopleTrust: 8, fear: 8, misjudgment: 4 },
+                result: '소문은 빠르고 뜨거웠다. 어떤 말은 맞았고, 어떤 말은 두려움이 만든 그림자였다.',
+                consequence: '당신은 사람들의 체감 현실에 가까워졌다. 대신 불안도 함께 들여왔다.',
+                flags: ['heard_lumen_rumors'],
+            },
+            {
+                text: '해외 라디오를 몰래 듣는다',
+                hint: '정확한 정세를 얻을 수 있지만 감시 위험이 오른다.',
+                tone: '저항',
+                effects: { information: 24, misjudgment: -12, risk: 12, surveillance: 16, exposureRisk: 10, resistance: 1 },
+                result: '잡음 사이로 공식 발표와 다른 숫자가 들렸다. 더 많이 알게 되었고, 더 불안해졌다.',
+                consequence: '당신은 진실에 가까워졌다. 그러나 진실에 가까워지는 길은 더 감시받는 길이었다.',
+                flags: ['foreign_radio'],
+            },
+            {
+                text: '제국 내부 문서를 돈 주고 산다',
+                hint: '정보 정확도는 높지만 돈과 노출 위험을 치른다.',
+                tone: '회색',
+                effects: { money: -18, information: 30, misjudgment: -18, risk: 16, exposureRisk: 18, opportunist: 1 },
+                result: '문서는 짧고 차가웠다. 신문이 숨긴 숫자가 그 안에 있었다.',
+                consequence: '당신은 정확한 정보를 샀다. 그리고 정보가 거래되는 세계에 한 발 더 들어섰다.',
+                flags: ['bought_internal_docs'],
             },
         ],
     },
@@ -453,13 +526,48 @@ function applyChoice(player: Player, choice: Choice, nextAge: number) {
         next[statKey] = clamp(next[statKey] + (value ?? 0), max)
     })
 
-    const annualCost = 8 + Math.floor(next.debt * 0.08)
+    if (choice.tone === '협력') {
+        next.rationalization = clamp(next.rationalization + 7)
+        next.surveillance = clamp(next.surveillance - 3)
+    }
+
+    if (choice.tone === '저항') {
+        next.fear = clamp(next.fear + 8)
+        next.surveillance = clamp(next.surveillance + 10)
+        next.exposureRisk = clamp(next.exposureRisk + 8)
+    }
+
+    if (choice.tone === '회색') {
+        next.rationalization = clamp(next.rationalization + 10)
+        next.exposureRisk = clamp(next.exposureRisk + 8)
+    }
+
+    const livingPressure = getLivingPressure(next)
+    const annualCost = 8 + Math.floor(next.debt * 0.08) + Math.floor(livingPressure / 12)
     next.money = clamp(next.money - annualCost, 999)
+    next.food = clamp(next.food - 7 + Math.floor(next.money / 60))
+    next.medicine = clamp(next.medicine - (next.family < 45 ? 8 : 4))
+    next.risk = clamp(next.risk + Math.floor((next.surveillance + next.exposureRisk + next.fear) / 25))
 
     if (next.money <= 0) {
         next.debt = clamp(next.debt + 12, 999)
         next.family = clamp(next.family - 12)
         next.conscience = clamp(next.conscience - 4)
+    }
+
+    if (next.food < 25) {
+        next.family = clamp(next.family - 8)
+        next.fear = clamp(next.fear + 6)
+    }
+
+    if (next.medicine < 20) {
+        next.family = clamp(next.family - 6)
+        next.conscience = clamp(next.conscience - 3)
+    }
+
+    if (next.rationalization > 55) {
+        next.conscience = clamp(next.conscience - 3)
+        next.misjudgment = clamp(next.misjudgment + 4)
     }
 
     const flags = Array.from(new Set([...next.flags, ...(choice.flags ?? [])]))
@@ -471,6 +579,74 @@ function applyChoice(player: Player, choice: Choice, nextAge: number) {
     }
 }
 
+function getLivingPressure(player: Player) {
+    return clamp(
+        (100 - player.family) * 0.8 +
+            player.debt * 0.4 +
+            (100 - player.food) * 0.55 +
+            (100 - player.medicine) * 0.45 -
+            player.money * 0.12,
+    )
+}
+
+function getResponsibilityScore(player: Player, history: HistoryItem[]) {
+    const directHarm = history.filter((item) => item.tone === '협력').length
+    const rescue = history.filter((item) => item.tone === '저항').length
+
+    return Math.max(
+        0,
+        Math.round(
+            player.guilt * 12 +
+                directHarm * 14 +
+                player.misjudgment * 0.5 +
+                player.exposureRisk * 0.4 +
+                player.opportunist * 6 -
+                player.resistance * 10 -
+                rescue * 5 -
+                player.peopleTrust * 0.12,
+        ),
+    )
+}
+
+function getWitnesses(player: Player, history: HistoryItem[]) {
+    const witnesses: string[] = []
+    const helped = history.find((item) => item.choice.includes('숨겨주고'))
+    const reported = history.find((item) => item.choice.includes('신고'))
+    const contract = history.find((item) => item.choice.includes('계약을 수락'))
+    const confession = history.find((item) => item.choice.includes('부끄러운 선택'))
+    const radio = history.find((item) => item.choice.includes('해외 라디오'))
+
+    if (helped) {
+        witnesses.push('그날 밤 당신이 숨겨준 친구의 가족은 “우리는 그 선택 때문에 며칠을 더 벌었다”고 증언했다.')
+    }
+
+    if (reported) {
+        witnesses.push('골목 사람들은 포상금이 지급된 날 이후 당신의 집 앞에서 말을 낮추었다고 기록했다.')
+    }
+
+    if (contract) {
+        witnesses.push('군수 계약 장부에는 당신의 서명과 납품 숫자가 함께 남아 있었다.')
+    }
+
+    if (radio) {
+        witnesses.push('압수 기록에는 당신이 공식 발표와 다른 정보를 찾으려 했다는 흔적이 남아 있었다.')
+    }
+
+    if (confession) {
+        witnesses.push('가족은 뒤늦은 고백이 상처를 없애지는 못했지만, 침묵을 끝냈다고 말했다.')
+    }
+
+    if (player.rationalization >= 55) {
+        witnesses.push('기록관은 당신의 진술에서 “가족을 위해서였다”는 문장이 반복되었다고 적었다.')
+    }
+
+    if (witnesses.length === 0) {
+        witnesses.push('기록관에는 큰 증언이 남지 않았다. 침묵 역시 당신의 시대가 남긴 한 장의 기록이었다.')
+    }
+
+    return witnesses.slice(0, 4)
+}
+
 function getJob(flags: string[]) {
     if (flags.includes('war_supplier')) return '군수 사업가'
     if (flags.includes('empire_clerk')) return '제국청 직원'
@@ -480,12 +656,42 @@ function getJob(flags: string[]) {
     return '가족의 보호자'
 }
 
-function getEnding(player: Player) {
+function getEnding(player: Player, history: HistoryItem[]) {
+    const responsibility = getResponsibilityScore(player, history)
+
+    if (responsibility >= 130) {
+        return {
+            title: '역사의 가해자',
+            text: `${player.nickname}의 선택은 가족을 살렸을지 모른다. 그러나 기록관은 그 생존 뒤에 남겨진 피해자들의 이름을 함께 읽었다.`,
+            reflection: '선택은 언제나 사정과 함께 존재한다. 그러나 사정이 많다고 해서 책임이 사라지지는 않는다.',
+            judgment: responsibility,
+        }
+    }
+
+    if (responsibility >= 80) {
+        return {
+            title: '협력 책임자',
+            text: `${player.nickname}은 시대의 명령을 따랐다고 말했다. 그러나 증언자들은 그 명령이 누군가에게 어떤 결과였는지 말하기 시작했다.`,
+            reflection: '나쁜 의도가 없었다는 말은 중요하다. 하지만 피해를 만든 구조 안에서 얻은 안정도 함께 보아야 한다.',
+            judgment: responsibility,
+        }
+    }
+
+    if (responsibility >= 35) {
+        return {
+            title: '회색 인물',
+            text: `${player.nickname}의 기록에는 도움과 외면, 생존과 계산이 함께 남았다.`,
+            reflection: '역사는 사람을 쉽게 단정하지 못한다. 그래서 더 불편하게, 하나하나의 선택을 다시 묻는다.',
+            judgment: responsibility,
+        }
+    }
+
     if (player.risk >= 90 && player.empireTrust < 30) {
         return {
             title: '체포된 이름',
             text: `${player.nickname}은 시대를 배신하지 않으려 했다. 그러나 가족은 그 대가를 함께 짊어졌다.`,
             reflection: '위험을 감수한 선택은 숭고할 수 있지만, 그 위험은 언제나 혼자만의 것이 아니었다.',
+            judgment: responsibility,
         }
     }
 
@@ -494,6 +700,7 @@ function getEnding(player: Player) {
             title: '성공한 협력자, 몰락한 이름',
             text: `${player.nickname}은 가족을 지켰다. 그러나 수많은 가족을 무너뜨리는 데 기여했다.`,
             reflection: '가족을 위한 선택이라는 말은 진실일 수 있다. 그러나 그 진실이 타인의 피해를 지우지는 못한다.',
+            judgment: responsibility,
         }
     }
 
@@ -502,6 +709,7 @@ function getEnding(player: Player) {
             title: '가난한 저항자',
             text: `${player.nickname}은 시대를 배신하지 않았다. 그러나 곁의 사람들은 대가를 함께 짊어졌다.`,
             reflection: '옳은 선택도 누군가에게 상처가 된다. 그래서 도덕은 승리보다 책임에 가깝다.',
+            judgment: responsibility,
         }
     }
 
@@ -510,6 +718,7 @@ function getEnding(player: Player) {
             title: '막판의 변절자',
             text: `${player.nickname}은 편을 바꿨다. 마음을 바꾼 것인지는 아무도 알 수 없었다.`,
             reflection: '살아남기 위해 남긴 여지는 때로 지혜였고, 때로 자신도 믿지 못할 변명이 되었다.',
+            judgment: responsibility,
         }
     }
 
@@ -518,6 +727,7 @@ function getEnding(player: Player) {
             title: '가족만을 위한 사람',
             text: `${player.nickname}의 집에는 불이 꺼지지 않았다. 대신 다른 집들의 불을 보지 않기로 했다.`,
             reflection: '가장 가까운 사람을 지키는 마음은 선하다. 하지만 선한 마음이 좁아질 때, 바깥의 고통은 더 쉽게 외면된다.',
+            judgment: responsibility,
         }
     }
 
@@ -526,6 +736,7 @@ function getEnding(player: Player) {
             title: '이름 없는 사람',
             text: `${player.nickname}은 살아남았다. 그러나 시대는 조용히 지나쳐 갔다.`,
             reflection: '아무것도 하지 않는 선택은 죄가 아닐 수 있다. 그러나 아무 흔적도 남기지 않는 삶이 반드시 평온한 것은 아니다.',
+            judgment: responsibility,
         }
     }
 
@@ -533,16 +744,24 @@ function getEnding(player: Player) {
         title: '회색의 생존자',
         text: `역사는 ${player.nickname}을 단정하지 못했다. 생존과 양심, 회피와 책임이 함께 남았다.`,
         reflection: '삶은 선명한 색으로만 기록되지 않는다. 중요한 것은 회색을 부정하지 않고, 그 안에서 무엇을 감수했는지 보는 일이다.',
+        judgment: responsibility,
     }
 }
 
 const publicStats = [
     { key: 'money', label: '재산', Icon: Coins, max: 160, inverse: false },
     { key: 'debt', label: '부채', Icon: Scale, max: 120, inverse: true },
+    { key: 'food', label: '식량', Icon: Coins, max: 100, inverse: false },
+    { key: 'medicine', label: '의약품', Icon: HeartPulse, max: 100, inverse: false },
     { key: 'family', label: '가족 안정', Icon: Users, max: 100, inverse: false },
     { key: 'status', label: '사회적 지위', Icon: UserRound, max: 100, inverse: false },
     { key: 'conscience', label: '양심', Icon: HeartPulse, max: 100, inverse: false },
+    { key: 'rationalization', label: '자기합리화', Icon: Info, max: 100, inverse: true },
     { key: 'information', label: '정보력', Icon: Info, max: 100, inverse: false },
+    { key: 'misjudgment', label: '오판 위험', Icon: ShieldAlert, max: 100, inverse: true },
+    { key: 'fear', label: '공포심', Icon: ShieldAlert, max: 100, inverse: true },
+    { key: 'surveillance', label: '감시도', Icon: ShieldAlert, max: 100, inverse: true },
+    { key: 'exposureRisk', label: '노출 위험', Icon: ShieldAlert, max: 100, inverse: true },
     { key: 'risk', label: '위험도', Icon: ShieldAlert, max: 100, inverse: true },
 ] as const
 
@@ -562,7 +781,8 @@ export default function MoralDilemmaGame() {
     const [lastResult, setLastResult] = useState<string | null>(null)
     const event = events[eventIndex]
     const currentAge = player.startAge + event.ageOffset
-    const ending = useMemo(() => getEnding(player), [player])
+    const ending = useMemo(() => getEnding(player, history), [player, history])
+    const witnesses = useMemo(() => getWitnesses(player, history), [player, history])
 
     const startGuide = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault()
@@ -782,6 +1002,14 @@ export default function MoralDilemmaGame() {
                             <p className="mt-6 max-w-3xl text-xl font-black leading-relaxed">{ending.text}</p>
                             <p className="mt-4 max-w-3xl text-base font-semibold leading-relaxed text-[#5b5143]">{ending.reflection}</p>
 
+                            <div className="mt-8 border-2 border-[#1c1a17] bg-[#2d302f] p-5 text-[#f8f2e7]">
+                                <p className="text-sm font-black uppercase tracking-[0.16em] text-[#d1a846]">기록관 판정</p>
+                                <p className="mt-2 text-4xl font-black">{ending.judgment}</p>
+                                <p className="mt-2 text-sm font-semibold leading-relaxed text-[#f8f2e7]/72">
+                                    협력 기록, 피해 가능성, 오판 위험, 노출 기록, 저항과 구명 기록을 함께 계산한 책임 점수입니다.
+                                </p>
+                            </div>
+
                             <div className="mt-8 grid gap-3 md:grid-cols-3">
                                 {[
                                     ['죄책 기록', player.guilt],
@@ -794,6 +1022,17 @@ export default function MoralDilemmaGame() {
                                     </div>
                                 ))}
                             </div>
+
+                            <section className="mt-8">
+                                <h3 className="text-2xl font-black">증언</h3>
+                                <div className="mt-4 grid gap-3 md:grid-cols-2">
+                                    {witnesses.map((witness) => (
+                                        <p key={witness} className="border-2 border-[#1c1a17] bg-[#eee1cc] p-4 text-sm font-bold leading-relaxed text-[#4d4132]">
+                                            {witness}
+                                        </p>
+                                    ))}
+                                </div>
+                            </section>
 
                             <section className="mt-8">
                                 <h3 className="text-2xl font-black">나의 선택 요약</h3>
@@ -850,9 +1089,24 @@ function SceneVisual({ event }: { event: EventCard }) {
 }
 
 function StatusPanel({ player }: { player: Player }) {
+    const livingPressure = getLivingPressure(player)
+    const pressureTone = getStatTone(livingPressure, 100, true)
+
     return (
         <div className="border-2 border-[#1c1a17] bg-[#f8f2e7] p-4 shadow-[0_6px_0_#1c1a17]">
             <p className="text-xs font-black uppercase tracking-[0.16em] text-[#8b2f2f]">상태</p>
+            <div className="mt-4 border-2 border-[#1c1a17] bg-white p-3">
+                <div className="flex items-center justify-between gap-2">
+                    <p className="text-sm font-black">생활 압박</p>
+                    <p className={`text-sm font-black ${pressureTone.text}`}>{livingPressure}</p>
+                </div>
+                <div className="mt-2 h-4 border-2 border-[#1c1a17] bg-[#ded2bd]">
+                    <div className={`h-full ${pressureTone.bar}`} style={{ width: `${livingPressure}%` }} />
+                </div>
+                <p className={`mt-1 text-xs font-black ${pressureTone.text}`}>
+                    높을수록 양심적 선택의 현실 비용이 커집니다.
+                </p>
+            </div>
             <div className="mt-4 space-y-4">
                 {publicStats.map(({ key, label, Icon, max, inverse }) => {
                     const value = player[key]
