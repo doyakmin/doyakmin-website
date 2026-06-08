@@ -536,10 +536,9 @@ export default function MoralDilemmaGame() {
         <main className="min-h-screen bg-[#eee9de] text-[#1c1a17]">
             <div className="game-container py-6 md:py-10">
                 <header className="border-b-2 border-[#1c1a17] pb-5">
-                    <p className="text-xs font-black uppercase tracking-[0.18em] text-[#8b2f2f]">GRAARE / Hidden Playtest</p>
                     <h1 className="mt-2 text-4xl font-black leading-tight tracking-normal md:text-6xl">회색의 시대</h1>
                     <p className="mt-3 max-w-2xl text-base font-semibold leading-relaxed text-[#5b5143]">
-                        가족을 지키기 위한 선택이 어떤 기록으로 남는지 확인하는 도덕 선택 시뮬레이션입니다.
+                        삶은 끊임없는 선택의 연속이다. - 장 폴 사르트르
                     </p>
                 </header>
 
@@ -597,7 +596,7 @@ export default function MoralDilemmaGame() {
                                 type="submit"
                                 className="mt-7 min-h-12 w-full border-2 border-[#1c1a17] bg-[#d1a846] px-5 text-base font-black shadow-[0_5px_0_#1c1a17] transition-transform hover:-translate-y-0.5 active:translate-y-1 active:shadow-[0_2px_0_#1c1a17]"
                             >
-                                설명 보기
+                                시작하기
                             </button>
                         </form>
 
@@ -605,9 +604,10 @@ export default function MoralDilemmaGame() {
                             <BookOpen className="h-9 w-9 text-[#d1a846]" />
                             <h2 className="mt-5 text-2xl font-black md:text-3xl">이 게임에서 하는 일</h2>
                             <div className="mt-5 space-y-4 text-base font-semibold leading-relaxed text-[#f8f2e7]/80">
-                                <p>당신은 가상의 나라 루멘에서 식민지 시대를 살아갑니다.</p>
-                                <p>매 사건마다 선택을 합니다. 돈과 가족은 당장 도움이 되지만, 양심과 평판은 천천히 흔들립니다.</p>
-                                <p>죄책 기록, 저항 기록, 기회주의 기록은 플레이 중 숨겨지고 엔딩에서 공개됩니다.</p>
+                                <p>
+                                    내 삶의 중요한 요소들을 좌우할 선택을 하게 됩니다. 재산, 부채, 가족 안정,
+                                    사회적 지위, 양심, 정보력, 위험도 수치를 관리하며 신중한 선택을 하세요.
+                                </p>
                             </div>
                         </div>
                     </section>
@@ -616,12 +616,12 @@ export default function MoralDilemmaGame() {
                 {phase === 'guide' && (
                     <section className="mt-6 border-2 border-[#1c1a17] bg-[#f8f2e7] p-5 shadow-[0_7px_0_#1c1a17] md:p-8">
                         <p className="text-sm font-black uppercase tracking-[0.16em] text-[#8b2f2f]">게임 설명</p>
-                        <h2 className="mt-2 text-3xl font-black">선택은 정답이 아니라 대가를 남깁니다</h2>
+                        <h2 className="mt-2 text-3xl font-black">선택은 대가를 남깁니다</h2>
                         <div className="mt-6 grid gap-4 md:grid-cols-3">
                             {[
                                 ['공개 수치', '재산, 가족 안정, 양심, 정보력, 위험도는 항상 볼 수 있습니다.'],
                                 ['숨겨진 기록', '죄책, 저항, 기회주의, 매몰비용은 엔딩에서 평가됩니다.'],
-                                ['플레이 목표', '좋은 사람 점수를 모으는 게임이 아닙니다. 무엇을 감수했는지 확인하는 게임입니다.'],
+                                ['플레이 목표', '내 삶에 중요한 것을 선택하고 대가를 감수하세요.'],
                             ].map(([title, text]) => (
                                 <div key={title} className="border-2 border-[#1c1a17] bg-white p-4">
                                     <p className="font-black">{title}</p>
