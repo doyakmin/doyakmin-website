@@ -1,6 +1,16 @@
+import type { Metadata } from 'next'
 import GameImageCarousel from '@/components/game_image_carousel'
 import AppDownloadButtons from '@/components/app_download_buttons'
 import TranslatedText from '@/components/translated_text'
+import { createSeoMetadata } from '@/lib/seo'
+
+export const metadata: Metadata = createSeoMetadata({
+    title: '한국지 | GPS 기반 모바일 점령 게임',
+    description: '한국지는 실제 위치와 건물을 기반으로 영토를 점령하고 플레이어와 경쟁하는 도약민의 GPS 기반 모바일 게임입니다.',
+    path: '/games',
+    image: '/image/hangukji/hero-conquer.png',
+    keywords: ['한국지 다운로드', '모바일 점령 게임', '위치 기반 모바일 게임'],
+})
 
 const features = [
     {

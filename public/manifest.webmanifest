@@ -1,0 +1,17 @@
+{
+  "name": "도약민",
+  "short_name": "도약민",
+  "description": "GPS 기반 모바일 점령 게임 한국지를 만드는 도약민 공식 웹사이트",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#07111f",
+  "theme_color": "#07111f",
+  "lang": "ko-KR",
+  "icons": [
+    {
+      "src": "/image/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

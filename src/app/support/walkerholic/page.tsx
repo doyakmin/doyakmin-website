@@ -4,8 +4,11 @@ import { Mail, Phone, ShieldCheck, Trash2 } from 'lucide-react';
 import GoogleSheetContactForm from '@/components/google_sheet_contact_form';
 
 export const metadata: Metadata = {
-  title: 'walker홀릭 지원 | 도약민',
-  description: 'walker홀릭 앱 고객지원, 문의 접수, 개인정보처리방침, 계정 삭제 안내 페이지입니다.',
+  title: 'walker홀릭 고객지원 | 도약민',
+  description: 'walker홀릭 앱 고객지원, 문의 접수, 개인정보처리방침, 계정 삭제 안내를 제공하는 도약민 공식 지원 페이지입니다.',
+  alternates: {
+    canonical: 'https://doyakmin.com/support/walkerholic',
+  },
 };
 
 export default function WalkerholicSupportPage() {

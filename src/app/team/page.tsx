@@ -1,5 +1,15 @@
+import type { Metadata } from 'next'
 import Image from 'next/image'
 import TranslatedText from '@/components/translated_text'
+import { createSeoMetadata } from '@/lib/seo'
+
+export const metadata: Metadata = createSeoMetadata({
+    title: '회사소개 | 도약민',
+    description: '도약민은 현실의 이동과 지역 경험을 게임으로 바꾸는 부산 기반 게임 스타트업입니다. 한국관광공사 예비관광벤처 선정 등 주요 이력을 확인하세요.',
+    path: '/team',
+    image: '/og-doyakmin-card-v3.jpg',
+    keywords: ['도약민 회사소개', '게임 스타트업', '부산 게임사', '한국관광공사 예비관광벤처'],
+})
 
 const historyItems = [
     {

@@ -1,4 +1,13 @@
+import type { Metadata } from 'next';
 import AccountDeleteFormPage from '@/components/account_delete_form_page';
+import { createSeoMetadata } from '@/lib/seo';
+
+export const metadata: Metadata = createSeoMetadata({
+  title: 'walker홀릭 계정 삭제 요청 | 도약민',
+  description: 'walker홀릭 서비스 계정 삭제를 요청하는 도약민 공식 페이지입니다.',
+  path: '/delete-account/namgu',
+  keywords: ['walker홀릭 계정 삭제', 'walker홀릭 탈퇴'],
+});
 
 export default function DeleteAccountNamguPage() {
   return (

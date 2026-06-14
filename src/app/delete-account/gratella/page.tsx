@@ -1,4 +1,13 @@
+import type { Metadata } from 'next';
 import AccountDeleteFormPage from '@/components/account_delete_form_page';
+import { createSeoMetadata } from '@/lib/seo';
+
+export const metadata: Metadata = createSeoMetadata({
+  title: 'Gratella 계정 삭제 요청 | 도약민',
+  description: 'Gratella 서비스 계정 삭제를 요청하는 도약민 공식 페이지입니다.',
+  path: '/delete-account/gratella',
+  keywords: ['Gratella 계정 삭제', 'Gratella 탈퇴'],
+});
 
 export default function DeleteAccountGratellaPage() {
   return (

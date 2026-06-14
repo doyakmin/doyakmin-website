@@ -1,29 +1,18 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
-import { hangukjiBetaEvent } from '@/content/news/hangukji-beta-event'
-import { termsOfService } from '@/content/news/terms-of-service'
-import { privacyPolicy } from '@/content/news/privacy-policy'
-import { emergencyNotice20250909 } from '@/content/news/emergency-notice-2025-09-09'
-import { antiCheatNotice20251006 } from '@/content/news/anti-cheat-notice-2025-10-06'
-import { abnormalLogoutNotice20251023 } from '@/content/news/abnormal-logout-notice-2025-10-23'
-import { unPeaceFestival20251025 } from '@/content/news/un-peace-festival-2025-10-25'
-import { eventEndNotice20251107 } from '@/content/news/event-end-notice-2025-11-07'
-import { winnerAnnouncement20251109 } from '@/content/news/winner-announcement-2025-11-09'
+import { allNewsPosts } from '@/content/news'
 import TranslatedText from '@/components/translated_text'
+import { createSeoMetadata } from '@/lib/seo'
+
+export const metadata: Metadata = createSeoMetadata({
+    title: '소식 | 도약민',
+    description: '한국지와 도약민의 업데이트, 이벤트, 공지사항을 확인할 수 있는 공식 소식 페이지입니다.',
+    path: '/news',
+    keywords: ['도약민 소식', '한국지 공지', '한국지 이벤트', '한국지 업데이트'],
+})
 
 export default function NewsPage() {
-    const allPosts = [
-        winnerAnnouncement20251109,
-        eventEndNotice20251107,
-        unPeaceFestival20251025,
-        abnormalLogoutNotice20251023,
-        antiCheatNotice20251006,
-        emergencyNotice20250909,
-        hangukjiBetaEvent,
-        termsOfService,
-        privacyPolicy,
-    ].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-
     return (
         <main className="bg-[#f4f7fb] text-[#111827]">
             <section className="bg-[#07111f] py-24 text-white">
@@ -44,7 +33,7 @@ export default function NewsPage() {
             <section className="py-20">
                 <div className="game-container">
                     <div className="grid grid-cols-1 gap-5">
-                        {allPosts.map((post) => (
+                        {allNewsPosts.map((post) => (
                             <Link key={post.slug} href={`/news/${post.slug}`} className="group block">
                                 <article className="game-card flex items-center justify-between gap-5 p-6 transition-transform group-hover:-translate-y-1">
                                     <div>

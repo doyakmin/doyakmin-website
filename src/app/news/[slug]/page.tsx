@@ -1,27 +1,49 @@
-import { hangukjiBetaEvent } from '@/content/news/hangukji-beta-event';
-import { termsOfService } from '@/content/news/terms-of-service';
-import { privacyPolicy } from '@/content/news/privacy-policy';
-import { emergencyNotice20250909 } from '@/content/news/emergency-notice-2025-09-09';
-import { antiCheatNotice20251006 } from '@/content/news/anti-cheat-notice-2025-10-06';
-import { abnormalLogoutNotice20251023 } from '@/content/news/abnormal-logout-notice-2025-10-23';
-import { unPeaceFestival20251025 } from '@/content/news/un-peace-festival-2025-10-25';
-import { eventEndNotice20251107 } from '@/content/news/event-end-notice-2025-11-07';
-import { winnerAnnouncement20251109 } from '@/content/news/winner-announcement-2025-11-09';
+import type { Metadata } from 'next';
+import { allNewsPosts } from '@/content/news';
 import AppDownloadButtons from '@/components/app_download_buttons';
 import CountdownTimer from '@/components/countdown_timer';
+import { createSeoMetadata } from '@/lib/seo';
 import { notFound } from 'next/navigation';
 
-const allPosts = [winnerAnnouncement20251109, eventEndNotice20251107, unPeaceFestival20251025, abnormalLogoutNotice20251023, antiCheatNotice20251006, emergencyNotice20250909, hangukjiBetaEvent, termsOfService, privacyPolicy];
-
 export async function generateStaticParams() {
-    return allPosts.map((post) => ({
+    return allNewsPosts.map((post) => ({
         slug: post.slug,
     }));
 }
 
 function getPost(params: { slug: string }) {
-    const post = allPosts.find((p) => p.slug === params.slug);
+    const post = allNewsPosts.find((p) => p.slug === params.slug);
     return post;
+}
+
+function stripHtml(html: string) {
+    return html
+        .replace(/<[^>]*>/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
+}
+
+export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
+    const post = getPost(params);
+
+    if (!post) {
+        return createSeoMetadata({
+            title: '소식을 찾을 수 없습니다 | 도약민',
+            description: '요청하신 도약민 소식 페이지를 찾을 수 없습니다.',
+            path: `/news/${params.slug}`,
+            noIndex: true,
+        });
+    }
+
+    const description = post.summary || stripHtml(post.content).slice(0, 150);
+
+    return createSeoMetadata({
+        title: `${post.title.replace(/\\n|\n/g, ' ')} | 도약민 소식`,
+        description,
+        path: `/news/${post.slug}`,
+        image: post.slug === 'hangukji-beta-event' ? '/image/event/hangukji-beta-event-poster.jpg' : '/og-doyakmin-card-v3.jpg',
+        keywords: ['도약민 공지', '한국지 공지', post.title.replace(/\\n|\n/g, ' ')],
+    });
 }
 
 export default function NewsPostPage({ params }: { params: { slug: string } }) {

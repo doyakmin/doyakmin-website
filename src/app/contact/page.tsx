@@ -1,7 +1,16 @@
+import type { Metadata } from 'next'
 import Image from 'next/image'
 import Map from '@/components/map'
 import GoogleSheetContactForm from '@/components/google_sheet_contact_form'
 import TranslatedText from '@/components/translated_text'
+import { createSeoMetadata } from '@/lib/seo'
+
+export const metadata: Metadata = createSeoMetadata({
+    title: '문의 | 도약민',
+    description: '도약민 제휴, 협업, 앱 문의를 접수하는 공식 문의 페이지입니다. 이메일, 전화, 주소와 한국지 네이버 카페 정보를 확인하세요.',
+    path: '/contact',
+    keywords: ['도약민 문의', '한국지 문의', '도약민 제휴', '한국지 네이버 카페'],
+})
 
 export default function ContactPage() {
     return (
