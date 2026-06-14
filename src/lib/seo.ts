@@ -7,6 +7,7 @@ export const defaultOgImage = '/og-doyakmin-card-v3.jpg';
 type SeoMetadataOptions = {
   title: string;
   description: string;
+  openGraphDescription?: string;
   path?: string;
   image?: string;
   keywords?: string[];
@@ -20,6 +21,7 @@ export function absoluteUrl(path = '/') {
 export function createSeoMetadata({
   title,
   description,
+  openGraphDescription = description,
   path = '/',
   image = defaultOgImage,
   keywords = [],
@@ -63,7 +65,7 @@ export function createSeoMetadata({
         },
     openGraph: {
       title,
-      description,
+      description: openGraphDescription,
       url,
       siteName,
       type: 'website',
@@ -82,7 +84,7 @@ export function createSeoMetadata({
     twitter: {
       card: 'summary_large_image',
       title,
-      description,
+      description: openGraphDescription,
       images: [imageUrl],
     },
   };

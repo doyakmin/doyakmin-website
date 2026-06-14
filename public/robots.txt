@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /GRAARE
+
+Sitemap: https://doyakmin.com/sitemap.xml

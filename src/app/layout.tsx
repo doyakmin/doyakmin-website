@@ -10,9 +10,10 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   ...createSeoMetadata({
-    title: "도약민 | 한국지 위치 기반 게임 제작사",
-    description:
-      "주식회사 도약민은 GPS 기반 모바일 점령 게임 한국지를 만드는 게임 스튜디오입니다. 현실의 이동과 지역 경험을 새로운 놀이로 연결합니다.",
+    title: "도약민 | GAMES MAKETH THE WORLD ANEW",
+    description: "위치 기반 게임 '한국지' 제작사 (주)도약민. 게임으로 세상을 바꾸다.",
+    openGraphDescription:
+      "위치 기반 게임 '한국지'로 전국을 점령! 게임으로 세상을 새롭게 만드는 (주)도약민.",
     path: "/",
     keywords: ["모바일 게임", "게임 스타트업", "부산 게임사", "관광 게임"],
   }),
