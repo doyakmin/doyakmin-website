@@ -84,6 +84,7 @@ export default function Home() {
                             alt="한국지 로고"
                             width={1000}
                             height={260}
+                            sizes="(max-width: 1024px) 92vw, 620px"
                             className="h-auto w-[92%] max-w-[620px] object-contain drop-shadow-[0_14px_0_rgba(0,0,0,0.24)] md:w-full md:drop-shadow-[0_18px_0_rgba(0,0,0,0.28)]"
                             priority
                         />
@@ -141,6 +142,7 @@ export default function Home() {
                             alt="한국지 튜토리얼 화면"
                             width={960}
                             height={720}
+                            sizes="(max-width: 1024px) calc(100vw - 24px), 55vw"
                             className="aspect-[4/3] w-full rounded-[22px] object-contain"
                         />
                     </div>
@@ -167,6 +169,7 @@ export default function Home() {
                                     alt={`${value.titleKo} 이미지`}
                                     width={360}
                                     height={260}
+                                    sizes="(max-width: 640px) 72vw, (max-width: 768px) 46vw, 357px"
                                     className="aspect-[4/3] w-full rounded-[16px] object-cover md:rounded-[20px]"
                                 />
                                 <h3 className="mt-4 text-2xl font-black tracking-tighter text-[#b7ff2a] md:mt-5 md:text-3xl">
