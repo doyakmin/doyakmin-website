@@ -197,6 +197,90 @@ html[data-lang="ja"] body {
   list-style-position: inside;
 }
 
+/* Terms of service: make long legal copy easy to scan without changing its wording. */
+.terms-document {
+  max-width: 880px;
+  margin-inline: auto;
+  color: #263244;
+  font-size: 16px;
+  line-height: 1.78;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.terms-document .terms-version {
+  margin: 0 0 44px;
+  border: 2px solid #111827;
+  border-radius: 22px;
+  background: linear-gradient(135deg, rgba(183, 255, 42, 0.32), rgba(39, 216, 255, 0.16));
+  padding: 26px 28px;
+  color: #526071;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.terms-document .terms-version strong {
+  display: block;
+  margin-bottom: 4px;
+  color: #111827;
+  font-size: clamp(24px, 4vw, 34px);
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+}
+
+.terms-document h3 {
+  margin: 52px 0 18px;
+  border-left: 7px solid #0c7a90;
+  border-bottom: 1px solid #dbe3ec;
+  padding: 2px 0 13px 16px;
+  color: #111827;
+  font-size: 22px;
+  font-weight: 900;
+  line-height: 1.35;
+  letter-spacing: -0.025em;
+}
+
+.terms-document p {
+  margin: 0 0 13px;
+}
+
+.terms-document .terms-clause {
+  position: relative;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  padding: 9px 12px 9px 48px;
+}
+
+.terms-document .terms-clause:nth-of-type(even) {
+  background: #f6f8fb;
+}
+
+.terms-document .terms-clause-number {
+  position: absolute;
+  left: 12px;
+  top: 9px;
+  min-width: 26px;
+  color: #0c7a90;
+  font-weight: 900;
+}
+
+.terms-document ul {
+  margin: 12px 0 24px;
+  border-radius: 16px;
+  background: #f4f7fb;
+  padding: 18px 22px 18px 42px;
+  list-style-position: outside;
+}
+
+.terms-document li {
+  margin: 7px 0;
+  padding-left: 4px;
+}
+
+.terms-document li::marker {
+  color: #0c7a90;
+}
+
 @media (max-width: 767px) {
   html {
     scroll-padding-top: 72px;
@@ -280,5 +364,35 @@ html[data-lang="ja"] body {
 
   .mobile-value-strip::-webkit-scrollbar {
     display: none;
+  }
+
+  .terms-document {
+    font-size: 15px;
+    line-height: 1.72;
+  }
+
+  .terms-document .terms-version {
+    margin-bottom: 34px;
+    border-radius: 16px;
+    padding: 20px;
+  }
+
+  .terms-document h3 {
+    margin-top: 40px;
+    padding-left: 12px;
+    font-size: 19px;
+  }
+
+  .terms-document .terms-clause {
+    padding: 8px 8px 8px 40px;
+  }
+
+  .terms-document .terms-clause-number {
+    left: 8px;
+    top: 8px;
+  }
+
+  .terms-document ul {
+    padding: 14px 16px 14px 34px;
   }
 }
