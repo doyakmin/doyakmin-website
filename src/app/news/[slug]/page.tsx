@@ -3,6 +3,7 @@ import { allNewsPosts } from '@/content/news';
 import AppDownloadButtons from '@/components/app_download_buttons';
 import CountdownTimer from '@/components/countdown_timer';
 import TranslatedText from '@/components/translated_text';
+import LocalizedHtml from '@/components/localized_html';
 import { createSeoMetadata } from '@/lib/seo';
 import { notFound } from 'next/navigation';
 
@@ -53,6 +54,7 @@ export default function NewsPostPage({ params }: { params: { slug: string } }) {
     if (!post) {
         notFound();
     }
+    const localizedPost = post as typeof post & { contentEn?: string; contentJa?: string };
 
     return (
         <main className="bg-[#f4f7fb] text-[#111827]">
@@ -120,7 +122,11 @@ export default function NewsPostPage({ params }: { params: { slug: string } }) {
                             <div dangerouslySetInnerHTML={{ __html: post.content.split('</div>').slice(post.content.split('</div>').findIndex(part => part.includes('countdown-timer-container')) + 1).join('</div>') }} />
                         </>
                     ) : (
-                        <div dangerouslySetInnerHTML={{ __html: post.content }} />
+                        <LocalizedHtml
+                            ko={post.content}
+                            en={localizedPost.contentEn ?? post.content}
+                            ja={localizedPost.contentJa ?? post.content}
+                        />
                     )}
                 </div>
             </article>
