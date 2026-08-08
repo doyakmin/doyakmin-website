@@ -108,13 +108,13 @@ export default function TeamPage() {
                                 rel="noopener noreferrer"
                                 className="hover:text-[#0c7a90]"
                             >
-                                정민영
+                                <TranslatedText ko="정민영" en="Minyoung Jung" ja="チョン・ミニョン" />
                             </a>
                         </h2>
                         <p className="mt-2 text-base font-black text-[#0c7a90]">
                             <TranslatedText ko="대표이사" en="CEO" ja="代表取締役" />
                         </p>
-                        <p className="mt-2 break-all text-sm font-bold text-[#526071]">minyoung5454@naver.com</p>
+                        <p className="mt-2 break-all text-sm font-bold text-[#526071]">jmy@doyakmin.com</p>
                     </article>
                 </div>
             </section>

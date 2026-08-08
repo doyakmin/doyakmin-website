@@ -46,7 +46,9 @@ export default function Games() {
                 <div className="game-container grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr]">
                     <div>
                         <p className="game-eyebrow">First Title</p>
-                        <h1 className="game-title mt-5">한국지</h1>
+                        <h1 className="game-title mt-5">
+                            <TranslatedText ko="한국지" en="hankookji" ja="ハングクジ" />
+                        </h1>
                         <p className="game-readable mt-6 text-xl font-semibold leading-relaxed text-white/78">
                             <TranslatedText
                                 ko="지역 소멸 문제 해결을 위한 GPS 기반 모바일 점령형 게임입니다."

@@ -287,8 +287,8 @@ export default function PrivacyPage() {
                 <div className="flex">
                   <dt className="w-24 shrink-0 bg-gray-50/80 px-4 py-2.5 text-xs font-medium uppercase tracking-wider text-gray-500 sm:w-28">이메일</dt>
                   <dd className="px-4 py-2.5 text-sm">
-                    <a href="mailto:doyakmin@gmail.com" className="font-medium text-emerald-600 transition-colors hover:text-emerald-700">
-                      doyakmin@gmail.com
+                    <a href="mailto:jmy@doyakmin.com" className="font-medium text-emerald-600 transition-colors hover:text-emerald-700">
+                      jmy@doyakmin.com
                     </a>
                   </dd>
                 </div>
@@ -333,7 +333,7 @@ export default function PrivacyPage() {
           {/* Footer */}
           <div className="mt-16 border-t border-gray-100 pt-6 text-center text-sm text-gray-400">
             <p>본 방침은 2026년 2월 16일부터 시행됩니다.</p>
-            <p className="mt-1">주식회사 도약민 | doyakmin@gmail.com</p>
+            <p className="mt-1">주식회사 도약민 | jmy@doyakmin.com</p>
           </div>
           </div>
         </div>
