@@ -39,6 +39,13 @@ const features = [
     },
 ]
 
+const gameTags = [
+    { value: 'GPS', ko: 'GPS', en: 'GPS', ja: 'GPS' },
+    { value: 'PVP', ko: 'PVP', en: 'PVP', ja: 'PVP' },
+    { value: 'capture', ko: '점령전', en: 'Capture', ja: '占領戦' },
+    { value: 'strategy', ko: '전략', en: 'Strategy', ja: '戦略' },
+]
+
 export default function Games() {
     return (
         <main className="bg-[#f4f7fb] text-[#111827]">
@@ -64,9 +71,9 @@ export default function Games() {
                             />
                         </p>
                         <div className="mt-8 flex flex-wrap gap-3">
-                            {['GPS', 'PVP', '점령전', '전략'].map((tag) => (
-                                <span key={tag} className="game-tag">
-                                    {tag}
+                            {gameTags.map((tag) => (
+                                <span key={tag.value} className="game-tag">
+                                    <TranslatedText ko={tag.ko} en={tag.en} ja={tag.ja} />
                                 </span>
                             ))}
                         </div>

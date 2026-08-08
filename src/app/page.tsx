@@ -9,6 +9,13 @@ const stats = [
     { value: 'LOCAL', ko: '지역 방문을 만드는 게임', en: 'A game that drives local visits', ja: '地域への訪問を生み出すゲーム' },
 ]
 
+const gameTags = [
+    { value: 'GPS', ko: 'GPS', en: 'GPS', ja: 'GPS' },
+    { value: 'capture', ko: '점령전', en: 'Capture', ja: '占領戦' },
+    { value: 'PVP', ko: 'PVP', en: 'PVP', ja: 'PVP' },
+    { value: 'local', ko: '지역 활성화', en: 'Local revitalization', ja: '地域活性化' },
+]
+
 const values = [
     {
         titleKo: '재미',
@@ -138,9 +145,9 @@ export default function Home() {
                             />
                         </p>
                         <div className="mt-7 flex flex-wrap gap-3">
-                            {['GPS', '점령전', 'PVP', '지역 활성화'].map((tag) => (
-                                <span key={tag} className="game-tag">
-                                    {tag}
+                            {gameTags.map((tag) => (
+                                <span key={tag.value} className="game-tag">
+                                    <TranslatedText ko={tag.ko} en={tag.en} ja={tag.ja} />
                                 </span>
                             ))}
                         </div>

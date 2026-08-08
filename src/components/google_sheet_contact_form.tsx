@@ -54,18 +54,22 @@ export default function GoogleSheetContactForm({ service, className = "" }: Goog
         body: JSON.stringify(payload),
       });
 
-      const result = (await response.json()) as { ok?: boolean; message?: string };
+      const result = (await response.json()) as { ok?: boolean };
       if (!response.ok || result.ok !== true) {
-        throw new Error(result.message || `서버 응답 오류 (${response.status})`);
+        throw new Error(String(response.status));
       }
 
       setSubmitStatus("success");
       setMessage(text("문의가 정상 접수되어 운영진에게 전달되었습니다. 확인 후 순차적으로 안내드리겠습니다.", "Your inquiry has been received. Our team will get back to you after review.", "お問い合わせを受け付けました。確認後、順次ご案内いたします。"));
       form.reset();
     } catch (error) {
-      const errorMessage = error instanceof Error ? error.message : "문의 접수 중 오류가 발생했습니다.";
+      const errorMessage = error instanceof Error ? error.message : "unknown";
       setSubmitStatus("error");
-      setMessage(`오류가 발생했습니다: ${errorMessage}`);
+      setMessage(text(
+        `문의 접수에 실패했습니다. 잠시 후 다시 시도해주세요. (오류 ${errorMessage})`,
+        `We could not submit your inquiry. Please try again shortly. (Error ${errorMessage})`,
+        `お問い合わせを送信できませんでした。しばらくしてからもう一度お試しください。（エラー ${errorMessage}）`,
+      ));
     } finally {
       setIsSubmitting(false);
     }
@@ -121,12 +125,12 @@ export default function GoogleSheetContactForm({ service, className = "" }: Goog
           className="block w-full rounded-2xl border-2 border-[#111827] bg-white px-4 py-3 text-sm font-bold shadow-none focus:outline-none focus:ring-4 focus:ring-[#b7ff2a]/60"
         >
           <option value="" disabled>
-            Select a type
+            {text("문의 유형을 선택하세요", "Select a type", "お問い合わせ種別を選択してください")}
           </option>
-          <option value="app">App inquiry</option>
-          <option value="business">Business proposal</option>
-          <option value="event">Event inquiry</option>
-          <option value="etc">Other</option>
+          <option value="app">{text("앱 문의", "App inquiry", "アプリに関するお問い合わせ")}</option>
+          <option value="business">{text("사업 제안", "Business proposal", "事業提案")}</option>
+          <option value="event">{text("이벤트 문의", "Event inquiry", "イベントに関するお問い合わせ")}</option>
+          <option value="etc">{text("기타", "Other", "その他")}</option>
         </select>
       </div>
 
@@ -149,7 +153,7 @@ export default function GoogleSheetContactForm({ service, className = "" }: Goog
         disabled={isSubmitting}
         className="game-button w-full disabled:cursor-not-allowed disabled:bg-gray-300 disabled:text-gray-500"
       >
-        {isSubmitting ? "Sending..." : <TranslatedText ko="문의 등록하기" en="Submit inquiry" ja="送信する" />}
+        {isSubmitting ? text("전송 중...", "Sending...", "送信中...") : <TranslatedText ko="문의 등록하기" en="Submit inquiry" ja="送信する" />}
       </button>
 
       {message && (
