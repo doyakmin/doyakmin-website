@@ -40,7 +40,8 @@ export default function Footer() {
                 <div className="mt-12 flex flex-col gap-4 border-t border-white/12 pt-6 text-xs font-semibold text-white/48 sm:flex-row sm:items-center sm:justify-between">
                     <p>© {new Date().getFullYear()} (주)도약민. All rights reserved.</p>
                     <div className="flex flex-wrap gap-x-5 gap-y-2">
-                        <a href="/policy/operation" className="hover:text-[#b7ff2a]"><TranslatedText ko="운영정책" en="Operation Policy" ja="運営ポリシー" /></a>
+                        <Link href="/news/operation-policy" className="hover:text-[#b7ff2a]"><TranslatedText ko="운영정책" en="Operation Policy" ja="運営ポリシー" /></Link>
+                        <Link href="/news/location-based-service-terms" className="hover:text-[#b7ff2a]"><TranslatedText ko="위치기반서비스 이용약관" en="Location Terms" ja="位置情報利用規約" /></Link>
                         <Link href="/news/privacy-policy" className="hover:text-[#b7ff2a]"><TranslatedText ko="개인정보처리방침" en="Privacy Policy" ja="プライバシーポリシー" /></Link>
                         <Link href="/news/terms-of-service" className="hover:text-[#b7ff2a]"><TranslatedText ko="이용약관" en="Terms" ja="利用規約" /></Link>
                     </div>

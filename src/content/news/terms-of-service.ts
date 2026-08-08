@@ -9,7 +9,6 @@ export const termsOfService = {
   summaryEn: 'These Terms govern the rights, obligations, responsibilities, and conditions for using hankookji.',
   summaryJa: '本規約は、ハングクジの利用に関する会社と会員の権利、義務、責任および利用条件を定めます。',
   content: `<div class="terms-document">
-<p class="terms-version"><strong>한국지 서비스 이용약관</strong><br>2026 정식 서비스 통합 최종본</p>
 <h3>제1조(목적)</h3>
 <p>이 약관은 주식회사 도약민(이하 “회사”)가 제공하는 모바일 게임 「한국지」 및 이에 부수되는 서비스(이하 “서비스”)의 이용과 관련하여 회사와 회원 사이의 권리&#183;의무 및 책임사항, 이용조건과 절차 등 필요한 사항을 정함을 목적으로 합니다.</p>
 <h3>제2조(정의)</h3>
@@ -195,7 +194,6 @@ export const termsOfService = {
 <ul>
 <li>공고일: 2026년 8월 8일</li>
 <li>시행일: 2026년 8월 8일</li>
-<li>버전: 2026.08.08</li>
 <li>종전 이용약관 시행일: 2025년 4월 1일</li>
 </ul>
 <h3>사업자 정보</h3>
@@ -208,7 +206,6 @@ export const termsOfService = {
 <p>전화: 051-271-6765</p>
 </div>`,
   contentEn: `<div class="terms-document">
-<p class="terms-version"><strong>hankookji Terms of Service</strong><br>2026 Final Consolidated Version</p>
 <h3>Article 1 (Purpose)</h3>
 <p>The purpose of these Terms and Conditions is to establish necessary matters, such as rights, obligations and responsibilities, terms and procedures of use, and other matters between the Company and members in relation to the use of the mobile game “hankookji” and its accompanying services (hereinafter referred to as “Services”) provided by doyakmin Inc (hereinafter referred to as “Company”).</p>
 <h3>Article 2 (Definition)</h3>
@@ -394,7 +391,6 @@ export const termsOfService = {
 <ul>
 <li>Announcement date: August 8, 2026</li>
 <li>Effective date: August 8, 2026</li>
-<li>Version: 2026.08.08</li>
 <li>Effective date of previous terms and conditions: April 1, 2025</li>
 </ul>
 <h3>Business information</h3>
@@ -407,7 +403,6 @@ export const termsOfService = {
 <p>Phone: 051-271-6765</p>
 </div>`,
   contentJa: `<div class="terms-document">
-<p class="terms-version"><strong>ハングクジ サービス利用規約</strong><br>2026年 正式サービス統合最終版</p>
 <h3>第1条(目的)</h3>
 <p>この約款は、ドヤクミン（跳躍民）（以下「会社」）が提供するモバイルゲーム「ハングクジ」およびこれに付随するサービス（以下「サービス」）の利用に関連して、会社と会員間の権利・義務および責任事項、利用条件と手続きなど必要な事項を定めることを目的とします。</p>
 <h3>第2条(定義)</h3>
@@ -593,7 +588,6 @@ export const termsOfService = {
 <ul>
 <li>発表日：2026年8月8日</li>
 <li>施行日：2026年8月8日</li>
-<li>バージョン：2026.08.08</li>
 <li>従前利用規約施行日：2025年4月1日</li>
 </ul>
 <h3>事業者情報</h3>

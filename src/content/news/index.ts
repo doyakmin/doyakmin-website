@@ -3,6 +3,8 @@ import { antiCheatNotice20251006 } from './anti-cheat-notice-2025-10-06';
 import { emergencyNotice20250909 } from './emergency-notice-2025-09-09';
 import { eventEndNotice20251107 } from './event-end-notice-2025-11-07';
 import { hangukjiBetaEvent } from './hangukji-beta-event';
+import { locationBasedServiceTerms } from './location-based-service-terms';
+import { operationPolicy } from './operation-policy';
 import { privacyPolicy } from './privacy-policy';
 import { termsOfService } from './terms-of-service';
 import { unPeaceFestival20251025 } from './un-peace-festival-2025-10-25';
@@ -18,4 +20,6 @@ export const allNewsPosts = [
   hangukjiBetaEvent,
   termsOfService,
   privacyPolicy,
+  locationBasedServiceTerms,
+  operationPolicy,
 ].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
