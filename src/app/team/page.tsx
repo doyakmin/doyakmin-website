@@ -18,7 +18,7 @@ const historyItems = [
             { ko: '부산권 창업공유대학 IR 피칭 대회 최우수상', en: 'Grand Prize, Busan Startup Shared University IR Pitching Competition', ja: '釜山圏創業共有大学 IRピッチング大会 最優秀賞' },
             { ko: '한국관광공사 예비관광벤처 선정', en: 'Selected as a Preliminary Tourism Venture by the Korea Tourism Organization', ja: '韓国観光公社「予備観光ベンチャー」に選定' },
             { ko: '꿈터플러스 창업경진대회 대상', en: 'Grand Prize, Kkumteo Plus Startup Competition', ja: 'クムトプラス創業コンテスト 大賞' },
-            { ko: '주식회사 도약민 법인 설립', en: 'Doyakmin Inc. established', ja: '株式会社DOYAKMIN 設立' },
+            { ko: '주식회사 도약민 법인 설립', en: 'doyakmin Inc established', ja: 'ドヤクミン（跳躍民） 設立' },
         ],
     },
     {
@@ -43,8 +43,8 @@ const pressLinks = [
     },
     {
         title: '2025 관광이음주간 도약민, 혁신 기술 선보여',
-        titleEn: 'Doyakmin showcases innovative technology at 2025 Tourism Connection Week',
-        titleJa: 'DOYAKMIN、2025観光つながり週間で革新技術を披露',
+        titleEn: 'doyakmin Inc showcases innovative technology at 2025 Tourism Connection Week',
+        titleJa: 'ドヤクミン（跳躍民）、2025観光つながり週間で革新技術を披露',
         href: 'https://m.newsprime.co.kr/section_view.html?no=705537',
         image: '/image/news/giweek-2025-prime.jpg',
     },
@@ -84,8 +84,8 @@ export default function TeamPage() {
                         <p className="game-readable mt-6 text-xl font-semibold leading-relaxed text-white/78">
                             <TranslatedText
                                 ko="도약민은 현실의 이동과 지역 경험을 게임으로 바꾸는 스튜디오입니다."
-                                en="Doyakmin is a studio that turns movement and local experiences into games."
-                                ja="DOYAKMINは、現実の移動や地域での体験をゲームに変えるスタジオです。"
+                                en="doyakmin Inc is a studio that turns movement and local experiences into games."
+                                ja="ドヤクミン（跳躍民）は、現実の移動や地域での体験をゲームに変えるスタジオです。"
                             />
                         </p>
                     </div>
@@ -123,7 +123,7 @@ export default function TeamPage() {
                 <div className="game-container">
                     <p className="game-eyebrow text-[#0c7a90]">History</p>
                     <h2 className="game-heading mt-4">
-                        <TranslatedText ko="도약민의 플레이 로그" en="Doyakmin play log" ja="DOYAKMINのプレイログ" />
+                        <TranslatedText ko="도약민의 플레이 로그" en="doyakmin Inc play log" ja="ドヤクミン（跳躍民）のプレイログ" />
                     </h2>
 
                     <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">

@@ -24,8 +24,8 @@ export default function NewsPage() {
                     <p className="game-readable mt-6 text-xl font-semibold leading-relaxed text-white/78">
                         <TranslatedText
                             ko="한국지와 도약민의 업데이트, 이벤트, 공지를 확인하세요."
-                            en="Check updates, events, and notices from Hankookji and Doyakmin."
-                            ja="ハングクジとDOYAKMINのアップデート、イベント、お知らせをご覧ください。"
+                            en="Check updates, events, and notices from Hankookji and doyakmin Inc."
+                            ja="ハングクジとドヤクミン（跳躍民）のアップデート、イベント、お知らせをご覧ください。"
                         />
                     </p>
                 </div>

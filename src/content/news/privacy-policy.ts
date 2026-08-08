@@ -6,8 +6,8 @@ export const privacyPolicy = {
   date: '2025-04-01', // 문서의 시행일자로 업데이트
   author: '(주)도약민',
   summary: '주식회사 도약민이 이용자의 개인정보를 어떤 목적으로 수집·이용하고, 어떻게 안전하게 관리·파기하는지에 대한 방침을 안내합니다.',
-  summaryEn: 'How Doyakmin Inc. collects, uses, protects, and disposes of personal information.',
-  summaryJa: '株式会社DOYAKMINによる個人情報の収集・利用・安全管理・廃棄に関する方針です。',
+  summaryEn: 'How doyakmin Inc collects, uses, protects, and disposes of personal information.',
+  summaryJa: 'ドヤクミン（跳躍民）による個人情報の収集・利用・安全管理・廃棄に関する方針です。',
   content: `
     <div class="prose lg:prose-xl max-w-none">
       <p>주식회사 도약민(이하 “회사”)는 이용자의 개인정보를 소중히 여기며 「개인정보 보호법」 등 대한민국 관계 법령과 가이드라인을 준수합니다. 본 개인정보처리방침은 회사가 어떤 정보를 어떤 목적으로 수집·이용하고, 어떻게 안전하게 관리·파기하는지 알리기 위한 것입니다.</p>
@@ -249,7 +249,7 @@ export const privacyPolicy = {
         <li>최초 제정: 2025.04.01</li>
       </ul>
       <br/>
-      <p>© doyakmin Inc. All rights reserved.</p>
+      <p>© doyakmin Inc All rights reserved.</p>
     </div>
   `,
 };

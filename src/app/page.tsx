@@ -56,7 +56,7 @@ export default function Home() {
 
                 <div className="game-container relative z-10 grid min-h-[calc(100svh-56px)] items-center gap-8 py-12 md:gap-10 md:py-20 lg:grid-cols-[1.05fr_0.95fr]">
                     <div>
-                        <p className="game-eyebrow">Doyakmin Game Studio</p>
+                        <p className="game-eyebrow">doyakmin Inc Game Studio</p>
                         <h1 className="game-title mt-5 max-w-3xl">
                             Play the map.
                             <br />
@@ -133,8 +133,8 @@ export default function Home() {
                         <p className="game-copy game-readable mt-3">
                             <TranslatedText
                                 ko="도약민은 이동이 곧 플레이가 되는 경험을 설계합니다."
-                                en="Doyakmin designs experiences where movement itself becomes play."
-                                ja="DOYAKMINは、移動そのものが遊びになる体験をデザインします。"
+                                en="doyakmin Inc designs experiences where movement itself becomes play."
+                                ja="ドヤクミン（跳躍民）は、移動そのものが遊びになる体験をデザインします。"
                             />
                         </p>
                         <div className="mt-7 flex flex-wrap gap-3">

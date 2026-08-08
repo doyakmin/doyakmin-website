@@ -210,7 +210,7 @@ export const termsOfService = {
   contentEn: `<div class="terms-document">
 <p class="terms-version"><strong>hankookji Terms of Service</strong><br>2026 Final Consolidated Version</p>
 <h3>Article 1 (Purpose)</h3>
-<p>The purpose of these Terms and Conditions is to establish necessary matters, such as rights, obligations and responsibilities, terms and procedures of use, and other matters between the Company and members in relation to the use of the mobile game “hankookji” and its accompanying services (hereinafter referred to as “Services”) provided by Doyakmin Inc. (hereinafter referred to as “Company”).</p>
+<p>The purpose of these Terms and Conditions is to establish necessary matters, such as rights, obligations and responsibilities, terms and procedures of use, and other matters between the Company and members in relation to the use of the mobile game “hankookji” and its accompanying services (hereinafter referred to as “Services”) provided by doyakmin Inc (hereinafter referred to as “Company”).</p>
 <h3>Article 2 (Definition)</h3>
 <p class="terms-clause"><strong class="terms-clause-number">1.</strong> “Member” refers to a person who agrees to these Terms and Conditions and uses the Service by entering into a Service Use Agreement with the Company.</p>
 <p class="terms-clause"><strong class="terms-clause-number">2.</strong> “Account” refers to a unit of use granted by the company or linked to an external authentication method such as Google or Apple in order to identify members and store game information.</p>
@@ -409,7 +409,7 @@ export const termsOfService = {
   contentJa: `<div class="terms-document">
 <p class="terms-version"><strong>ハングクジ サービス利用規約</strong><br>2026年 正式サービス統合最終版</p>
 <h3>第1条(目的)</h3>
-<p>この約款は、株式会社DOYAKMIN（以下「会社」）が提供するモバイルゲーム「ハングクジ」およびこれに付随するサービス（以下「サービス」）の利用に関連して、会社と会員間の権利・義務および責任事項、利用条件と手続きなど必要な事項を定めることを目的とします。</p>
+<p>この約款は、ドヤクミン（跳躍民）（以下「会社」）が提供するモバイルゲーム「ハングクジ」およびこれに付随するサービス（以下「サービス」）の利用に関連して、会社と会員間の権利・義務および責任事項、利用条件と手続きなど必要な事項を定めることを目的とします。</p>
 <h3>第2条(定義)</h3>
 <p class="terms-clause"><strong class="terms-clause-number">1.</strong> 「会員」とは、この約款に同意し、会社とサービス利用契約を締結してサービスを利用する者をいいます。</p>
 <p class="terms-clause"><strong class="terms-clause-number">2.</strong> 「アカウント」とは、会員を識別し、ゲーム情報を保存するために会社が付与するか、Google、Appleなど外部認証手段と連結される利用単位をいいます。</p>
@@ -597,7 +597,7 @@ export const termsOfService = {
 <li>従前利用規約施行日：2025年4月1日</li>
 </ul>
 <h3>事業者情報</h3>
-<p>相互：株式会社DOYAKMIN</p>
+<p>相互：ドヤクミン（跳躍民）</p>
 <p>代表者：チョン・ミンヨン</p>
 <p>事業者登録番号：529-81-03507</p>
 <p>通信販売業申告番号：2025-釜山江西区-0420</p>

@@ -34,7 +34,7 @@ export default function GlobalNavigation() {
                                 height={34}
                                 className="h-[34px] w-[34px] rounded-xl border-2 border-white/20 object-cover"
                             />
-                            <span className="text-lg font-black tracking-tight">DOYAKMIN</span>
+                            <span className="text-lg font-black tracking-tight">doyakmin Inc</span>
                         </Link>
 
                         <div className="hidden items-center gap-2 md:flex">

@@ -25,8 +25,8 @@ export default function ContactPage() {
                         <p className="game-readable mt-5 text-xl font-semibold leading-relaxed text-white/78">
                             <TranslatedText
                                 ko="제휴, 협업, 앱 문의를 남겨주시면 도약민 팀이 확인 후 안내드립니다."
-                                en="Send us partnership, collaboration, or app inquiries. The Doyakmin team will get back to you."
-                                ja="提携、協業、アプリに関するお問い合わせをお送りください。DOYAKMINチームよりご案内します。"
+                                en="Send us partnership, collaboration, or app inquiries. The doyakmin Inc team will get back to you."
+                                ja="提携、協業、アプリに関するお問い合わせをお送りください。ドヤクミン（跳躍民）チームよりご案内します。"
                             />
                         </p>
                     </div>

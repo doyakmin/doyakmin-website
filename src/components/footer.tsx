@@ -7,10 +7,10 @@ export default function Footer() {
             <div className="game-container py-16">
                 <div className="grid grid-cols-1 gap-10 md:grid-cols-[1.2fr_0.8fr_0.8fr]">
                     <div>
-                        <p className="game-eyebrow">Doyakmin</p>
+                        <p className="game-eyebrow">doyakmin Inc</p>
                         <h2 className="mt-3 text-4xl font-black tracking-tighter">Games Maketh The World Anew</h2>
                         <div className="mt-6 space-y-2 text-sm font-semibold leading-relaxed text-white/58">
-                            <p><TranslatedText ko="주식회사 도약민" en="Doyakmin Inc." ja="株式会社DOYAKMIN" /></p>
+                            <p><TranslatedText ko="주식회사 도약민" en="doyakmin Inc" ja="ドヤクミン（跳躍民）" /></p>
                             <p><TranslatedText ko="대표이사: 정민영" en="CEO: Minyoung Jung" ja="代表取締役：チョン・ミニョン" /></p>
                             <p><TranslatedText ko="사업자등록번호: 529-81-03507" en="Business Registration No. 529-81-03507" ja="事業者登録番号：529-81-03507" /></p>
                             <p><TranslatedText ko="통신판매업신고번호: 2025-부산강서구-0420" en="E-commerce Registration No. 2025-Busan Gangseo-0420" ja="通信販売業届出番号：2025-釜山江西区-0420" /></p>
