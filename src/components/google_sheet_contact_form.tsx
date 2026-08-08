@@ -32,11 +32,12 @@ export default function GoogleSheetContactForm({ service, className = "" }: Goog
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    const form = event.currentTarget;
     setMessage("");
     setSubmitStatus("idle");
 
     setIsSubmitting(true);
-    const formData = new FormData(event.currentTarget);
+    const formData = new FormData(form);
     const payload = {
       name: String(formData.get("name") || ""),
       replyContact: String(formData.get("replyContact") || ""),
@@ -60,7 +61,7 @@ export default function GoogleSheetContactForm({ service, className = "" }: Goog
 
       setSubmitStatus("success");
       setMessage(text("문의가 정상 접수되어 운영진에게 전달되었습니다. 확인 후 순차적으로 안내드리겠습니다.", "Your inquiry has been received. Our team will get back to you after review.", "お問い合わせを受け付けました。確認後、順次ご案内いたします。"));
-      event.currentTarget.reset();
+      form.reset();
     } catch (error) {
       const errorMessage = error instanceof Error ? error.message : "문의 접수 중 오류가 발생했습니다.";
       setSubmitStatus("error");
