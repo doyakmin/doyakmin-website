@@ -1,9 +1,13 @@
 export const antiCheatNotice20251006 = {
     slug: 'anti-cheat-notice-2025-10-06',
     title: '🚨 부정행위 관련 안내',
+    titleEn: '🚨 Notice on Cheating and Unfair Play',
+    titleJa: '🚨 不正行為に関するお知らせ',
     date: '2025-10-06',
     author: '(주)도약민',
     summary: 'GPS 스푸핑 등 비정상 행위 관련 제재 안내 (2025-10-06)',
+    summaryEn: 'Enforcement measures for GPS spoofing and other abnormal activity (2025-10-06).',
+    summaryJa: 'GPS偽装などの不正行為に対する措置について（2025-10-06）。',
     content: `
         <p class="text-gray-700 mb-4">안녕하세요, 한국지 운영팀입니다.</p>
 

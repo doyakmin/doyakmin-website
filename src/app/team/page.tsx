@@ -15,20 +15,20 @@ const historyItems = [
     {
         year: '2025',
         items: [
-            '부산권 창업공유대학 IR 피칭 대회 최우수상',
-            '한국관광공사 예비관광벤처 선정',
-            '꿈터플러스 창업경진대회 대상',
-            '주식회사 도약민 법인 설립',
+            { ko: '부산권 창업공유대학 IR 피칭 대회 최우수상', en: 'Grand Prize, Busan Startup Shared University IR Pitching Competition', ja: '釜山圏創業共有大学 IRピッチング大会 最優秀賞' },
+            { ko: '한국관광공사 예비관광벤처 선정', en: 'Selected as a Preliminary Tourism Venture by the Korea Tourism Organization', ja: '韓国観光公社「予備観光ベンチャー」に選定' },
+            { ko: '꿈터플러스 창업경진대회 대상', en: 'Grand Prize, Kkumteo Plus Startup Competition', ja: 'クムトプラス創業コンテスト 大賞' },
+            { ko: '주식회사 도약민 법인 설립', en: 'Doyakmin Inc. established', ja: '株式会社DOYAKMIN 設立' },
         ],
     },
     {
         year: '2024',
         items: [
-            '창업 경진대회 국립부경대학교 이사장상',
-            'K7U-Belt 창업경진대회 총장상',
-            '동남권 창업경진대회 우수팀 선정',
-            '부산다움 트래블톤 우수상',
-            '경남 메이커 창업 지원사업 선정',
+            { ko: '창업 경진대회 국립부경대학교 이사장상', en: 'Chairperson’s Award, Pukyong National University Startup Competition', ja: '国立釜慶大学校 創業コンテスト 理事長賞' },
+            { ko: 'K7U-Belt 창업경진대회 총장상', en: 'President’s Award, K7U-Belt Startup Competition', ja: 'K7U-Belt 創業コンテスト 総長賞' },
+            { ko: '동남권 창업경진대회 우수팀 선정', en: 'Selected as an Outstanding Team, Southeast Startup Competition', ja: '東南圏創業コンテスト 優秀チーム選定' },
+            { ko: '부산다움 트래블톤 우수상', en: 'Excellence Award, Busan-daum Travelthon', ja: '釜山らしさトラベルトン 優秀賞' },
+            { ko: '경남 메이커 창업 지원사업 선정', en: 'Selected for the Gyeongnam Maker Startup Support Program', ja: '慶南メイカー創業支援事業に選定' },
         ],
     },
 ]
@@ -36,26 +36,36 @@ const historyItems = [
 const pressLinks = [
     {
         title: "KBS 부산 뉴스, GPS 기반 관광 게임 '한국지' 소개",
+        titleEn: "KBS Busan News features GPS-based tourism game 'Hankookji'",
+        titleJa: "KBS釜山ニュース、GPS観光ゲーム「ハングクジ」を紹介",
         href: 'https://youtu.be/UHrwMiI9XXo?si=MtpjOsWFEuAAISMq',
         image: '/image/hangukji/press-kbs.png',
     },
     {
         title: '2025 관광이음주간 도약민, 혁신 기술 선보여',
+        titleEn: 'Doyakmin showcases innovative technology at 2025 Tourism Connection Week',
+        titleJa: 'DOYAKMIN、2025観光つながり週間で革新技術を披露',
         href: 'https://m.newsprime.co.kr/section_view.html?no=705537',
         image: '/image/news/giweek-2025-prime.jpg',
     },
     {
         title: "부산 지역 대학생 스타트업 개발 모바일 게임 '한국지' 주목",
+        titleEn: "Busan student startup's mobile game 'Hankookji' draws attention",
+        titleJa: '釜山の大学生スタートアップ開発「ハングクジ」に注目',
         href: 'https://www.pknu.ac.kr/main/51?action=view&no=721366',
         image: '/image/news/news1.jpg',
     },
     {
         title: '국립부경대, 창업 아이디어 경진대회 대상 수상',
+        titleEn: 'Pukyong National University team wins startup idea competition grand prize',
+        titleJa: '国立釜慶大学校、創業アイデアコンテストで大賞受賞',
         href: 'https://naver.me/xOd6Eh3o',
         image: '/image/news/news2.png',
     },
     {
         title: "국립부경대-경상국립대 연합팀, '2024 부산다움 트래블톤' 우수상",
+        titleEn: "Pukyong–Gyeongsang National University team wins Excellence Award at 2024 Busan-daum Travelthon",
+        titleJa: '国立釜慶大・慶尚国立大連合チーム、2024釜山らしさトラベルトン優秀賞',
         href: 'https://naver.me/xnrlgB9Q',
         image: '/image/news/news3.jpg',
     },
@@ -122,7 +132,7 @@ export default function TeamPage() {
                                 <h3 className="text-5xl font-black tracking-tighter">{group.year}</h3>
                                 <ul className="mt-6 space-y-3 text-base font-bold leading-relaxed text-[#526071]">
                                     {group.items.map((item) => (
-                                        <li key={item}>{item}</li>
+                                        <li key={item.ko}><TranslatedText ko={item.ko} en={item.en} ja={item.ja} /></li>
                                     ))}
                                 </ul>
                             </article>
@@ -155,7 +165,9 @@ export default function TeamPage() {
                                         sizes="(max-width: 768px) 100vw, 50vw"
                                     />
                                 </div>
-                                <p className="mt-4 text-lg font-black leading-tight">{link.title}</p>
+                                <p className="balanced-copy mt-4 text-lg font-black leading-tight">
+                                    <TranslatedText ko={link.title} en={link.titleEn} ja={link.titleJa} />
+                                </p>
                             </a>
                         ))}
                     </div>

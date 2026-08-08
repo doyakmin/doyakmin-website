@@ -34,7 +34,7 @@ export default function ContactPage() {
                     <div className="game-card bg-white p-6 text-[#111827]">
                         <p className="text-sm font-black uppercase tracking-[0.16em] text-[#0c7a90]">Community</p>
                         <h2 className="mt-3 text-3xl font-black tracking-tighter">
-                            <TranslatedText ko="한국지 네이버 카페" en="Hangukji Naver Cafe" ja="『韓国地』Naverカフェ" />
+                            <TranslatedText ko="한국지 네이버 카페" en="Hankookji Naver Cafe" ja="ハングクジ Naverカフェ" />
                         </h2>
                         <p className="game-readable mt-3 text-base font-bold leading-relaxed text-[#526071]">
                             <TranslatedText

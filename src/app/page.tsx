@@ -65,8 +65,8 @@ export default function Home() {
                         <p className="game-readable mt-5 text-lg font-semibold leading-relaxed text-white/82 md:mt-6 md:text-xl">
                             <TranslatedText
                                 ko="한국지는 현실의 위치를 게임판으로 바꾸는 모바일 점령형 게임입니다."
-                                en="Hangukji is a mobile capture game that turns real-world locations into a game board."
-                                ja="『韓国地（Hangukji）』は、現実の場所をゲーム盤に変えるモバイル陣取りゲームです。"
+                                en="Hankookji is a mobile capture game that turns real-world locations into a game board."
+                                ja="ハングクジは、現実の場所をゲーム盤に変えるモバイル陣取りゲームです。"
                             />
                         </p>
                         <div className="mt-7 grid grid-cols-2 gap-3 sm:flex sm:flex-wrap md:mt-8 md:gap-4">
@@ -115,7 +115,7 @@ export default function Home() {
             <section className="bg-[#f4f7fb] py-14 md:py-24">
                 <div className="game-container grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr]">
                     <div>
-                        <p className="game-eyebrow text-[#0c7a90]">Hangukji</p>
+                        <p className="game-eyebrow text-[#0c7a90]">Hankookji</p>
                         <h2 className="game-heading mt-4 text-[#111827]">
                             <TranslatedText
                                 ko="전국이 전장이 되고, 산책이 전략이 됩니다."
@@ -202,7 +202,7 @@ export default function Home() {
                             Download
                         </p>
                         <h2 className="game-heading mt-4 text-[#111827]">
-                            <TranslatedText ko="한국지를 지금 플레이하세요." en="Play Hangukji now." ja="今すぐ『韓国地』をプレイしよう。" />
+                            <TranslatedText ko="한국지를 지금 플레이하세요." en="Play Hankookji now." ja="今すぐハングクジをプレイしよう。" />
                         </h2>
                         <p className="game-readable mt-5 text-lg font-bold leading-relaxed text-[#111827]/78">
                             <TranslatedText

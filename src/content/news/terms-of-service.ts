@@ -1,9 +1,13 @@
 export const termsOfService = {
   slug: 'terms-of-service',
   title: '이용 약관',
+  titleEn: 'Terms of Service',
+  titleJa: '利用規約',
   date: '2025-04-01', // 문서의 시행일자로 업데이트
   author: '(주)도약민',
   summary: '주식회사 도약민이 제공하는 게임 서비스 이용과 관련한 회사와 회원의 권리, 의무 및 책임사항 등을 규정합니다.',
+  summaryEn: 'The rights, obligations, and responsibilities of Doyakmin Inc. and users of its game services.',
+  summaryJa: '株式会社DOYAKMINが提供するゲームサービスに関する会社と会員の権利・義務・責任を定めます。',
   content: `
     <div class="prose lg:prose-xl max-w-none">
       <h3 class="font-bold mt-8">제1조. 목적</h3>
@@ -344,4 +348,4 @@ export const termsOfService = {
       <p>©doyakmin Inc. All rights reserved.</p>
     </div>
   `,
-}; 
+};

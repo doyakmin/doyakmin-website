@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { allNewsPosts } from '@/content/news';
 import AppDownloadButtons from '@/components/app_download_buttons';
 import CountdownTimer from '@/components/countdown_timer';
+import TranslatedText from '@/components/translated_text';
 import { createSeoMetadata } from '@/lib/seo';
 import { notFound } from 'next/navigation';
 
@@ -61,17 +62,12 @@ export default function NewsPostPage({ params }: { params: { slug: string } }) {
                     <p className="mb-4 text-sm font-black uppercase tracking-[0.14em] text-[#0c7a90]">
                         {post.date} · {post.author}
                     </p>
-                    <h1 className="text-4xl font-black leading-tight tracking-tighter md:text-5xl">
-                        {(() => {
-                            const titleLines = post.title.split(/\n|\\n/);
-                            return titleLines.map((line, index) => (
-                                <span key={index}>
-                                    {line}
-                                    {index < titleLines.length - 1 && <br />}
-                                </span>
-                            ));
-                        })()}
+                    <h1 className="balanced-copy text-4xl font-black leading-tight tracking-tighter md:text-5xl">
+                        <TranslatedText ko={post.title.replace(/\\n/g, '\n')} en={post.titleEn.replace(/\\n/g, '\n')} ja={post.titleJa.replace(/\\n/g, '\n')} />
                     </h1>
+                    <p className="game-readable mx-auto mt-5 max-w-3xl text-base font-semibold leading-relaxed text-[#526071]">
+                        <TranslatedText ko={post.summary} en={post.summaryEn} ja={post.summaryJa} />
+                    </p>
                 </header>
 
                 {/* Post Content */}

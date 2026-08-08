@@ -36,6 +36,12 @@ html:not([data-lang]) .i18n-ja {
   display: none;
 }
 
+.i18n-ko,
+.i18n-en,
+.i18n-ja {
+  white-space: pre-line;
+}
+
 body {
   min-height: 100vh;
   background: var(--game-night);
@@ -45,6 +51,22 @@ body {
   overflow-wrap: break-word;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+html[data-lang="en"] body {
+  word-break: normal;
+}
+
+html[data-lang="ja"] body {
+  line-break: strict;
+  word-break: auto-phrase;
+}
+
+.game-title,
+.game-heading,
+.game-readable,
+.balanced-copy {
+  text-wrap: balance;
 }
 
 ::selection {

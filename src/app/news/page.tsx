@@ -24,8 +24,8 @@ export default function NewsPage() {
                     <p className="game-readable mt-6 text-xl font-semibold leading-relaxed text-white/78">
                         <TranslatedText
                             ko="한국지와 도약민의 업데이트, 이벤트, 공지를 확인하세요."
-                            en="Check updates, events, and notices from Hangukji and Doyakmin."
-                            ja="『韓国地』とDOYAKMINのアップデート、イベント、お知らせをご覧ください。"
+                            en="Check updates, events, and notices from Hankookji and Doyakmin."
+                            ja="ハングクジとDOYAKMINのアップデート、イベント、お知らせをご覧ください。"
                         />
                     </p>
                 </div>
@@ -41,14 +41,12 @@ export default function NewsPage() {
                                         <p className="text-sm font-black uppercase tracking-[0.12em] text-[#0c7a90]">
                                             {post.date} · {post.author}
                                         </p>
-                                        <h2 className="mt-3 text-2xl font-black leading-tight tracking-tight">
-                                            {post.title.split(/\n|\\n/).map((line, i, arr) => (
-                                                <span key={i}>
-                                                    {line}
-                                                    {i < arr.length - 1 && <br />}
-                                                </span>
-                                            ))}
+                                        <h2 className="balanced-copy mt-3 text-2xl font-black leading-tight tracking-tight">
+                                            <TranslatedText ko={post.title.replace(/\\n/g, '\n')} en={post.titleEn.replace(/\\n/g, '\n')} ja={post.titleJa.replace(/\\n/g, '\n')} />
                                         </h2>
+                                        <p className="game-readable mt-3 text-sm font-semibold leading-relaxed text-[#526071]">
+                                            <TranslatedText ko={post.summary} en={post.summaryEn} ja={post.summaryJa} />
+                                        </p>
                                     </div>
 
                                     {post.slug === 'hangukji-beta-event' && (

@@ -100,13 +100,13 @@ export default function Games() {
                 <div className="game-container grid items-center gap-10 lg:grid-cols-[1fr_0.85fr]">
                     <div>
                         <h2 className="game-heading">
-                            <TranslatedText ko="지금 바로 첫 영토를 차지하세요." en="Capture your first territory now." ja="今すぐ最初の領土を手に入れよう。" />
+                            <TranslatedText ko="지금 바로 첫 영토를 차지하세요." en="Capture your first territory now." ja="今すぐ最初の領土を占領しよう。" />
                         </h2>
                         <p className="game-readable mt-5 text-lg font-bold leading-relaxed text-[#111827]/78">
                             <TranslatedText
                                 ko="한국지는 iOS와 Google Play에서 만날 수 있습니다."
-                                en="Hangukji is available on iOS and Google Play."
-                                ja="『韓国地』はiOSとGoogle Playでお楽しみいただけます。"
+                                en="Hankookji is available on iOS and Google Play."
+                                ja="ハングクジはiOSとGoogle Playでお楽しみいただけます。"
                             />
                         </p>
                     </div>

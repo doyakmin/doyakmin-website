@@ -38,7 +38,7 @@ export function createSeoMetadata({
       '(주)도약민',
       '주식회사 도약민',
       '한국지',
-      'Hangukji',
+      'Hankookji',
       '위치 기반 게임',
       'GPS 게임',
       '지역 활성화 게임',

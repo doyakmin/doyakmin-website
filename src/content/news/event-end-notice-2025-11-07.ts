@@ -1,9 +1,13 @@
 export const eventEndNotice20251107 = {
     slug: 'event-end-notice-2025-11-07',
     title: '🎊 베타 이벤트 당첨자 발표',
+    titleEn: '🎊 Beta Event Winners',
+    titleJa: '🎊 ベータイベント当選者発表',
     date: '2025-11-07',
     author: '(주)도약민',
     summary: '경성대·부경대 베타 이벤트가 성공적으로 종료되었습니다. 당첨자 발표 및 경품 수령 절차를 안내드립니다.',
+    summaryEn: 'The Kyungsung and Pukyong National University beta event has ended. See the winners and prize claim process.',
+    summaryJa: '慶星大学・釜慶大学ベータイベントが終了しました。当選者と賞品受取手続きをご案内します。',
     content: `
         <div class="mb-8">
             <div class="bg-emerald-50 border-l-4 border-emerald-600 p-6 rounded-r-lg">

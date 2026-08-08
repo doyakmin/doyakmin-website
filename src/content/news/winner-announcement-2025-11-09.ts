@@ -1,9 +1,13 @@
 export const winnerAnnouncement20251109 = {
     slug: 'winner-announcement-2025-11-09',
     title: '🎉 한국지 베타 이벤트 당첨자 발표',
+    titleEn: '🎉 Hankookji Beta Event Winners',
+    titleJa: '🎉 ハングクジ ベータイベント当選者発表',
     date: '2025-11-09',
     author: '(주)도약민',
     summary: '경성대·부경대 베타 이벤트 당첨자가 발표되었습니다! 당첨 여부를 확인하시고 11월 16일까지 정보를 제출해주세요.',
+    summaryEn: 'Winners of the Kyungsung and Pukyong National University beta event have been announced. Submit your information by November 16.',
+    summaryJa: '慶星大学・釜慶大学ベータイベントの当選者を発表しました。11月16日までに情報をご提出ください。',
     content: `
         <div class="mb-8">
             <div class="bg-gradient-to-r from-yellow-50 to-orange-50 border-l-4 border-yellow-500 p-6 md:p-8 rounded-r-2xl">

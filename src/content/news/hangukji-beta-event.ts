@@ -1,9 +1,13 @@
 export const hangukjiBetaEvent = {
     slug: 'hangukji-beta-event',
     title: '한국지 9~10월 베타 이벤트 안내\\n(경성대·부경대)',
+    titleEn: 'Hankookji September–October Beta Event\\n(Kyungsung · Pukyong National University)',
+    titleJa: 'ハングクジ 9～10月ベータイベント\\n（慶星大学・釜慶大学）',
     date: '2025-08-03',
     author: '(주)도약민',
     summary: '한국지 베타 테스트에 참여하고 특별한 보상을 받아가세요! 경성대·부경대 학생들을 대상으로 진행되는 이번 이벤트에 많은 참여 바랍니다.',
+    summaryEn: 'Join the Hankookji beta test and earn special rewards. Open to students of Kyungsung and Pukyong National University.',
+    summaryJa: 'ハングクジのベータテストに参加して特別な報酬を獲得しよう。慶星大学・釜慶大学の学生を対象としたイベントです。',
     content: `
         <div class="mb-6">
              <img src="/image/event/hangukji-beta-event-poster.png" alt="한국지 베타 이벤트 배너" class="w-full rounded-lg shadow-md mb-6" />

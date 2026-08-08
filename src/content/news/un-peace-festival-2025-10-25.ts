@@ -1,9 +1,13 @@
 export const unPeaceFestival20251025 = {
     slug: 'un-peace-festival-2025-10-25',
     title: '🌏 한국지 X UN 평화축제 체험 부스 안내 (남구 평화공원)',
+    titleEn: '🌏 Hankookji × UN Peace Festival Experience Booth (Nam-gu Peace Park)',
+    titleJa: '🌏 ハングクジ × UN平和祭り 体験ブース（南区・平和公園）',
     date: '2025-10-18',
     author: '(주)도약민',
     summary: '부산 남구 평화공원에서 즐기는 한국지 체험 부스 – 점령 퀘스트, 훈련장 미니게임, 포토존 이벤트!',
+    summaryEn: 'Experience Hankookji at Busan Nam-gu Peace Park with capture quests, training mini-games, and a photo-zone event.',
+    summaryJa: '釜山・南区平和公園でハングクジを体験。占領クエスト、訓練場ミニゲーム、フォトゾーンイベントを開催します。',
     content: `
         <p class="text-gray-700 mb-6">부산 남구 평화공원에서 열리는 <strong>UN 평화축제</strong>에 한국지 체험 부스가 운영됩니다. 현장에서 다양한 미션을 수행하고 경품도 받아가세요!</p>
 

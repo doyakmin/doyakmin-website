@@ -1,9 +1,13 @@
 export const emergencyNotice20250909 = {
     slug: 'emergency-notice-2025-09-09',
     title: '로그인 이용 안내',
+    titleEn: 'Login Information',
+    titleJa: 'ログインに関するご案内',
     date: '2025-09-09',
     author: '(주)도약민',
     summary: '게스트 로그인 안내',
+    summaryEn: 'Information about guest login.',
+    summaryJa: 'ゲストログインについてご案内します。',
     content: `
         <p class="text-gray-700 mb-4">
             한국지를 플레이해 주셔서 정말 감사합니다. 🫶<br />

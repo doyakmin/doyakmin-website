@@ -1,9 +1,13 @@
 export const abnormalLogoutNotice20251023 = {
     slug: 'abnormal-logout-notice-2025-10-23',
     title: '업데이트 이후 비정상 로그아웃 현상 안내',
+    titleEn: 'Notice: Unexpected Logouts After the Update',
+    titleJa: 'アップデート後の予期しないログアウトについて',
     date: '2025-10-23',
     author: '(주)도약민',
     summary: '일부 기기에서 비정상 로그아웃 및 계정 접속 불가 현상 – 임시 복구 절차 안내',
+    summaryEn: 'Temporary recovery steps for unexpected logouts and account access issues on some devices.',
+    summaryJa: '一部端末で発生している予期しないログアウトとアカウント接続不具合の暫定復旧手順をご案内します。',
     content: `
         <p class="text-gray-700 mb-4">안녕하세요. 한국지를 이용해 주시는 모든 탐험가 여러분께 감사드립니다.</p>
         <p class="text-gray-700 mb-6">최근 업데이트 이후 일부 기기에서 <strong>비정상 로그아웃</strong> 현상이 발생하여 기존 계정으로 접속이 불가능한 사례가 확인되었습니다. 현재 원인 파악 및 수정 작업이 진행 중입니다.</p>
