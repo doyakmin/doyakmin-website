@@ -9,7 +9,6 @@ export const operationPolicy = {
   summaryEn: 'Rules for hankookji service operations, real-world safety, buildings, prohibited conduct, and sanctions.',
   summaryJa: 'ハングクジのサービス運営、現実空間の安全、建物、不正利用および制裁基準をご案内します。',
   content: `<div class="terms-document">
-<p class="terms-version"><strong>운영정책</strong><br>서비스 운영&#183;안전&#183;건물&#183;부정이용&#183;제재 기준 최종 검토본</p>
 <p>주식회사 도약민 &#183; 공고 2026년 8월 8일 &#183; 시행 2026년 8월 8일</p>
 <h3>1. 목적과 적용범위</h3>
 <p>본 운영정책은 한국지 서비스 이용약관에서 위임한 세부 운영기준을 정하고 회원이 안전하고 공정하게 서비스를 이용할 수 있도록 하기 위한 기준입니다. 이용약관과 본 정책이 충돌하는 경우 관계법령과 이용약관이 우선하며, 개인정보와 개인위치정보의 처리는 개인정보처리방침 및 위치기반서비스 이용약관에 따릅니다.</p>
@@ -138,7 +137,6 @@ export const operationPolicy = {
 </ul>
 </div>`,
   contentEn: `<div class="terms-document">
-<p class="terms-version"><strong>Operation Policy</strong><br>Final review of service operation, safety, building, illegal use, and sanctions standards</p>
 <p>doyakmin Inc &#183; Announcement August 8, 2026 &#183; Implementation August 8, 2026</p>
 <h3>1. Purpose and scope of application</h3>
 <p>This operating policy sets the detailed operating standards delegated in the hankookji Service Terms of Use and is intended to ensure that members can use the service safely and fairly. If there is a conflict between the Terms of Use and this policy, the relevant laws and Terms of Use will take precedence, and the processing of personal information and personal location information will be governed by the Personal Information Processing Policy and the Terms of Use of Location-based Services.</p>
@@ -267,7 +265,6 @@ export const operationPolicy = {
 </ul>
 </div>`,
   contentJa: `<div class="terms-document">
-<p class="terms-version"><strong>運営ポリシー</strong><br>サービス運営・安全・建物・不正利用・制裁基準最終検討本</p>
 <p>ドヤクミン（跳躍民） ・公告 2026年8月8日 ・施行 2026年8月8日</p>
 <h3>1.目的と適用範囲</h3>
 <p>本運営方針は、ハングクジサービス利用規約で委任した細部運営基準を定め、会員が安全かつ公正にサービスを利用できるようにするための基準です。利用規約と本方針が衝突する場合、関係法令と利用規約が優先し、個人情報と個人位置情報の処理は、個人情報処理方針及び位置基盤サービス利用規約に従います。</p>

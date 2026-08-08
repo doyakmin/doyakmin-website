@@ -9,7 +9,6 @@ export const locationBasedServiceTerms = {
   summaryEn: 'The rights, obligations, and location-information practices governing the hankookji location-based service.',
   summaryJa: 'ハングクジの位置情報サービスに関する権利・義務および位置情報の取扱基準をご案内します。',
   content: `<div class="terms-document">
-<p class="terms-version"><strong>위치기반서비스 이용약관</strong><br>위치정보법 반영 최종 검토본</p>
 <p>주식회사 도약민 &#183; 공고 2026년 8월 8일 &#183; 시행 2026년 8월 8일</p>
 <h3>제1조(목적)</h3>
 <p>이 약관은 주식회사 도약민(이하 “회사”)가 제공하는 모바일 게임 「한국지」의 위치기반서비스를 이용함에 있어 회사와 개인위치정보주체인 이용자(이하 “회원”) 사이의 권리&#183;의무 및 필요한 사항을 정함을 목적으로 합니다.</p>
@@ -103,7 +102,6 @@ export const locationBasedServiceTerms = {
 </ul>
 </div>`,
   contentEn: `<div class="terms-document">
-<p class="terms-version"><strong>Location-Based Service Terms</strong><br>Final review reflecting the Location Information Act</p>
 <p>doyakmin Inc &#183; Announcement August 8, 2026 &#183; Implementation August 8, 2026</p>
 <h3>Article 1 (Purpose)</h3>
 <p>The purpose of these Terms and Conditions is to establish the rights, obligations and necessary matters between the Company and users (hereinafter “Members”) who are subjects of personal location information when using the location-based service of the mobile game “hankookji” provided by doyakmin Inc (hereinafter “Company”).</p>
@@ -197,7 +195,6 @@ export const locationBasedServiceTerms = {
 </ul>
 </div>`,
   contentJa: `<div class="terms-document">
-<p class="terms-version"><strong>位置情報サービス利用規約</strong><br>位置情報法の反映最終レビュー</p>
 <p>ドヤクミン（跳躍民） ・公告 2026年8月8日 ・施行 2026年8月8日</p>
 <h3>第1条(目的)</h3>
 <p>この約款は、ドヤクミン（跳躍民）（以下「会社」）が提供するモバイルゲーム「ハングクジ」の位置基盤サービスを利用する上で、会社と個人位置情報主体である利用者（以下「会員」）との間の権利・義務及び必要事項を定めることを目的とします。</p>

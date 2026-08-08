@@ -9,7 +9,6 @@ export const privacyPolicy = {
   summaryEn: 'How doyakmin Inc processes personal information and personal location information for hankookji and its website.',
   summaryJa: 'ハングクジおよびドヤクミン（跳躍民）ウェブサイトにおける個人情報・個人位置情報の取扱いについてご案内します。',
   content: `<div class="terms-document">
-<p class="terms-version"><strong>개인정보처리방침</strong><br>도약민 홈페이지 및 모바일 게임 「한국지」 적용</p>
 <p>주식회사 도약민 &#183; 공고 2026년 8월 8일 &#183; 시행 2026년 8월 8일</p>
 <p>주식회사 도약민(이하 “회사”)는 이용자의 개인정보와 개인위치정보를 중요하게 보호하며 「개인정보 보호법」, 「위치정보의 보호 및 이용 등에 관한 법률」 등 관계법령을 준수합니다. 본 방침은 회사의 홈페이지와 모바일 게임 「한국지」에서 어떤 정보를 어떤 목적으로 처리하고, 어떻게 보호&#183;보관&#183;파기하는지 안내합니다.</p>
 <h3>목차</h3>
@@ -260,7 +259,6 @@ export const privacyPolicy = {
 </ul>
 </div>`,
   contentEn: `<div class="terms-document">
-<p class="terms-version"><strong>Privacy Policy</strong><br>Applies to doyakmin Inc website and mobile game “hankookji”</p>
 <p>doyakmin Inc &#183; Announcement August 8, 2026 &#183; Implementation August 8, 2026</p>
 <p>doyakmin Inc (hereinafter referred to as the “Company”) takes great care in protecting users’ personal information and personal location information and complies with relevant laws and regulations such as the Personal Information Protection Act and the Act on the Protection and Use of Location Information. This policy guides you on what information is processed, for what purpose, and how it is protected, stored, and destroyed on the company&#39;s website and mobile game 「hankookji」.</p>
 <h3>table of contents</h3>
@@ -511,7 +509,6 @@ export const privacyPolicy = {
 </ul>
 </div>`,
   contentJa: `<div class="terms-document">
-<p class="terms-version"><strong>プライバシーポリシー</strong><br>ドヤクミン（跳躍民）ウェブサイト及びモバイルゲーム「ハングクジ」適用</p>
 <p>ドヤクミン（跳躍民） ・公告 2026年8月8日 ・施行 2026年8月8日</p>
 <p>ドヤクミン（跳躍民）（以下「会社」）は、利用者の個人情報と個人位置情報を重要に保護し、「個人情報保護法」、「位置情報の保護および利用等に関する法律」など関係法令を遵守します。本方針は、会社のホームページとモバイルゲーム「ハングクジ」でどのような情報をどのような目的で処理し、どのように保護・保管・破棄するかをご案内します。</p>
 <h3>目次</h3>
