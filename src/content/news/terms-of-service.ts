@@ -390,7 +390,7 @@ export const termsOfService = {
 <p class="terms-clause"><strong class="terms-clause-number">4.</strong> If a lawsuit is necessary, the competent court shall follow the provisions of the Civil Procedure Act and other relevant laws and regulations.</p>
 <h3>Article 29 (Rules other than terms and conditions)</h3>
 <p>Matters not specified in these Terms and Conditions are subject to the operating policy, location-based service terms and conditions, personal information processing policy, individual product and event information, and the 「Act on Consumer Protection in Electronic Commerce, etc.」, 「Act on Regulation of Terms and Conditions」, 「Game Industry Promotion Act」, 「Contents Industry Promotion Act」, and other related laws and regulations and practices.</p>
-<p>Supplementary provisions</p>
+<h3>Supplementary Provisions</h3>
 <ul>
 <li>Announcement date: August 8, 2026</li>
 <li>Effective date: August 8, 2026</li>
@@ -398,7 +398,7 @@ export const termsOfService = {
 <li>Effective date of previous terms and conditions: April 1, 2025</li>
 </ul>
 <h3>Business information</h3>
-<p>Company name: Bohm Min Co., Ltd.</p>
+<p><strong>Company name:</strong> doyakmin Inc</p>
 <p>Representative: Minyoung Jeong</p>
 <p>Business registration number: 529-81-03507</p>
 <p>Mail order business report number: 2025-Busan Gangseo-gu-0420</p>
@@ -589,7 +589,7 @@ export const termsOfService = {
 <p class="terms-clause"><strong class="terms-clause-number">4.</strong> 訴訟が必要な場合、管轄裁判所は「民事訴訟法」など関係法令が定めるところによります。</p>
 <h3>第29条(約款その他準則)</h3>
 <p>この約款に定めない事項は、運営政策、位置基盤サービス利用約款、個人情報処理方針、個別商品・イベント案内及び「電子商取引等における消費者保護に関する法律」、「約款の規制に関する法律」、「ゲーム産業振興に関する法律」、「コンテンツ産業振興法」、「コンテンツ産業振興法」、</p>
-<p>付則</p>
+<h3>附則</h3>
 <ul>
 <li>発表日：2026年8月8日</li>
 <li>施行日：2026年8月8日</li>
@@ -597,7 +597,7 @@ export const termsOfService = {
 <li>従前利用規約施行日：2025年4月1日</li>
 </ul>
 <h3>事業者情報</h3>
-<p>相互：ドヤクミン（跳躍民）</p>
+<p><strong>会社名：</strong>ドヤクミン（跳躍民）</p>
 <p>代表者：チョン・ミンヨン</p>
 <p>事業者登録番号：529-81-03507</p>
 <p>通信販売業申告番号：2025-釜山江西区-0420</p>
