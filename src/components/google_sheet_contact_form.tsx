@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import TranslatedText from './translated_text'
 
 type SubmitStatus = "idle" | "success" | "error";
+type Language = "ko" | "en" | "ja";
 
 type GoogleSheetContactFormProps = {
   service: string;
@@ -14,7 +15,21 @@ export default function GoogleSheetContactForm({ service, className = "" }: Goog
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<SubmitStatus>("idle");
   const [message, setMessage] = useState("");
+  const [language, setLanguage] = useState<Language>("ko");
   const scriptURL = process.env.NEXT_PUBLIC_CONTACT_SCRIPT_URL;
+
+  useEffect(() => {
+    const saved = localStorage.getItem("doyakmin-language");
+    setLanguage(saved === "en" || saved === "ja" ? saved : "ko");
+    const handleLanguageChange = (event: Event) => {
+      const next = (event as CustomEvent<string>).detail;
+      if (next === "ko" || next === "en" || next === "ja") setLanguage(next);
+    };
+    window.addEventListener("doyakmin-language-change", handleLanguageChange);
+    return () => window.removeEventListener("doyakmin-language-change", handleLanguageChange);
+  }, []);
+
+  const text = (ko: string, en: string, ja: string) => language === "ja" ? ja : language === "en" ? en : ko;
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -23,7 +38,7 @@ export default function GoogleSheetContactForm({ service, className = "" }: Goog
 
     if (!scriptURL) {
       setSubmitStatus("error");
-      setMessage("문의 접수 기능이 아직 설정되지 않았습니다. 운영팀 이메일로 문의해주세요.");
+      setMessage(text("문의 접수 기능이 아직 설정되지 않았습니다. 운영팀 이메일로 문의해주세요.", "The contact form is not configured yet. Please email our team.", "お問い合わせフォームは現在準備中です。運営チームへメールでお問い合わせください。"));
       return;
     }
 
@@ -59,7 +74,7 @@ export default function GoogleSheetContactForm({ service, className = "" }: Goog
       }
 
       setSubmitStatus("success");
-      setMessage("문의가 정상 접수되어 운영진에게 전달되었습니다. 확인 후 순차적으로 안내드리겠습니다.");
+      setMessage(text("문의가 정상 접수되어 운영진에게 전달되었습니다. 확인 후 순차적으로 안내드리겠습니다.", "Your inquiry has been received. Our team will get back to you after review.", "お問い合わせを受け付けました。確認後、順次ご案内いたします。"));
       event.currentTarget.reset();
     } catch (error) {
       const errorMessage = error instanceof Error ? error.message : "문의 접수 중 오류가 발생했습니다.";
@@ -74,7 +89,7 @@ export default function GoogleSheetContactForm({ service, className = "" }: Goog
     <form className={`space-y-5 ${className}`} onSubmit={handleSubmit}>
       <div>
         <label htmlFor={`name-${service}`} className="mb-2 block text-sm font-black text-[#111827]">
-          <TranslatedText ko="이름" en="Name" />
+          <TranslatedText ko="이름" en="Name" ja="お名前" />
         </label>
         <input
           id={`name-${service}`}
@@ -82,13 +97,13 @@ export default function GoogleSheetContactForm({ service, className = "" }: Goog
           type="text"
           required
           className="block w-full rounded-2xl border-2 border-[#111827] px-4 py-3 text-sm font-bold shadow-none focus:outline-none focus:ring-4 focus:ring-[#b7ff2a]/60"
-          placeholder="성함을 입력해주세요"
+          placeholder={text("성함을 입력해주세요", "Enter your name", "お名前を入力してください")}
         />
       </div>
 
       <div>
         <label htmlFor={`reply-contact-${service}`} className="mb-2 block text-sm font-black text-[#111827]">
-          <TranslatedText ko="답변 받을 연락처 (이메일 또는 카카오톡 ID)" en="Reply contact (email or KakaoTalk ID)" />
+          <TranslatedText ko="답변 받을 연락처 (이메일 또는 카카오톡 ID)" en="Reply contact (email or KakaoTalk ID)" ja="返信先（メールまたはKakaoTalk ID）" />
         </label>
         <input
           id={`reply-contact-${service}`}
@@ -96,13 +111,13 @@ export default function GoogleSheetContactForm({ service, className = "" }: Goog
           type="text"
           required
           className="block w-full rounded-2xl border-2 border-[#111827] px-4 py-3 text-sm font-bold shadow-none focus:outline-none focus:ring-4 focus:ring-[#b7ff2a]/60"
-          placeholder="예: your-email@example.com 또는 kakaotalk_id"
+          placeholder={text("예: your-email@example.com 또는 kakaotalk_id", "e.g. your-email@example.com or kakaotalk_id", "例：your-email@example.com または kakaotalk_id")}
         />
       </div>
 
       <div>
         <label htmlFor={`category-${service}`} className="mb-2 block text-sm font-black text-[#111827]">
-          <TranslatedText ko="문의 유형" en="Inquiry type" />
+          <TranslatedText ko="문의 유형" en="Inquiry type" ja="お問い合わせ種別" />
         </label>
         <select
           id={`category-${service}`}
@@ -123,7 +138,7 @@ export default function GoogleSheetContactForm({ service, className = "" }: Goog
 
       <div>
         <label htmlFor={`message-${service}`} className="mb-2 block text-sm font-black text-[#111827]">
-          <TranslatedText ko="문의 내용" en="Message" />
+          <TranslatedText ko="문의 내용" en="Message" ja="お問い合わせ内容" />
         </label>
         <textarea
           id={`message-${service}`}
@@ -131,7 +146,7 @@ export default function GoogleSheetContactForm({ service, className = "" }: Goog
           required
           rows={6}
           className="block w-full rounded-2xl border-2 border-[#111827] px-4 py-3 text-sm font-bold shadow-none focus:outline-none focus:ring-4 focus:ring-[#b7ff2a]/60"
-          placeholder="문의 내용을 자세히 입력해주세요"
+          placeholder={text("문의 내용을 자세히 입력해주세요", "Please describe your inquiry", "お問い合わせ内容を詳しくご入力ください")}
         />
       </div>
 
@@ -140,7 +155,7 @@ export default function GoogleSheetContactForm({ service, className = "" }: Goog
         disabled={isSubmitting || !scriptURL}
         className="game-button w-full disabled:cursor-not-allowed disabled:bg-gray-300 disabled:text-gray-500"
       >
-        {isSubmitting ? "Sending..." : <TranslatedText ko="문의 등록하기" en="Submit inquiry" />}
+        {isSubmitting ? "Sending..." : <TranslatedText ko="문의 등록하기" en="Submit inquiry" ja="送信する" />}
       </button>
 
       {message && (

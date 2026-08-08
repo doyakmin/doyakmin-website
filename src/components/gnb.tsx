@@ -8,11 +8,11 @@ import LanguageSelector from './language_selector'
 import TranslatedText from './translated_text'
 
 const navItems = [
-    { href: '/', ko: '홈', en: 'Home', Icon: Home },
-    { href: '/games', ko: '게임', en: 'Games', Icon: Gamepad2 },
-    { href: '/team', ko: '회사', en: 'Studio', Icon: Building2 },
-    { href: '/news', ko: '소식', en: 'News', Icon: Newspaper },
-    { href: '/contact', ko: '문의', en: 'Contact', Icon: Mail },
+    { href: '/', ko: '홈', en: 'Home', ja: 'ホーム', Icon: Home },
+    { href: '/games', ko: '게임', en: 'Games', ja: 'ゲーム', Icon: Gamepad2 },
+    { href: '/team', ko: '회사', en: 'Studio', ja: '会社', Icon: Building2 },
+    { href: '/news', ko: '소식', en: 'News', ja: 'ニュース', Icon: Newspaper },
+    { href: '/contact', ko: '문의', en: 'Contact', ja: 'お問い合わせ', Icon: Mail },
 ]
 
 export default function GlobalNavigation() {
@@ -44,7 +44,7 @@ export default function GlobalNavigation() {
                                     href={item.href}
                                     className="rounded-xl px-4 py-2 text-sm font-extrabold text-white/72 transition-colors hover:bg-white/10 hover:text-[#b7ff2a]"
                                 >
-                                    <TranslatedText ko={item.ko} en={item.en} />
+                                    <TranslatedText ko={item.ko} en={item.en} ja={item.ja} />
                                 </Link>
                             ))}
                         </div>
@@ -65,7 +65,7 @@ export default function GlobalNavigation() {
 
             <div className="fixed bottom-0 left-0 right-0 z-50 border-t-2 border-[#111827] bg-white/96 px-2 pb-[max(8px,env(safe-area-inset-bottom))] pt-2 shadow-[0_-8px_24px_rgba(7,17,31,0.14)] backdrop-blur-md md:hidden">
                 <div className="mx-auto grid max-w-md grid-cols-5 gap-1">
-                    {navItems.map(({ href, ko, en, Icon }) => {
+                    {navItems.map(({ href, ko, en, ja, Icon }) => {
                         const isActive = href === '/' ? pathname === href : pathname.startsWith(href)
 
                         return (
@@ -80,7 +80,7 @@ export default function GlobalNavigation() {
                                 onClick={handleMenuClick}
                             >
                                 <Icon className="mb-1 h-5 w-5" strokeWidth={2.6} />
-                                <TranslatedText ko={ko} en={en} />
+                                <TranslatedText ko={ko} en={en} ja={ja} />
                             </Link>
                         )
                     })}

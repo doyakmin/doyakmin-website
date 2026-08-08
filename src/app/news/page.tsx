@@ -19,12 +19,13 @@ export default function NewsPage() {
                 <div className="game-container">
                     <p className="game-eyebrow">News Room</p>
                     <h1 className="game-title mt-5">
-                        <TranslatedText ko="소식" en="News" />
+                        <TranslatedText ko="소식" en="News" ja="ニュース" />
                     </h1>
                     <p className="game-readable mt-6 text-xl font-semibold leading-relaxed text-white/78">
                         <TranslatedText
                             ko="한국지와 도약민의 업데이트, 이벤트, 공지를 확인하세요."
                             en="Check updates, events, and notices from Hangukji and Doyakmin."
+                            ja="『韓国地』とDOYAKMINのアップデート、イベント、お知らせをご覧ください。"
                         />
                     </p>
                 </div>

@@ -75,6 +75,7 @@ export default function TeamPage() {
                             <TranslatedText
                                 ko="도약민은 현실의 이동과 지역 경험을 게임으로 바꾸는 스튜디오입니다."
                                 en="Doyakmin is a studio that turns movement and local experiences into games."
+                                ja="DOYAKMINは、現実の移動や地域での体験をゲームに変えるスタジオです。"
                             />
                         </p>
                     </div>
@@ -101,7 +102,7 @@ export default function TeamPage() {
                             </a>
                         </h2>
                         <p className="mt-2 text-base font-black text-[#0c7a90]">
-                            <TranslatedText ko="대표이사" en="CEO" />
+                            <TranslatedText ko="대표이사" en="CEO" ja="代表取締役" />
                         </p>
                         <p className="mt-2 break-all text-sm font-bold text-[#526071]">minyoung5454@naver.com</p>
                     </article>
@@ -112,7 +113,7 @@ export default function TeamPage() {
                 <div className="game-container">
                     <p className="game-eyebrow text-[#0c7a90]">History</p>
                     <h2 className="game-heading mt-4">
-                        <TranslatedText ko="도약민의 플레이 로그" en="Doyakmin play log" />
+                        <TranslatedText ko="도약민의 플레이 로그" en="Doyakmin play log" ja="DOYAKMINのプレイログ" />
                     </h2>
 
                     <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
@@ -134,7 +135,7 @@ export default function TeamPage() {
                 <div className="game-container">
                     <p className="text-sm font-black uppercase tracking-[0.16em] text-[#111827]/70">Press</p>
                     <h2 className="game-heading mt-4">
-                        <TranslatedText ko="보도자료" en="Press" />
+                        <TranslatedText ko="보도자료" en="Press" ja="プレス" />
                     </h2>
                     <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
                         {pressLinks.map((link) => (

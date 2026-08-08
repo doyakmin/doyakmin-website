@@ -23,11 +23,16 @@ html {
 }
 
 html[data-lang="ko"] .i18n-en,
-html[data-lang="en"] .i18n-ko {
+html[data-lang="ko"] .i18n-ja,
+html[data-lang="en"] .i18n-ko,
+html[data-lang="en"] .i18n-ja,
+html[data-lang="ja"] .i18n-ko,
+html[data-lang="ja"] .i18n-en {
   display: none;
 }
 
-html:not([data-lang]) .i18n-en {
+html:not([data-lang]) .i18n-en,
+html:not([data-lang]) .i18n-ja {
   display: none;
 }
 

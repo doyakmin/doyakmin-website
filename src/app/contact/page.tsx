@@ -20,12 +20,13 @@ export default function ContactPage() {
                     <div>
                         <p className="game-eyebrow">Contact</p>
                         <h1 className="game-title mt-5">
-                            <TranslatedText ko="문의" en="Contact" />
+                            <TranslatedText ko="문의" en="Contact" ja="お問い合わせ" />
                         </h1>
                         <p className="game-readable mt-5 text-xl font-semibold leading-relaxed text-white/78">
                             <TranslatedText
                                 ko="제휴, 협업, 앱 문의를 남겨주시면 도약민 팀이 확인 후 안내드립니다."
                                 en="Send us partnership, collaboration, or app inquiries. The Doyakmin team will get back to you."
+                                ja="提携、協業、アプリに関するお問い合わせをお送りください。DOYAKMINチームよりご案内します。"
                             />
                         </p>
                     </div>
@@ -33,12 +34,13 @@ export default function ContactPage() {
                     <div className="game-card bg-white p-6 text-[#111827]">
                         <p className="text-sm font-black uppercase tracking-[0.16em] text-[#0c7a90]">Community</p>
                         <h2 className="mt-3 text-3xl font-black tracking-tighter">
-                            <TranslatedText ko="한국지 네이버 카페" en="Hangukji Naver Cafe" />
+                            <TranslatedText ko="한국지 네이버 카페" en="Hangukji Naver Cafe" ja="『韓国地』Naverカフェ" />
                         </h2>
                         <p className="game-readable mt-3 text-base font-bold leading-relaxed text-[#526071]">
                             <TranslatedText
                                 ko="게임 소식과 공략을 확인하고 다른 플레이어들과 소통해보세요."
                                 en="Check game news and guides, and connect with other players."
+                                ja="ゲームの最新情報や攻略を確認し、ほかのプレイヤーと交流しましょう。"
                             />
                         </p>
                         <a
@@ -49,7 +51,7 @@ export default function ContactPage() {
                         >
                             <Image src="/image/naver_cafe.png" alt="네이버카페 로고" width={22} height={22} />
                             <span className="ml-2">
-                                <TranslatedText ko="카페 방문하기" en="Visit Cafe" />
+                                <TranslatedText ko="카페 방문하기" en="Visit Cafe" ja="カフェを見る" />
                             </span>
                         </a>
                     </div>
@@ -61,12 +63,12 @@ export default function ContactPage() {
                     <div>
                         <p className="game-eyebrow text-[#0c7a90]">Message</p>
                         <h2 className="game-heading mt-4">
-                            <TranslatedText ko="문의 접수" en="Send a message" />
+                            <TranslatedText ko="문의 접수" en="Send a message" ja="お問い合わせフォーム" />
                         </h2>
                         <div className="mt-8 space-y-4 text-lg font-bold leading-relaxed text-[#526071]">
-                            <p>이메일: jmy@doyakmin.com</p>
-                            <p>전화: 0507-1341-5455</p>
-                            <p>주소: 부산광역시 강서구 명지오션시티9로 50, 103호</p>
+                            <p><TranslatedText ko="이메일" en="Email" ja="メール" />: jmy@doyakmin.com</p>
+                            <p><TranslatedText ko="전화" en="Phone" ja="電話" />: 0507-1341-5455</p>
+                            <p><TranslatedText ko="주소: 부산광역시 강서구 명지오션시티9로 50, 103호" en="Address: 103, 50 Myeongji Ocean City 9-ro, Gangseo-gu, Busan, Korea" ja="住所：韓国 釜山広域市 江西区 明旨オーシャンシティ9路 50、103号" /></p>
                         </div>
                     </div>
 
@@ -79,10 +81,10 @@ export default function ContactPage() {
             <section className="bg-[#b7ff2a] py-20">
                 <div className="game-container">
                     <h2 className="game-heading">
-                        <TranslatedText ko="찾아오시는 길" en="Location" />
+                        <TranslatedText ko="찾아오시는 길" en="Location" ja="アクセス" />
                     </h2>
                     <p className="mt-4 text-lg font-bold text-[#111827]/72">
-                        <TranslatedText ko="방문 전 사전 연락 부탁드립니다." en="Please contact us before visiting." />
+                        <TranslatedText ko="방문 전 사전 연락 부탁드립니다." en="Please contact us before visiting." ja="ご来訪前にご連絡をお願いいたします。" />
                     </p>
                     <div className="game-card mt-8 overflow-hidden p-3">
                         <Map />

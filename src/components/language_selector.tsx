@@ -2,24 +2,26 @@
 
 import { useEffect, useState } from 'react'
 
-type Language = 'ko' | 'en'
+type Language = 'ko' | 'en' | 'ja'
 
 export default function LanguageSelector() {
     const [language, setLanguage] = useState<Language>('ko')
 
     useEffect(() => {
         const savedLanguage = localStorage.getItem('doyakmin-language')
-        const initialLanguage: Language = savedLanguage === 'en' ? 'en' : 'ko'
+        const initialLanguage: Language = savedLanguage === 'en' || savedLanguage === 'ja' ? savedLanguage : 'ko'
         setLanguage(initialLanguage)
         document.documentElement.dataset.lang = initialLanguage
-        document.documentElement.lang = initialLanguage === 'en' ? 'en' : 'ko'
+        document.documentElement.lang = initialLanguage
+        window.dispatchEvent(new CustomEvent('doyakmin-language-change', { detail: initialLanguage }))
     }, [])
 
     const changeLanguage = (nextLanguage: Language) => {
         setLanguage(nextLanguage)
         localStorage.setItem('doyakmin-language', nextLanguage)
         document.documentElement.dataset.lang = nextLanguage
-        document.documentElement.lang = nextLanguage === 'en' ? 'en' : 'ko'
+        document.documentElement.lang = nextLanguage
+        window.dispatchEvent(new CustomEvent('doyakmin-language-change', { detail: nextLanguage }))
     }
 
     const buttonClass = (target: Language) =>
@@ -37,6 +39,10 @@ export default function LanguageSelector() {
             <span className="px-0.5 text-white/30">/</span>
             <button type="button" onClick={() => changeLanguage('en')} className={buttonClass('en')}>
                 ENG
+            </button>
+            <span className="px-0.5 text-white/30">/</span>
+            <button type="button" onClick={() => changeLanguage('ja')} className={buttonClass('ja')}>
+                JP
             </button>
         </div>
     )
