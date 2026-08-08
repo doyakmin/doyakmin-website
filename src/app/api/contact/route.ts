@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server'
 export const runtime = 'nodejs'
 
 const fallbackScriptUrl =
-    'https://script.google.com/macros/s/AKfycbwrSjpeg7-No6w80JlBIF872vKnSQdmXl_KsKMN0lIx1Xq7ctbcfKO48ObzYd-5d-Ru/exec'
+    'https://script.google.com/macros/s/AKfycbwMOD4ea2l892156W_xGTRj2x044itAUEk4aZ7YVh6nQ_yCjXqYhyXE5u4IZZvf3o6g/exec'
 
 const limits = {
     name: 100,
