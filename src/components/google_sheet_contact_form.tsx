@@ -16,7 +16,6 @@ export default function GoogleSheetContactForm({ service, className = "" }: Goog
   const [submitStatus, setSubmitStatus] = useState<SubmitStatus>("idle");
   const [message, setMessage] = useState("");
   const [language, setLanguage] = useState<Language>("ko");
-  const scriptURL = process.env.NEXT_PUBLIC_CONTACT_SCRIPT_URL;
 
   useEffect(() => {
     const saved = localStorage.getItem("doyakmin-language");
@@ -36,41 +35,27 @@ export default function GoogleSheetContactForm({ service, className = "" }: Goog
     setMessage("");
     setSubmitStatus("idle");
 
-    if (!scriptURL) {
-      setSubmitStatus("error");
-      setMessage(text("문의 접수 기능이 아직 설정되지 않았습니다. 운영팀 이메일로 문의해주세요.", "The contact form is not configured yet. Please email our team.", "お問い合わせフォームは現在準備中です。運営チームへメールでお問い合わせください。"));
-      return;
-    }
-
     setIsSubmitting(true);
     const formData = new FormData(event.currentTarget);
-    const replyContact = String(formData.get("replyContact") || "").trim();
-    formData.append("source", "website-contact");
-    formData.append("submittedAt", new Date().toISOString());
-    formData.append("service", service);
-    formData.append("email", replyContact);
+    const payload = {
+      name: String(formData.get("name") || ""),
+      replyContact: String(formData.get("replyContact") || ""),
+      category: String(formData.get("category") || ""),
+      message: String(formData.get("message") || ""),
+      website: String(formData.get("website") || ""),
+      service,
+    };
 
     try {
-      const response = await fetch(scriptURL, {
+      const response = await fetch("/api/contact", {
         method: "POST",
-        body: formData,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
       });
 
-      if (!response.ok) {
-        throw new Error(`서버 응답 오류 (${response.status})`);
-      }
-
-      let result: Record<string, unknown> = {};
-      try {
-        result = (await response.json()) as Record<string, unknown>;
-      } catch {
-        result = {};
-      }
-
-      const isSuccess = result.result === "success" || result.status === "success" || result.ok === true;
-      if (!isSuccess && Object.keys(result).length > 0) {
-        const reason = typeof result.message === "string" ? result.message : "알 수 없는 오류가 발생했습니다.";
-        throw new Error(reason);
+      const result = (await response.json()) as { ok?: boolean; message?: string };
+      if (!response.ok || result.ok !== true) {
+        throw new Error(result.message || `서버 응답 오류 (${response.status})`);
       }
 
       setSubmitStatus("success");
@@ -87,6 +72,14 @@ export default function GoogleSheetContactForm({ service, className = "" }: Goog
 
   return (
     <form className={`space-y-5 ${className}`} onSubmit={handleSubmit}>
+      <input
+        type="text"
+        name="website"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        className="hidden"
+      />
       <div>
         <label htmlFor={`name-${service}`} className="mb-2 block text-sm font-black text-[#111827]">
           <TranslatedText ko="이름" en="Name" ja="お名前" />
@@ -152,7 +145,7 @@ export default function GoogleSheetContactForm({ service, className = "" }: Goog
 
       <button
         type="submit"
-        disabled={isSubmitting || !scriptURL}
+        disabled={isSubmitting}
         className="game-button w-full disabled:cursor-not-allowed disabled:bg-gray-300 disabled:text-gray-500"
       >
         {isSubmitting ? "Sending..." : <TranslatedText ko="문의 등록하기" en="Submit inquiry" ja="送信する" />}
