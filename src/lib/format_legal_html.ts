@@ -55,7 +55,7 @@ export function formatLegalHtml(html: string) {
 
     let formatted = html.replace(
         /(<div class="terms-document">\s*)<p>([^<]*(?:Announcement|Implementation|공고|시행|発表日|施行日)[^<]*)<\/p>/,
-        '$1<p class="terms-version"><strong>$2</strong></p>',
+        '$1',
     );
 
     const plainParagraph = '<p>(?:(?!<\\/p>)[\\s\\S])*?<\\/p>';

@@ -208,26 +208,6 @@ html[data-lang="ja"] body {
   overflow-wrap: break-word;
 }
 
-.terms-document .terms-version {
-  margin: 0 0 44px;
-  border: 2px solid #111827;
-  border-radius: 22px;
-  background: linear-gradient(135deg, rgba(183, 255, 42, 0.32), rgba(39, 216, 255, 0.16));
-  padding: 26px 28px;
-  color: #526071;
-  font-size: 14px;
-  line-height: 1.55;
-}
-
-.terms-document .terms-version strong {
-  display: block;
-  margin-bottom: 4px;
-  color: #111827;
-  font-size: clamp(24px, 4vw, 34px);
-  line-height: 1.2;
-  letter-spacing: -0.035em;
-}
-
 .terms-document h3 {
   margin: 52px 0 18px;
   border-left: 7px solid #0c7a90;
@@ -421,12 +401,6 @@ html[data-lang="ja"] body {
   .terms-document {
     font-size: 15px;
     line-height: 1.72;
-  }
-
-  .terms-document .terms-version {
-    margin-bottom: 34px;
-    border-radius: 16px;
-    padding: 20px;
   }
 
   .terms-document h3 {
