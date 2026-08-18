@@ -281,6 +281,58 @@ html[data-lang="ja"] body {
   color: #0c7a90;
 }
 
+.terms-document .terms-table-wrap {
+  margin: 20px 0 30px;
+  overflow-x: auto;
+  border: 2px solid #111827;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 5px 0 rgba(17, 24, 39, 0.12);
+  -webkit-overflow-scrolling: touch;
+}
+
+.terms-document .terms-table {
+  width: 100%;
+  min-width: 620px;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.terms-document .terms-table th,
+.terms-document .terms-table td {
+  border-right: 1px solid #dbe3ec;
+  border-bottom: 1px solid #dbe3ec;
+  padding: 14px 16px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.terms-document .terms-table th {
+  background: linear-gradient(135deg, #0c7a90, #075a6a);
+  color: #fff;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+}
+
+.terms-document .terms-table tbody tr:nth-child(even) td {
+  background: #f4f7fb;
+}
+
+.terms-document .terms-table tbody tr:hover td {
+  background: rgba(183, 255, 42, 0.16);
+}
+
+.terms-document .terms-table th:last-child,
+.terms-document .terms-table td:last-child {
+  border-right: 0;
+}
+
+.terms-document .terms-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
 @media (max-width: 767px) {
   html {
     scroll-padding-top: 72px;
@@ -394,5 +446,20 @@ html[data-lang="ja"] body {
 
   .terms-document ul {
     padding: 14px 16px 14px 34px;
+  }
+
+  .terms-document .terms-table-wrap {
+    margin-inline: -2px;
+    border-radius: 14px;
+  }
+
+  .terms-document .terms-table {
+    min-width: 560px;
+    font-size: 13px;
+  }
+
+  .terms-document .terms-table th,
+  .terms-document .terms-table td {
+    padding: 12px;
   }
 }

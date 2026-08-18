@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { formatLegalHtml } from '@/lib/format_legal_html'
 
 type Language = 'ko' | 'en' | 'ja'
 
@@ -19,6 +20,6 @@ export default function LocalizedHtml({ ko, en, ja }: { ko: string; en: string; 
         return () => window.removeEventListener('doyakmin-language-change', handleLanguageChange)
     }, [])
 
-    const html = language === 'en' ? en : language === 'ja' ? ja : ko
+    const html = formatLegalHtml(language === 'en' ? en : language === 'ja' ? ja : ko)
     return <div lang={language} dangerouslySetInnerHTML={{ __html: html }} />
 }
