@@ -3,7 +3,7 @@ import TranslatedText from './translated_text'
 
 export default function Footer() {
     return (
-        <footer className="border-t-2 border-[#111827] bg-[#07111f] text-white">
+        <footer className="border-t-2 border-[#111827] bg-[#07111f] pb-[calc(80px+env(safe-area-inset-bottom))] text-white md:pb-0">
             <div className="game-container py-16">
                 <div className="grid grid-cols-1 gap-10 md:grid-cols-[1.2fr_0.8fr_0.8fr]">
                     <div>
